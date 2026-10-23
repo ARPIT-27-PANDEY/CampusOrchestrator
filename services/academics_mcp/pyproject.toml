@@ -1,0 +1,31 @@
+[project]
+name = "campusos-academics-mcp"
+version = "0.1.0"
+description = "CampusOS academics MCP server: PDF handbook RAG with Qdrant and page citations"
+requires-python = ">=3.11"
+dependencies = [
+  "mcp==2.3.0",
+  "pydantic>=2.14,<3",
+  "uvicorn>=0.54,<1",
+  "pymupdf==2.0",
+  "qdrant-client==1.20.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9,<10", "pytest-asyncio>=1.4,<2"]
+fastembed = ["fastembed>=0.9,<1"]
+
+[project.scripts]
+academics-mcp = "academics_mcp.__main__:main"
+academics-ingest = "academics_mcp.ingest:main"
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["academics_mcp*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

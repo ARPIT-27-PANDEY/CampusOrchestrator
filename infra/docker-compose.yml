@@ -1,0 +1,96 @@
+# CampusOS AI local environment. From the repo root:
+#   cp .env.example .env        # optional: set LLM_PROVIDER=groq and GROQ_API_KEY
+#   docker compose -f infra/docker-compose.yml up --build
+# Frontend http://localhost:3000, API http://localhost:8000/docs
+name: campusos
+
+x-mcp-common: &mcp-common
+  restart: unless-stopped
+  environment: &mcp-env
+    MCP_ALLOWED_HOSTS: "localhost:*,127.0.0.1:*,library-mcp:*,events-mcp:*,cafeteria-mcp:*,academics-mcp:*"
+    LOG_LEVEL: info
+
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.19.2
+    restart: unless-stopped
+    volumes:
+      - qdrant-data:/qdrant/storage
+    ports:
+      - "6333:6333"
+
+  library-mcp:
+    <<: *mcp-common
+    build: ../services/library_mcp
+    environment:
+      <<: *mcp-env
+      LIBRARY_PROVIDER: ${LIBRARY_PROVIDER:-demo}
+
+  events-mcp:
+    <<: *mcp-common
+    build: ../services/events_mcp
+    environment:
+      <<: *mcp-env
+      EVENTS_PROVIDER: ${EVENTS_PROVIDER:-demo}
+      GOOGLE_CALENDAR_ID: ${GOOGLE_CALENDAR_ID:-}
+      GOOGLE_CALENDAR_API_KEY: ${GOOGLE_CALENDAR_API_KEY:-}
+      CAMPUS_TIMEZONE: ${CAMPUS_TIMEZONE:-Asia/Kolkata}
+
+  cafeteria-mcp:
+    <<: *mcp-common
+    build: ../services/cafeteria_mcp
+    environment:
+      <<: *mcp-env
+      CAFETERIA_PROVIDER: ${CAFETERIA_PROVIDER:-demo}
+      CAFETERIA_MENU_PATH: ${CAFETERIA_MENU_PATH:-}
+
+  academics-mcp:
+    <<: *mcp-common
+    build: ../services/academics_mcp
+    depends_on: [qdrant]
+    environment:
+      <<: *mcp-env
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_COLLECTION: campus_handbooks
+      EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-hashing}
+      ACADEMICS_DATA_MODE: ${ACADEMICS_DATA_MODE:-demo}
+    # To index your own PDFs: mount them over the demo set and set ACADEMICS_DATA_MODE=imported
+    # volumes:
+    #   - ./handbooks:/srv/handbooks:ro
+
+  backend:
+    build: ../backend
+    restart: unless-stopped
+    depends_on:
+      library-mcp: {condition: service_healthy}
+      events-mcp: {condition: service_healthy}
+      cafeteria-mcp: {condition: service_healthy}
+      academics-mcp: {condition: service_healthy}
+    env_file:
+      - path: ../.env
+        required: false
+    environment:
+      MCP_LIBRARY_URL: http://library-mcp:8101/mcp
+      MCP_EVENTS_URL: http://events-mcp:8102/mcp
+      MCP_CAFETERIA_URL: http://cafeteria-mcp:8103/mcp
+      MCP_ACADEMICS_URL: http://academics-mcp:8104/mcp
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000}
+      EVAL_REPORT_PATH: /app/evals/latest.json
+      LOG_JSON: "true"
+    volumes:
+      - ../evals/reports:/app/evals:ro
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ../frontend
+      args:
+        NEXT_PUBLIC_API_BASE_URL: ${PUBLIC_API_BASE_URL:-http://localhost:8000}
+    restart: unless-stopped
+    depends_on: [backend]
+    ports:
+      - "3000:3000"
+
+volumes:
+  qdrant-data:

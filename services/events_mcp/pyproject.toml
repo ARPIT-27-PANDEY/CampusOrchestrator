@@ -1,0 +1,32 @@
+[project]
+name = "campusos-events-mcp"
+version = "0.1.0"
+description = "CampusOS events MCP server (demo + optional Google Calendar provider)"
+requires-python = ">=3.11"
+dependencies = [
+  "mcp==2.3.0",
+  "pydantic>=2.14,<3",
+  "uvicorn>=0.54,<1",
+  "httpx>=0.28,<1",
+  "tzdata>=2024.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9,<10", "pytest-asyncio>=1.4,<2"]
+
+[project.scripts]
+events-mcp = "events_mcp.__main__:main"
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["events_mcp*"]
+
+[tool.setuptools.package-data]
+events_mcp = ["data/*.json"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

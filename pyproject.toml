@@ -1,0 +1,25 @@
+# Workspace-level tooling config. Each service/backend has its own pyproject.toml with its dependencies.
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+markers = ["integration: launches the MCP servers as separate processes"]
+pythonpath = ["backend"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["frontend", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "BLE", "UP", "SIM", "ASYNC", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003", "B008", "E501"]  # E501: formatter owns line length; long strings allowed
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "library_mcp", "events_mcp", "cafeteria_mcp", "academics_mcp", "evals"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+warn_unused_ignores = false
+exclude = ["frontend/", "build/"]

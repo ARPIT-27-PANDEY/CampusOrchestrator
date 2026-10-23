@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* CampusOS wayfinding tokens.
+   Base: cool signboard white + deep navy ink. Each campus system has its own sign colour,
+   used only to identify that system (route stops, source signs, legend). */
+:root {
+  --ground: #eef1f4;
+  --panel: #ffffff;
+  --ink: #142033;
+  --ink-muted: #56637a;
+  --rule: #d3d9e1;
+  --focus: #1f5fd1;
+
+  --svc-library: #2c7a55;
+  --svc-events: #7d3c98;
+  --svc-cafeteria: #b07a10;
+  --svc-academics: #2f56a6;
+
+  --ok: #2c7a55;
+  --warn: #a86400;
+  --bad: #b3261e;
+  --hatch: rgba(20, 32, 51, 0.09);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #0f1724;
+    --panel: #172234;
+    --ink: #e6ebf2;
+    --ink-muted: #9aa8bd;
+    --rule: #2a3a52;
+    --focus: #7aa7ff;
+    --svc-library: #52b487;
+    --svc-events: #c28fe0;
+    --svc-cafeteria: #e2ad45;
+    --svc-academics: #7d9ef0;
+    --ok: #52b487;
+    --warn: #e2ad45;
+    --bad: #f07a70;
+    --hatch: rgba(230, 235, 242, 0.1);
+  }
+}
+
+@theme inline {
+  --color-ground: var(--ground);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-rule: var(--rule);
+  --color-focus: var(--focus);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+  --font-sans: "Frutiger", "Avenir Next", "Segoe UI Variable Text", "Segoe UI", "Source Sans 3", "Helvetica Neue", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+html {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1;
+}
+
+body {
+  background: var(--ground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Simulated data is marked with construction-style hatching rather than a loud label. */
+.demo-hatch {
+  background-image: repeating-linear-gradient(135deg, var(--hatch) 0 6px, transparent 6px 12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Answer prose rendered from markdown */
+.answer-prose p {
+  margin: 0 0 0.75rem;
+}
+.answer-prose p:last-child {
+  margin-bottom: 0;
+}
+.answer-prose ul,
+.answer-prose ol {
+  margin: 0 0 0.75rem 1.25rem;
+  list-style: disc;
+}
+.answer-prose strong {
+  font-weight: 650;
+}

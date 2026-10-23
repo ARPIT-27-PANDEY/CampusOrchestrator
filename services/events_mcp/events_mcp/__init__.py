@@ -1,0 +1,1 @@
+"""CampusOS events MCP server."""

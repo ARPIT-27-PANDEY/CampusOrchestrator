@@ -1,0 +1,30 @@
+[project]
+name = "campusos-library-mcp"
+version = "0.1.0"
+description = "CampusOS library MCP server (demo catalogue provider; replaceable)"
+requires-python = ">=3.11"
+dependencies = [
+  "mcp==2.3.0",
+  "pydantic>=2.14,<3",
+  "uvicorn>=0.54,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9,<10", "pytest-asyncio>=1.4,<2"]
+
+[project.scripts]
+library-mcp = "library_mcp.__main__:main"
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["library_mcp*"]
+
+[tool.setuptools.package-data]
+library_mcp = ["data/*.json"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

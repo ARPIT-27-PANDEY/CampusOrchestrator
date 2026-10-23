@@ -1,0 +1,9 @@
+{
+  "_comment": "Allowlisted MCP servers. URLs may be overridden with MCP_<ID>_URL env vars (e.g. MCP_LIBRARY_URL). Hosts must appear in MCP_ALLOWED_HOSTS.",
+  "servers": [
+    {"id": "library", "name": "Library", "url": "http://localhost:8101/mcp", "description": "Catalogue, copy availability, opening hours"},
+    {"id": "events", "name": "Events", "url": "http://localhost:8102/mcp", "description": "Workshops, lectures, campus calendar"},
+    {"id": "cafeteria", "name": "Cafeteria", "url": "http://localhost:8103/mcp", "description": "Menus and prices"},
+    {"id": "academics", "name": "Academics", "url": "http://localhost:8104/mcp", "description": "Handbook and policy retrieval (RAG)"}
+  ]
+}
