@@ -1,0 +1,17 @@
+# Used by builds whose context is the repo root (infra/render/Dockerfile).
+.git
+.venv
+**/__pycache__
+**/*.egg-info
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+**/tests
+**/node_modules
+frontend
+.env
+.env.*
+**/.env
+*.bundle
+*.zip
+traces*.jsonl

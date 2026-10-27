@@ -35,6 +35,10 @@ frontend/coverage/
 *.tsbuildinfo
 next-env.d.ts
 
+# Local archives of the repo
+*.bundle
+*.zip
+
 # OS / editors
 .DS_Store
 Thumbs.db

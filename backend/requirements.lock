@@ -142,7 +142,7 @@ uvicorn==0.54.0
     # via
     #   campusos-backend (backend/pyproject.toml)
     #   mcp
-uvloop==0.23.0
+uvloop==0.23.0 ; sys_platform != 'win32' and sys_platform != 'cygwin' and platform_python_implementation != 'PyPy'
     # via uvicorn
 watchfiles==1.3.0
     # via uvicorn
