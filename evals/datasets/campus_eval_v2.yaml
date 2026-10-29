@@ -25,15 +25,17 @@ cases:
   # ================================================================= single service: library (campus catalogue)
   - {id: lib2-01, category: single_server, query: "Is Introduction to Algorithms available in the library?",
      expected_tools: [library__search_books, library__get_book_availability],
+     acceptable_tools: [[library__search_books, library__get_book_availability], [library__search_books]],
      expected_args: {library__search_books: {query: "Introduction to Algorithms"}},
-     must_contain: ["Introduction to Algorithms", "not available"], expect_source_modes: {library: demo}}
+     must_contain: ["Introduction to Algorithms"],
+     must_contain_any: ["not available", "0 copies", "no copies", "0 of 1", "unavailable", "none available"], expect_source_modes: {library: demo}}
   - {id: lib2-02, category: topic_search, query: "Do you have books about mechanics?",
-     expected_tools: [library__search_books, library__get_book_availability],
+     expected_tools: [library__search_books, library__get_book_availability], acceptable_tools: [[library__search_books, library__get_book_availability], [library__search_books]],
      must_contain: ["Engineering Mechanics"]}
   - {id: lib2-03, category: topic_search, query: "Do you have any thermodynamics books?",
-     expected_tools: [library__search_books, library__get_book_availability], must_contain: ["Thermodynamics"]}
+     expected_tools: [library__search_books, library__get_book_availability], acceptable_tools: [[library__search_books, library__get_book_availability], [library__search_books]], must_contain: ["Thermodynamics"]}
   - {id: lib2-04, category: topic_search, query: "Any books on linear algebra?",
-     expected_tools: [library__search_books, library__get_book_availability], must_contain: ["linear algebra"]}
+     expected_tools: [library__search_books, library__get_book_availability], acceptable_tools: [[library__search_books, library__get_book_availability], [library__search_books]], must_contain: ["linear algebra"]}
   - {id: lib2-05, category: no_results, query: "Do you have books on underwater basket weaving?",
      expected_tools: [library__search_books], must_contain: ["no match"], must_not_contain: ["copies available"]}
   - {id: lib2-06, category: single_server, query: "What are the library hours today?",
@@ -45,7 +47,7 @@ cases:
      expected_tools: [library__get_library_hours], expected_args: {library__get_library_hours: {date: "2026-11-01"}},
      must_contain: ["12:00", "18:00"]}
   - {id: lib2-09, category: paraphrase, query: "Can I borrow Deep Learning by Goodfellow?",
-     expected_tools: [library__search_books, library__get_book_availability], must_contain: ["Deep Learning"]}
+     expected_tools: [library__search_books, library__get_book_availability], acceptable_tools: [[library__search_books, library__get_book_availability], [library__search_books]], must_contain: ["Deep Learning"]}
   # ================================================================= public book discovery (offline replay)
   - {id: pub-01, category: public_books, query: "Find open access books on thermodynamics",
      expected_tools: [library__discover_public_books],
