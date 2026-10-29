@@ -1,0 +1,4271 @@
+{
+ "kind": "library_search",
+ "run_id": "library-20261029T092812Z-49c546",
+ "generated_at": "2026-10-29T09:28:12+00:00",
+ "dataset": "library_search_v1.yaml",
+ "dataset_sha256": "49c546a52ee4330136b6a26b268e52f0de25fb2947036987302908362bb233f0",
+ "catalogue": {
+  "books": 138,
+  "sha256": "2115945542ef01d537e877c0c0d7dbf98cf6d43a7041479dbc29ed9b85b905c5"
+ },
+ "k": 5,
+ "tuned": true,
+ "labels": {
+  "t01": [
+   "LIB-1054"
+  ],
+  "t02": [
+   "LIB-1070"
+  ],
+  "t03": [
+   "LIB-1105"
+  ],
+  "t04": [
+   "LIB-1023",
+   "LIB-1024"
+  ],
+  "t05": [
+   "LIB-1132"
+  ],
+  "t06": [
+   "LIB-1114"
+  ],
+  "s01": [
+   "LIB-1008",
+   "LIB-1009",
+   "LIB-1010"
+  ],
+  "s02": [
+   "LIB-1059",
+   "LIB-1060",
+   "LIB-1061",
+   "LIB-1062"
+  ],
+  "s03": [
+   "LIB-1011",
+   "LIB-1012"
+  ],
+  "s04": [
+   "LIB-1065",
+   "LIB-1066"
+  ],
+  "s05": [
+   "LIB-1084",
+   "LIB-1085",
+   "LIB-1086"
+  ],
+  "s06": [
+   "LIB-1096"
+  ],
+  "s07": [
+   "LIB-1025",
+   "LIB-1026"
+  ],
+  "s08": [
+   "LIB-1043",
+   "LIB-1044"
+  ],
+  "a01": [
+   "LIB-1054",
+   "LIB-1055",
+   "LIB-1056",
+   "LIB-1057"
+  ],
+  "a02": [
+   "LIB-1005",
+   "LIB-1006",
+   "LIB-1007"
+  ],
+  "a03": [
+   "LIB-1063",
+   "LIB-1064"
+  ],
+  "a04": [
+   "LIB-1008",
+   "LIB-1009",
+   "LIB-1010"
+  ],
+  "p01": [
+   "LIB-1013",
+   "LIB-1014"
+  ],
+  "p02": [
+   "LIB-1072",
+   "LIB-1073"
+  ],
+  "p03": [
+   "LIB-1132",
+   "LIB-1133",
+   "LIB-1134",
+   "LIB-1135",
+   "LIB-1136"
+  ],
+  "p04": [
+   "LIB-1128"
+  ],
+  "p05": [
+   "LIB-1099",
+   "LIB-1100",
+   "LIB-1101"
+  ],
+  "p06": [
+   "LIB-1105",
+   "LIB-1106",
+   "LIB-1107"
+  ],
+  "p07": [
+   "LIB-1059",
+   "LIB-1060",
+   "LIB-1061",
+   "LIB-1062"
+  ],
+  "p08": [
+   "LIB-1043",
+   "LIB-1044"
+  ],
+  "p09": [
+   "LIB-1005",
+   "LIB-1006",
+   "LIB-1007",
+   "LIB-1040",
+   "LIB-1041",
+   "LIB-1042"
+  ],
+  "p10": [
+   "LIB-1033"
+  ],
+  "p11": [
+   "LIB-1084",
+   "LIB-1085",
+   "LIB-1086"
+  ],
+  "p12": [
+   "LIB-1140",
+   "LIB-1142"
+  ],
+  "p13": [
+   "LIB-1047",
+   "LIB-1048"
+  ],
+  "p14": [
+   "LIB-1045",
+   "LIB-1046",
+   "LIB-1053"
+  ],
+  "p15": [
+   "LIB-1102",
+   "LIB-1103"
+  ],
+  "p16": [
+   "LIB-1111",
+   "LIB-1112"
+  ],
+  "p17": [
+   "LIB-1034",
+   "LIB-1035"
+  ],
+  "p18": [
+   "LIB-1141",
+   "LIB-1143"
+  ],
+  "p19": [
+   "LIB-1088",
+   "LIB-1089"
+  ],
+  "p20": [
+   "LIB-1138",
+   "LIB-1139"
+  ],
+  "p21": [
+   "LIB-1123",
+   "LIB-1124",
+   "LIB-1125"
+  ],
+  "p22": [
+   "LIB-1108",
+   "LIB-1109",
+   "LIB-1110"
+  ],
+  "p23": [
+   "LIB-1030",
+   "LIB-1031"
+  ],
+  "p24": [
+   "LIB-1038"
+  ],
+  "p25": [
+   "LIB-1063",
+   "LIB-1064"
+  ],
+  "p26": [
+   "LIB-1094"
+  ],
+  "p27": [
+   "LIB-1019"
+  ],
+  "p28": [
+   "LIB-1116",
+   "LIB-1117",
+   "LIB-1133"
+  ],
+  "au01": [
+   "LIB-1066",
+   "LIB-1067"
+  ],
+  "au02": [
+   "LIB-1078",
+   "LIB-1079"
+  ],
+  "au03": [
+   "LIB-1107",
+   "LIB-1108"
+  ],
+  "au04": [
+   "LIB-1140"
+  ],
+  "n01": [],
+  "n02": [],
+  "n03": [],
+  "n04": [],
+  "n05": [],
+  "n06": [],
+  "n07": [],
+  "n08": [],
+  "n09": [],
+  "n10": [],
+  "n11": [],
+  "n12": []
+ },
+ "results": [
+  {
+   "mode": "keyword",
+   "status": "ok",
+   "embedder": null,
+   "gates": null,
+   "tuning": null,
+   "splits": {
+    "dev": {
+     "queries": 31,
+     "positives": 25,
+     "negatives": 6,
+     "hit@k": 0.48,
+     "recall@k": 0.433,
+     "precision@k": 0.403,
+     "mrr": 0.448,
+     "ndcg@k": 0.432,
+     "missed_rate": 0.52,
+     "negatives_correct_empty": 1.0,
+     "objective": 0.5418,
+     "search_p50_ms": 3.64,
+     "search_p95_ms": 5.04
+    },
+    "test": {
+     "queries": 31,
+     "positives": 25,
+     "negatives": 6,
+     "hit@k": 0.44,
+     "recall@k": 0.44,
+     "precision@k": 0.42,
+     "mrr": 0.44,
+     "ndcg@k": 0.44,
+     "missed_rate": 0.56,
+     "negatives_correct_empty": 1.0,
+     "objective": 0.5484,
+     "search_p50_ms": 3.51,
+     "search_p95_ms": 5.9
+    }
+   },
+   "test_categories": {
+    "alias": {
+     "queries": 2,
+     "hit@k": 1.0,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "ndcg@k": 1.0,
+     "negatives_correct_empty": null
+    },
+    "author": {
+     "queries": 2,
+     "hit@k": 1.0,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "ndcg@k": 1.0,
+     "negatives_correct_empty": null
+    },
+    "negative": {
+     "queries": 6,
+     "hit@k": null,
+     "recall@k": null,
+     "precision@k": null,
+     "ndcg@k": null,
+     "negatives_correct_empty": 1.0
+    },
+    "paraphrase": {
+     "queries": 14,
+     "hit@k": 0.0,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "ndcg@k": 0.0,
+     "negatives_correct_empty": null
+    },
+    "subject": {
+     "queries": 4,
+     "hit@k": 1.0,
+     "recall@k": 1.0,
+     "precision@k": 0.875,
+     "ndcg@k": 1.0,
+     "negatives_correct_empty": null
+    },
+    "title": {
+     "queries": 3,
+     "hit@k": 1.0,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "ndcg@k": 1.0,
+     "negatives_correct_empty": null
+    }
+   },
+   "rows": [
+    {
+     "id": "t01",
+     "split": "dev",
+     "category": "title",
+     "query": "Introduction to Algorithms",
+     "returned": [
+      "LIB-1054"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1054"
+     ],
+     "search_ms": 3.55,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t02",
+     "split": "test",
+     "category": "title",
+     "query": "Clean Code",
+     "returned": [
+      "LIB-1070"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1070"
+     ],
+     "search_ms": 4.32,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t03",
+     "split": "dev",
+     "category": "title",
+     "query": "The Lean Startup",
+     "returned": [
+      "LIB-1105"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1105"
+     ],
+     "search_ms": 3.33,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t04",
+     "split": "test",
+     "category": "title",
+     "query": "Signals and Systems",
+     "returned": [
+      "LIB-1023",
+      "LIB-1024"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1023",
+      "LIB-1024"
+     ],
+     "search_ms": 3.19,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t05",
+     "split": "test",
+     "category": "title",
+     "query": "Wings of Fire",
+     "returned": [
+      "LIB-1132"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1132"
+     ],
+     "search_ms": 3.18,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t06",
+     "split": "dev",
+     "category": "title",
+     "query": "Sapiens",
+     "returned": [
+      "LIB-1114"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1114"
+     ],
+     "search_ms": 3.61,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s01",
+     "split": "dev",
+     "category": "subject",
+     "query": "thermodynamics",
+     "returned": [
+      "LIB-1008",
+      "LIB-1009",
+      "LIB-1010"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1008",
+      "LIB-1009",
+      "LIB-1010"
+     ],
+     "search_ms": 3.92,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s02",
+     "split": "test",
+     "category": "subject",
+     "query": "machine learning",
+     "returned": [
+      "LIB-1062",
+      "LIB-1059",
+      "LIB-1060",
+      "LIB-1061"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1059",
+      "LIB-1060",
+      "LIB-1061",
+      "LIB-1062"
+     ],
+     "search_ms": 3.37,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s03",
+     "split": "dev",
+     "category": "subject",
+     "query": "fluid mechanics",
+     "returned": [
+      "LIB-1011",
+      "LIB-1001",
+      "LIB-1002",
+      "LIB-1003",
+      "LIB-1004"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1011",
+      "LIB-1012"
+     ],
+     "search_ms": 3.65,
+     "hit@k": true,
+     "recall@k": 0.5,
+     "precision@k": 0.2,
+     "mrr": 1.0,
+     "ndcg@k": 0.6131471927654584,
+     "empty": false
+    },
+    {
+     "id": "s04",
+     "split": "test",
+     "category": "subject",
+     "query": "operating systems",
+     "returned": [
+      "LIB-1065",
+      "LIB-1066"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1065",
+      "LIB-1066"
+     ],
+     "search_ms": 3.19,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s05",
+     "split": "dev",
+     "category": "subject",
+     "query": "probability",
+     "returned": [
+      "LIB-1084",
+      "LIB-1085",
+      "LIB-1086"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1084",
+      "LIB-1085",
+      "LIB-1086"
+     ],
+     "search_ms": 4.36,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s06",
+     "split": "test",
+     "category": "subject",
+     "query": "organic chemistry",
+     "returned": [
+      "LIB-1096",
+      "LIB-1097"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1096"
+     ],
+     "search_ms": 3.45,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.5,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s07",
+     "split": "dev",
+     "category": "subject",
+     "query": "control systems",
+     "returned": [
+      "LIB-1026",
+      "LIB-1025",
+      "LIB-1035"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1025",
+      "LIB-1026"
+     ],
+     "search_ms": 3.21,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.6666666666666666,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s08",
+     "split": "test",
+     "category": "subject",
+     "query": "geotechnical engineering",
+     "returned": [
+      "LIB-1043",
+      "LIB-1044"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1043",
+      "LIB-1044"
+     ],
+     "search_ms": 3.18,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "a01",
+     "split": "dev",
+     "category": "alias",
+     "query": "dsa",
+     "returned": [
+      "LIB-1054",
+      "LIB-1057",
+      "LIB-1055",
+      "LIB-1056"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1054",
+      "LIB-1055",
+      "LIB-1056",
+      "LIB-1057"
+     ],
+     "search_ms": 3.3,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "a02",
+     "split": "test",
+     "category": "alias",
+     "query": "som",
+     "returned": [
+      "LIB-1005",
+      "LIB-1006",
+      "LIB-1007"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1005",
+      "LIB-1006",
+      "LIB-1007"
+     ],
+     "search_ms": 4.75,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "a03",
+     "split": "dev",
+     "category": "alias",
+     "query": "dbms books",
+     "returned": [
+      "LIB-1063",
+      "LIB-1064"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1063",
+      "LIB-1064"
+     ],
+     "search_ms": 4.32,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "a04",
+     "split": "test",
+     "category": "alias",
+     "query": "thermo",
+     "returned": [
+      "LIB-1008",
+      "LIB-1009",
+      "LIB-1010"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1008",
+      "LIB-1009",
+      "LIB-1010"
+     ],
+     "search_ms": 3.41,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p01",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "how heat moves through materials",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1013",
+      "LIB-1014"
+     ],
+     "search_ms": 3.74,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p02",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "protecting computers from hackers",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1072",
+      "LIB-1073"
+     ],
+     "search_ms": 5.02,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p03",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "life stories of famous people",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1132",
+      "LIB-1133",
+      "LIB-1134",
+      "LIB-1135",
+      "LIB-1136"
+     ],
+     "search_ms": 3.72,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p04",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "detective stories",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1128"
+     ],
+     "search_ms": 3.41,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p05",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "money, markets and prices",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1099",
+      "LIB-1100",
+      "LIB-1101"
+     ],
+     "search_ms": 3.49,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p06",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "starting your own company",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1105",
+      "LIB-1106",
+      "LIB-1107"
+     ],
+     "search_ms": 4.85,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p07",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "teaching computers to learn from data",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1059",
+      "LIB-1060",
+      "LIB-1061",
+      "LIB-1062"
+     ],
+     "search_ms": 3.79,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p08",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "building foundations on soil",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1043",
+      "LIB-1044"
+     ],
+     "search_ms": 3.49,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p09",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "designing bridges and beams",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1005",
+      "LIB-1006",
+      "LIB-1007",
+      "LIB-1040",
+      "LIB-1041",
+      "LIB-1042"
+     ],
+     "search_ms": 3.52,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p10",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "electric motors and generators",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1033"
+     ],
+     "search_ms": 4.54,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p11",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "chance and randomness",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1084",
+      "LIB-1085",
+      "LIB-1086"
+     ],
+     "search_ms": 3.72,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p12",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "how the universe began",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1140",
+      "LIB-1142"
+     ],
+     "search_ms": 3.4,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p13",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "roads and traffic planning",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1047",
+      "LIB-1048"
+     ],
+     "search_ms": 3.42,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p14",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "water flowing in rivers and canals",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1045",
+      "LIB-1046",
+      "LIB-1053"
+     ],
+     "search_ms": 3.51,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p15",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "how the mind makes decisions",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1102",
+      "LIB-1103"
+     ],
+     "search_ms": 5.8,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p16",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "writing clearly",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1111",
+      "LIB-1112"
+     ],
+     "search_ms": 4.35,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p17",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "programming small chips inside gadgets",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1034",
+      "LIB-1035"
+     ],
+     "search_ms": 4.65,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p18",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "how species change over time",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1141",
+      "LIB-1143"
+     ],
+     "search_ms": 6.59,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p19",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "solving equations on a computer",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1088",
+      "LIB-1089"
+     ],
+     "search_ms": 3.55,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p20",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "global warming",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1138",
+      "LIB-1139"
+     ],
+     "search_ms": 3.32,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p21",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "Indian novels and stories",
+     "returned": [
+      "LIB-1119",
+      "LIB-1120",
+      "LIB-1121",
+      "LIB-1122",
+      "LIB-1123"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1123",
+      "LIB-1124",
+      "LIB-1125"
+     ],
+     "search_ms": 3.39,
+     "hit@k": true,
+     "recall@k": 0.3333333333333333,
+     "precision@k": 0.2,
+     "mrr": 0.2,
+     "ndcg@k": 0.18154179253735267,
+     "empty": false
+    },
+    {
+     "id": "p22",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "leading teams and running a business",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1108",
+      "LIB-1109",
+      "LIB-1110"
+     ],
+     "search_ms": 4.57,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p23",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "radio and wireless signal transmission",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1030",
+      "LIB-1031"
+     ],
+     "search_ms": 4.28,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p24",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "converting AC to DC with semiconductors",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1038"
+     ],
+     "search_ms": 5.9,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p25",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "SQL and storing data",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1063",
+      "LIB-1064"
+     ],
+     "search_ms": 5.04,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p26",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "behaviour of atoms and subatomic particles",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1094"
+     ],
+     "search_ms": 4.37,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p27",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "oscillating machines and vibration",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1019"
+     ],
+     "search_ms": 3.63,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p28",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "India's freedom movement",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1116",
+      "LIB-1117",
+      "LIB-1133"
+     ],
+     "search_ms": 3.48,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "au01",
+     "split": "dev",
+     "category": "author",
+     "query": "Tanenbaum",
+     "returned": [
+      "LIB-1066",
+      "LIB-1067"
+     ],
+     "matched_on": "author",
+     "relevant": [
+      "LIB-1066",
+      "LIB-1067"
+     ],
+     "search_ms": 3.2,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "au02",
+     "split": "test",
+     "category": "author",
+     "query": "Strang",
+     "returned": [
+      "LIB-1078",
+      "LIB-1079"
+     ],
+     "matched_on": "author",
+     "relevant": [
+      "LIB-1078",
+      "LIB-1079"
+     ],
+     "search_ms": 4.4,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "au03",
+     "split": "dev",
+     "category": "author",
+     "query": "Drucker",
+     "returned": [
+      "LIB-1107",
+      "LIB-1108"
+     ],
+     "matched_on": "author",
+     "relevant": [
+      "LIB-1107",
+      "LIB-1108"
+     ],
+     "search_ms": 3.16,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "au04",
+     "split": "test",
+     "category": "author",
+     "query": "Hawking",
+     "returned": [
+      "LIB-1140"
+     ],
+     "matched_on": "author",
+     "relevant": [
+      "LIB-1140"
+     ],
+     "search_ms": 3.53,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "n01",
+     "split": "dev",
+     "category": "negative",
+     "query": "underwater basket weaving",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 3.46,
+     "correct_empty": true
+    },
+    {
+     "id": "n02",
+     "split": "test",
+     "category": "negative",
+     "query": "cooking recipes",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 3.64,
+     "correct_empty": true
+    },
+    {
+     "id": "n03",
+     "split": "dev",
+     "category": "negative",
+     "query": "knitting patterns",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 4.28,
+     "correct_empty": true
+    },
+    {
+     "id": "n04",
+     "split": "test",
+     "category": "negative",
+     "query": "astrology",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 3.23,
+     "correct_empty": true
+    },
+    {
+     "id": "n05",
+     "split": "dev",
+     "category": "negative",
+     "query": "pet grooming",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 3.55,
+     "correct_empty": true
+    },
+    {
+     "id": "n06",
+     "split": "test",
+     "category": "negative",
+     "query": "fashion design",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 3.32,
+     "correct_empty": true
+    },
+    {
+     "id": "n07",
+     "split": "dev",
+     "category": "negative",
+     "query": "yoga poses",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 4.56,
+     "correct_empty": true
+    },
+    {
+     "id": "n08",
+     "split": "test",
+     "category": "negative",
+     "query": "car insurance",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 3.43,
+     "correct_empty": true
+    },
+    {
+     "id": "n09",
+     "split": "dev",
+     "category": "negative",
+     "query": "wedding planning",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 3.64,
+     "correct_empty": true
+    },
+    {
+     "id": "n10",
+     "split": "test",
+     "category": "negative",
+     "query": "video game walkthroughs",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 3.53,
+     "correct_empty": true
+    },
+    {
+     "id": "n11",
+     "split": "dev",
+     "category": "negative",
+     "query": "gardening tips",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 3.84,
+     "correct_empty": true
+    },
+    {
+     "id": "n12",
+     "split": "test",
+     "category": "negative",
+     "query": "football tactics",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 4.41,
+     "correct_empty": true
+    }
+   ]
+  },
+  {
+   "mode": "hybrid-hashing",
+   "status": "ok",
+   "embedder": "hashing-v1-512",
+   "gates": {
+    "min_score": 0.6,
+    "min_z": 4.0
+   },
+   "tuning": {
+    "split": "dev",
+    "objective": 0.5418,
+    "grid_min_score": [
+     0.0,
+     0.02,
+     0.04,
+     0.06,
+     0.08,
+     0.1,
+     0.12,
+     0.14,
+     0.16,
+     0.18,
+     0.2,
+     0.22,
+     0.24,
+     0.26,
+     0.28,
+     0.3,
+     0.32,
+     0.34,
+     0.36,
+     0.38,
+     0.4,
+     0.42,
+     0.44,
+     0.46,
+     0.48,
+     0.5,
+     0.52,
+     0.54,
+     0.56,
+     0.58,
+     0.6
+    ],
+    "grid_min_z": [
+     0.0,
+     1.5,
+     1.75,
+     2.0,
+     2.25,
+     2.5,
+     2.75,
+     3.0,
+     3.25,
+     3.5,
+     3.75,
+     4.0
+    ]
+   },
+   "index_build_s": 0.02,
+   "negatives_top_cosine": {
+    "n01": 0.1599,
+    "n02": 0.3053,
+    "n03": 0.1194,
+    "n04": 0.1534,
+    "n05": 0.1755,
+    "n06": 0.1683,
+    "n07": 0.1978,
+    "n08": 0.0375,
+    "n09": 0.3095,
+    "n10": 0.1324,
+    "n11": 0.1832,
+    "n12": 0.2442
+   },
+   "negative_margin": 0.2905,
+   "splits": {
+    "dev": {
+     "queries": 31,
+     "positives": 25,
+     "negatives": 6,
+     "hit@k": 0.48,
+     "recall@k": 0.433,
+     "precision@k": 0.403,
+     "mrr": 0.448,
+     "ndcg@k": 0.432,
+     "missed_rate": 0.52,
+     "negatives_correct_empty": 1.0,
+     "objective": 0.5418,
+     "search_p50_ms": 9.19,
+     "search_p95_ms": 14.95
+    },
+    "test": {
+     "queries": 31,
+     "positives": 25,
+     "negatives": 6,
+     "hit@k": 0.44,
+     "recall@k": 0.44,
+     "precision@k": 0.42,
+     "mrr": 0.44,
+     "ndcg@k": 0.44,
+     "missed_rate": 0.56,
+     "negatives_correct_empty": 1.0,
+     "objective": 0.5484,
+     "search_p50_ms": 8.06,
+     "search_p95_ms": 12.77
+    }
+   },
+   "test_categories": {
+    "alias": {
+     "queries": 2,
+     "hit@k": 1.0,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "ndcg@k": 1.0,
+     "negatives_correct_empty": null
+    },
+    "author": {
+     "queries": 2,
+     "hit@k": 1.0,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "ndcg@k": 1.0,
+     "negatives_correct_empty": null
+    },
+    "negative": {
+     "queries": 6,
+     "hit@k": null,
+     "recall@k": null,
+     "precision@k": null,
+     "ndcg@k": null,
+     "negatives_correct_empty": 1.0
+    },
+    "paraphrase": {
+     "queries": 14,
+     "hit@k": 0.0,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "ndcg@k": 0.0,
+     "negatives_correct_empty": null
+    },
+    "subject": {
+     "queries": 4,
+     "hit@k": 1.0,
+     "recall@k": 1.0,
+     "precision@k": 0.875,
+     "ndcg@k": 1.0,
+     "negatives_correct_empty": null
+    },
+    "title": {
+     "queries": 3,
+     "hit@k": 1.0,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "ndcg@k": 1.0,
+     "negatives_correct_empty": null
+    }
+   },
+   "rows": [
+    {
+     "id": "t01",
+     "split": "dev",
+     "category": "title",
+     "query": "Introduction to Algorithms",
+     "returned": [
+      "LIB-1054"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1054"
+     ],
+     "search_ms": 3.91,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t02",
+     "split": "test",
+     "category": "title",
+     "query": "Clean Code",
+     "returned": [
+      "LIB-1070"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1070"
+     ],
+     "search_ms": 4.21,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t03",
+     "split": "dev",
+     "category": "title",
+     "query": "The Lean Startup",
+     "returned": [
+      "LIB-1105"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1105"
+     ],
+     "search_ms": 3.34,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t04",
+     "split": "test",
+     "category": "title",
+     "query": "Signals and Systems",
+     "returned": [
+      "LIB-1023",
+      "LIB-1024"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1023",
+      "LIB-1024"
+     ],
+     "search_ms": 3.32,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t05",
+     "split": "test",
+     "category": "title",
+     "query": "Wings of Fire",
+     "returned": [
+      "LIB-1132"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1132"
+     ],
+     "search_ms": 4.39,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t06",
+     "split": "dev",
+     "category": "title",
+     "query": "Sapiens",
+     "returned": [
+      "LIB-1114"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1114"
+     ],
+     "search_ms": 5.66,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s01",
+     "split": "dev",
+     "category": "subject",
+     "query": "thermodynamics",
+     "returned": [
+      "LIB-1008",
+      "LIB-1009",
+      "LIB-1010"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1008",
+      "LIB-1009",
+      "LIB-1010"
+     ],
+     "search_ms": 8.61,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s02",
+     "split": "test",
+     "category": "subject",
+     "query": "machine learning",
+     "returned": [
+      "LIB-1062",
+      "LIB-1059",
+      "LIB-1060",
+      "LIB-1061"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1059",
+      "LIB-1060",
+      "LIB-1061",
+      "LIB-1062"
+     ],
+     "search_ms": 4.41,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s03",
+     "split": "dev",
+     "category": "subject",
+     "query": "fluid mechanics",
+     "returned": [
+      "LIB-1011",
+      "LIB-1001",
+      "LIB-1002",
+      "LIB-1003",
+      "LIB-1004"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1011",
+      "LIB-1012"
+     ],
+     "search_ms": 4.37,
+     "hit@k": true,
+     "recall@k": 0.5,
+     "precision@k": 0.2,
+     "mrr": 1.0,
+     "ndcg@k": 0.6131471927654584,
+     "empty": false
+    },
+    {
+     "id": "s04",
+     "split": "test",
+     "category": "subject",
+     "query": "operating systems",
+     "returned": [
+      "LIB-1065",
+      "LIB-1066"
+     ],
+     "matched_on": "hybrid",
+     "relevant": [
+      "LIB-1065",
+      "LIB-1066"
+     ],
+     "search_ms": 7.75,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s05",
+     "split": "dev",
+     "category": "subject",
+     "query": "probability",
+     "returned": [
+      "LIB-1084",
+      "LIB-1085",
+      "LIB-1086"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1084",
+      "LIB-1085",
+      "LIB-1086"
+     ],
+     "search_ms": 8.65,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s06",
+     "split": "test",
+     "category": "subject",
+     "query": "organic chemistry",
+     "returned": [
+      "LIB-1096",
+      "LIB-1097"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1096"
+     ],
+     "search_ms": 3.46,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.5,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s07",
+     "split": "dev",
+     "category": "subject",
+     "query": "control systems",
+     "returned": [
+      "LIB-1026",
+      "LIB-1025",
+      "LIB-1035"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1025",
+      "LIB-1026"
+     ],
+     "search_ms": 3.28,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.6666666666666666,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s08",
+     "split": "test",
+     "category": "subject",
+     "query": "geotechnical engineering",
+     "returned": [
+      "LIB-1043",
+      "LIB-1044"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1043",
+      "LIB-1044"
+     ],
+     "search_ms": 11.04,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "a01",
+     "split": "dev",
+     "category": "alias",
+     "query": "dsa",
+     "returned": [
+      "LIB-1054",
+      "LIB-1057",
+      "LIB-1055",
+      "LIB-1056"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1054",
+      "LIB-1055",
+      "LIB-1056",
+      "LIB-1057"
+     ],
+     "search_ms": 13.11,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "a02",
+     "split": "test",
+     "category": "alias",
+     "query": "som",
+     "returned": [
+      "LIB-1005",
+      "LIB-1006",
+      "LIB-1007"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1005",
+      "LIB-1006",
+      "LIB-1007"
+     ],
+     "search_ms": 7.8,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "a03",
+     "split": "dev",
+     "category": "alias",
+     "query": "dbms books",
+     "returned": [
+      "LIB-1063",
+      "LIB-1064"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1063",
+      "LIB-1064"
+     ],
+     "search_ms": 9.02,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "a04",
+     "split": "test",
+     "category": "alias",
+     "query": "thermo",
+     "returned": [
+      "LIB-1008",
+      "LIB-1009",
+      "LIB-1010"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1008",
+      "LIB-1009",
+      "LIB-1010"
+     ],
+     "search_ms": 7.66,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p01",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "how heat moves through materials",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1013",
+      "LIB-1014"
+     ],
+     "search_ms": 9.16,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p02",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "protecting computers from hackers",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1072",
+      "LIB-1073"
+     ],
+     "search_ms": 8.03,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p03",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "life stories of famous people",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1132",
+      "LIB-1133",
+      "LIB-1134",
+      "LIB-1135",
+      "LIB-1136"
+     ],
+     "search_ms": 9.16,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p04",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "detective stories",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1128"
+     ],
+     "search_ms": 8.06,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p05",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "money, markets and prices",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1099",
+      "LIB-1100",
+      "LIB-1101"
+     ],
+     "search_ms": 9.19,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p06",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "starting your own company",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1105",
+      "LIB-1106",
+      "LIB-1107"
+     ],
+     "search_ms": 8.03,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p07",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "teaching computers to learn from data",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1059",
+      "LIB-1060",
+      "LIB-1061",
+      "LIB-1062"
+     ],
+     "search_ms": 10.17,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p08",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "building foundations on soil",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1043",
+      "LIB-1044"
+     ],
+     "search_ms": 8.14,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p09",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "designing bridges and beams",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1005",
+      "LIB-1006",
+      "LIB-1007",
+      "LIB-1040",
+      "LIB-1041",
+      "LIB-1042"
+     ],
+     "search_ms": 10.11,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p10",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "electric motors and generators",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1033"
+     ],
+     "search_ms": 7.98,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p11",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "chance and randomness",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1084",
+      "LIB-1085",
+      "LIB-1086"
+     ],
+     "search_ms": 9.23,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p12",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "how the universe began",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1140",
+      "LIB-1142"
+     ],
+     "search_ms": 8.13,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p13",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "roads and traffic planning",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1047",
+      "LIB-1048"
+     ],
+     "search_ms": 8.83,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p14",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "water flowing in rivers and canals",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1045",
+      "LIB-1046",
+      "LIB-1053"
+     ],
+     "search_ms": 9.2,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p15",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "how the mind makes decisions",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1102",
+      "LIB-1103"
+     ],
+     "search_ms": 8.38,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p16",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "writing clearly",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1111",
+      "LIB-1112"
+     ],
+     "search_ms": 9.65,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p17",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "programming small chips inside gadgets",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1034",
+      "LIB-1035"
+     ],
+     "search_ms": 8.11,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p18",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "how species change over time",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1141",
+      "LIB-1143"
+     ],
+     "search_ms": 9.9,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p19",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "solving equations on a computer",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1088",
+      "LIB-1089"
+     ],
+     "search_ms": 7.8,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p20",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "global warming",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1138",
+      "LIB-1139"
+     ],
+     "search_ms": 10.9,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p21",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "Indian novels and stories",
+     "returned": [
+      "LIB-1119",
+      "LIB-1120",
+      "LIB-1121",
+      "LIB-1122",
+      "LIB-1123"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1123",
+      "LIB-1124",
+      "LIB-1125"
+     ],
+     "search_ms": 11.86,
+     "hit@k": true,
+     "recall@k": 0.3333333333333333,
+     "precision@k": 0.2,
+     "mrr": 0.2,
+     "ndcg@k": 0.18154179253735267,
+     "empty": false
+    },
+    {
+     "id": "p22",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "leading teams and running a business",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1108",
+      "LIB-1109",
+      "LIB-1110"
+     ],
+     "search_ms": 8.45,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p23",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "radio and wireless signal transmission",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1030",
+      "LIB-1031"
+     ],
+     "search_ms": 10.16,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p24",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "converting AC to DC with semiconductors",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1038"
+     ],
+     "search_ms": 8.03,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p25",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "SQL and storing data",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1063",
+      "LIB-1064"
+     ],
+     "search_ms": 10.31,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p26",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "behaviour of atoms and subatomic particles",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1094"
+     ],
+     "search_ms": 7.81,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p27",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "oscillating machines and vibration",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1019"
+     ],
+     "search_ms": 9.47,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p28",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "India's freedom movement",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1116",
+      "LIB-1117",
+      "LIB-1133"
+     ],
+     "search_ms": 7.69,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "au01",
+     "split": "dev",
+     "category": "author",
+     "query": "Tanenbaum",
+     "returned": [
+      "LIB-1066",
+      "LIB-1067"
+     ],
+     "matched_on": "author",
+     "relevant": [
+      "LIB-1066",
+      "LIB-1067"
+     ],
+     "search_ms": 11.76,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "au02",
+     "split": "test",
+     "category": "author",
+     "query": "Strang",
+     "returned": [
+      "LIB-1078",
+      "LIB-1079"
+     ],
+     "matched_on": "author",
+     "relevant": [
+      "LIB-1078",
+      "LIB-1079"
+     ],
+     "search_ms": 12.33,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "au03",
+     "split": "dev",
+     "category": "author",
+     "query": "Drucker",
+     "returned": [
+      "LIB-1107",
+      "LIB-1108"
+     ],
+     "matched_on": "author",
+     "relevant": [
+      "LIB-1107",
+      "LIB-1108"
+     ],
+     "search_ms": 17.52,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "au04",
+     "split": "test",
+     "category": "author",
+     "query": "Hawking",
+     "returned": [
+      "LIB-1140"
+     ],
+     "matched_on": "author",
+     "relevant": [
+      "LIB-1140"
+     ],
+     "search_ms": 22.42,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "n01",
+     "split": "dev",
+     "category": "negative",
+     "query": "underwater basket weaving",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 14.95,
+     "correct_empty": true
+    },
+    {
+     "id": "n02",
+     "split": "test",
+     "category": "negative",
+     "query": "cooking recipes",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 9.59,
+     "correct_empty": true
+    },
+    {
+     "id": "n03",
+     "split": "dev",
+     "category": "negative",
+     "query": "knitting patterns",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 7.51,
+     "correct_empty": true
+    },
+    {
+     "id": "n04",
+     "split": "test",
+     "category": "negative",
+     "query": "astrology",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 9.47,
+     "correct_empty": true
+    },
+    {
+     "id": "n05",
+     "split": "dev",
+     "category": "negative",
+     "query": "pet grooming",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 10.05,
+     "correct_empty": true
+    },
+    {
+     "id": "n06",
+     "split": "test",
+     "category": "negative",
+     "query": "fashion design",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 12.49,
+     "correct_empty": true
+    },
+    {
+     "id": "n07",
+     "split": "dev",
+     "category": "negative",
+     "query": "yoga poses",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 10.52,
+     "correct_empty": true
+    },
+    {
+     "id": "n08",
+     "split": "test",
+     "category": "negative",
+     "query": "car insurance",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 7.41,
+     "correct_empty": true
+    },
+    {
+     "id": "n09",
+     "split": "dev",
+     "category": "negative",
+     "query": "wedding planning",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 10.78,
+     "correct_empty": true
+    },
+    {
+     "id": "n10",
+     "split": "test",
+     "category": "negative",
+     "query": "video game walkthroughs",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 11.14,
+     "correct_empty": true
+    },
+    {
+     "id": "n11",
+     "split": "dev",
+     "category": "negative",
+     "query": "gardening tips",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 13.92,
+     "correct_empty": true
+    },
+    {
+     "id": "n12",
+     "split": "test",
+     "category": "negative",
+     "query": "football tactics",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 12.77,
+     "correct_empty": true
+    }
+   ]
+  },
+  {
+   "mode": "hybrid-fastembed",
+   "status": "ok",
+   "embedder": "fastembed:BAAI/bge-small-en-v1.5",
+   "gates": {
+    "min_score": 0.68,
+    "min_z": 1.5
+   },
+   "tuning": {
+    "split": "dev",
+    "objective": 0.8743,
+    "grid_min_score": [
+     0.5,
+     0.51,
+     0.52,
+     0.53,
+     0.54,
+     0.55,
+     0.56,
+     0.57,
+     0.58,
+     0.59,
+     0.6,
+     0.61,
+     0.62,
+     0.63,
+     0.64,
+     0.65,
+     0.66,
+     0.67,
+     0.68,
+     0.69,
+     0.7,
+     0.71,
+     0.72,
+     0.73,
+     0.74,
+     0.75,
+     0.76,
+     0.77,
+     0.78,
+     0.79,
+     0.8
+    ],
+    "grid_min_z": [
+     0.0,
+     1.5,
+     1.75,
+     2.0,
+     2.25,
+     2.5,
+     2.75,
+     3.0,
+     3.25,
+     3.5,
+     3.75,
+     4.0
+    ]
+   },
+   "index_build_s": 5.95,
+   "negatives_top_cosine": {
+    "n01": 0.658,
+    "n02": 0.557,
+    "n03": 0.673,
+    "n04": 0.6573,
+    "n05": 0.5098,
+    "n06": 0.6637,
+    "n07": 0.5987,
+    "n08": 0.5267,
+    "n09": 0.5809,
+    "n10": 0.5613,
+    "n11": 0.5888,
+    "n12": 0.6148
+   },
+   "negative_margin": 0.007,
+   "splits": {
+    "dev": {
+     "queries": 31,
+     "positives": 25,
+     "negatives": 6,
+     "hit@k": 0.96,
+     "recall@k": 0.861,
+     "precision@k": 0.719,
+     "mrr": 0.9,
+     "ndcg@k": 0.844,
+     "missed_rate": 0.04,
+     "negatives_correct_empty": 1.0,
+     "objective": 0.8743,
+     "search_p50_ms": 7.71,
+     "search_p95_ms": 19.61
+    },
+    "test": {
+     "queries": 31,
+     "positives": 25,
+     "negatives": 6,
+     "hit@k": 0.92,
+     "recall@k": 0.787,
+     "precision@k": 0.781,
+     "mrr": 0.888,
+     "ndcg@k": 0.794,
+     "missed_rate": 0.0,
+     "negatives_correct_empty": 1.0,
+     "objective": 0.8335,
+     "search_p50_ms": 14.75,
+     "search_p95_ms": 18.98
+    }
+   },
+   "test_categories": {
+    "alias": {
+     "queries": 2,
+     "hit@k": 1.0,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "ndcg@k": 1.0,
+     "negatives_correct_empty": null
+    },
+    "author": {
+     "queries": 2,
+     "hit@k": 1.0,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "ndcg@k": 1.0,
+     "negatives_correct_empty": null
+    },
+    "negative": {
+     "queries": 6,
+     "hit@k": null,
+     "recall@k": null,
+     "precision@k": null,
+     "ndcg@k": null,
+     "negatives_correct_empty": 1.0
+    },
+    "paraphrase": {
+     "queries": 14,
+     "hit@k": 0.857,
+     "recall@k": 0.619,
+     "precision@k": 0.711,
+     "ndcg@k": 0.631,
+     "negatives_correct_empty": null
+    },
+    "subject": {
+     "queries": 4,
+     "hit@k": 1.0,
+     "recall@k": 1.0,
+     "precision@k": 0.642,
+     "ndcg@k": 1.0,
+     "negatives_correct_empty": null
+    },
+    "title": {
+     "queries": 3,
+     "hit@k": 1.0,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "ndcg@k": 1.0,
+     "negatives_correct_empty": null
+    }
+   },
+   "rows": [
+    {
+     "id": "t01",
+     "split": "dev",
+     "category": "title",
+     "query": "Introduction to Algorithms",
+     "returned": [
+      "LIB-1054"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1054"
+     ],
+     "search_ms": 2.55,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t02",
+     "split": "test",
+     "category": "title",
+     "query": "Clean Code",
+     "returned": [
+      "LIB-1070"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1070"
+     ],
+     "search_ms": 2.23,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t03",
+     "split": "dev",
+     "category": "title",
+     "query": "The Lean Startup",
+     "returned": [
+      "LIB-1105"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1105"
+     ],
+     "search_ms": 4.18,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t04",
+     "split": "test",
+     "category": "title",
+     "query": "Signals and Systems",
+     "returned": [
+      "LIB-1023",
+      "LIB-1024"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1023",
+      "LIB-1024"
+     ],
+     "search_ms": 2.96,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t05",
+     "split": "test",
+     "category": "title",
+     "query": "Wings of Fire",
+     "returned": [
+      "LIB-1132"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1132"
+     ],
+     "search_ms": 2.53,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "t06",
+     "split": "dev",
+     "category": "title",
+     "query": "Sapiens",
+     "returned": [
+      "LIB-1114"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1114"
+     ],
+     "search_ms": 2.31,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s01",
+     "split": "dev",
+     "category": "subject",
+     "query": "thermodynamics",
+     "returned": [
+      "LIB-1008",
+      "LIB-1009",
+      "LIB-1010"
+     ],
+     "matched_on": "hybrid",
+     "relevant": [
+      "LIB-1008",
+      "LIB-1009",
+      "LIB-1010"
+     ],
+     "search_ms": 9.52,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s02",
+     "split": "test",
+     "category": "subject",
+     "query": "machine learning",
+     "returned": [
+      "LIB-1062",
+      "LIB-1059",
+      "LIB-1060",
+      "LIB-1061"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1059",
+      "LIB-1060",
+      "LIB-1061",
+      "LIB-1062"
+     ],
+     "search_ms": 2.25,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s03",
+     "split": "dev",
+     "category": "subject",
+     "query": "fluid mechanics",
+     "returned": [
+      "LIB-1011",
+      "LIB-1001",
+      "LIB-1002",
+      "LIB-1003",
+      "LIB-1004"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1011",
+      "LIB-1012"
+     ],
+     "search_ms": 2.79,
+     "hit@k": true,
+     "recall@k": 0.5,
+     "precision@k": 0.2,
+     "mrr": 1.0,
+     "ndcg@k": 0.6131471927654584,
+     "empty": false
+    },
+    {
+     "id": "s04",
+     "split": "test",
+     "category": "subject",
+     "query": "operating systems",
+     "returned": [
+      "LIB-1065",
+      "LIB-1066",
+      "LIB-1076"
+     ],
+     "matched_on": "hybrid",
+     "relevant": [
+      "LIB-1065",
+      "LIB-1066"
+     ],
+     "search_ms": 14.97,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.6666666666666666,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s05",
+     "split": "dev",
+     "category": "subject",
+     "query": "probability",
+     "returned": [
+      "LIB-1084",
+      "LIB-1086",
+      "LIB-1085"
+     ],
+     "matched_on": "hybrid",
+     "relevant": [
+      "LIB-1084",
+      "LIB-1085",
+      "LIB-1086"
+     ],
+     "search_ms": 7.71,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s06",
+     "split": "test",
+     "category": "subject",
+     "query": "organic chemistry",
+     "returned": [
+      "LIB-1096",
+      "LIB-1097"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1096"
+     ],
+     "search_ms": 2.23,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.5,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s07",
+     "split": "dev",
+     "category": "subject",
+     "query": "control systems",
+     "returned": [
+      "LIB-1026",
+      "LIB-1025",
+      "LIB-1035"
+     ],
+     "matched_on": "title",
+     "relevant": [
+      "LIB-1025",
+      "LIB-1026"
+     ],
+     "search_ms": 3.98,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.6666666666666666,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "s08",
+     "split": "test",
+     "category": "subject",
+     "query": "geotechnical engineering",
+     "returned": [
+      "LIB-1043",
+      "LIB-1044",
+      "LIB-1045",
+      "LIB-1046",
+      "LIB-1052"
+     ],
+     "matched_on": "hybrid",
+     "relevant": [
+      "LIB-1043",
+      "LIB-1044"
+     ],
+     "search_ms": 15.65,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.4,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "a01",
+     "split": "dev",
+     "category": "alias",
+     "query": "dsa",
+     "returned": [
+      "LIB-1054",
+      "LIB-1057",
+      "LIB-1055",
+      "LIB-1056"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1054",
+      "LIB-1055",
+      "LIB-1056",
+      "LIB-1057"
+     ],
+     "search_ms": 7.97,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "a02",
+     "split": "test",
+     "category": "alias",
+     "query": "som",
+     "returned": [
+      "LIB-1005",
+      "LIB-1006",
+      "LIB-1007"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1005",
+      "LIB-1006",
+      "LIB-1007"
+     ],
+     "search_ms": 14.75,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "a03",
+     "split": "dev",
+     "category": "alias",
+     "query": "dbms books",
+     "returned": [
+      "LIB-1063",
+      "LIB-1064",
+      "LIB-1056",
+      "LIB-1054",
+      "LIB-1062"
+     ],
+     "matched_on": "hybrid",
+     "relevant": [
+      "LIB-1063",
+      "LIB-1064"
+     ],
+     "search_ms": 6.62,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.4,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "a04",
+     "split": "test",
+     "category": "alias",
+     "query": "thermo",
+     "returned": [
+      "LIB-1008",
+      "LIB-1009",
+      "LIB-1010"
+     ],
+     "matched_on": "subject",
+     "relevant": [
+      "LIB-1008",
+      "LIB-1009",
+      "LIB-1010"
+     ],
+     "search_ms": 14.88,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p01",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "how heat moves through materials",
+     "returned": [
+      "LIB-1013",
+      "LIB-1014"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1013",
+      "LIB-1014"
+     ],
+     "search_ms": 8.82,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p02",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "protecting computers from hackers",
+     "returned": [
+      "LIB-1073",
+      "LIB-1072"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1072",
+      "LIB-1073"
+     ],
+     "search_ms": 15.76,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p03",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "life stories of famous people",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [
+      "LIB-1132",
+      "LIB-1133",
+      "LIB-1134",
+      "LIB-1135",
+      "LIB-1136"
+     ],
+     "search_ms": 5.11,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": true
+    },
+    {
+     "id": "p04",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "detective stories",
+     "returned": [
+      "LIB-1128"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1128"
+     ],
+     "search_ms": 11.82,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p05",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "money, markets and prices",
+     "returned": [
+      "LIB-1100",
+      "LIB-1099",
+      "LIB-1101"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1099",
+      "LIB-1100",
+      "LIB-1101"
+     ],
+     "search_ms": 5.04,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p06",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "starting your own company",
+     "returned": [
+      "LIB-1105",
+      "LIB-1106"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1105",
+      "LIB-1106",
+      "LIB-1107"
+     ],
+     "search_ms": 13.27,
+     "hit@k": true,
+     "recall@k": 0.6666666666666666,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 0.7653606369886217,
+     "empty": false
+    },
+    {
+     "id": "p07",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "teaching computers to learn from data",
+     "returned": [
+      "LIB-1062",
+      "LIB-1061",
+      "LIB-1057",
+      "LIB-1054",
+      "LIB-1060"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1059",
+      "LIB-1060",
+      "LIB-1061",
+      "LIB-1062"
+     ],
+     "search_ms": 5.04,
+     "hit@k": true,
+     "recall@k": 0.75,
+     "precision@k": 0.6,
+     "mrr": 1.0,
+     "ndcg@k": 0.787702056960637,
+     "empty": false
+    },
+    {
+     "id": "p08",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "building foundations on soil",
+     "returned": [
+      "LIB-1043"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1043",
+      "LIB-1044"
+     ],
+     "search_ms": 15.35,
+     "hit@k": true,
+     "recall@k": 0.5,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 0.6131471927654584,
+     "empty": false
+    },
+    {
+     "id": "p09",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "designing bridges and beams",
+     "returned": [
+      "LIB-1016",
+      "LIB-1042",
+      "LIB-1041",
+      "LIB-1040",
+      "LIB-1015"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1005",
+      "LIB-1006",
+      "LIB-1007",
+      "LIB-1040",
+      "LIB-1041",
+      "LIB-1042"
+     ],
+     "search_ms": 9.52,
+     "hit@k": true,
+     "recall@k": 0.6,
+     "precision@k": 0.6,
+     "mrr": 0.5,
+     "ndcg@k": 0.5296347172140421,
+     "empty": false
+    },
+    {
+     "id": "p10",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "electric motors and generators",
+     "returned": [
+      "LIB-1033",
+      "LIB-1038",
+      "LIB-1037",
+      "LIB-1032"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1033"
+     ],
+     "search_ms": 11.86,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.25,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p11",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "chance and randomness",
+     "returned": [
+      "LIB-1086",
+      "LIB-1084",
+      "LIB-1085",
+      "LIB-1061",
+      "LIB-1054"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1084",
+      "LIB-1085",
+      "LIB-1086"
+     ],
+     "search_ms": 7.71,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.6,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p12",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "how the universe began",
+     "returned": [
+      "LIB-1140",
+      "LIB-1142"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1140",
+      "LIB-1142"
+     ],
+     "search_ms": 14.04,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p13",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "roads and traffic planning",
+     "returned": [
+      "LIB-1048",
+      "LIB-1047",
+      "LIB-1051",
+      "LIB-1055"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1047",
+      "LIB-1048"
+     ],
+     "search_ms": 5.03,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.5,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p14",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "water flowing in rivers and canals",
+     "returned": [
+      "LIB-1045",
+      "LIB-1053"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1045",
+      "LIB-1046",
+      "LIB-1053"
+     ],
+     "search_ms": 14.71,
+     "hit@k": true,
+     "recall@k": 0.6666666666666666,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 0.7653606369886217,
+     "empty": false
+    },
+    {
+     "id": "p15",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "how the mind makes decisions",
+     "returned": [
+      "LIB-1102"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1102",
+      "LIB-1103"
+     ],
+     "search_ms": 7.27,
+     "hit@k": true,
+     "recall@k": 0.5,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 0.6131471927654584,
+     "empty": false
+    },
+    {
+     "id": "p16",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "writing clearly",
+     "returned": [
+      "LIB-1111"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1111",
+      "LIB-1112"
+     ],
+     "search_ms": 16.5,
+     "hit@k": true,
+     "recall@k": 0.5,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 0.6131471927654584,
+     "empty": false
+    },
+    {
+     "id": "p17",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "programming small chips inside gadgets",
+     "returned": [
+      "LIB-1035"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1034",
+      "LIB-1035"
+     ],
+     "search_ms": 8.91,
+     "hit@k": true,
+     "recall@k": 0.5,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 0.6131471927654584,
+     "empty": false
+    },
+    {
+     "id": "p18",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "how species change over time",
+     "returned": [
+      "LIB-1143",
+      "LIB-1138"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1141",
+      "LIB-1143"
+     ],
+     "search_ms": 14.56,
+     "hit@k": true,
+     "recall@k": 0.5,
+     "precision@k": 0.5,
+     "mrr": 1.0,
+     "ndcg@k": 0.6131471927654584,
+     "empty": false
+    },
+    {
+     "id": "p19",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "solving equations on a computer",
+     "returned": [
+      "LIB-1057",
+      "LIB-1088",
+      "LIB-1055",
+      "LIB-1078",
+      "LIB-1089"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1088",
+      "LIB-1089"
+     ],
+     "search_ms": 4.95,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.4,
+     "mrr": 0.5,
+     "ndcg@k": 0.6240505200038379,
+     "empty": false
+    },
+    {
+     "id": "p20",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "global warming",
+     "returned": [
+      "LIB-1139"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1138",
+      "LIB-1139"
+     ],
+     "search_ms": 15.31,
+     "hit@k": true,
+     "recall@k": 0.5,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 0.6131471927654584,
+     "empty": false
+    },
+    {
+     "id": "p21",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "Indian novels and stories",
+     "returned": [
+      "LIB-1124",
+      "LIB-1119",
+      "LIB-1120",
+      "LIB-1125",
+      "LIB-1121"
+     ],
+     "matched_on": "hybrid",
+     "relevant": [
+      "LIB-1123",
+      "LIB-1124",
+      "LIB-1125"
+     ],
+     "search_ms": 6.97,
+     "hit@k": true,
+     "recall@k": 0.6666666666666666,
+     "precision@k": 0.4,
+     "mrr": 1.0,
+     "ndcg@k": 0.6713860725233041,
+     "empty": false
+    },
+    {
+     "id": "p22",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "leading teams and running a business",
+     "returned": [
+      "LIB-1105"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1108",
+      "LIB-1109",
+      "LIB-1110"
+     ],
+     "search_ms": 17.26,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": false
+    },
+    {
+     "id": "p23",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "radio and wireless signal transmission",
+     "returned": [
+      "LIB-1024",
+      "LIB-1030",
+      "LIB-1023",
+      "LIB-1031",
+      "LIB-1039"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1030",
+      "LIB-1031"
+     ],
+     "search_ms": 9.5,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.4,
+     "mrr": 0.5,
+     "ndcg@k": 0.6509209298071326,
+     "empty": false
+    },
+    {
+     "id": "p24",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "converting AC to DC with semiconductors",
+     "returned": [
+      "LIB-1037",
+      "LIB-1029"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1038"
+     ],
+     "search_ms": 14.46,
+     "hit@k": false,
+     "recall@k": 0.0,
+     "precision@k": 0.0,
+     "mrr": 0.0,
+     "ndcg@k": 0.0,
+     "empty": false
+    },
+    {
+     "id": "p25",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "SQL and storing data",
+     "returned": [
+      "LIB-1064",
+      "LIB-1063"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1063",
+      "LIB-1064"
+     ],
+     "search_ms": 6.96,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p26",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "behaviour of atoms and subatomic particles",
+     "returned": [
+      "LIB-1091",
+      "LIB-1093",
+      "LIB-1089",
+      "LIB-1090",
+      "LIB-1094"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1094"
+     ],
+     "search_ms": 18.98,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.2,
+     "mrr": 0.2,
+     "ndcg@k": 0.38685280723454163,
+     "empty": false
+    },
+    {
+     "id": "p27",
+     "split": "dev",
+     "category": "paraphrase",
+     "query": "oscillating machines and vibration",
+     "returned": [
+      "LIB-1019",
+      "LIB-1016",
+      "LIB-1018",
+      "LIB-1020",
+      "LIB-1015"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1019"
+     ],
+     "search_ms": 9.16,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 0.2,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "p28",
+     "split": "test",
+     "category": "paraphrase",
+     "query": "India's freedom movement",
+     "returned": [
+      "LIB-1117"
+     ],
+     "matched_on": "semantic",
+     "relevant": [
+      "LIB-1116",
+      "LIB-1117",
+      "LIB-1133"
+     ],
+     "search_ms": 15.5,
+     "hit@k": true,
+     "recall@k": 0.3333333333333333,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 0.46927872602275644,
+     "empty": false
+    },
+    {
+     "id": "au01",
+     "split": "dev",
+     "category": "author",
+     "query": "Tanenbaum",
+     "returned": [
+      "LIB-1066",
+      "LIB-1067"
+     ],
+     "matched_on": "author",
+     "relevant": [
+      "LIB-1066",
+      "LIB-1067"
+     ],
+     "search_ms": 5.16,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "au02",
+     "split": "test",
+     "category": "author",
+     "query": "Strang",
+     "returned": [
+      "LIB-1078",
+      "LIB-1079"
+     ],
+     "matched_on": "author",
+     "relevant": [
+      "LIB-1078",
+      "LIB-1079"
+     ],
+     "search_ms": 18.51,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "au03",
+     "split": "dev",
+     "category": "author",
+     "query": "Drucker",
+     "returned": [
+      "LIB-1107",
+      "LIB-1108"
+     ],
+     "matched_on": "author",
+     "relevant": [
+      "LIB-1107",
+      "LIB-1108"
+     ],
+     "search_ms": 16.74,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "au04",
+     "split": "test",
+     "category": "author",
+     "query": "Hawking",
+     "returned": [
+      "LIB-1140"
+     ],
+     "matched_on": "author",
+     "relevant": [
+      "LIB-1140"
+     ],
+     "search_ms": 17.14,
+     "hit@k": true,
+     "recall@k": 1.0,
+     "precision@k": 1.0,
+     "mrr": 1.0,
+     "ndcg@k": 1.0,
+     "empty": false
+    },
+    {
+     "id": "n01",
+     "split": "dev",
+     "category": "negative",
+     "query": "underwater basket weaving",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 13.18,
+     "correct_empty": true
+    },
+    {
+     "id": "n02",
+     "split": "test",
+     "category": "negative",
+     "query": "cooking recipes",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 18.5,
+     "correct_empty": true
+    },
+    {
+     "id": "n03",
+     "split": "dev",
+     "category": "negative",
+     "query": "knitting patterns",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 19.61,
+     "correct_empty": true
+    },
+    {
+     "id": "n04",
+     "split": "test",
+     "category": "negative",
+     "query": "astrology",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 11.64,
+     "correct_empty": true
+    },
+    {
+     "id": "n05",
+     "split": "dev",
+     "category": "negative",
+     "query": "pet grooming",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 12.33,
+     "correct_empty": true
+    },
+    {
+     "id": "n06",
+     "split": "test",
+     "category": "negative",
+     "query": "fashion design",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 21.77,
+     "correct_empty": true
+    },
+    {
+     "id": "n07",
+     "split": "dev",
+     "category": "negative",
+     "query": "yoga poses",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 13.74,
+     "correct_empty": true
+    },
+    {
+     "id": "n08",
+     "split": "test",
+     "category": "negative",
+     "query": "car insurance",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 11.24,
+     "correct_empty": true
+    },
+    {
+     "id": "n09",
+     "split": "dev",
+     "category": "negative",
+     "query": "wedding planning",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 12.13,
+     "correct_empty": true
+    },
+    {
+     "id": "n10",
+     "split": "test",
+     "category": "negative",
+     "query": "video game walkthroughs",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 17.14,
+     "correct_empty": true
+    },
+    {
+     "id": "n11",
+     "split": "dev",
+     "category": "negative",
+     "query": "gardening tips",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 24.0,
+     "correct_empty": true
+    },
+    {
+     "id": "n12",
+     "split": "test",
+     "category": "negative",
+     "query": "football tactics",
+     "returned": [],
+     "matched_on": null,
+     "relevant": [],
+     "search_ms": 14.32,
+     "correct_empty": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+# Library catalogue search benchmark (keyword vs hybrid keyword + embedding search).
+#
+# Corpus: services/library_mcp/library_mcp/data/demo_books.json (138 Open Library-verified records;
+# holdings are synthetic, which does not matter here: only titles, subjects and authors are searched).
+#
+# Labels are rules, not hand-picked rankings: a book is relevant when one of its catalogue subjects (or its
+# discipline) is in `relevant_subjects`, or its id is in `relevant_ids`. The runner resolves and stores the
+# ids per query, and fails if a rule resolves to nothing. `expect_empty: true` means the catalogue has no
+# book on the topic, so the right result is an empty list (with suggestions at most).
+#
+# Splits: thresholds are tuned on `dev` only and then applied unchanged to `test`.
+# Categories: title (known item), subject (the catalogue's own subject words), alias (student shorthand),
+# paraphrase (the topic described in other words: what semantic search is for), author, negative.
+version: 1
+queries:
+  # --------------------------------------------------------------- known-item titles
+  - {id: t01, split: dev, category: title, query: "Introduction to Algorithms", relevant_ids: [LIB-1054]}
+  - {id: t02, split: test, category: title, query: "Clean Code", relevant_ids: [LIB-1070]}
+  - {id: t03, split: dev, category: title, query: "The Lean Startup", relevant_ids: [LIB-1105]}
+  - {id: t04, split: test, category: title, query: "Signals and Systems", relevant_ids: [LIB-1023, LIB-1024]}
+  - {id: t05, split: test, category: title, query: "Wings of Fire", relevant_ids: [LIB-1132]}
+  - {id: t06, split: dev, category: title, query: "Sapiens", relevant_ids: [LIB-1114]}
+  # --------------------------------------------------------------- subject words used by the catalogue
+  - {id: s01, split: dev, category: subject, query: "thermodynamics", relevant_subjects: [thermodynamics]}
+  - {id: s02, split: test, category: subject, query: "machine learning", relevant_subjects: [machine learning]}
+  - {id: s03, split: dev, category: subject, query: "fluid mechanics", relevant_subjects: [fluid mechanics]}
+  - {id: s04, split: test, category: subject, query: "operating systems", relevant_subjects: [operating systems]}
+  - {id: s05, split: dev, category: subject, query: "probability", relevant_subjects: [probability]}
+  - {id: s06, split: test, category: subject, query: "organic chemistry", relevant_subjects: [organic chemistry]}
+  - {id: s07, split: dev, category: subject, query: "control systems", relevant_subjects: [control systems]}
+  - {id: s08, split: test, category: subject, query: "geotechnical engineering", relevant_subjects: [geotechnical engineering]}
+  # --------------------------------------------------------------- student shorthand
+  - {id: a01, split: dev, category: alias, query: "dsa", relevant_subjects: [algorithms, data structures]}
+  - {id: a02, split: test, category: alias, query: "som", relevant_subjects: [strength of materials, mechanics of materials]}
+  - {id: a03, split: dev, category: alias, query: "dbms books", relevant_subjects: [databases]}
+  - {id: a04, split: test, category: alias, query: "thermo", relevant_subjects: [thermodynamics]}
+  # --------------------------------------------------------------- paraphrases (no catalogue subject word)
+  - {id: p01, split: dev, category: paraphrase, query: "how heat moves through materials", relevant_subjects: [heat transfer]}
+  - {id: p02, split: test, category: paraphrase, query: "protecting computers from hackers", relevant_subjects: [cybersecurity]}
+  - {id: p03, split: dev, category: paraphrase, query: "life stories of famous people", relevant_subjects: [biography]}
+  - {id: p04, split: test, category: paraphrase, query: "detective stories", relevant_subjects: [mystery]}
+  - {id: p05, split: dev, category: paraphrase, query: "money, markets and prices", relevant_subjects: [economics]}
+  - {id: p06, split: test, category: paraphrase, query: "starting your own company", relevant_subjects: [startups, entrepreneurship]}
+  - {id: p07, split: dev, category: paraphrase, query: "teaching computers to learn from data", relevant_subjects: [machine learning]}
+  - {id: p08, split: test, category: paraphrase, query: "building foundations on soil", relevant_subjects: [soil mechanics]}
+  - {id: p09, split: dev, category: paraphrase, query: "designing bridges and beams", relevant_subjects: [structural engineering, strength of materials, mechanics of materials]}
+  - {id: p10, split: test, category: paraphrase, query: "electric motors and generators", relevant_subjects: [electrical machines]}
+  - {id: p11, split: dev, category: paraphrase, query: "chance and randomness", relevant_subjects: [probability]}
+  - {id: p12, split: test, category: paraphrase, query: "how the universe began", relevant_subjects: [cosmology, astronomy]}
+  - {id: p13, split: dev, category: paraphrase, query: "roads and traffic planning", relevant_subjects: [transportation engineering]}
+  - {id: p14, split: test, category: paraphrase, query: "water flowing in rivers and canals", relevant_subjects: [hydraulics, hydrology]}
+  - {id: p15, split: dev, category: paraphrase, query: "how the mind makes decisions", relevant_subjects: [psychology]}
+  - {id: p16, split: test, category: paraphrase, query: "writing clearly", relevant_subjects: [writing]}
+  - {id: p17, split: dev, category: paraphrase, query: "programming small chips inside gadgets", relevant_subjects: [embedded systems, microcontrollers]}
+  - {id: p18, split: test, category: paraphrase, query: "how species change over time", relevant_subjects: [evolution]}
+  - {id: p19, split: dev, category: paraphrase, query: "solving equations on a computer", relevant_subjects: [numerical methods]}
+  - {id: p20, split: test, category: paraphrase, query: "global warming", relevant_subjects: [climate, climate change]}
+  - {id: p21, split: dev, category: paraphrase, query: "Indian novels and stories", relevant_subjects: [indian literature]}
+  - {id: p22, split: test, category: paraphrase, query: "leading teams and running a business", relevant_subjects: [management]}
+  - {id: p23, split: dev, category: paraphrase, query: "radio and wireless signal transmission", relevant_subjects: [communication systems]}
+  - {id: p24, split: test, category: paraphrase, query: "converting AC to DC with semiconductors", relevant_subjects: [power electronics]}
+  - {id: p25, split: dev, category: paraphrase, query: "SQL and storing data", relevant_subjects: [databases]}
+  - {id: p26, split: test, category: paraphrase, query: "behaviour of atoms and subatomic particles", relevant_subjects: [quantum mechanics]}
+  - {id: p27, split: dev, category: paraphrase, query: "oscillating machines and vibration", relevant_subjects: [vibrations]}
+  - {id: p28, split: test, category: paraphrase, query: "India's freedom movement", relevant_ids: [LIB-1116, LIB-1117, LIB-1133]}
+  # --------------------------------------------------------------- authors
+  - {id: au01, split: dev, category: author, query: "Tanenbaum", relevant_ids: [LIB-1066, LIB-1067]}
+  - {id: au02, split: test, category: author, query: "Strang", relevant_ids: [LIB-1078, LIB-1079]}
+  - {id: au03, split: dev, category: author, query: "Drucker", relevant_ids: [LIB-1107, LIB-1108]}
+  - {id: au04, split: test, category: author, query: "Hawking", relevant_ids: [LIB-1140]}
+  # --------------------------------------------------------------- no book in the catalogue on this topic
+  - {id: n01, split: dev, category: negative, query: "underwater basket weaving", expect_empty: true}
+  - {id: n02, split: test, category: negative, query: "cooking recipes", expect_empty: true}
+  - {id: n03, split: dev, category: negative, query: "knitting patterns", expect_empty: true}
+  - {id: n04, split: test, category: negative, query: "astrology", expect_empty: true}
+  - {id: n05, split: dev, category: negative, query: "pet grooming", expect_empty: true}
+  - {id: n06, split: test, category: negative, query: "fashion design", expect_empty: true}
+  - {id: n07, split: dev, category: negative, query: "yoga poses", expect_empty: true}
+  - {id: n08, split: test, category: negative, query: "car insurance", expect_empty: true}
+  - {id: n09, split: dev, category: negative, query: "wedding planning", expect_empty: true}
+  - {id: n10, split: test, category: negative, query: "video game walkthroughs", expect_empty: true}
+  - {id: n11, split: dev, category: negative, query: "gardening tips", expect_empty: true}
+  - {id: n12, split: test, category: negative, query: "football tactics", expect_empty: true}

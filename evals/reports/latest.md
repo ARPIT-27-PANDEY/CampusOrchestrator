@@ -1,9 +1,9 @@
 # CampusOrchestrator evaluation report
 
-- Run: `agent-20261029T090701Z-mock-09b7ed` (2026-10-29T09:07:01+00:00)
+- Run: `agent-20261029T093110Z-mock-6ee8df` (2026-10-29T09:31:10+00:00)
 - Dataset: `campus_eval_v2.yaml` v2 (66 cases x 1), fixtures v2
 - Provider / model: mock / `mock-deterministic-v1`; transport: inprocess; retriever: hashing
-- Prompt 08bee2bd11bc, tool schemas 50f7ce4c0abc, commit be3124a79d (uncommitted changes)
+- Prompt 08bee2bd11bc, tool schemas 50f7ce4c0abc, commit 8d6a25dacf (uncommitted changes)
 
 > Mock-provider run: tool choice comes from a deterministic keyword router, so tool-selection numbers measure the pipeline (MCP discovery, routing, validation, retrieval, citations, failure handling), not GPT-OSS-120B's judgement. Run with --provider groq for a live-model evaluation.
 
@@ -21,9 +21,9 @@
 | Tool budget exhausted | 1 |
 | Mean LLM turns | 2.06 |
 | Results with status=error / model infrastructure errors | 3 / 0 |
-| Latency p50 / p95 / p99 (n=63, non-error) | 60.5 / 392.0 / n/a ms |
-| First token p50 (n=63) | 60.4 ms |
-| LLM wall p50 / tool wall p50 / discovery p50 | 0.9 / 44.9 / 9.6 ms |
+| Latency p50 / p95 / p99 (n=63, non-error) | 61.3 / 428.0 / n/a ms |
+| First token p50 (n=63) | 61.2 ms |
+| LLM wall p50 / tool wall p50 / discovery p50 | 0.8 / 42.0 / 9.3 ms |
 | Tokens (prompt / completion) | 0 / 0 |
 
 _Latency percentiles use requests that did not end in status=error; error and fault counts are reported separately. In-process transport has no network hop; the first case includes cold-start costs (no warm-up). p99 is reported only with at least 100 samples._

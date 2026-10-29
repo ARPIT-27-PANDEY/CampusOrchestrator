@@ -63,7 +63,7 @@ def build_server(
             int | None, Field(ge=1000, le=2100, description="Latest first-publication year.")
         ] = None,
     ) -> SearchBooksResult:
-        """Search the CAMPUS library catalogue (holdings and copy counts) by title, subject, author or keywords.
+        """Search the CAMPUS library catalogue (holdings and copy counts) by title, subject, author or topic.
 
         Returns book_id and copy counts; use get_book_availability for shelf location and due dates.
         A miss means this catalogue has no match - it says nothing about books in general
@@ -83,6 +83,7 @@ def build_server(
             count=len(found.books),
             books=found.books,
             matched_on=found.matched_on,
+            search_mode=found.search_mode,
             suggestions=found.suggestions,
             message=found.message,
             source=prov.source_info(),

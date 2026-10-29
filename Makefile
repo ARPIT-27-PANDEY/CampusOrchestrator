@@ -3,7 +3,7 @@ PY ?= .venv/bin/python
 SERVICES := library events cafeteria academics
 
 .PHONY: install dev servers stop-servers backend frontend test test-services test-backend test-integration lint \
-        typecheck eval eval-v1 eval-http eval-faults eval-retrieval eval-retrieval-all eval-compare fetch-sources \
+        typecheck eval eval-v1 eval-http eval-faults eval-retrieval eval-retrieval-all eval-library eval-compare fetch-sources \
         check-sources ingest docker-up docker-down
 
 install:  ## create .venv and install every package + dev tools, then frontend deps
@@ -48,7 +48,7 @@ lint:
 	cd frontend && npm run lint
 
 typecheck:
-	$(PY) -m mypy backend/app services/*/[a-z]*_mcp evals/run_eval.py evals/run_retrieval.py evals/compare.py
+	$(PY) -m mypy backend/app services/*/[a-z]*_mcp evals/run_eval.py evals/run_retrieval.py evals/run_library_search.py evals/compare.py
 	cd frontend && npm run typecheck
 
 fetch-sources:  ## download the curated official IIT Roorkee PDFs (allowlisted hosts only)
@@ -77,6 +77,9 @@ eval-retrieval:  ## retrieval benchmark, offline retrievers, thresholds tuned on
 
 eval-retrieval-all:  ## + FastEmbed (needs the optional extra; downloads ~130 MB once)
 	$(PY) -m evals.run_retrieval --retrievers hashing,fastembed,hybrid,hybrid-fastembed --tune
+
+eval-library:  ## library search benchmark: keyword vs hybrid (hashing, FastEmbed if installed); gates tuned on dev
+	$(PY) -m evals.run_library_search --tune
 
 eval-compare:  ## list saved runs; compare with: $(PY) -m evals.compare RUN_A RUN_B
 	$(PY) -m evals.compare --list

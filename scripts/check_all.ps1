@@ -24,7 +24,7 @@ Run-Step "pytest backend" (Join-Path $root "backend") { & $py -m pytest -q -p no
 Run-Step "pytest integration" $root { & $py -m pytest tests -q -p no:cacheprovider }
 Run-Step "ruff format" $root { & $py -m ruff format --check backend services tests evals scripts }
 Run-Step "ruff check" $root { & $py -m ruff check backend services tests evals scripts }
-Run-Step "mypy" $root { & $py -m mypy backend/app services/library_mcp/library_mcp services/events_mcp/events_mcp services/cafeteria_mcp/cafeteria_mcp services/academics_mcp/academics_mcp evals/run_eval.py evals/run_retrieval.py evals/compare.py }
+Run-Step "mypy" $root { & $py -m mypy backend/app services/library_mcp/library_mcp services/events_mcp/events_mcp services/cafeteria_mcp/cafeteria_mcp services/academics_mcp/academics_mcp evals/run_eval.py evals/run_retrieval.py evals/run_library_search.py evals/compare.py }
 if (-not $SkipFrontend) {
   $fe = Join-Path $root "frontend"
   Run-Step "npm lint" $fe { npm run lint }

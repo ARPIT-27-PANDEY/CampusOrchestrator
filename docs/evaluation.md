@@ -100,6 +100,35 @@ python -m evals.run_retrieval --retrievers hashing,fastembed,hybrid,hybrid-faste
 A retriever that cannot run (e.g. FastEmbed not installed) is reported as `not_run` with the reason -
 never filled with another retriever's numbers.
 
+## 3. Library search benchmark - `python -m evals.run_library_search`
+
+`evals/datasets/library_search_v1.yaml`: 62 queries over the 138-book catalogue (31 dev / 31 test) in six
+categories: known-item titles, the catalogue's own subject words, student shorthand (`dsa`, `som`),
+paraphrases with no catalogue subject word, authors, and 12 negatives (topics the catalogue does not
+hold, where the right result is empty). Labels are rules (`relevant_subjects` / `relevant_ids`) resolved
+against the catalogue; the resolved ids are stored in each report.
+
+Modes run the same `DemoLibraryProvider.search` code path as the `search_books` tool:
+
+| Mode | Ranking |
+|---|---|
+| `keyword` | tiers: identifier > title > subject (+ aliases) > author > keywords |
+| `hybrid-hashing` | keyword tiers RRF-fused with a lexical hashing embedder (offline baseline, not semantic) |
+| `hybrid-fastembed` | keyword tiers RRF-fused with `BAAI/bge-small-en-v1.5` similarity |
+
+In hybrid mode identifier and exact-title hits stay exact. A book enters the semantic list only if it
+clears two gates: cosine `min_score` and a per-query z-score `min_z` (how far it stands above that query's
+similarity to the whole catalogue). Small embedding models give unrelated pairs cosine values of
+0.55-0.67, so the second gate matters. `--tune` sweeps both gates on **dev** only (objective: mean nDCG@5
+on topical queries, 1/0 for a correctly empty negative; ties go to stricter gates) and applies them to
+**test**. Each hybrid report also records the closest negative's cosine, to show how fragile the
+"no match" behaviour is.
+
+```bash
+python -m evals.run_library_search --modes keyword,hybrid-hashing --tune      # offline, used in CI
+python -m evals.run_library_search --tune                                     # + FastEmbed (optional extra)
+```
+
 ## Latency
 
 End-to-end latency is the server-side wall time of a run (`time.perf_counter()`). Each run also records
@@ -108,6 +137,10 @@ versus the sum of individual tool durations (they differ when calls run concurre
 hits. Reports give p50/p95 (p99 only with at least 100 samples), the mean, the sample size, and count
 error results separately; percentiles use non-error runs only. In-process transport has no network hop;
 the first case includes cold-start costs (no warm-up). Mock latencies contain no model inference.
+
+Live model latency so far comes from one 5-case Groq run (`agent-20261029T090445Z-groq-e99b83`, library
+questions only): 3.5-34 s per answer, of which the model was about 99% and MCP tools 50-90 ms. That is
+too small a sample for percentiles; treat it as an order of magnitude, not a benchmark.
 
 ## Comparing runs
 
@@ -122,5 +155,6 @@ differ or when a mock run is compared with a live one.
 ## Results
 
 See [`evals/reports/latest.md`](../evals/reports/latest.md), `latest-v1.md`, `latest-fastembed.md`,
-`latest-repeat3.md` and [`evals/reports/retrieval-latest.md`](../evals/reports/retrieval-latest.md).
+`latest-repeat3.md`, [`evals/reports/retrieval-latest.md`](../evals/reports/retrieval-latest.md) and
+[`evals/reports/library-latest.md`](../evals/reports/library-latest.md).
 The README summarises them. No live Groq evaluation is included in this repository's reports.

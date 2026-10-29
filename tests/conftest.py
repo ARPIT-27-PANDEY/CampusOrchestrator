@@ -91,6 +91,10 @@ def http_servers() -> Iterator[dict[str, str]]:
                 "HANDBOOK_DIR": str(ROOT / "services" / "academics_mcp" / "data" / "handbooks"),
                 "SOURCE_MANIFEST": "",
                 "PUBLIC_BOOK_PROVIDERS": "",  # no outbound calls to public book APIs in tests
+                # Offline, deterministic search regardless of the developer's shell (no model downloads).
+                "LIBRARY_SEARCH_MODE": "keyword",
+                "EMBEDDING_PROVIDER": "hashing",
+                "RETRIEVAL_MODE": "dense",
                 "LIBRARY_DEMO_DATA": str(ROOT / "services/library_mcp/library_mcp/data/demo_books_v1.json"),
                 "EVENTS_DEMO_DATA": str(ROOT / "services/events_mcp/events_mcp/data/demo_events_v1.json"),
             }

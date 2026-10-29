@@ -38,7 +38,7 @@ jobs:
           ruff format --check backend services tests evals
           ruff check backend services tests evals
       - name: Type check
-        run: mypy backend/app services/*/[a-z]*_mcp evals/run_eval.py evals/run_retrieval.py evals/compare.py
+        run: mypy backend/app services/*/[a-z]*_mcp evals/run_eval.py evals/run_retrieval.py evals/run_library_search.py evals/compare.py
       - name: MCP server tests
         run: for s in library events cafeteria academics; do (cd services/${s}_mcp && pytest -q) || exit 1; done
       - name: Backend tests (incl. security, trace privacy, timezone)
@@ -51,6 +51,8 @@ jobs:
           python -m evals.run_eval --dataset evals/datasets/campus_eval_v1.yaml --out evals/reports/ci
       - name: Retrieval benchmark (hashing and hybrid; FastEmbed is opt-in)
         run: python -m evals.run_retrieval --retrievers hashing,hybrid --tune --out evals/reports/ci
+      - name: Library search benchmark (offline modes; FastEmbed is opt-in)
+        run: python -m evals.run_library_search --modes keyword,hybrid-hashing --tune --out evals/reports/ci
       - uses: actions/upload-artifact@v4
         if: matrix.python-version == '3.12'
         with:

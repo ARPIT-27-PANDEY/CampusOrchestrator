@@ -95,6 +95,17 @@ Windows PowerShell: use `.venv\Scripts\python.exe` and set `$env:MCP_PORT=8101` 
 `python -m <name>_mcp`; `scripts/check_all.ps1` runs every Python check and `scripts/frontend_checks.ps1`
 runs the frontend checks in a Node container if Node is not installed.
 
+Semantic search (recommended locally; the code default stays offline). The MCP servers read their
+settings from the environment, so set these in the shell that starts the academics and library servers:
+
+```powershell
+.venv\Scripts\python.exe -m pip install -e "services/academics_mcp[fastembed]" -e "services/library_mcp[fastembed]"
+$env:EMBEDDING_PROVIDER="fastembed"; $env:RETRIEVAL_MODE="hybrid"; $env:LIBRARY_SEARCH_MODE="hybrid"
+```
+
+The first start downloads the ~130 MB `BAAI/bge-small-en-v1.5` model once. Docker Compose turns all of
+this on by default (`INSTALL_FASTEMBED=1` bakes the model into the images; set it to `0` for small images).
+
 ### Docker Compose
 
 ```bash
@@ -120,7 +131,8 @@ Every variable is in [`.env.example`](.env.example). The important ones:
 | `ACCESS_MODE`, `ACCESS_PASSWORD`, `SESSION_SECRET` | `open`, –, – | Access gate (see [security](docs/security.md)) |
 | `CHAT_RATE_PER_MINUTE`, `MAX_CONCURRENT_CHATS` | 10, 4 | Abuse prevention |
 | `TRACE_BACKEND`, `TRACE_RETENTION_HOURS`, `TRACE_STORE_QUERY_TEXT` | `memory`, 24, dev only | Trace persistence and privacy |
-| `EMBEDDING_PROVIDER`, `RETRIEVAL_MODE` | `hashing`, `dense` | `fastembed` (optional extra, ~130 MB model) and/or `hybrid` (BM25 + RRF) |
+| `EMBEDDING_PROVIDER`, `RETRIEVAL_MODE` | `hashing`, `dense` (Compose: `fastembed`, `hybrid`) | Handbook search: `fastembed` (optional extra, ~130 MB model) and/or `hybrid` (BM25 + RRF) |
+| `LIBRARY_SEARCH_MODE` | `keyword` (Compose: `hybrid`) | `hybrid` fuses keyword tiers with FastEmbed similarity (`LIBRARY_EMBEDDER`, gates `LIBRARY_SEMANTIC_MIN_SCORE`/`_MIN_Z`) |
 | `PUBLIC_BOOK_PROVIDERS` | `openlibrary,openstax` | Public book discovery; empty disables it; `googlebooks` opt-in |
 | `EVENTS_PROVIDER`, `CAFETERIA_PROVIDER` | `demo` | `google` calendar; `json`/`pdf` menu imports (never labelled live) |
 | `BACKEND_URL` (frontend) | `http://localhost:8000` | Server-side proxy target; never sent to the browser |
@@ -134,7 +146,7 @@ cd frontend && npm run build
 
 | Suite | Tests | Highlights |
 |---|---:|---|
-| `services/library_mcp` | 52 | campus-date default, tiered/alias search, verified catalogue, public discovery (access types, partial failure, cache, rate limit) |
+| `services/library_mcp` | 63 | campus-date default, tiered/alias search, hybrid semantic search (fusion, gates, honest misses, no silent fallback), verified catalogue, public discovery |
 | `services/events_mcp` | 36 | IST midnight boundary, statuses, all-day/multi-day/past-midnight, duplicates, Google `updated` vs fetch time, failure != empty |
 | `services/cafeteria_mcp` | 30 | campus "today", four-week rotation, filters, locations, staleness (true/false/null), invalid files |
 | `services/academics_mcp` | 35 | allowlisted downloader, scanned-PDF detection, supersession/applicability, embedder collections, RRF |
@@ -142,7 +154,7 @@ cd frontend && npm run build
 | `tests/` (integration) | 21 | four servers as HTTP processes, cross-service date agreement, official corpus default, new server by configuration only |
 | `frontend` (Vitest) | 14 | SSE, chat state, answer view (named failures, session expiry), freshness labels, campus-time formatting |
 
-ruff, mypy `--strict` (65 files), eslint, `tsc` and `next build` pass. CI never needs a Groq key.
+ruff, mypy `--strict` (67 files), eslint, `tsc` and `next build` pass. CI never needs a Groq key.
 
 ## Evaluation
 
@@ -158,6 +170,19 @@ ruff, mypy `--strict` (65 files), eslint, `tsc` and `next build` pass. CI never 
 
 Semantic retrieval clearly beats lexical hashing; hybrid helps hashing but adds nothing measurable on
 top of FastEmbed. The abstention sample is small (6 test questions).
+
+**Library search** (`evals/reports/library-latest.md`, 31 held-out test queries over the 138-book catalogue,
+6 on topics the catalogue does not hold; semantic gates chosen on the 31-query dev split):
+
+| Mode | Hit@5 | Recall@5 | Precision@5 | Paraphrase Hit@5 | Unrelated queries left empty | Search p50 |
+|---|---|---|---|---|---|---|
+| keyword (default) | 0.44 | 0.44 | 0.42 | 0/14 | 6/6 | 3.5 ms |
+| hybrid, hashing embedder | 0.44 | 0.44 | 0.42 | 0/14 | 6/6 | 8.1 ms |
+| hybrid, FastEmbed bge-small | **0.92** | **0.79** | **0.78** | 12/14 | 6/6 | 14.8 ms |
+
+Keyword search already finds titles, catalogue subjects, shorthand and authors; FastEmbed adds queries
+phrased in other words ("protecting computers from hackers"). The unrelated-topic result is fragile: the
+closest one ("knitting patterns" -> *Design Patterns*) scored 0.673 against a 0.68 gate.
 
 **Agent benchmark, mock provider** (deterministic keyword router: these numbers test the pipeline, not
 GPT-OSS-120B):

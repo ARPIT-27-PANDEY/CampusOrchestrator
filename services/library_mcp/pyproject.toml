@@ -12,6 +12,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=9,<10", "pytest-asyncio>=1.4,<2"]
+fastembed = ["fastembed>=0.9,<1"]  # LIBRARY_SEARCH_MODE=hybrid (semantic search)
 
 [project.scripts]
 library-mcp = "library_mcp.__main__:main"

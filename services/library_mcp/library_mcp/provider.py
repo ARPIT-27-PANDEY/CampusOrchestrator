@@ -19,6 +19,7 @@ from typing import Any, Protocol
 
 from .campus_time import CampusClock
 from .models import BookAvailability, BookSummary, LibraryHours, SourceInfo
+from .semantic import SemanticIndex, rrf_fuse, semantic_from_env
 
 DEMO_DATA_PATH = Path(__file__).parent / "data" / "demo_books.json"
 
@@ -108,6 +109,7 @@ class CatalogueSearch:
     matched_on: str | None = None
     suggestions: list[str] = field(default_factory=list)
     message: str | None = None
+    search_mode: str = "keyword"
 
 
 class DemoLibraryProvider:
@@ -121,6 +123,19 @@ class DemoLibraryProvider:
         self._as_of: str | None = raw.get("data_as_of")
         self._version = hashlib.sha256(text.encode()).hexdigest()[:12]
         self.clock = clock or CampusClock()
+        self.semantic: SemanticIndex | None = None
+
+    @property
+    def books(self) -> list[dict[str, Any]]:
+        return self._books
+
+    def enable_semantic(self, index: SemanticIndex | None) -> None:
+        """Turn on hybrid (keyword + embedding) ranking; ``None`` keeps keyword-only search."""
+        self.semantic = index
+
+    @property
+    def search_mode(self) -> str:
+        return self.semantic.label if self.semantic else "keyword"
 
     def source_info(self) -> SourceInfo:
         return SourceInfo(
@@ -179,6 +194,8 @@ class DemoLibraryProvider:
 
         Keyword matching needs most query words to appear; there is no fuzzy matching, so a miss is an
         honest empty result (with related subjects as suggestions) rather than unrelated titles.
+        With a semantic index (hybrid mode), identifier and title hits stay exact; otherwise the keyword
+        ranking is fused (RRF) with books whose embedding similarity clears the index threshold.
         """
         q_norm = _normalise(query)
         compact = re.sub(r"[^0-9xX]", "", query)
@@ -199,14 +216,15 @@ class DemoLibraryProvider:
                 return False
             return not (year_to and (year is None or year > year_to))
 
+        mode = self.search_mode
         pool = [b for b in self._books if allowed(b)]
         if query.strip().upper() in {b["book_id"] for b in pool}:
             hit = [b for b in pool if b["book_id"] == query.strip().upper()]
-            return CatalogueSearch([self._summary(b) for b in hit], "identifier")
+            return CatalogueSearch([self._summary(b) for b in hit], "identifier", search_mode=mode)
         if _ISBN.match(compact):
             hit = [b for b in pool if compact in b.get("isbn_13", [])]
             if hit:
-                return CatalogueSearch([self._summary(b) for b in hit[:limit]], "identifier")
+                return CatalogueSearch([self._summary(b) for b in hit[:limit]], "identifier", search_mode=mode)
 
         words = _terms(query)
         expanded: list[str] = []
@@ -237,15 +255,23 @@ class DemoLibraryProvider:
             if matched and matched >= max(1, (len(words) * 2 + 2) // 3):  # at least two thirds of the words
                 scored.append((10 + matched + (5 if q_norm in title else 0), "keywords", book))
         scored.sort(key=lambda x: (-x[0], x[2]["book_id"]))
+        if self.semantic is not None and words and not (scored and scored[0][1] == "title"):
+            semantic = self.semantic.rank(query, [b["book_id"] for b in pool])
+            if semantic:
+                by_id = {b["book_id"]: b for b in pool}
+                fused = rrf_fuse([b["book_id"] for _, _, b in scored], [bid for bid, _ in semantic])[:limit]
+                how = "hybrid" if scored else "semantic"
+                return CatalogueSearch([self._summary(by_id[bid]) for bid in fused], how, search_mode=mode)
         if scored:
             top = scored[:limit]
-            return CatalogueSearch([self._summary(b) for _, _, b in top], top[0][1])
+            return CatalogueSearch([self._summary(b) for _, _, b in top], top[0][1], search_mode=mode)
         related = [s for s in self._subjects() if any(w[:4] in s for w in words if len(w) > 3)][:5]
         return CatalogueSearch(
             [],
             None,
             related,
             f"No title, subject or author in the campus catalogue matches '{query}'.",
+            search_mode=mode,
         )
 
     def get_book_availability(self, book_id: str) -> BookAvailability:
@@ -303,7 +329,9 @@ def load_provider_from_env(clock: CampusClock | None = None) -> LibraryProvider:
     name = os.getenv("LIBRARY_PROVIDER", "demo").lower()
     if name == "demo":
         path = os.getenv("LIBRARY_DEMO_DATA")
-        return DemoLibraryProvider(Path(path), clock=clock) if path else DemoLibraryProvider(clock=clock)
+        provider = DemoLibraryProvider(Path(path), clock=clock) if path else DemoLibraryProvider(clock=clock)
+        provider.enable_semantic(semantic_from_env(provider.books))
+        return provider
     raise ValueError(
         f"Unsupported LIBRARY_PROVIDER '{name}'. Implement LibraryProvider for your campus system "
         "and register it in library_mcp.provider.load_provider_from_env."

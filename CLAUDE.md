@@ -19,6 +19,7 @@ make lint typecheck               # ruff format/check, eslint, mypy --strict, ts
 make eval                         # v2 agent benchmark (66 cases, mock) -> evals/reports/runs/ + latest.{json,md}
 make eval-v1                      # original 51-case benchmark (frozen v1 fixtures) -> latest-v1.*
 make eval-retrieval               # retrieval benchmark (hashing, hybrid; thresholds tuned on dev) -> retrieval-latest.*
+make eval-library                 # library search benchmark (keyword vs hybrid; gates tuned on dev) -> library-latest.*
 make fetch-sources check-sources ingest   # official IIT Roorkee PDFs (allowlisted) and the academics index
 (cd services/academics_mcp && ../../.venv/bin/python -m pytest -q)   # one service
 (cd backend && ../.venv/bin/python -m pytest -q)

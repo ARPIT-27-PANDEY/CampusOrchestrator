@@ -39,6 +39,15 @@ services:
         value: "2"
       - key: CAMPUS_TIMEZONE
         value: Asia/Kolkata
+      # Search stays lexical here: FastEmbed adds ~150-250 MB per process (academics and library each load
+      # the model), and this container already uses ~425 MB of the free plan's 512 MB. On a plan with
+      # >= 1 GB, build with INSTALL_FASTEMBED=1 and set fastembed / hybrid (see DEPLOY.md).
+      - key: EMBEDDING_PROVIDER
+        value: hashing
+      - key: RETRIEVAL_MODE
+        value: dense
+      - key: LIBRARY_SEARCH_MODE
+        value: keyword
       - key: LOG_LEVEL
         value: INFO
 

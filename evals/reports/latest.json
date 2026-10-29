@@ -1,7 +1,7 @@
 {
  "kind": "agent",
- "run_id": "agent-20261029T090701Z-mock-09b7ed",
- "generated_at": "2026-10-29T09:07:01+00:00",
+ "run_id": "agent-20261029T093110Z-mock-6ee8df",
+ "generated_at": "2026-10-29T09:31:10+00:00",
  "dataset": "campus_eval_v2.yaml",
  "provider": "mock",
  "model": "mock-deterministic-v1",
@@ -29,7 +29,7 @@
   },
   "skipped": [],
   "git": {
-   "commit": "be3124a79d381ce873454bd0344839da671b4bef",
+   "commit": "8d6a25dacfc07cd235583911cb6b63878bea411e",
    "dirty": true
   },
   "python": "3.12.10",
@@ -65,17 +65,17 @@
    "infra_llm": 0
   },
   "latency_sample": 63,
-  "latency_p50_ms": 60.5,
-  "latency_p95_ms": 392.0,
+  "latency_p50_ms": 61.3,
+  "latency_p95_ms": 428.0,
   "latency_p99_ms": null,
-  "latency_mean_ms": 221.2,
-  "first_token_p50_ms": 60.4,
+  "latency_mean_ms": 218.5,
+  "first_token_p50_ms": 61.2,
   "first_token_sample": 63,
-  "llm_wall_p50_ms": 0.9,
-  "tool_wall_p50_ms": 44.9,
-  "discovery_p50_ms": 9.6,
+  "llm_wall_p50_ms": 0.8,
+  "tool_wall_p50_ms": 42.0,
+  "discovery_p50_ms": 9.3,
   "tool_duration_p50_ms": 35.0,
-  "tool_duration_p95_ms": 315.3,
+  "tool_duration_p95_ms": 276.9,
   "prompt_tokens": 0,
   "completion_tokens": 0,
   "stability": null
@@ -233,34 +233,34 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 167.4,
+   "latency_ms": 85.3,
    "timings": {
-    "wall_ms": 167.4,
-    "discovery_ms": 25.5,
-    "first_token_ms": 167.3,
-    "llm_wall_ms": 52.1,
+    "wall_ms": 85.3,
+    "discovery_ms": 23.2,
+    "first_token_ms": 85.2,
+    "llm_wall_ms": 5.9,
     "llm_call_ms": [
-     51.1,
+     4.9,
      0.5,
      0.5
     ],
-    "tool_wall_ms": 89.1,
-    "tool_work_ms": 89.0,
+    "tool_wall_ms": 55.6,
+    "tool_work_ms": 55.4,
     "tool_ms_by_tool": {
      "library__search_books": [
-      66.1
+      34.9
      ],
      "library__get_book_availability": [
-      22.9
+      20.5
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.7
+    "orchestration_ms": 0.6
    },
    "tool_durations_ms": [
-    66.1,
-    22.9
+    34.9,
+    20.5
    ],
    "iterations": 3,
    "usage": {
@@ -302,34 +302,34 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 64.8,
+   "latency_ms": 67.3,
    "timings": {
-    "wall_ms": 64.8,
-    "discovery_ms": 10.0,
-    "first_token_ms": 64.6,
-    "llm_wall_ms": 0.9,
+    "wall_ms": 67.3,
+    "discovery_ms": 10.2,
+    "first_token_ms": 67.2,
+    "llm_wall_ms": 1.1,
     "llm_call_ms": [
      0.2,
-     0.3,
+     0.5,
      0.4
     ],
-    "tool_wall_ms": 53.1,
-    "tool_work_ms": 53.0,
+    "tool_wall_ms": 55.4,
+    "tool_work_ms": 55.2,
     "tool_ms_by_tool": {
      "library__search_books": [
-      33.0
+      34.2
      ],
      "library__get_book_availability": [
-      20.0
+      21.0
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.8
+    "orchestration_ms": 0.6
    },
    "tool_durations_ms": [
-    33.0,
-    20.0
+    34.2,
+    21.0
    ],
    "iterations": 3,
    "usage": {
@@ -371,34 +371,34 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 64.9,
+   "latency_ms": 72.3,
    "timings": {
-    "wall_ms": 64.9,
-    "discovery_ms": 9.4,
-    "first_token_ms": 64.8,
-    "llm_wall_ms": 1.1,
+    "wall_ms": 72.3,
+    "discovery_ms": 10.0,
+    "first_token_ms": 72.0,
+    "llm_wall_ms": 2.8,
     "llm_call_ms": [
      0.4,
-     0.3,
-     0.4
+     0.5,
+     1.9
     ],
-    "tool_wall_ms": 53.8,
-    "tool_work_ms": 53.8,
+    "tool_wall_ms": 58.6,
+    "tool_work_ms": 58.5,
     "tool_ms_by_tool": {
      "library__search_books": [
-      34.3
+      35.0
      ],
      "library__get_book_availability": [
-      19.5
+      23.5
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.6
+    "orchestration_ms": 0.9
    },
    "tool_durations_ms": [
-    34.3,
-    19.5
+    35.0,
+    23.5
    ],
    "iterations": 3,
    "usage": {
@@ -440,34 +440,34 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 73.2,
+   "latency_ms": 68.8,
    "timings": {
-    "wall_ms": 73.2,
-    "discovery_ms": 13.5,
-    "first_token_ms": 73.1,
+    "wall_ms": 68.8,
+    "discovery_ms": 9.3,
+    "first_token_ms": 68.7,
     "llm_wall_ms": 1.0,
     "llm_call_ms": [
      0.3,
      0.3,
      0.4
     ],
-    "tool_wall_ms": 57.9,
-    "tool_work_ms": 57.8,
+    "tool_wall_ms": 58.0,
+    "tool_work_ms": 57.9,
     "tool_ms_by_tool": {
      "library__search_books": [
-      35.0
+      35.4
      ],
      "library__get_book_availability": [
-      22.8
+      22.5
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.8
+    "orchestration_ms": 0.5
    },
    "tool_durations_ms": [
-    35.0,
-    22.8
+    35.4,
+    22.5
    ],
    "iterations": 3,
    "usage": {
@@ -508,29 +508,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 61.4,
+   "latency_ms": 44.7,
    "timings": {
-    "wall_ms": 61.4,
-    "discovery_ms": 13.1,
-    "first_token_ms": 61.3,
-    "llm_wall_ms": 0.7,
+    "wall_ms": 44.7,
+    "discovery_ms": 10.5,
+    "first_token_ms": 44.6,
+    "llm_wall_ms": 0.6,
     "llm_call_ms": [
-     0.4,
+     0.3,
      0.3
     ],
-    "tool_wall_ms": 47.0,
-    "tool_work_ms": 47.0,
+    "tool_wall_ms": 33.2,
+    "tool_work_ms": 33.1,
     "tool_ms_by_tool": {
      "library__search_books": [
-      47.0
+      33.1
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.6
+    "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    47.0
+    33.1
    ],
    "iterations": 2,
    "usage": {
@@ -571,29 +571,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 29.3,
+   "latency_ms": 31.3,
    "timings": {
-    "wall_ms": 29.3,
-    "discovery_ms": 7.5,
-    "first_token_ms": 29.2,
+    "wall_ms": 31.4,
+    "discovery_ms": 8.6,
+    "first_token_ms": 31.3,
     "llm_wall_ms": 0.5,
     "llm_call_ms": [
      0.4,
      0.1
     ],
-    "tool_wall_ms": 20.9,
-    "tool_work_ms": 20.9,
+    "tool_wall_ms": 21.8,
+    "tool_work_ms": 21.7,
     "tool_ms_by_tool": {
      "library__get_library_hours": [
-      20.9
+      21.7
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.4
+    "orchestration_ms": 0.5
    },
    "tool_durations_ms": [
-    20.9
+    21.7
    ],
    "iterations": 2,
    "usage": {
@@ -634,21 +634,21 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 33.5,
+   "latency_ms": 34.8,
    "timings": {
-    "wall_ms": 33.5,
-    "discovery_ms": 9.7,
-    "first_token_ms": 33.4,
-    "llm_wall_ms": 0.2,
+    "wall_ms": 34.8,
+    "discovery_ms": 9.1,
+    "first_token_ms": 34.7,
+    "llm_wall_ms": 0.3,
     "llm_call_ms": [
      0.1,
-     0.1
+     0.2
     ],
-    "tool_wall_ms": 23.2,
-    "tool_work_ms": 23.2,
+    "tool_wall_ms": 25.0,
+    "tool_work_ms": 24.9,
     "tool_ms_by_tool": {
      "library__get_library_hours": [
-      23.2
+      24.9
      ]
     },
     "tool_retries": 0,
@@ -656,7 +656,7 @@
     "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    23.2
+    24.9
    ],
    "iterations": 2,
    "usage": {
@@ -697,21 +697,21 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 39.8,
+   "latency_ms": 48.5,
    "timings": {
-    "wall_ms": 39.8,
-    "discovery_ms": 11.4,
-    "first_token_ms": 39.7,
+    "wall_ms": 48.5,
+    "discovery_ms": 17.7,
+    "first_token_ms": 48.3,
     "llm_wall_ms": 0.3,
     "llm_call_ms": [
      0.1,
      0.2
     ],
-    "tool_wall_ms": 27.7,
-    "tool_work_ms": 27.6,
+    "tool_wall_ms": 30.1,
+    "tool_work_ms": 30.0,
     "tool_ms_by_tool": {
      "library__get_library_hours": [
-      27.6
+      30.0
      ]
     },
     "tool_retries": 0,
@@ -719,7 +719,7 @@
     "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    27.6
+    30.0
    ],
    "iterations": 2,
    "usage": {
@@ -761,34 +761,34 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 86.0,
+   "latency_ms": 139.6,
    "timings": {
-    "wall_ms": 86.0,
-    "discovery_ms": 13.9,
-    "first_token_ms": 85.9,
-    "llm_wall_ms": 1.0,
+    "wall_ms": 139.6,
+    "discovery_ms": 21.8,
+    "first_token_ms": 139.4,
+    "llm_wall_ms": 1.7,
     "llm_call_ms": [
-     0.3,
-     0.3,
-     0.4
+     0.4,
+     0.7,
+     0.6
     ],
-    "tool_wall_ms": 70.5,
-    "tool_work_ms": 70.4,
+    "tool_wall_ms": 115.1,
+    "tool_work_ms": 114.9,
     "tool_ms_by_tool": {
      "library__search_books": [
-      49.9
+      71.0
      ],
      "library__get_book_availability": [
-      20.5
+      43.9
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.6
+    "orchestration_ms": 1.0
    },
    "tool_durations_ms": [
-    49.9,
-    20.5
+    71.0,
+    43.9
    ],
    "iterations": 3,
    "usage": {
@@ -829,29 +829,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 59.1,
+   "latency_ms": 108.1,
    "timings": {
-    "wall_ms": 59.1,
-    "discovery_ms": 7.6,
-    "first_token_ms": 58.9,
-    "llm_wall_ms": 1.6,
+    "wall_ms": 108.1,
+    "discovery_ms": 7.7,
+    "first_token_ms": 107.9,
+    "llm_wall_ms": 1.2,
     "llm_call_ms": [
-     0.8,
-     0.8
+     0.5,
+     0.7
     ],
-    "tool_wall_ms": 49.0,
-    "tool_work_ms": 48.9,
+    "tool_wall_ms": 98.6,
+    "tool_work_ms": 98.5,
     "tool_ms_by_tool": {
      "library__discover_public_books": [
-      48.9
+      98.5
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.9
+    "orchestration_ms": 0.6
    },
    "tool_durations_ms": [
-    48.9
+    98.5
    ],
    "iterations": 2,
    "usage": {
@@ -892,29 +892,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 68.8,
+   "latency_ms": 71.6,
    "timings": {
-    "wall_ms": 68.8,
-    "discovery_ms": 10.1,
-    "first_token_ms": 68.7,
-    "llm_wall_ms": 0.9,
+    "wall_ms": 71.6,
+    "discovery_ms": 16.0,
+    "first_token_ms": 71.4,
+    "llm_wall_ms": 1.1,
     "llm_call_ms": [
-     0.3,
+     0.5,
      0.6
     ],
-    "tool_wall_ms": 56.4,
-    "tool_work_ms": 56.3,
+    "tool_wall_ms": 53.2,
+    "tool_work_ms": 53.1,
     "tool_ms_by_tool": {
      "library__discover_public_books": [
-      56.3
+      53.1
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 1.4
+    "orchestration_ms": 1.3
    },
    "tool_durations_ms": [
-    56.3
+    53.1
    ],
    "iterations": 2,
    "usage": {
@@ -955,29 +955,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 62.5,
+   "latency_ms": 61.3,
    "timings": {
-    "wall_ms": 62.5,
+    "wall_ms": 61.3,
     "discovery_ms": 9.4,
-    "first_token_ms": 62.4,
-    "llm_wall_ms": 0.6,
+    "first_token_ms": 61.2,
+    "llm_wall_ms": 0.7,
     "llm_call_ms": [
-     0.2,
+     0.3,
      0.4
     ],
-    "tool_wall_ms": 51.5,
-    "tool_work_ms": 51.4,
+    "tool_wall_ms": 50.3,
+    "tool_work_ms": 50.2,
     "tool_ms_by_tool": {
      "library__discover_public_books": [
-      51.4
+      50.2
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 1.0
+    "orchestration_ms": 0.9
    },
    "tool_durations_ms": [
-    51.4
+    50.2
    ],
    "iterations": 2,
    "usage": {
@@ -1018,29 +1018,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 54.6,
+   "latency_ms": 57.7,
    "timings": {
-    "wall_ms": 54.6,
-    "discovery_ms": 8.4,
-    "first_token_ms": 54.5,
-    "llm_wall_ms": 0.8,
+    "wall_ms": 57.7,
+    "discovery_ms": 10.3,
+    "first_token_ms": 57.6,
+    "llm_wall_ms": 0.7,
     "llm_call_ms": [
-     0.4,
+     0.3,
      0.4
     ],
-    "tool_wall_ms": 44.9,
-    "tool_work_ms": 44.9,
+    "tool_wall_ms": 46.3,
+    "tool_work_ms": 46.2,
     "tool_ms_by_tool": {
      "library__discover_public_books": [
-      44.9
+      46.2
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.5
+    "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    44.9
+    46.2
    ],
    "iterations": 2,
    "usage": {
@@ -1081,29 +1081,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 592.5,
+   "latency_ms": 631.5,
    "timings": {
-    "wall_ms": 592.5,
-    "discovery_ms": 9.6,
-    "first_token_ms": 592.4,
-    "llm_wall_ms": 0.6,
+    "wall_ms": 631.6,
+    "discovery_ms": 8.1,
+    "first_token_ms": 631.1,
+    "llm_wall_ms": 2.6,
     "llm_call_ms": [
      0.3,
-     0.3
+     2.3
     ],
-    "tool_wall_ms": 581.5,
-    "tool_work_ms": 581.5,
+    "tool_wall_ms": 619.6,
+    "tool_work_ms": 619.5,
     "tool_ms_by_tool": {
      "library__discover_public_books": [
-      581.5
+      619.5
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.8
+    "orchestration_ms": 1.3
    },
    "tool_durations_ms": [
-    581.5
+    619.5
    ],
    "iterations": 2,
    "usage": {
@@ -1144,29 +1144,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 45.6,
+   "latency_ms": 47.4,
    "timings": {
-    "wall_ms": 45.6,
-    "discovery_ms": 9.6,
-    "first_token_ms": 45.5,
-    "llm_wall_ms": 2.6,
+    "wall_ms": 47.4,
+    "discovery_ms": 11.3,
+    "first_token_ms": 47.3,
+    "llm_wall_ms": 2.7,
     "llm_call_ms": [
-     2.1,
+     2.2,
      0.5
     ],
-    "tool_wall_ms": 32.6,
-    "tool_work_ms": 32.5,
+    "tool_wall_ms": 32.7,
+    "tool_work_ms": 32.6,
     "tool_ms_by_tool": {
      "cafeteria__get_today_menu": [
-      32.5
+      32.6
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.8
+    "orchestration_ms": 0.7
    },
    "tool_durations_ms": [
-    32.5
+    32.6
    ],
    "iterations": 2,
    "usage": {
@@ -1207,29 +1207,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 41.2,
+   "latency_ms": 45.3,
    "timings": {
-    "wall_ms": 41.2,
-    "discovery_ms": 7.6,
-    "first_token_ms": 41.0,
-    "llm_wall_ms": 1.0,
+    "wall_ms": 45.3,
+    "discovery_ms": 9.1,
+    "first_token_ms": 45.2,
+    "llm_wall_ms": 0.8,
     "llm_call_ms": [
      0.3,
-     0.7
+     0.5
     ],
-    "tool_wall_ms": 31.5,
-    "tool_work_ms": 31.5,
+    "tool_wall_ms": 34.6,
+    "tool_work_ms": 34.5,
     "tool_ms_by_tool": {
      "cafeteria__get_menu_for_date": [
-      31.5
+      34.5
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 1.1
+    "orchestration_ms": 0.8
    },
    "tool_durations_ms": [
-    31.5
+    34.5
    ],
    "iterations": 2,
    "usage": {
@@ -1270,29 +1270,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 41.8,
+   "latency_ms": 43.3,
    "timings": {
-    "wall_ms": 41.8,
-    "discovery_ms": 10.1,
-    "first_token_ms": 41.7,
-    "llm_wall_ms": 1.1,
+    "wall_ms": 43.3,
+    "discovery_ms": 10.7,
+    "first_token_ms": 43.2,
+    "llm_wall_ms": 1.2,
     "llm_call_ms": [
      0.7,
-     0.4
+     0.5
     ],
-    "tool_wall_ms": 30.0,
-    "tool_work_ms": 30.0,
+    "tool_wall_ms": 31.0,
+    "tool_work_ms": 31.0,
     "tool_ms_by_tool": {
      "cafeteria__get_menu_for_date": [
-      30.0
+      31.0
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.6
+    "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    30.0
+    31.0
    ],
    "iterations": 2,
    "usage": {
@@ -1333,29 +1333,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 38.2,
+   "latency_ms": 44.1,
    "timings": {
-    "wall_ms": 38.2,
-    "discovery_ms": 7.0,
-    "first_token_ms": 38.1,
-    "llm_wall_ms": 1.0,
+    "wall_ms": 44.1,
+    "discovery_ms": 8.9,
+    "first_token_ms": 43.8,
+    "llm_wall_ms": 1.6,
     "llm_call_ms": [
-     0.6,
-     0.4
+     0.7,
+     0.9
     ],
-    "tool_wall_ms": 29.7,
-    "tool_work_ms": 29.7,
+    "tool_wall_ms": 32.8,
+    "tool_work_ms": 32.7,
     "tool_ms_by_tool": {
      "cafeteria__get_menu_for_date": [
-      29.7
+      32.7
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.5
+    "orchestration_ms": 0.8
    },
    "tool_durations_ms": [
-    29.7
+    32.7
    ],
    "iterations": 2,
    "usage": {
@@ -1396,21 +1396,21 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 50.2,
+   "latency_ms": 51.9,
    "timings": {
-    "wall_ms": 50.2,
+    "wall_ms": 51.9,
     "discovery_ms": 9.6,
-    "first_token_ms": 50.1,
+    "first_token_ms": 51.8,
     "llm_wall_ms": 1.4,
     "llm_call_ms": [
      0.9,
      0.5
     ],
-    "tool_wall_ms": 38.8,
-    "tool_work_ms": 38.7,
+    "tool_wall_ms": 40.5,
+    "tool_work_ms": 40.5,
     "tool_ms_by_tool": {
      "cafeteria__get_item_price": [
-      38.7
+      40.5
      ]
     },
     "tool_retries": 0,
@@ -1418,7 +1418,7 @@
     "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    38.7
+    40.5
    ],
    "iterations": 2,
    "usage": {
@@ -1459,29 +1459,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 42.6,
+   "latency_ms": 62.5,
    "timings": {
-    "wall_ms": 42.6,
-    "discovery_ms": 10.4,
-    "first_token_ms": 42.5,
-    "llm_wall_ms": 1.3,
+    "wall_ms": 62.5,
+    "discovery_ms": 16.1,
+    "first_token_ms": 62.3,
+    "llm_wall_ms": 1.8,
     "llm_call_ms": [
-     0.8,
-     0.5
+     1.1,
+     0.7
     ],
-    "tool_wall_ms": 30.5,
-    "tool_work_ms": 30.5,
+    "tool_wall_ms": 44.0,
+    "tool_work_ms": 43.9,
     "tool_ms_by_tool": {
      "cafeteria__search_menu_item": [
-      30.5
+      43.9
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.4
+    "orchestration_ms": 0.6
    },
    "tool_durations_ms": [
-    30.5
+    43.9
    ],
    "iterations": 2,
    "usage": {
@@ -1522,29 +1522,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 41.3,
+   "latency_ms": 38.6,
    "timings": {
-    "wall_ms": 41.3,
-    "discovery_ms": 7.5,
-    "first_token_ms": 41.2,
-    "llm_wall_ms": 1.1,
+    "wall_ms": 38.6,
+    "discovery_ms": 8.9,
+    "first_token_ms": 38.4,
+    "llm_wall_ms": 1.3,
     "llm_call_ms": [
      0.6,
-     0.5
+     0.7
     ],
-    "tool_wall_ms": 32.4,
-    "tool_work_ms": 32.4,
+    "tool_wall_ms": 27.9,
+    "tool_work_ms": 27.9,
     "tool_ms_by_tool": {
      "cafeteria__get_item_price": [
-      32.4
+      27.9
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.3
+    "orchestration_ms": 0.5
    },
    "tool_durations_ms": [
-    32.4
+    27.9
    ],
    "iterations": 2,
    "usage": {
@@ -1585,29 +1585,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 48.0,
+   "latency_ms": 41.1,
    "timings": {
-    "wall_ms": 48.0,
-    "discovery_ms": 11.7,
-    "first_token_ms": 47.9,
-    "llm_wall_ms": 1.3,
+    "wall_ms": 41.1,
+    "discovery_ms": 9.9,
+    "first_token_ms": 40.9,
+    "llm_wall_ms": 1.0,
     "llm_call_ms": [
      0.5,
-     0.8
+     0.5
     ],
-    "tool_wall_ms": 34.7,
-    "tool_work_ms": 34.6,
+    "tool_wall_ms": 29.6,
+    "tool_work_ms": 29.6,
     "tool_ms_by_tool": {
      "cafeteria__get_menu_for_date": [
-      34.6
+      29.6
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.3
+    "orchestration_ms": 0.6
    },
    "tool_durations_ms": [
-    34.6
+    29.6
    ],
    "iterations": 2,
    "usage": {
@@ -1648,29 +1648,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 73.8,
+   "latency_ms": 40.6,
    "timings": {
-    "wall_ms": 73.8,
-    "discovery_ms": 18.2,
-    "first_token_ms": 73.7,
-    "llm_wall_ms": 0.9,
+    "wall_ms": 40.6,
+    "discovery_ms": 9.2,
+    "first_token_ms": 40.5,
+    "llm_wall_ms": 0.8,
     "llm_call_ms": [
-     0.5,
+     0.4,
      0.4
     ],
-    "tool_wall_ms": 54.1,
-    "tool_work_ms": 54.0,
+    "tool_wall_ms": 30.3,
+    "tool_work_ms": 30.3,
     "tool_ms_by_tool": {
      "events__get_events_for_date": [
-      54.0
+      30.3
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.6
+    "orchestration_ms": 0.3
    },
    "tool_durations_ms": [
-    54.0
+    30.3
    ],
    "iterations": 2,
    "usage": {
@@ -1711,29 +1711,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 41.5,
+   "latency_ms": 64.0,
    "timings": {
-    "wall_ms": 41.5,
-    "discovery_ms": 9.1,
-    "first_token_ms": 41.4,
-    "llm_wall_ms": 0.7,
+    "wall_ms": 64.0,
+    "discovery_ms": 18.7,
+    "first_token_ms": 63.9,
+    "llm_wall_ms": 1.4,
     "llm_call_ms": [
-     0.3,
+     1.0,
      0.4
     ],
-    "tool_wall_ms": 31.3,
-    "tool_work_ms": 31.2,
+    "tool_wall_ms": 43.1,
+    "tool_work_ms": 43.0,
     "tool_ms_by_tool": {
      "events__get_events_for_date": [
-      31.2
+      43.0
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.4
+    "orchestration_ms": 0.8
    },
    "tool_durations_ms": [
-    31.2
+    43.0
    ],
    "iterations": 2,
    "usage": {
@@ -1774,29 +1774,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 38.8,
+   "latency_ms": 54.1,
    "timings": {
-    "wall_ms": 38.8,
-    "discovery_ms": 7.4,
-    "first_token_ms": 38.7,
-    "llm_wall_ms": 0.6,
+    "wall_ms": 54.1,
+    "discovery_ms": 10.6,
+    "first_token_ms": 53.9,
+    "llm_wall_ms": 1.0,
     "llm_call_ms": [
      0.3,
-     0.3
+     0.7
     ],
-    "tool_wall_ms": 30.4,
-    "tool_work_ms": 30.3,
+    "tool_wall_ms": 42.0,
+    "tool_work_ms": 41.9,
     "tool_ms_by_tool": {
      "events__search_events": [
-      30.3
+      41.9
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.4
+    "orchestration_ms": 0.5
    },
    "tool_durations_ms": [
-    30.3
+    41.9
    ],
    "iterations": 2,
    "usage": {
@@ -1837,29 +1837,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 42.6,
+   "latency_ms": 40.8,
    "timings": {
-    "wall_ms": 42.6,
-    "discovery_ms": 10.9,
-    "first_token_ms": 42.5,
+    "wall_ms": 40.8,
+    "discovery_ms": 10.4,
+    "first_token_ms": 40.7,
     "llm_wall_ms": 0.7,
     "llm_call_ms": [
      0.3,
      0.4
     ],
-    "tool_wall_ms": 30.6,
-    "tool_work_ms": 30.6,
+    "tool_wall_ms": 29.2,
+    "tool_work_ms": 29.1,
     "tool_ms_by_tool": {
      "events__search_events": [
-      30.6
+      29.1
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.4
+    "orchestration_ms": 0.5
    },
    "tool_durations_ms": [
-    30.6
+    29.1
    ],
    "iterations": 2,
    "usage": {
@@ -1900,21 +1900,21 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 43.1,
+   "latency_ms": 41.2,
    "timings": {
-    "wall_ms": 43.1,
-    "discovery_ms": 7.3,
-    "first_token_ms": 43.0,
+    "wall_ms": 41.2,
+    "discovery_ms": 9.4,
+    "first_token_ms": 41.1,
     "llm_wall_ms": 0.7,
     "llm_call_ms": [
      0.3,
      0.4
     ],
-    "tool_wall_ms": 34.7,
-    "tool_work_ms": 34.7,
+    "tool_wall_ms": 30.7,
+    "tool_work_ms": 30.7,
     "tool_ms_by_tool": {
      "events__search_events": [
-      34.7
+      30.7
      ]
     },
     "tool_retries": 0,
@@ -1922,7 +1922,7 @@
     "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    34.7
+    30.7
    ],
    "iterations": 2,
    "usage": {
@@ -1963,29 +1963,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 60.5,
+   "latency_ms": 39.8,
    "timings": {
-    "wall_ms": 60.5,
-    "discovery_ms": 11.1,
-    "first_token_ms": 60.4,
-    "llm_wall_ms": 0.8,
+    "wall_ms": 39.8,
+    "discovery_ms": 8.8,
+    "first_token_ms": 39.7,
+    "llm_wall_ms": 0.7,
     "llm_call_ms": [
      0.3,
-     0.5
+     0.4
     ],
-    "tool_wall_ms": 48.3,
-    "tool_work_ms": 48.2,
+    "tool_wall_ms": 29.9,
+    "tool_work_ms": 29.8,
     "tool_ms_by_tool": {
      "events__search_events": [
-      48.2
+      29.8
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.3
+    "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    48.2
+    29.8
    ],
    "iterations": 2,
    "usage": {
@@ -2026,21 +2026,21 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 44.3,
+   "latency_ms": 41.5,
    "timings": {
-    "wall_ms": 44.3,
-    "discovery_ms": 8.1,
-    "first_token_ms": 44.2,
-    "llm_wall_ms": 0.6,
+    "wall_ms": 41.5,
+    "discovery_ms": 9.0,
+    "first_token_ms": 41.4,
+    "llm_wall_ms": 0.7,
     "llm_call_ms": [
      0.3,
-     0.3
+     0.4
     ],
-    "tool_wall_ms": 35.2,
-    "tool_work_ms": 35.1,
+    "tool_wall_ms": 31.4,
+    "tool_work_ms": 31.3,
     "tool_ms_by_tool": {
      "events__search_events": [
-      35.1
+      31.3
      ]
     },
     "tool_retries": 0,
@@ -2048,7 +2048,7 @@
     "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    35.1
+    31.3
    ],
    "iterations": 2,
    "usage": {
@@ -2089,29 +2089,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 38.1,
+   "latency_ms": 39.2,
    "timings": {
-    "wall_ms": 38.1,
-    "discovery_ms": 7.5,
-    "first_token_ms": 38.0,
+    "wall_ms": 39.2,
+    "discovery_ms": 7.1,
+    "first_token_ms": 39.1,
     "llm_wall_ms": 0.7,
     "llm_call_ms": [
      0.3,
      0.4
     ],
-    "tool_wall_ms": 29.4,
-    "tool_work_ms": 29.3,
+    "tool_wall_ms": 31.0,
+    "tool_work_ms": 31.0,
     "tool_ms_by_tool": {
      "events__get_events_for_date": [
-      29.3
+      31.0
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.5
+    "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    29.3
+    31.0
    ],
    "iterations": 2,
    "usage": {
@@ -2152,29 +2152,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 39.6,
+   "latency_ms": 39.5,
    "timings": {
-    "wall_ms": 39.6,
-    "discovery_ms": 8.2,
-    "first_token_ms": 39.5,
-    "llm_wall_ms": 1.1,
+    "wall_ms": 39.5,
+    "discovery_ms": 7.9,
+    "first_token_ms": 39.4,
+    "llm_wall_ms": 0.7,
     "llm_call_ms": [
-     0.7,
+     0.3,
      0.4
     ],
-    "tool_wall_ms": 29.8,
-    "tool_work_ms": 29.8,
+    "tool_wall_ms": 30.6,
+    "tool_work_ms": 30.5,
     "tool_ms_by_tool": {
      "events__search_events": [
-      29.8
+      30.5
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.5
+    "orchestration_ms": 0.3
    },
    "tool_durations_ms": [
-    29.8
+    30.5
    ],
    "iterations": 2,
    "usage": {
@@ -2215,29 +2215,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 41.9,
+   "latency_ms": 40.1,
    "timings": {
-    "wall_ms": 42.0,
-    "discovery_ms": 9.1,
-    "first_token_ms": 41.8,
+    "wall_ms": 40.1,
+    "discovery_ms": 6.9,
+    "first_token_ms": 40.0,
     "llm_wall_ms": 0.7,
     "llm_call_ms": [
      0.3,
      0.4
     ],
-    "tool_wall_ms": 31.6,
-    "tool_work_ms": 31.6,
+    "tool_wall_ms": 32.1,
+    "tool_work_ms": 32.1,
     "tool_ms_by_tool": {
      "events__get_upcoming_events": [
-      31.6
+      32.1
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.6
+    "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    31.6
+    32.1
    ],
    "iterations": 2,
    "usage": {
@@ -2278,29 +2278,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 217.0,
+   "latency_ms": 69.1,
    "timings": {
-    "wall_ms": 217.0,
-    "discovery_ms": 11.5,
-    "first_token_ms": 216.4,
-    "llm_wall_ms": 1.5,
+    "wall_ms": 69.1,
+    "discovery_ms": 6.9,
+    "first_token_ms": 68.9,
+    "llm_wall_ms": 0.8,
     "llm_call_ms": [
      0.1,
-     1.4
+     0.7
     ],
-    "tool_wall_ms": 201.7,
-    "tool_work_ms": 201.6,
+    "tool_wall_ms": 60.4,
+    "tool_work_ms": 60.4,
     "tool_ms_by_tool": {
      "academics__search_handbook": [
-      201.6
+      60.4
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 2.3
+    "orchestration_ms": 1.0
    },
    "tool_durations_ms": [
-    201.6
+    60.4
    ],
    "iterations": 2,
    "usage": {
@@ -2341,29 +2341,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 110.0,
+   "latency_ms": 87.4,
    "timings": {
-    "wall_ms": 110.0,
-    "discovery_ms": 11.8,
-    "first_token_ms": 109.3,
-    "llm_wall_ms": 1.7,
+    "wall_ms": 87.4,
+    "discovery_ms": 9.3,
+    "first_token_ms": 87.1,
+    "llm_wall_ms": 0.7,
     "llm_call_ms": [
-     0.3,
-     1.4
+     0.2,
+     0.5
     ],
-    "tool_wall_ms": 94.9,
-    "tool_work_ms": 94.8,
+    "tool_wall_ms": 76.3,
+    "tool_work_ms": 76.2,
     "tool_ms_by_tool": {
      "academics__search_handbook": [
-      94.8
+      76.2
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 1.6
+    "orchestration_ms": 1.1
    },
    "tool_durations_ms": [
-    94.8
+    76.2
    ],
    "iterations": 2,
    "usage": {
@@ -2406,29 +2406,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 97.7,
+   "latency_ms": 126.1,
    "timings": {
-    "wall_ms": 97.7,
-    "discovery_ms": 7.6,
-    "first_token_ms": 97.3,
-    "llm_wall_ms": 0.7,
+    "wall_ms": 126.1,
+    "discovery_ms": 9.5,
+    "first_token_ms": 125.6,
+    "llm_wall_ms": 0.6,
     "llm_call_ms": [
-     0.2,
+     0.1,
      0.5
     ],
-    "tool_wall_ms": 87.9,
-    "tool_work_ms": 87.8,
+    "tool_wall_ms": 114.6,
+    "tool_work_ms": 114.5,
     "tool_ms_by_tool": {
      "academics__search_handbook": [
-      87.8
+      114.5
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 1.5
+    "orchestration_ms": 1.4
    },
    "tool_durations_ms": [
-    87.8
+    114.5
    ],
    "iterations": 2,
    "usage": {
@@ -2469,29 +2469,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 90.9,
+   "latency_ms": 140.1,
    "timings": {
-    "wall_ms": 90.9,
-    "discovery_ms": 7.7,
-    "first_token_ms": 90.5,
-    "llm_wall_ms": 0.7,
+    "wall_ms": 140.1,
+    "discovery_ms": 14.9,
+    "first_token_ms": 139.5,
+    "llm_wall_ms": 1.5,
     "llm_call_ms": [
-     0.2,
-     0.5
+     0.4,
+     1.1
     ],
-    "tool_wall_ms": 81.2,
-    "tool_work_ms": 81.1,
+    "tool_wall_ms": 121.5,
+    "tool_work_ms": 121.4,
     "tool_ms_by_tool": {
      "academics__search_handbook": [
-      81.1
+      121.4
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 1.3
+    "orchestration_ms": 2.2
    },
    "tool_durations_ms": [
-    81.1
+    121.4
    ],
    "iterations": 2,
    "usage": {
@@ -2532,29 +2532,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 80.0,
+   "latency_ms": 75.4,
    "timings": {
-    "wall_ms": 80.0,
-    "discovery_ms": 7.6,
-    "first_token_ms": 79.7,
-    "llm_wall_ms": 0.6,
+    "wall_ms": 75.4,
+    "discovery_ms": 7.1,
+    "first_token_ms": 75.2,
+    "llm_wall_ms": 0.5,
     "llm_call_ms": [
      0.1,
-     0.5
+     0.4
     ],
-    "tool_wall_ms": 70.4,
-    "tool_work_ms": 70.3,
+    "tool_wall_ms": 66.9,
+    "tool_work_ms": 66.8,
     "tool_ms_by_tool": {
      "academics__search_handbook": [
-      70.3
+      66.8
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 1.4
+    "orchestration_ms": 0.9
    },
    "tool_durations_ms": [
-    70.3
+    66.8
    ],
    "iterations": 2,
    "usage": {
@@ -2597,29 +2597,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 113.1,
+   "latency_ms": 75.9,
    "timings": {
-    "wall_ms": 113.1,
-    "discovery_ms": 24.0,
-    "first_token_ms": 112.9,
-    "llm_wall_ms": 1.0,
+    "wall_ms": 75.9,
+    "discovery_ms": 10.8,
+    "first_token_ms": 75.7,
+    "llm_wall_ms": 0.7,
     "llm_call_ms": [
-     0.4,
-     0.6
+     0.2,
+     0.5
     ],
-    "tool_wall_ms": 84.9,
-    "tool_work_ms": 84.8,
+    "tool_wall_ms": 63.4,
+    "tool_work_ms": 63.4,
     "tool_ms_by_tool": {
      "academics__search_handbook": [
-      84.8
+      63.4
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 3.2
+    "orchestration_ms": 1.0
    },
    "tool_durations_ms": [
-    84.8
+    63.4
    ],
    "iterations": 2,
    "usage": {
@@ -2660,21 +2660,21 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 63.6,
+   "latency_ms": 68.2,
    "timings": {
-    "wall_ms": 63.6,
-    "discovery_ms": 10.2,
-    "first_token_ms": 63.5,
-    "llm_wall_ms": 0.6,
+    "wall_ms": 68.3,
+    "discovery_ms": 9.2,
+    "first_token_ms": 68.1,
+    "llm_wall_ms": 0.7,
     "llm_call_ms": [
-     0.1,
+     0.2,
      0.5
     ],
-    "tool_wall_ms": 51.9,
-    "tool_work_ms": 51.9,
+    "tool_wall_ms": 57.5,
+    "tool_work_ms": 57.4,
     "tool_ms_by_tool": {
      "academics__search_handbook": [
-      51.9
+      57.4
      ]
     },
     "tool_retries": 0,
@@ -2682,7 +2682,7 @@
     "orchestration_ms": 0.9
    },
    "tool_durations_ms": [
-    51.9
+    57.4
    ],
    "iterations": 2,
    "usage": {
@@ -2723,29 +2723,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 63.1,
+   "latency_ms": 98.9,
    "timings": {
-    "wall_ms": 63.1,
-    "discovery_ms": 10.6,
-    "first_token_ms": 63.0,
-    "llm_wall_ms": 0.5,
+    "wall_ms": 98.9,
+    "discovery_ms": 11.2,
+    "first_token_ms": 98.8,
+    "llm_wall_ms": 0.6,
     "llm_call_ms": [
      0.2,
-     0.3
+     0.4
     ],
-    "tool_wall_ms": 51.3,
-    "tool_work_ms": 51.3,
+    "tool_wall_ms": 85.9,
+    "tool_work_ms": 85.8,
     "tool_ms_by_tool": {
      "academics__search_handbook": [
-      51.3
+      85.8
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.7
+    "orchestration_ms": 1.2
    },
    "tool_durations_ms": [
-    51.3
+    85.8
    ],
    "iterations": 2,
    "usage": {
@@ -2788,29 +2788,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 84.2,
+   "latency_ms": 66.6,
    "timings": {
-    "wall_ms": 84.2,
-    "discovery_ms": 8.4,
-    "first_token_ms": 84.0,
-    "llm_wall_ms": 0.7,
+    "wall_ms": 66.6,
+    "discovery_ms": 10.4,
+    "first_token_ms": 66.4,
+    "llm_wall_ms": 0.6,
     "llm_call_ms": [
-     0.2,
+     0.1,
      0.5
     ],
-    "tool_wall_ms": 74.0,
-    "tool_work_ms": 73.9,
+    "tool_wall_ms": 54.8,
+    "tool_work_ms": 54.7,
     "tool_ms_by_tool": {
      "academics__search_handbook": [
-      73.9
+      54.7
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 1.1
+    "orchestration_ms": 0.8
    },
    "tool_durations_ms": [
-    73.9
+    54.7
    ],
    "iterations": 2,
    "usage": {
@@ -2853,21 +2853,21 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 92.4,
+   "latency_ms": 83.1,
    "timings": {
-    "wall_ms": 92.4,
-    "discovery_ms": 14.3,
-    "first_token_ms": 92.3,
-    "llm_wall_ms": 1.1,
+    "wall_ms": 83.1,
+    "discovery_ms": 11.1,
+    "first_token_ms": 82.9,
+    "llm_wall_ms": 0.8,
     "llm_call_ms": [
-     0.5,
+     0.2,
      0.6
     ],
-    "tool_wall_ms": 75.9,
-    "tool_work_ms": 75.8,
+    "tool_wall_ms": 70.1,
+    "tool_work_ms": 70.0,
     "tool_ms_by_tool": {
      "academics__search_handbook": [
-      75.8
+      70.0
      ]
     },
     "tool_retries": 0,
@@ -2875,7 +2875,7 @@
     "orchestration_ms": 1.1
    },
    "tool_durations_ms": [
-    75.8
+    70.0
    ],
    "iterations": 2,
    "usage": {
@@ -2923,42 +2923,42 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 131.5,
+   "latency_ms": 127.0,
    "timings": {
-    "wall_ms": 131.5,
-    "discovery_ms": 12.5,
-    "first_token_ms": 131.3,
-    "llm_wall_ms": 3.3,
+    "wall_ms": 127.0,
+    "discovery_ms": 9.2,
+    "first_token_ms": 126.8,
+    "llm_wall_ms": 2.7,
     "llm_call_ms": [
      0.7,
-     1.5,
-     1.1
+     1.0,
+     1.0
     ],
-    "tool_wall_ms": 114.7,
-    "tool_work_ms": 114.6,
+    "tool_wall_ms": 114.3,
+    "tool_work_ms": 114.0,
     "tool_ms_by_tool": {
      "library__search_books": [
-      32.0
+      32.3
      ],
      "cafeteria__get_today_menu": [
-      31.3
+      29.4
      ],
      "events__search_events": [
-      28.0
+      30.0
      ],
      "library__get_book_availability": [
-      23.3
+      22.3
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 1.0
+    "orchestration_ms": 0.8
    },
    "tool_durations_ms": [
-    32.0,
-    31.3,
-    28.0,
-    23.3
+    32.3,
+    29.4,
+    30.0,
+    22.3
    ],
    "iterations": 3,
    "usage": {
@@ -3002,33 +3002,33 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 133.3,
+   "latency_ms": 74.6,
    "timings": {
-    "wall_ms": 133.3,
-    "discovery_ms": 10.4,
-    "first_token_ms": 133.2,
-    "llm_wall_ms": 46.4,
+    "wall_ms": 74.6,
+    "discovery_ms": 7.9,
+    "first_token_ms": 74.5,
+    "llm_wall_ms": 1.6,
     "llm_call_ms": [
-     45.6,
-     0.8
+     0.7,
+     0.9
     ],
-    "tool_wall_ms": 75.8,
-    "tool_work_ms": 75.7,
+    "tool_wall_ms": 64.6,
+    "tool_work_ms": 64.5,
     "tool_ms_by_tool": {
      "events__get_events_for_date": [
-      53.1
+      41.8
      ],
      "library__get_library_hours": [
-      22.6
+      22.7
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.7
+    "orchestration_ms": 0.5
    },
    "tool_durations_ms": [
-    53.1,
-    22.6
+    41.8,
+    22.7
    ],
    "iterations": 2,
    "usage": {
@@ -3072,24 +3072,24 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 99.3,
+   "latency_ms": 121.4,
    "timings": {
-    "wall_ms": 99.3,
-    "discovery_ms": 8.9,
-    "first_token_ms": 99.1,
-    "llm_wall_ms": 2.0,
+    "wall_ms": 121.4,
+    "discovery_ms": 7.4,
+    "first_token_ms": 121.2,
+    "llm_wall_ms": 1.9,
     "llm_call_ms": [
-     0.9,
+     0.8,
      1.1
     ],
-    "tool_wall_ms": 87.4,
-    "tool_work_ms": 87.3,
+    "tool_wall_ms": 111.1,
+    "tool_work_ms": 110.9,
     "tool_ms_by_tool": {
      "events__search_events": [
-      27.8
+      44.2
      ],
      "academics__search_handbook": [
-      59.5
+      66.7
      ]
     },
     "tool_retries": 0,
@@ -3097,8 +3097,8 @@
     "orchestration_ms": 1.0
    },
    "tool_durations_ms": [
-    27.8,
-    59.5
+    44.2,
+    66.7
    ],
    "iterations": 2,
    "usage": {
@@ -3139,29 +3139,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 62.9,
+   "latency_ms": 62.3,
    "timings": {
-    "wall_ms": 62.9,
-    "discovery_ms": 9.5,
-    "first_token_ms": 62.8,
-    "llm_wall_ms": 2.7,
+    "wall_ms": 62.3,
+    "discovery_ms": 10.0,
+    "first_token_ms": 62.3,
+    "llm_wall_ms": 2.1,
     "llm_call_ms": [
-     1.2,
-     1.5
+     1.0,
+     1.1
     ],
-    "tool_wall_ms": 50.3,
-    "tool_work_ms": 50.3,
+    "tool_wall_ms": 49.7,
+    "tool_work_ms": 49.7,
     "tool_ms_by_tool": {
      "library__discover_public_books": [
-      50.3
+      49.7
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.4
+    "orchestration_ms": 0.5
    },
    "tool_durations_ms": [
-    50.3
+    49.7
    ],
    "iterations": 2,
    "usage": {
@@ -3205,33 +3205,33 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 109.8,
+   "latency_ms": 74.7,
    "timings": {
-    "wall_ms": 109.8,
-    "discovery_ms": 7.8,
-    "first_token_ms": 109.7,
-    "llm_wall_ms": 2.9,
+    "wall_ms": 74.7,
+    "discovery_ms": 9.1,
+    "first_token_ms": 74.4,
+    "llm_wall_ms": 4.0,
     "llm_call_ms": [
-     1.3,
-     1.6
+     1.4,
+     2.6
     ],
-    "tool_wall_ms": 98.2,
-    "tool_work_ms": 98.0,
+    "tool_wall_ms": 60.6,
+    "tool_work_ms": 60.5,
     "tool_ms_by_tool": {
      "cafeteria__get_menu_for_date": [
-      50.9
+      32.1
      ],
      "events__get_events_for_date": [
-      47.1
+      28.4
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.9
+    "orchestration_ms": 1.0
    },
    "tool_durations_ms": [
-    50.9,
-    47.1
+    32.1,
+    28.4
    ],
    "iterations": 2,
    "usage": {
@@ -3266,11 +3266,11 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 8.7,
+   "latency_ms": 9.8,
    "timings": {
-    "wall_ms": 8.7,
-    "discovery_ms": 8.1,
-    "first_token_ms": 8.6,
+    "wall_ms": 9.8,
+    "discovery_ms": 9.3,
+    "first_token_ms": 9.8,
     "llm_wall_ms": 0.3,
     "llm_call_ms": [
      0.3
@@ -3280,7 +3280,7 @@
     "tool_ms_by_tool": {},
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.3
+    "orchestration_ms": 0.2
    },
    "tool_durations_ms": [],
    "iterations": 1,
@@ -3316,11 +3316,11 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 7.8,
+   "latency_ms": 24.2,
    "timings": {
-    "wall_ms": 7.8,
-    "discovery_ms": 7.3,
-    "first_token_ms": 7.7,
+    "wall_ms": 24.2,
+    "discovery_ms": 23.4,
+    "first_token_ms": 24.1,
     "llm_wall_ms": 0.4,
     "llm_call_ms": [
      0.4
@@ -3330,7 +3330,7 @@
     "tool_ms_by_tool": {},
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.1
+    "orchestration_ms": 0.4
    },
    "tool_durations_ms": [],
    "iterations": 1,
@@ -3366,11 +3366,11 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 9.4,
+   "latency_ms": 11.7,
    "timings": {
-    "wall_ms": 9.4,
-    "discovery_ms": 8.6,
-    "first_token_ms": 9.3,
+    "wall_ms": 11.7,
+    "discovery_ms": 10.9,
+    "first_token_ms": 11.6,
     "llm_wall_ms": 0.5,
     "llm_call_ms": [
      0.5
@@ -3416,11 +3416,11 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 7.5,
+   "latency_ms": 8.4,
    "timings": {
-    "wall_ms": 7.5,
-    "discovery_ms": 7.3,
-    "first_token_ms": 7.5,
+    "wall_ms": 8.4,
+    "discovery_ms": 8.1,
+    "first_token_ms": 8.3,
     "llm_wall_ms": 0.1,
     "llm_call_ms": [
      0.1
@@ -3430,7 +3430,7 @@
     "tool_ms_by_tool": {},
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.1
+    "orchestration_ms": 0.2
    },
    "tool_durations_ms": [],
    "iterations": 1,
@@ -3475,33 +3475,33 @@
    "budget_exhausted": false,
    "status": "partial",
    "error_code": null,
-   "latency_ms": 392.0,
+   "latency_ms": 350.1,
    "timings": {
-    "wall_ms": 392.0,
-    "discovery_ms": 10.2,
-    "first_token_ms": 391.9,
-    "llm_wall_ms": 2.8,
+    "wall_ms": 350.1,
+    "discovery_ms": 8.9,
+    "first_token_ms": 350.0,
+    "llm_wall_ms": 2.7,
     "llm_call_ms": [
-     1.3,
+     1.2,
      1.5
     ],
-    "tool_wall_ms": 378.0,
-    "tool_work_ms": 377.8,
+    "tool_wall_ms": 337.6,
+    "tool_work_ms": 337.5,
     "tool_ms_by_tool": {
      "events__search_events": [
-      315.3
+      266.4
      ],
      "cafeteria__get_today_menu": [
-      62.5
+      71.1
      ]
     },
     "tool_retries": 1,
     "cache_hits": 0,
-    "orchestration_ms": 1.0
+    "orchestration_ms": 0.9
    },
    "tool_durations_ms": [
-    315.3,
-    62.5
+    266.4,
+    71.1
    ],
    "iterations": 2,
    "usage": {
@@ -3545,33 +3545,33 @@
    "budget_exhausted": false,
    "status": "partial",
    "error_code": null,
-   "latency_ms": 4363.3,
+   "latency_ms": 4344.0,
    "timings": {
-    "wall_ms": 4363.3,
-    "discovery_ms": 9.4,
-    "first_token_ms": 4363.1,
-    "llm_wall_ms": 1.6,
+    "wall_ms": 4344.0,
+    "discovery_ms": 11.6,
+    "first_token_ms": 4343.9,
+    "llm_wall_ms": 1.3,
     "llm_call_ms": [
      0.6,
-     1.0
+     0.7
     ],
-    "tool_wall_ms": 4351.7,
-    "tool_work_ms": 4351.4,
+    "tool_wall_ms": 4330.6,
+    "tool_work_ms": 4330.4,
     "tool_ms_by_tool": {
      "library__get_library_hours": [
-      4274.1
+      4273.6
      ],
      "events__search_events": [
-      77.3
+      56.8
      ]
     },
     "tool_retries": 1,
     "cache_hits": 0,
-    "orchestration_ms": 0.6
+    "orchestration_ms": 0.5
    },
    "tool_durations_ms": [
-    4274.1,
-    77.3
+    4273.6,
+    56.8
    ],
    "iterations": 2,
    "usage": {
@@ -3606,21 +3606,21 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 7.5,
+   "latency_ms": 7.9,
    "timings": {
-    "wall_ms": 7.5,
-    "discovery_ms": 6.7,
-    "first_token_ms": 7.4,
-    "llm_wall_ms": 0.5,
+    "wall_ms": 7.9,
+    "discovery_ms": 7.4,
+    "first_token_ms": 7.9,
+    "llm_wall_ms": 0.3,
     "llm_call_ms": [
-     0.5
+     0.3
     ],
     "tool_wall_ms": 0.0,
     "tool_work_ms": 0.0,
     "tool_ms_by_tool": {},
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.3
+    "orchestration_ms": 0.2
    },
    "tool_durations_ms": [],
    "iterations": 1,
@@ -3662,29 +3662,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 373.1,
+   "latency_ms": 337.9,
    "timings": {
-    "wall_ms": 373.1,
-    "discovery_ms": 10.7,
-    "first_token_ms": 373.0,
-    "llm_wall_ms": 0.2,
+    "wall_ms": 337.9,
+    "discovery_ms": 8.9,
+    "first_token_ms": 337.7,
+    "llm_wall_ms": 0.4,
     "llm_call_ms": [
      0.1,
-     0.1
+     0.3
     ],
-    "tool_wall_ms": 361.7,
-    "tool_work_ms": 361.7,
+    "tool_wall_ms": 328.2,
+    "tool_work_ms": 328.1,
     "tool_ms_by_tool": {
      "library__get_library_hours": [
-      361.7
+      328.1
      ]
     },
     "tool_retries": 1,
     "cache_hits": 0,
-    "orchestration_ms": 0.5
+    "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    361.7
+    328.1
    ],
    "iterations": 2,
    "usage": {
@@ -3725,29 +3725,29 @@
    "budget_exhausted": false,
    "status": "partial",
    "error_code": null,
-   "latency_ms": 11.7,
+   "latency_ms": 11.0,
    "timings": {
-    "wall_ms": 11.7,
-    "discovery_ms": 9.9,
-    "first_token_ms": 11.6,
+    "wall_ms": 11.0,
+    "discovery_ms": 8.9,
+    "first_token_ms": 11.0,
     "llm_wall_ms": 0.6,
     "llm_call_ms": [
      0.3,
      0.3
     ],
-    "tool_wall_ms": 1.0,
-    "tool_work_ms": 1.0,
+    "tool_wall_ms": 1.2,
+    "tool_work_ms": 1.1,
     "tool_ms_by_tool": {
      "events__get_events_for_date": [
-      1.0
+      1.1
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.2
+    "orchestration_ms": 0.3
    },
    "tool_durations_ms": [
-    1.0
+    1.1
    ],
    "iterations": 2,
    "usage": {
@@ -3792,38 +3792,38 @@
    "budget_exhausted": false,
    "status": "partial",
    "error_code": null,
-   "latency_ms": 368.9,
+   "latency_ms": 428.0,
    "timings": {
-    "wall_ms": 368.9,
-    "discovery_ms": 10.5,
-    "first_token_ms": 368.6,
-    "llm_wall_ms": 4.8,
+    "wall_ms": 428.0,
+    "discovery_ms": 10.7,
+    "first_token_ms": 427.7,
+    "llm_wall_ms": 6.4,
     "llm_call_ms": [
-     0.7,
-     2.2,
+     0.6,
+     3.9,
      1.9
     ],
-    "tool_wall_ms": 352.3,
-    "tool_work_ms": 352.1,
+    "tool_wall_ms": 409.2,
+    "tool_work_ms": 408.8,
     "tool_ms_by_tool": {
      "library__search_books": [
-      33.1
+      58.7
      ],
      "academics__search_handbook": [
-      264.3
+      276.9
      ],
      "library__get_book_availability": [
-      54.7
+      73.2
      ]
     },
     "tool_retries": 1,
     "cache_hits": 0,
-    "orchestration_ms": 1.3
+    "orchestration_ms": 1.7
    },
    "tool_durations_ms": [
-    33.1,
-    264.3,
-    54.7
+    58.7,
+    276.9,
+    73.2
    ],
    "iterations": 3,
    "usage": {
@@ -3864,29 +3864,29 @@
    "budget_exhausted": false,
    "status": "partial",
    "error_code": null,
-   "latency_ms": 4306.1,
+   "latency_ms": 4307.9,
    "timings": {
-    "wall_ms": 4306.1,
-    "discovery_ms": 9.3,
-    "first_token_ms": 4305.8,
-    "llm_wall_ms": 2.2,
+    "wall_ms": 4307.9,
+    "discovery_ms": 10.6,
+    "first_token_ms": 4307.6,
+    "llm_wall_ms": 2.3,
     "llm_call_ms": [
      0.3,
-     1.9
+     2.0
     ],
-    "tool_wall_ms": 4293.7,
-    "tool_work_ms": 4293.6,
+    "tool_wall_ms": 4294.3,
+    "tool_work_ms": 4294.0,
     "tool_ms_by_tool": {
      "cafeteria__get_today_menu": [
-      4293.6
+      4294.0
      ]
     },
     "tool_retries": 1,
     "cache_hits": 0,
-    "orchestration_ms": 0.9
+    "orchestration_ms": 0.7
    },
    "tool_durations_ms": [
-    4293.6
+    4294.0
    ],
    "iterations": 2,
    "usage": {
@@ -3921,10 +3921,10 @@
    "budget_exhausted": false,
    "status": "error",
    "error_code": "llm_rate_limited",
-   "latency_ms": 7.6,
+   "latency_ms": 9.3,
    "timings": {
-    "wall_ms": 7.6,
-    "discovery_ms": 7.3,
+    "wall_ms": 9.3,
+    "discovery_ms": 9.0,
     "first_token_ms": null,
     "llm_wall_ms": 0.0,
     "llm_call_ms": [
@@ -3971,10 +3971,10 @@
    "budget_exhausted": false,
    "status": "error",
    "error_code": "llm_timeout",
-   "latency_ms": 10.7,
+   "latency_ms": 11.1,
    "timings": {
-    "wall_ms": 10.7,
-    "discovery_ms": 10.5,
+    "wall_ms": 11.1,
+    "discovery_ms": 10.9,
     "first_token_ms": null,
     "llm_wall_ms": 0.0,
     "llm_call_ms": [
@@ -4027,30 +4027,30 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 42.9,
+   "latency_ms": 47.1,
    "timings": {
-    "wall_ms": 42.9,
-    "discovery_ms": 7.8,
-    "first_token_ms": 42.8,
-    "llm_wall_ms": 0.9,
+    "wall_ms": 47.1,
+    "discovery_ms": 7.1,
+    "first_token_ms": 47.0,
+    "llm_wall_ms": 1.2,
     "llm_call_ms": [
      0.0,
-     0.4,
+     0.7,
      0.5
     ],
-    "tool_wall_ms": 33.4,
-    "tool_work_ms": 33.3,
+    "tool_wall_ms": 37.8,
+    "tool_work_ms": 37.7,
     "tool_ms_by_tool": {
      "cafeteria__get_today_menu": [
-      33.3
+      37.7
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.8
+    "orchestration_ms": 1.0
    },
    "tool_durations_ms": [
-    33.3
+    37.7
    ],
    "iterations": 3,
    "usage": {
@@ -4091,34 +4091,34 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 46.6,
+   "latency_ms": 44.0,
    "timings": {
-    "wall_ms": 46.6,
-    "discovery_ms": 13.0,
-    "first_token_ms": 46.4,
-    "llm_wall_ms": 0.8,
+    "wall_ms": 44.0,
+    "discovery_ms": 9.0,
+    "first_token_ms": 43.9,
+    "llm_wall_ms": 0.9,
     "llm_call_ms": [
      0.0,
-     0.3,
+     0.4,
      0.5
     ],
-    "tool_wall_ms": 31.7,
-    "tool_work_ms": 31.7,
+    "tool_wall_ms": 33.3,
+    "tool_work_ms": 33.2,
     "tool_ms_by_tool": {
      "nonexistent__teleport": [
       0.0
      ],
      "cafeteria__get_today_menu": [
-      31.7
+      33.2
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 1.1
+    "orchestration_ms": 0.8
    },
    "tool_durations_ms": [
     0.0,
-    31.7
+    33.2
    ],
    "iterations": 3,
    "usage": {
@@ -4159,10 +4159,10 @@
    "budget_exhausted": true,
    "status": "error",
    "error_code": "max_iterations",
-   "latency_ms": 54.4,
+   "latency_ms": 45.6,
    "timings": {
-    "wall_ms": 54.4,
-    "discovery_ms": 7.2,
+    "wall_ms": 45.6,
+    "discovery_ms": 9.6,
     "first_token_ms": null,
     "llm_wall_ms": 0.0,
     "llm_call_ms": [
@@ -4173,19 +4173,19 @@
      0.0,
      0.0
     ],
-    "tool_wall_ms": 44.5,
-    "tool_work_ms": 44.4,
+    "tool_wall_ms": 33.4,
+    "tool_work_ms": 33.3,
     "tool_ms_by_tool": {
      "cafeteria__get_today_menu": [
-      44.4
+      33.3
      ]
     },
     "tool_retries": 0,
     "cache_hits": 4,
-    "orchestration_ms": 2.7
+    "orchestration_ms": 2.6
    },
    "tool_durations_ms": [
-    44.4
+    33.3
    ],
    "iterations": 5,
    "usage": {
@@ -4220,21 +4220,21 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 21.4,
+   "latency_ms": 11.2,
    "timings": {
-    "wall_ms": 21.4,
-    "discovery_ms": 19.8,
-    "first_token_ms": 21.2,
-    "llm_wall_ms": 1.3,
+    "wall_ms": 11.2,
+    "discovery_ms": 8.2,
+    "first_token_ms": 10.9,
+    "llm_wall_ms": 2.6,
     "llm_call_ms": [
-     1.3
+     2.6
     ],
     "tool_wall_ms": 0.0,
     "tool_work_ms": 0.0,
     "tool_ms_by_tool": {},
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.3
+    "orchestration_ms": 0.4
    },
    "tool_durations_ms": [],
    "iterations": 1,
@@ -4276,29 +4276,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 112.2,
+   "latency_ms": 112.6,
    "timings": {
-    "wall_ms": 112.2,
-    "discovery_ms": 10.3,
-    "first_token_ms": 111.8,
-    "llm_wall_ms": 1.6,
+    "wall_ms": 112.6,
+    "discovery_ms": 9.1,
+    "first_token_ms": 112.3,
+    "llm_wall_ms": 1.2,
     "llm_call_ms": [
      0.4,
-     1.2
+     0.8
     ],
-    "tool_wall_ms": 98.5,
-    "tool_work_ms": 98.4,
+    "tool_wall_ms": 101.0,
+    "tool_work_ms": 101.0,
     "tool_ms_by_tool": {
      "academics__search_handbook": [
-      98.4
+      101.0
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 1.8
+    "orchestration_ms": 1.3
    },
    "tool_durations_ms": [
-    98.4
+    101.0
    ],
    "iterations": 2,
    "usage": {
@@ -4339,29 +4339,29 @@
    "budget_exhausted": false,
    "status": "ok",
    "error_code": null,
-   "latency_ms": 35.2,
+   "latency_ms": 22.3,
    "timings": {
-    "wall_ms": 35.2,
-    "discovery_ms": 18.3,
-    "first_token_ms": 35.0,
-    "llm_wall_ms": 1.7,
+    "wall_ms": 22.3,
+    "discovery_ms": 10.8,
+    "first_token_ms": 22.1,
+    "llm_wall_ms": 0.9,
     "llm_call_ms": [
-     0.8,
-     0.9
+     0.4,
+     0.5
     ],
-    "tool_wall_ms": 14.5,
-    "tool_work_ms": 14.5,
+    "tool_wall_ms": 10.2,
+    "tool_work_ms": 10.1,
     "tool_ms_by_tool": {
      "transport__get_shuttle_departures": [
-      14.5
+      10.1
      ]
     },
     "tool_retries": 0,
     "cache_hits": 0,
-    "orchestration_ms": 0.7
+    "orchestration_ms": 0.4
    },
    "tool_durations_ms": [
-    14.5
+    10.1
    ],
    "iterations": 2,
    "usage": {

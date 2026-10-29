@@ -14,4 +14,5 @@ def _offline_defaults(monkeypatch: pytest.MonkeyPatch) -> Iterator[None]:
     """Tests never call public book APIs; build_server() without arguments uses the v1 catalogue."""
     monkeypatch.setenv("PUBLIC_BOOK_PROVIDERS", "")
     monkeypatch.setenv("LIBRARY_DEMO_DATA", str(V1_CATALOGUE))
+    monkeypatch.setenv("LIBRARY_SEARCH_MODE", "keyword")  # hybrid tests inject a fake embedder explicitly
     yield

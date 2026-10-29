@@ -66,8 +66,10 @@ If Render added a suffix to a service name (e.g. `campusos-api-x7k2.onrender.com
 
 - **Sleeping:** free services sleep after 15 minutes without traffic; the first visit then takes about a minute.
 - **Memory:** the API container measured about 425 MB of the free plan's 512 MB after start-up and a few
-  questions (official corpus, hashing embedder). FastEmbed would not fit the free plan; if the logs show
-  an out-of-memory kill, move `campusos-api` to a paid instance.
+  questions (official corpus, hashing embedder). FastEmbed would not fit the free plan, so `render.yaml`
+  pins lexical search (`EMBEDDING_PROVIDER=hashing`, `RETRIEVAL_MODE=dense`, `LIBRARY_SEARCH_MODE=keyword`).
+  On an instance with at least 1 GB, install the `fastembed` extras in `infra/render/Dockerfile` and set
+  `fastembed` / `hybrid` / `hybrid`. If the logs show an out-of-memory kill, move `campusos-api` to a paid instance.
 - **Rate limits:** 10 questions per minute per session (burst 5), 5 sign-in attempts per minute per client,
   4 concurrent runs. Groq's free tier allows about 8K tokens a minute for `gpt-oss-120b`.
 - **Traces:** in production the stored traces keep no question text and no tool arguments, and expire after 24 h.

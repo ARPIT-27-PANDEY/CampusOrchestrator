@@ -55,7 +55,11 @@ class SearchBooksResult(BaseModel):
     count: int
     books: list[BookSummary]
     matched_on: str | None = Field(
-        default=None, description="identifier | title | author | subject | keywords - how the query matched."
+        default=None,
+        description="identifier | title | author | subject | keywords | semantic | hybrid - how the query matched.",
+    )
+    search_mode: str = Field(
+        default="keyword", description="keyword, or hybrid:<embedder> when embedding similarity is fused in."
     )
     suggestions: list[str] = Field(
         default_factory=list, description="Related subjects held in the catalogue when nothing matched."

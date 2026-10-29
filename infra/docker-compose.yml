@@ -21,10 +21,14 @@ services:
 
   library-mcp:
     <<: *mcp-common
-    build: ../services/library_mcp
+    build:
+      context: ../services/library_mcp
+      args:
+        INSTALL_FASTEMBED: ${INSTALL_FASTEMBED:-1}   # 0 = small image, keyword search only
     environment:
       <<: *mcp-env
       LIBRARY_PROVIDER: ${LIBRARY_PROVIDER:-demo}
+      LIBRARY_SEARCH_MODE: ${LIBRARY_SEARCH_MODE:-hybrid}   # keyword | hybrid (keyword + FastEmbed)
 
   events-mcp:
     <<: *mcp-common
@@ -46,13 +50,17 @@ services:
 
   academics-mcp:
     <<: *mcp-common
-    build: ../services/academics_mcp
+    build:
+      context: ../services/academics_mcp
+      args:
+        INSTALL_FASTEMBED: ${INSTALL_FASTEMBED:-1}
     depends_on: [qdrant]
     environment:
       <<: *mcp-env
       QDRANT_URL: http://qdrant:6333
       QDRANT_COLLECTION: campus_handbooks
-      EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-hashing}
+      EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-fastembed}   # needs INSTALL_FASTEMBED=1; hashing otherwise
+      RETRIEVAL_MODE: ${RETRIEVAL_MODE:-hybrid}
       ACADEMICS_DATA_MODE: ${ACADEMICS_DATA_MODE:-demo}
     # To index your own PDFs: mount them over the demo set and set ACADEMICS_DATA_MODE=imported
     # volumes:
