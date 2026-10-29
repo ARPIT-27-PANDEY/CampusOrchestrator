@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { useApi } from "@/hooks/use-api";
 import { api } from "@/lib/api";
-import type { EvalReport, EvalRunInfo, RetrievalReport, RetrievalSplit } from "@/lib/types";
+import type { EvalReport, EvalRunInfo, LibraryReport, LibrarySplit, RetrievalReport, RetrievalSplit } from "@/lib/types";
 import { formatMs, formatTime } from "@/lib/utils";
 
 import { Badge } from "@/components/ui/badge";
@@ -32,6 +32,14 @@ const RETRIEVAL_METRICS: { key: string; label: string; kind: Kind }[] = [
   { key: "ndcg@5", label: "nDCG@5", kind: "num" },
   { key: "abstain_recall", label: "Abstains when unanswerable", kind: "pct" },
   { key: "false_abstention_rate", label: "False abstention", kind: "pct" },
+  { key: "search_p50_ms", label: "Search p50", kind: "ms" },
+];
+const LIBRARY_METRICS: { key: string; label: string; kind: Kind }[] = [
+  { key: "hit@k", label: "Hit@5", kind: "pct" },
+  { key: "recall@k", label: "Recall@5", kind: "pct" },
+  { key: "precision@k", label: "Precision@5", kind: "pct" },
+  { key: "missed_rate", label: "Nothing found", kind: "pct" },
+  { key: "negatives_correct_empty", label: "Unrelated topics left empty", kind: "pct" },
   { key: "search_p50_ms", label: "Search p50", kind: "ms" },
 ];
 
@@ -245,6 +253,63 @@ function RetrievalTable({ report }: { report: RetrievalReport }) {
   );
 }
 
+function LibraryTable({ report }: { report: LibraryReport }) {
+  const ok = report.results.filter((r) => r.splits);
+  const sample: LibrarySplit | undefined = ok[0]?.splits?.test;
+  const paraphrase = (r: LibraryReport["results"][number]) => r.test_categories?.paraphrase?.["hit@k"];
+  const fragile = ok.filter((r) => r.negative_margin != null && r.negative_margin < 0.02);
+  return (
+    <>
+      <p className="mt-2 text-[13px] text-ink-muted">
+        <span className="font-mono">{report.run_id}</span>, {formatTime(report.generated_at)}. Test split
+        {sample ? ` (${sample.positives} topical queries, ${sample.negatives} on topics the catalogue does not hold)` : ""}{" "}
+        over {report.catalogue.books} catalogue books; semantic gates {report.tuned ? "chosen on the dev split only" : "as configured"}.
+      </p>
+      <div className="mt-4 overflow-x-auto">
+        <table className="w-full max-w-4xl min-w-[44rem] text-sm">
+          <thead>
+            <tr className="border-b border-rule text-left text-ink-muted">
+              <th className="py-2 pr-3 font-normal">Mode</th>
+              {LIBRARY_METRICS.map((m) => (
+                <th key={m.key} className="py-2 pr-3 text-right font-normal">
+                  {m.label}
+                </th>
+              ))}
+              <th className="py-2 pr-3 text-right font-normal">Reworded questions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {report.results.map((r) => (
+              <tr key={r.mode} className="border-b border-rule">
+                <th scope="row" className="py-2 pr-3 text-left font-normal">
+                  {r.mode}
+                  <span className="block text-xs text-ink-muted">{r.status === "ok" ? (r.embedder ?? "keyword tiers only") : r.reason}</span>
+                </th>
+                {LIBRARY_METRICS.map((m) => (
+                  <td key={m.key} className={`py-2 pr-3 text-right ${r.splits ? "" : "text-ink-muted"}`}>
+                    {r.splits ? fmt(r.splits.test[m.key], m.kind) : "not run"}
+                  </td>
+                ))}
+                <td className="py-2 pr-3 text-right">{r.splits ? fmt(paraphrase(r), "pct") : "not run"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="mt-2 max-w-3xl text-xs text-ink-muted">
+        Hit@5: a relevant book in the top five. Precision@5: share of returned books that are relevant. Unrelated topics
+        should return nothing. Reworded questions describe a topic without the catalogue&apos;s subject words.
+      </p>
+      {fragile.map((r) => (
+        <Notice key={r.mode} className="mt-3 max-w-3xl" tone="warn" title={`${r.mode}: the "no match" result is fragile`}>
+          The closest unrelated query scored only {r.negative_margin} below the similarity gate, so a slightly different
+          question could return a loosely related book.
+        </Notice>
+      ))}
+    </>
+  );
+}
+
 function pickDefault(runs: EvalRunInfo[]): string | undefined {
   const agent = runs.filter((r) => r.kind === "agent");
   return (
@@ -267,9 +332,11 @@ export default function EvalsPage() {
   const live = agentRuns.filter((r) => !isMock(r));
   const selectedId = chosen || pickDefault(runs.data ?? []) || "";
   const retrievalId = (runs.data ?? []).find((r) => r.kind === "retrieval")?.run_id ?? "";
+  const libraryId = (runs.data ?? []).find((r) => r.kind === "library_search")?.run_id ?? "";
   const selected = useApi((s) => (selectedId ? api.evalRun<EvalReport>(selectedId, s) : Promise.resolve(null)), { key: selectedId });
   const compared = useApi((s) => (compareId ? api.evalRun<EvalReport>(compareId, s) : Promise.resolve(null)), { key: compareId });
   const retrieval = useApi((s) => (retrievalId ? api.evalRun<RetrievalReport>(retrievalId, s) : Promise.resolve(null)), { key: retrievalId });
+  const library = useApi((s) => (libraryId ? api.evalRun<LibraryReport>(libraryId, s) : Promise.resolve(null)), { key: libraryId });
   const report = selected.data;
   const faultCats = report?.categories.filter((c) => ["failure", "llm_failure", "tool_budget"].includes(c.category)) ?? [];
   const ext = report?.cases.filter((c) => c.category === "extensibility") ?? [];
@@ -279,7 +346,8 @@ export default function EvalsPage() {
       <h1 className="text-2xl font-semibold tracking-tight">Evaluation</h1>
       <p className="mt-2 max-w-3xl text-sm text-ink-muted">
         Every number here is produced by <code className="font-mono">evals/run_eval.py</code> or{" "}
-        <code className="font-mono">evals/run_retrieval.py</code> and stored as an immutable run; nothing is entered by hand.
+        <code className="font-mono">evals/run_retrieval.py</code> or <code className="font-mono">evals/run_library_search.py</code>{" "}
+        and stored as an immutable run; nothing is entered by hand.
       </p>
       {runs.loading && !runs.data && <Skeleton className="mt-6 h-64 max-w-2xl" />}
       {runs.error && (
@@ -352,6 +420,17 @@ export default function EvalsPage() {
             ) : (
               <p className="mt-2 text-sm text-ink-muted">
                 No retrieval benchmark saved. Run <code className="font-mono">python -m evals.run_retrieval --tune</code>.
+              </p>
+            )}
+          </section>
+
+          <section className="mt-12">
+            <h2 className="text-lg font-semibold">Does semantic search find more library books?</h2>
+            {library.data ? (
+              <LibraryTable report={library.data} />
+            ) : (
+              <p className="mt-2 text-sm text-ink-muted">
+                No library search benchmark saved. Run <code className="font-mono">python -m evals.run_library_search --tune</code>.
               </p>
             )}
           </section>

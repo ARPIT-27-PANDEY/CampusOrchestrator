@@ -116,7 +116,7 @@ export interface SessionInfo {
 
 export interface EvalRunInfo {
   run_id: string;
-  kind: "agent" | "retrieval";
+  kind: "agent" | "retrieval" | "library_search";
   generated_at: string | null;
   dataset: string | null;
   provider: string | null;
@@ -155,6 +155,36 @@ export interface RetrievalReport {
   k: number;
   tuned: boolean;
   results: RetrievalResult[];
+}
+
+export interface LibrarySplit {
+  queries: number;
+  positives: number;
+  negatives: number;
+  [metric: string]: number | string | null;
+}
+
+export interface LibraryResult {
+  mode: string;
+  status: "ok" | "not_run";
+  reason?: string;
+  embedder?: string | null;
+  gates?: { min_score: number; min_z: number } | null;
+  negative_margin?: number | null;
+  negatives_top_cosine?: Record<string, number>;
+  splits?: { dev: LibrarySplit; test: LibrarySplit };
+  test_categories?: Record<string, Record<string, number | null>>;
+}
+
+export interface LibraryReport {
+  kind: "library_search";
+  run_id: string;
+  generated_at: string;
+  dataset: string;
+  k: number;
+  tuned: boolean;
+  catalogue: { books: number; sha256: string };
+  results: LibraryResult[];
 }
 
 export interface TraceListItem {

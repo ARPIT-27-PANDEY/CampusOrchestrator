@@ -329,13 +329,16 @@ async def eval_runs(request: Request, _: None = Depends(read_limited)) -> list[E
         c = d.get("config") or {}
         summary = d.get("summary") or {}
         kind = d.get("kind", "agent")
+        if kind not in ("agent", "retrieval", "library_search"):
+            continue  # an unknown report type is skipped, never shown as an agent run
+        results = d.get("results", [])
         out.append(
             EvalRunInfo(
                 run_id=d.get("run_id") or path.stem,
-                kind=kind if kind in ("agent", "retrieval") else "agent",
+                kind=kind,
                 generated_at=d.get("generated_at"),
                 dataset=d.get("dataset"),
-                provider=d.get("provider") or ",".join(r.get("retriever", "") for r in d.get("results", [])),
+                provider=d.get("provider") or ",".join(r.get("retriever") or r.get("mode") or "" for r in results),
                 model=d.get("model"),
                 transport=d.get("transport"),
                 retriever=c.get("retriever"),

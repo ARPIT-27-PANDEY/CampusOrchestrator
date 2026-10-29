@@ -20,7 +20,7 @@ _Screenshots in `docs/screenshots/` predate this upgrade (old name, fictional ha
 |---|---|---|
 | Academics | 17 official IIT Roorkee PDFs (UG Ordinances 2025, Ph.D. Regulations 2026, academic calendars, Senate notifications) from iitr.ac.in, with official URLs, issue dates, supersession and applicability; 2 scanned PDFs are reported as not indexed | – |
 | Events | 83 dates transcribed from the official Autumn 2026-27 and Spring 2025-26 calendars (document + page on each) | 39 club/career/sports events, dates relative to today |
-| Library | Bibliographic metadata of 138 titles verified against Open Library; live public discovery via Open Library and OpenStax (Google Books opt-in) | Copies, availability, shelves, due dates, opening hours |
+| Library | Bibliographic metadata of 138 titles verified against Open Library; live public discovery via Open Library, OpenStax and Google Books (with an API key) | Copies, availability, shelves, due dates, opening hours |
 | Cafeteria | – (mess.iitr.ac.in was not reachable) | Four-week menu rotation for three "(demo)" locations |
 
 Every tool result carries `source.mode`, `retrieved_at` (when we queried) separately from `data_as_of`
@@ -133,7 +133,7 @@ Every variable is in [`.env.example`](.env.example). The important ones:
 | `TRACE_BACKEND`, `TRACE_RETENTION_HOURS`, `TRACE_STORE_QUERY_TEXT` | `memory`, 24, dev only | Trace persistence and privacy |
 | `EMBEDDING_PROVIDER`, `RETRIEVAL_MODE` | `hashing`, `dense` (Compose: `fastembed`, `hybrid`) | Handbook search: `fastembed` (optional extra, ~130 MB model) and/or `hybrid` (BM25 + RRF) |
 | `LIBRARY_SEARCH_MODE` | `keyword` (Compose: `hybrid`) | `hybrid` fuses keyword tiers with FastEmbed similarity (`LIBRARY_EMBEDDER`, gates `LIBRARY_SEMANTIC_MIN_SCORE`/`_MIN_Z`) |
-| `PUBLIC_BOOK_PROVIDERS` | `openlibrary,openstax` | Public book discovery; empty disables it; `googlebooks` opt-in |
+| `PUBLIC_BOOK_PROVIDERS`, `GOOGLE_BOOKS_API_KEY` | `openlibrary,openstax` (+ `googlebooks` when the key is set) | Public book discovery; empty disables it. Google's keyless quota was exhausted (HTTP 429) when tested |
 | `EVENTS_PROVIDER`, `CAFETERIA_PROVIDER` | `demo` | `google` calendar; `json`/`pdf` menu imports (never labelled live) |
 | `BACKEND_URL` (frontend) | `http://localhost:8000` | Server-side proxy target; never sent to the browser |
 

@@ -31,7 +31,7 @@ flowchart LR
   MGR --> E["events-mcp<br/>catalog over providers"]
   MGR --> C["cafeteria-mcp<br/>4-week rotation"]
   MGR --> A["academics-mcp<br/>official IITR PDFs"]
-  L -.-> OL[("Open Library / OpenStax<br/>(Google Books opt-in)")]
+  L -.-> OL[("Open Library / OpenStax<br/>(Google Books with an API key)")]
   E -.-> GC[("Google Calendar (opt-in)")]
   A --> Q[("Qdrant collection per embedder")]
 ```

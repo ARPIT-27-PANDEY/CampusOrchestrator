@@ -39,6 +39,8 @@ COPY backend/app backend/app
 COPY backend/config backend/config
 RUN pip install --no-deps ./backend
 COPY evals/reports/latest.json evals/reports/latest.json
+# Saved runs (~3 MB) back the Evaluation page: agent, retrieval and library search benchmarks.
+COPY evals/reports/runs evals/reports/runs
 
 COPY infra/render/start.sh /usr/local/bin/campusos-start
 RUN sed -i 's/\r$//' /usr/local/bin/campusos-start && chmod +x /usr/local/bin/campusos-start \

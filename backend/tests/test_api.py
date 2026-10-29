@@ -167,6 +167,29 @@ def test_eval_report_endpoint(tmp_path: Path) -> None:
         assert c.get("/api/evals/latest").json()["summary"]["cases"] == 1
 
 
+def test_eval_runs_keep_their_kind(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    runs.mkdir()
+    reports = {
+        "agent-1": {"kind": "agent", "generated_at": "2026-10-29T01:00:00+00:00", "provider": "mock",
+                    "summary": {"pass_rate": 0.9, "cases": 66}},
+        "retrieval-1": {"kind": "retrieval", "generated_at": "2026-10-29T02:00:00+00:00",
+                        "results": [{"retriever": "hashing"}, {"retriever": "fastembed"}]},
+        "library-1": {"kind": "library_search", "generated_at": "2026-10-29T03:00:00+00:00",
+                      "results": [{"mode": "keyword"}, {"mode": "hybrid-fastembed"}]},
+        "other-1": {"kind": "something_new", "generated_at": "2026-10-29T04:00:00+00:00"},
+    }  # fmt: skip
+    for run_id, body in reports.items():
+        (runs / f"{run_id}.json").write_text(json.dumps({"run_id": run_id, **body}))
+    with make_client(eval_report_path=tmp_path / "latest.json") as c:
+        listed = {r["run_id"]: r for r in c.get("/api/evals/runs").json()}
+        assert set(listed) == {"agent-1", "retrieval-1", "library-1"}  # unknown kinds are not shown as agent runs
+        assert listed["library-1"]["kind"] == "library_search"
+        assert listed["library-1"]["provider"] == "keyword,hybrid-fastembed"
+        assert listed["retrieval-1"]["provider"] == "hashing,fastembed"
+        assert c.get("/api/evals/runs/library-1").json()["kind"] == "library_search"
+
+
 def test_groq_without_key_is_reported_not_silently_replaced() -> None:
     settings = Settings(llm_provider="groq", groq_api_key=None)
     state = build_state(settings, connector=FakeConnector({"library": library_server()}), servers=configs("library"))

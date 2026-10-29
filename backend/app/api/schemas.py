@@ -75,7 +75,7 @@ class SessionInfo(BaseModel):
 
 class EvalRunInfo(BaseModel):
     run_id: str
-    kind: Literal["agent", "retrieval"]
+    kind: Literal["agent", "retrieval", "library_search"]
     generated_at: str | None = None
     dataset: str | None = None
     provider: str | None = None

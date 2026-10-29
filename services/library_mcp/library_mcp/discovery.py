@@ -356,8 +356,14 @@ class DiscoveryService:
 
 
 def build_discovery_from_env(clock: CampusClock | None = None) -> DiscoveryService | None:
-    """``PUBLIC_BOOK_PROVIDERS`` = comma list (default openlibrary,openstax). Empty string disables discovery."""
-    raw = os.getenv("PUBLIC_BOOK_PROVIDERS", "openlibrary,openstax")
+    """``PUBLIC_BOOK_PROVIDERS`` = comma list. Empty string disables discovery.
+
+    Default: openlibrary,openstax, plus googlebooks when ``GOOGLE_BOOKS_API_KEY`` is set (Google's anonymous
+    quota is shared and was exhausted with HTTP 429 when tested, so keyless Google Books would only add
+    "could not be searched" to every answer). Listing googlebooks explicitly enables it without a key.
+    """
+    default = "openlibrary,openstax" + (",googlebooks" if os.getenv("GOOGLE_BOOKS_API_KEY") else "")
+    raw = os.getenv("PUBLIC_BOOK_PROVIDERS", default)
     names = [n.strip().lower() for n in raw.split(",") if n.strip()]
     if not names:
         return None

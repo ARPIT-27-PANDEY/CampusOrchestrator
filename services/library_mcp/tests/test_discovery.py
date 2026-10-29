@@ -209,3 +209,13 @@ async def test_tool_is_separate_from_campus_catalogue() -> None:
 async def test_discovery_disabled_hides_the_tool() -> None:
     async with Client(build_server(DemoLibraryProvider(), discovery=None)) as client:
         assert "discover_public_books" not in {t.name for t in (await client.list_tools()).tools}
+
+
+def test_google_books_is_on_by_default_when_a_key_is_set(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.delenv("PUBLIC_BOOK_PROVIDERS", raising=False)
+    monkeypatch.delenv("GOOGLE_BOOKS_API_KEY", raising=False)
+    svc = build_discovery_from_env()
+    assert svc is not None and [p.name for p in svc.providers] == ["openlibrary", "openstax"]
+    monkeypatch.setenv("GOOGLE_BOOKS_API_KEY", "test-key-not-real")
+    svc = build_discovery_from_env()
+    assert svc is not None and [p.name for p in svc.providers] == ["openlibrary", "openstax", "googlebooks"]

@@ -128,7 +128,7 @@ def build_server(
             ] = False,
             limit: Annotated[int, Field(ge=1, le=20, description="Maximum number of books.")] = 8,
         ) -> PublicBookSearchResult:
-            """Search PUBLIC book metadata (Open Library, OpenStax, optionally Google Books) for any subject.
+            """Search PUBLIC book metadata (Open Library, OpenStax, Google Books when configured) for any subject.
 
             This is NOT the campus library: it never says whether IIT Roorkee holds a copy. Each book has an
             access_type (open_access_download, open_access_read, borrow_online, preview_only, metadata_only)

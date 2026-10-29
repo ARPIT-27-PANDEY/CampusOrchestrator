@@ -86,8 +86,8 @@ publication year, publisher, ISBN-13s and work URL; 6 were skipped and are liste
 dates are **synthetic** and say nothing about IIT Roorkee's library.
 
 **Public book discovery (`mode: live`)** - tool `discover_public_books`, providers configurable with
-`PUBLIC_BOOK_PROVIDERS` (default `openlibrary,openstax`; `googlebooks` optional with
-`GOOGLE_BOOKS_API_KEY`). Access types:
+`PUBLIC_BOOK_PROVIDERS` (default `openlibrary,openstax`, plus `googlebooks` whenever
+`GOOGLE_BOOKS_API_KEY` is set). Access types:
 
 | access_type | Meaning | Example |
 |---|---|---|
@@ -101,8 +101,9 @@ Only provider-supplied links are returned (plus canonical record pages). Per-pro
 (1 s), one retry for transient errors, TTL cache (`PUBLIC_BOOK_CACHE_TTL_S`, 1 h), timeout
 (`PUBLIC_BOOK_TIMEOUT_S`, 8 s) and partial results with a per-provider status.
 
-Investigated but not integrated (from the development network, 2026-10-29): Google Books returned HTTP
-429 without a key (adapter implemented, opt-in); DOAB's REST search returned HTTP 403 (no adapter);
+Google Books without a key returned HTTP 429 ("Queries per day" exceeded on the shared anonymous quota)
+on 2026-10-29 and again on re-check, so it is enabled by the key rather than by default.
+Investigated but not integrated: DOAB's REST search returned HTTP 403 (no adapter);
 gutendex.com (Project Gutenberg) failed TLS (public-domain titles are reachable through Open Library's
 `public` scans instead).
 
