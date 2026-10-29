@@ -1,0 +1,426 @@
+{
+ "kind": "agent",
+ "run_id": "agent-20261029T100307Z-groq-3f5466",
+ "generated_at": "2026-10-29T10:03:07+00:00",
+ "dataset": "campus_eval_v2.yaml",
+ "provider": "groq",
+ "model": "openai/gpt-oss-120b",
+ "transport": "inprocess",
+ "config": {
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "model_settings": {
+   "temperature": 0.2,
+   "reasoning_effort": "low"
+  },
+  "prompt_version": "08bee2bd11bc",
+  "tool_schema_hash": "50f7ce4c0abc",
+  "dataset": "campus_eval_v2.yaml",
+  "dataset_version": 2,
+  "dataset_sha256": "b54b5de5d96e",
+  "fixtures": "v2",
+  "retriever": "hashing",
+  "transport": "inprocess",
+  "repeat": 1,
+  "tool_timeout_s": 2.0,
+  "timezone": "Asia/Kolkata",
+  "clock": "2026-10-29T10:00:00+05:30",
+  "selection": {
+   "case": null,
+   "category": null,
+   "limit": 5
+  },
+  "skipped": [
+   "llm-01 (llm_fault cases measure our handling; skipped on live runs)",
+   "llm-02 (llm_fault cases measure our handling; skipped on live runs)",
+   "llm-03 (llm_fault cases measure our handling; skipped on live runs)",
+   "llm-04 (llm_fault cases measure our handling; skipped on live runs)",
+   "llm-05 (llm_fault cases measure our handling; skipped on live runs)"
+  ],
+  "git": {
+   "commit": "e6c4053b370e0d77561b912845aed16b2493dcd4",
+   "dirty": false
+  },
+  "python": "3.12.10",
+  "platform": "win32"
+ },
+ "note": "Live GroqCloud evaluation; results vary between runs.",
+ "latency_note": "Latency percentiles use requests that did not end in status=error; error and fault counts are reported separately. In-process transport has no network hop; the first case includes cold-start costs (no warm-up). p99 is reported only with at least 100 samples.",
+ "summary": {
+  "cases": 5,
+  "runs": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "tool_selection_accuracy": 1.0,
+  "server_selection_accuracy": 1.0,
+  "argument_accuracy": 1.0,
+  "argument_cases": 1,
+  "answer_correctness": 1.0,
+  "citation_correctness": null,
+  "citation_cases": 0,
+  "source_mode_accuracy": 1.0,
+  "unnecessary_tool_call_rate": 0.0,
+  "repeated_tool_call_rate": 0.0,
+  "total_tool_calls": 5,
+  "failure_recovery_rate": null,
+  "failure_cases": 0,
+  "budget_exhausted": 0,
+  "llm_turns_mean": 2.0,
+  "llm_infra_errors": 0,
+  "error_results": 0,
+  "failure_classes": {
+   "reasoning": 0,
+   "fault_handling": 0,
+   "infra_llm": 0
+  },
+  "latency_sample": 5,
+  "latency_p50_ms": 11233.6,
+  "latency_p95_ms": 58305.3,
+  "latency_p99_ms": null,
+  "latency_mean_ms": 19170.4,
+  "first_token_p50_ms": 10957.9,
+  "first_token_sample": 5,
+  "llm_wall_p50_ms": 11147.4,
+  "tool_wall_p50_ms": 76.9,
+  "discovery_p50_ms": 8.5,
+  "tool_duration_p50_ms": 76.7,
+  "tool_duration_p95_ms": 109.7,
+  "prompt_tokens": 22177,
+  "completion_tokens": 778,
+  "stability": null
+ },
+ "categories": [
+  {
+   "category": "single_server",
+   "cases": 1,
+   "passed": 1
+  },
+  {
+   "category": "topic_search",
+   "cases": 3,
+   "passed": 3
+  },
+  {
+   "category": "no_results",
+   "cases": 1,
+   "passed": 1
+  }
+ ],
+ "cases": [
+  {
+   "id": "lib2-01",
+   "category": "single_server",
+   "query": "Is Introduction to Algorithms available in the library?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "library"
+   ],
+   "called_servers": [
+    "library"
+   ],
+   "called_tools": [
+    "library__search_books"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": true,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 1,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": true,
+   "recovered": null,
+   "budget_exhausted": false,
+   "status": "ok",
+   "error_code": null,
+   "latency_ms": 3518.7,
+   "timings": {
+    "wall_ms": 3518.7,
+    "discovery_ms": 33.7,
+    "first_token_ms": 3455.3,
+    "llm_wall_ms": 3372.4,
+    "llm_call_ms": [
+     2146.5,
+     1225.9
+    ],
+    "tool_wall_ms": 109.8,
+    "tool_work_ms": 109.7,
+    "tool_ms_by_tool": {
+     "library__search_books": [
+      109.7
+     ]
+    },
+    "tool_retries": 0,
+    "cache_hits": 0,
+    "orchestration_ms": 2.8
+   },
+   "tool_durations_ms": [
+    109.7
+   ],
+   "iterations": 2,
+   "usage": {
+    "llm_calls": 2,
+    "prompt_tokens": 4298,
+    "completion_tokens": 167
+   },
+   "note": null,
+   "answer": "**Availability**\n\n- The campus library catalogue shows one copy of **\u201cIntroduction to Algorithms\u201d** (Cormen, Leiserson, Rivest, Stein) with **0 copies currently available** out of a total of 1 copy.\n\n**Note:** This information comes from a demo catalogue; the data may be out of date and does not reflect the real IIT\u202fRoorkee library holdings.",
+   "repeat": 1
+  },
+  {
+   "id": "lib2-02",
+   "category": "topic_search",
+   "query": "Do you have books about mechanics?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "library"
+   ],
+   "called_servers": [
+    "library"
+   ],
+   "called_tools": [
+    "library__search_books"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 1,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": null,
+   "budget_exhausted": false,
+   "status": "ok",
+   "error_code": null,
+   "latency_ms": 11233.6,
+   "timings": {
+    "wall_ms": 11233.6,
+    "discovery_ms": 8.5,
+    "first_token_ms": 10957.9,
+    "llm_wall_ms": 11147.4,
+    "llm_call_ms": [
+     515.8,
+     10631.6
+    ],
+    "tool_wall_ms": 76.9,
+    "tool_work_ms": 76.7,
+    "tool_ms_by_tool": {
+     "library__search_books": [
+      76.7
+     ]
+    },
+    "tool_retries": 0,
+    "cache_hits": 0,
+    "orchestration_ms": 0.8
+   },
+   "tool_durations_ms": [
+    76.7
+   ],
+   "iterations": 2,
+   "usage": {
+    "llm_calls": 2,
+    "prompt_tokens": 4743,
+    "completion_tokens": 188
+   },
+   "note": null,
+   "answer": "- **Engineering Mechanics Statics** \u2013\u202fLIB\u20111001 (3 of 4 copies available)  \n- **Engineering Mechanics Dynamics** \u2013\u202fLIB\u20111002 (1 of 1 copy available)  \n- **Vector Mechanics for Engineers, Dynamics** \u2013\u202fLIB\u20111003 (currently no copies available)  \n- **Engineering mechanics** \u2013\u202fLIB\u20111004 (2 of 2 copies available)  \n- **Fundamentals of Physics** (covers mechanics) \u2013\u202fLIB\u20111090 (5 of 5 copies available)  \n\n*Note: This is demo data; the holdings and availability are simulated and may not reflect the actual IIT\u202fRoorkee library collection.*",
+   "repeat": 1
+  },
+  {
+   "id": "lib2-03",
+   "category": "topic_search",
+   "query": "Do you have any thermodynamics books?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "library"
+   ],
+   "called_servers": [
+    "library"
+   ],
+   "called_tools": [
+    "library__search_books"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 1,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": null,
+   "budget_exhausted": false,
+   "status": "ok",
+   "error_code": null,
+   "latency_ms": 21026.9,
+   "timings": {
+    "wall_ms": 21026.9,
+    "discovery_ms": 8.0,
+    "first_token_ms": 20734.9,
+    "llm_wall_ms": 20962.3,
+    "llm_call_ms": [
+     14710.8,
+     6251.5
+    ],
+    "tool_wall_ms": 55.5,
+    "tool_work_ms": 55.4,
+    "tool_ms_by_tool": {
+     "library__search_books": [
+      55.4
+     ]
+    },
+    "tool_retries": 0,
+    "cache_hits": 0,
+    "orchestration_ms": 1.1
+   },
+   "tool_durations_ms": [
+    55.4
+   ],
+   "iterations": 2,
+   "usage": {
+    "llm_calls": 2,
+    "prompt_tokens": 4484,
+    "completion_tokens": 182
+   },
+   "note": null,
+   "answer": "- **Thermodynamics, An Engineering Approach** \u2013 Yunus A.\u202f\u00c7engel (1993) \u2013 0 of 3 copies available.  \n- **Fundamentals of Engineering Thermodynamics** \u2013 Michael J.\u202fMoran & Howard N.\u202fShapiro (1988) \u2013 3 of 3 copies available.  \n- **Engineering Thermodynamics** \u2013 P.K.\u202fNag (1982) \u2013 3 of 6 copies available.  \n\n*Note: This data is from a demo catalogue and may not reflect the actual IIT\u202fRoorkee library holdings.*",
+   "repeat": 1
+  },
+  {
+   "id": "lib2-04",
+   "category": "topic_search",
+   "query": "Any books on linear algebra?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "library"
+   ],
+   "called_servers": [
+    "library"
+   ],
+   "called_tools": [
+    "library__search_books"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 1,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": null,
+   "budget_exhausted": false,
+   "status": "ok",
+   "error_code": null,
+   "latency_ms": 58305.3,
+   "timings": {
+    "wall_ms": 58305.3,
+    "discovery_ms": 11.0,
+    "first_token_ms": 58170.6,
+    "llm_wall_ms": 58227.2,
+    "llm_call_ms": [
+     14898.3,
+     43328.9
+    ],
+    "tool_wall_ms": 66.4,
+    "tool_work_ms": 66.3,
+    "tool_ms_by_tool": {
+     "library__search_books": [
+      66.3
+     ]
+    },
+    "tool_retries": 0,
+    "cache_hits": 0,
+    "orchestration_ms": 0.7
+   },
+   "tool_durations_ms": [
+    66.3
+   ],
+   "iterations": 2,
+   "usage": {
+    "llm_calls": 2,
+    "prompt_tokens": 4469,
+    "completion_tokens": 158
+   },
+   "note": null,
+   "answer": "- **Linear algebra and its applications** \u2013 Gilbert\u202fStrang (1976) \u2013 0 of 4 copies available.  \n- **Linear Algebra Done Right** \u2013 Sheldon\u202fJ.\u202fAxler (2004) \u2013 2 of 5 copies available.  \n- **Introduction to linear algebra** \u2013 Gilbert\u202fStrang (1998) \u2013 0 of 3 copies available.  \n\n*Note: This is demo data; the holdings and availability are simulated and may not reflect the actual IIT\u202fRoorkee library collection.*",
+   "repeat": 1
+  },
+  {
+   "id": "lib2-05",
+   "category": "no_results",
+   "query": "Do you have books on underwater basket weaving?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "library"
+   ],
+   "called_servers": [
+    "library"
+   ],
+   "called_tools": [
+    "library__search_books"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 1,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": null,
+   "budget_exhausted": false,
+   "status": "ok",
+   "error_code": null,
+   "latency_ms": 1767.4,
+   "timings": {
+    "wall_ms": 1767.4,
+    "discovery_ms": 7.5,
+    "first_token_ms": 1641.3,
+    "llm_wall_ms": 1677.3,
+    "llm_call_ms": [
+     707.5,
+     969.8
+    ],
+    "tool_wall_ms": 82.0,
+    "tool_work_ms": 81.8,
+    "tool_ms_by_tool": {
+     "library__search_books": [
+      81.8
+     ]
+    },
+    "tool_retries": 0,
+    "cache_hits": 0,
+    "orchestration_ms": 0.6
+   },
+   "tool_durations_ms": [
+    81.8
+   ],
+   "iterations": 2,
+   "usage": {
+    "llm_calls": 2,
+    "prompt_tokens": 4183,
+    "completion_tokens": 83
+   },
+   "note": null,
+   "answer": "The campus library catalogue returned no matches for \u201cunderwater basket weaving.\u201d (The data is demo data and may not reflect the actual IIT\u202fRoorkee holdings.)",
+   "repeat": 1
+  }
+ ]
+}
