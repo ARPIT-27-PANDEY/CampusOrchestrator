@@ -1,262 +1,209 @@
-# CampusOS AI: unified campus intelligence over MCP
+# CampusOrchestrator: an IIT Roorkee campus assistant over MCP
 
-Ask one question and get one grounded answer drawn from several campus systems:
+Ask one question and get one source-grounded answer drawn from several campus systems:
 
-> *"Find the next AI workshop, check whether Introduction to Algorithms is available in the library, and tell me which prerequisite the handbook specifies."*
+> *"What events are happening today, what is the attendance policy, and are there free physics textbooks?"*
 
-The backend discovers the tools that four independently running **Model Context Protocol (MCP)** servers publish (Library, Events, Cafeteria, Academics). It hands their schemas to **GPT-OSS-120B on GroqCloud** through native tool calling, executes only the calls the model picks, and returns an answer with handbook citations, source provenance (demo/imported/live) and a full execution trace.
+The backend discovers the tools that four independently running **Model Context Protocol (MCP)** servers
+publish (Library, Events, Cafeteria, Academics), hands their schemas to **GPT-OSS-120B on GroqCloud**
+through native tool calling, executes only the calls the model picks, and answers with citations to
+**official IIT Roorkee documents**, per-source provenance (demo / imported / live, checked-at time,
+staleness) and a full execution trace.
 
 ![Chat with route and citations](docs/screenshots/chat.png)
 
-## Why this design
+_Screenshots in `docs/screenshots/` predate this upgrade (old name, fictional handbook) and have not been retaken._
 
-Campus data is owned by different teams: the library system, the events calendar, catering, the registrar's handbooks. CampusOS does **not** copy those records into one central database. Each system sits behind its own MCP server that owns its integration logic, and the agent queries them at request time. The only derived store is a small Qdrant index of handbook PDFs, used for retrieval.
+## What is real and what is demo
+
+| Service | Real data | Synthetic (labelled `demo`) |
+|---|---|---|
+| Academics | 17 official IIT Roorkee PDFs (UG Ordinances 2025, Ph.D. Regulations 2026, academic calendars, Senate notifications) from iitr.ac.in, with official URLs, issue dates, supersession and applicability; 2 scanned PDFs are reported as not indexed | – |
+| Events | 83 dates transcribed from the official Autumn 2026-27 and Spring 2025-26 calendars (document + page on each) | 39 club/career/sports events, dates relative to today |
+| Library | Bibliographic metadata of 138 titles verified against Open Library; live public discovery via Open Library and OpenStax (Google Books opt-in) | Copies, availability, shelves, due dates, opening hours |
+| Cafeteria | – (mess.iitr.ac.in was not reachable) | Four-week menu rotation for three "(demo)" locations |
+
+Every tool result carries `source.mode`, `retrieved_at` (when we queried) separately from `data_as_of`
+(when the source says it was updated), and `stale` = true / false / **null (cannot be verified)**. The UI
+labels demo data, out-of-date data and unverifiable data differently. Details:
+[docs/data-sources.md](docs/data-sources.md).
+
+## Design
 
 | Concern | How it's handled |
 |---|---|
-| Independent ownership | 4 separate processes/containers, each with its own `pyproject.toml`, lock file, Dockerfile and tests |
-| No hardcoded tools | The backend learns every tool and input schema from `tools/list`; the orchestrator has no tool names in it |
-| Grounding | Citations shown in the UI come from retrieval output, never from model text; page references in the answer are verified against retrieved passages |
-| Failure isolation | Per-call timeouts, bounded retries, structured tool states, partial answers |
-| Honesty about data | Every tool result carries `source.mode` (`demo`/`imported`/`live`) and freshness; the UI labels demo data with hatching |
+| Independent ownership | 4 MCP servers, each with its own package, lock file, Dockerfile and tests; no central database |
+| No hard-coded tools | The orchestrator learns tools from `tools/list`; a test adds a new server by configuration only |
+| Campus time | One `CAMPUS_TIMEZONE` (default `Asia/Kolkata`) with an injectable clock in every service; the model is given the campus date and never decides it |
+| Grounding | Citations come from retrieved passages, link to the official PDF page, and page references and cited numbers in the answer are checked |
+| Failures | Per-call timeouts, bounded retries, structured tool states (incl. `malformed_response`), partial answers that name the failed service; a failed source is never reported as "no results" |
+| Public deployment | Shared-password gate (signed HttpOnly cookies), Origin checks, per-session rate limits, fail-closed production config, privacy-aware traces |
 
 ## Architecture
 
 ```mermaid
 flowchart LR
-  UI["Next.js 16 dashboard<br/>chat · sources · traces · evals"] -- "SSE /api/chat/stream" --> API
+  B["Browser"] --> W["Next.js 16 UI + /api proxy"]
+  W -- "server-side BACKEND_URL" --> API
   subgraph Backend["FastAPI backend"]
-    API["REST + SSE API"] --> ORCH["Agent orchestrator<br/>(explicit loop, budgets)"]
-    ORCH --> LLM["LLMProvider<br/>GroqProvider | MockProvider"]
-    ORCH --> MGR["MCP client manager<br/>discovery · registry · validation<br/>routing · timeouts · retries"]
-    ORCH --> TR["Trace store"]
+    API["REST + SSE · auth · rate limits"] --> ORCH["Agent orchestrator<br/>(campus clock, budgets)"]
+    ORCH --> LLM["GroqProvider | MockProvider"]
+    ORCH --> MGR["MCP client manager<br/>discovery · validation · routing"]
+    ORCH --> TR["Trace store<br/>memory | SQLite"]
   end
-  LLM -. "OpenAI-compatible API" .-> GROQ[("GroqCloud<br/>openai/gpt-oss-120b")]
-  MGR -- "Streamable HTTP (MCP 2026-07-28)" --> L["library-mcp :8101"]
-  MGR -- "Streamable HTTP" --> E["events-mcp :8102"]
-  MGR -- "Streamable HTTP" --> C["cafeteria-mcp :8103"]
-  MGR -- "Streamable HTTP" --> A["academics-mcp :8104"]
-  L --> LD[("Library provider<br/>demo JSON | your ILS")]
-  E --> ED[("Demo events | Google Calendar (read-only)")]
-  C --> CD[("Demo menu | JSON | PDF import")]
-  A --> Q[("Qdrant<br/>handbook chunks")]
-  A --> P[["PDF ingestion<br/>PyMuPDF → chunks → embeddings"]]
+  LLM -.-> GROQ[("GroqCloud<br/>openai/gpt-oss-120b")]
+  MGR --> L["library-mcp :8101"]
+  MGR --> E["events-mcp :8102"]
+  MGR --> C["cafeteria-mcp :8103"]
+  MGR --> A["academics-mcp :8104"]
+  L -.-> OL[("Open Library · OpenStax")]
+  A --> Q[("Qdrant · one collection per embedder")]
 ```
 
-More detail in [docs/architecture.md](docs/architecture.md).
+More in [docs/architecture.md](docs/architecture.md); API in [docs/api.md](docs/api.md); security in
+[docs/security.md](docs/security.md).
 
-### MCP client/server relationship
+## Setup and running
 
-- **Servers** (`services/*_mcp`) use the official **MCP Python SDK v2.3.0** (`mcp.server.MCPServer`), exposing typed tools whose JSON Schemas come from the function signatures and Pydantic constraints. They run Streamable HTTP in stateless JSON mode with **DNS-rebinding protection** (explicit `Host` allowlist), plus a plain `/health` route that reports data mode and freshness.
-- **The client manager** (`backend/app/mcp/manager.py`) uses the SDK's `mcp.Client`. On startup and on a TTL it calls `tools/list` on every allowlisted server, namespaces each tool as `<server>__<tool>` and stores it in the registry with its input schema. Each call opens a short-lived MCP session. With stateless servers that costs one extra round trip, but a restarted or crashed server recovers without any session repair.
-- The registry is converted to the provider's tool format (`backend/app/llm/groq.py → to_openai_tools`). Adding a fifth MCP server means adding one entry to `backend/config/mcp_servers.json`; no orchestrator code changes.
+**Prerequisites:** Python 3.11+ (3.12 recommended; avoid pre-release Pythons, some packages have no
+wheels), Node.js 22, npm. Docker is optional.
 
-### Tool discovery and orchestration
+### Ubuntu, without Docker
 
-`backend/app/agent/orchestrator.py` runs one inspectable loop:
+```bash
+sudo apt update && sudo apt install -y python3.12 python3.12-venv make git curl
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && sudo apt install -y nodejs
+git clone https://github.com/ARPIT-27-PANDEY/CampusOrchestrator.git && cd CampusOrchestrator
+cp .env.example .env              # mock mode works as-is; set LLM_PROVIDER=groq + GROQ_API_KEY for the real model
+cp .env.example backend/.env      # the backend reads .env from its working directory
+make install                      # .venv from lock files + frontend deps
+make fetch-sources                # only if services/academics_mcp/data/iitr/*.pdf are not in your checkout
+```
 
-1. `ensure_fresh()` re-discovers stale or unavailable servers. Unavailable services are listed in the system prompt so the model can say so.
-2. The query and the discovered tool schemas go to the LLM (`tool_choice="auto"`).
-3. Each requested call is **parsed** (malformed JSON goes back to the model as `invalid_arguments`), checked against the **budget**, **validated** against the discovered JSON Schema with unknown keys rejected, and then **routed** to its owning server with a per-call timeout and one retry for transient failures.
-4. Results go back to the model wrapped as `<tool_result untrusted="true">…</tool_result>`, compactly serialised and size-capped. Identical repeated calls within a run are served from a run cache.
-5. The loop stops at a final answer, or at `MAX_AGENT_ITERATIONS`, after which one last call is made with tools disabled. Empty responses and Groq `tool_use_failed` errors get one corrective retry each.
+Run (three terminals):
 
-Execution is **sequential by default**, because Groq documents `openai/gpt-oss-120b` as supporting tool use but not parallel tool calls; `parallel_tool_calls` is never sent. `TOOL_EXECUTION_MODE=concurrent` runs the independent read-only calls of a single model turn with `asyncio.gather`, which the mock provider exercises and a test verifies.
+```bash
+make servers                      # the four MCP servers in the background (logs in /tmp/campusos-*.log)
+make backend                      # FastAPI on :8000  (API docs: http://localhost:8000/docs)
+make frontend                     # Next.js on :3000  (proxies /api to BACKEND_URL, default :8000)
+```
 
-Every step (discovery, each model turn with token usage, each tool call with arguments, status, attempts and duration) is recorded in a trace at `/api/traces/{id}` and rendered on the Traces page.
+Each MCP server also runs on its own, e.g. `MCP_PORT=8104 .venv/bin/python -m academics_mcp`
+(the academics server indexes the official PDFs on start, about 10 s). Stop them with `make stop-servers`.
 
-### RAG and citation methodology
+Windows PowerShell: use `.venv\Scripts\python.exe` and set `$env:MCP_PORT=8101` before each
+`python -m <name>_mcp`; `scripts/check_all.ps1` runs every Python check and `scripts/frontend_checks.ps1`
+runs the frontend checks in a Node container if Node is not installed.
 
-- **Ingestion** (`academics_mcp/ingest.py`): PyMuPDF extracts text **per page** with 1-based page numbers. Chunks are clause-aware (one numbered clause or Q&A pair each) and **never cross a page boundary**, so a citation always points to exactly one page. Each chunk carries the document title, file name, page, section heading, chunk id and document version (the sha256 of the file).
-- **Idempotent re-ingestion**: unchanged files are skipped, so restarts don't duplicate chunks. Changed files have their old chunks deleted before re-insertion, and deleted files are pruned. Point ids are `uuid5(chunk_id)`.
-- **Retrieval**: cosine search in Qdrant, then a minimum score **and** at least one shared content term. Below that, the tool returns `found=false` with an insufficient-evidence message instead of the least-bad passage.
-- **Untrusted content**: instruction-like text in documents ("ignore previous instructions…") is redacted and flagged. A passage left with no content after redaction is withheld. The orchestrator also wraps all tool output as untrusted data. The demo FAQ deliberately contains such an injection.
-- **Citations** in the UI come from the passages the tool returned. `verify_citations` flags any `[Title, p. N]` or `p. N` in the answer that no retrieved passage supports, and the UI shows a warning when that happens.
-- **Freshness**: the index is a snapshot. Every academics result reports `ingested_at` and `document_version` per document. To refresh, replace the PDFs and restart the server (or run `python -m academics_mcp.ingest`).
-- **Embeddings**: the default is a deterministic **hashing embedder** (offline, no model download). It is lexical, so paraphrases fail; eval case `rag-07` ("ChatGPT" vs "generative AI tools") fails for exactly this reason. Set `EMBEDDING_PROVIDER=fastembed` to use BAAI/bge-small-en-v1.5 (optional extra; downloads the model on first use; not exercised in this repo's tests).
+### Docker Compose
+
+```bash
+make fetch-sources                # the academics image includes the official PDFs
+docker compose -f infra/docker-compose.yml up --build
+```
+
+Qdrant, the four MCP servers, the backend (:8000) and the frontend (:3000, proxying to the backend).
+
+### Render
+
+See [DEPLOY.md](DEPLOY.md). Production requires `ACCESS_MODE=password` with `ACCESS_PASSWORD` and
+`SESSION_SECRET` (the API refuses to start otherwise).
+
+## Configuration
+
+Every variable is in [`.env.example`](.env.example). The important ones:
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `CAMPUS_TIMEZONE` | `Asia/Kolkata` | Decides "today" in the backend and every MCP server |
+| `LLM_PROVIDER` / `GROQ_API_KEY` / `GROQ_MODEL` | `mock` / – / `openai/gpt-oss-120b` | `groq` for GroqCloud; no silent fallback when the key is missing |
+| `ACCESS_MODE`, `ACCESS_PASSWORD`, `SESSION_SECRET` | `open`, –, – | Access gate (see [security](docs/security.md)) |
+| `CHAT_RATE_PER_MINUTE`, `MAX_CONCURRENT_CHATS` | 10, 4 | Abuse prevention |
+| `TRACE_BACKEND`, `TRACE_RETENTION_HOURS`, `TRACE_STORE_QUERY_TEXT` | `memory`, 24, dev only | Trace persistence and privacy |
+| `EMBEDDING_PROVIDER`, `RETRIEVAL_MODE` | `hashing`, `dense` | `fastembed` (optional extra, ~130 MB model) and/or `hybrid` (BM25 + RRF) |
+| `PUBLIC_BOOK_PROVIDERS` | `openlibrary,openstax` | Public book discovery; empty disables it; `googlebooks` opt-in |
+| `EVENTS_PROVIDER`, `CAFETERIA_PROVIDER` | `demo` | `google` calendar; `json`/`pdf` menu imports (never labelled live) |
+| `BACKEND_URL` (frontend) | `http://localhost:8000` | Server-side proxy target; never sent to the browser |
+
+## Testing
+
+```bash
+make test lint typecheck          # every suite, ruff, eslint, mypy --strict, tsc
+cd frontend && npm run build
+```
+
+| Suite | Tests | Highlights |
+|---|---:|---|
+| `services/library_mcp` | 52 | campus-date default, tiered/alias search, verified catalogue, public discovery (access types, partial failure, cache, rate limit) |
+| `services/events_mcp` | 36 | IST midnight boundary, statuses, all-day/multi-day/past-midnight, duplicates, Google `updated` vs fetch time, failure != empty |
+| `services/cafeteria_mcp` | 30 | campus "today", four-week rotation, filters, locations, staleness (true/false/null), invalid files |
+| `services/academics_mcp` | 35 | allowlisted downloader, scanned-PDF detection, supersession/applicability, embedder collections, RRF |
+| `backend` | 99 | orchestrator, Groq adapter, security (sessions, Origin, rate limits, real-socket disconnect), trace privacy, numeric citation check |
+| `tests/` (integration) | 21 | four servers as HTTP processes, cross-service date agreement, official corpus default, new server by configuration only |
+| `frontend` (Vitest) | 14 | SSE, chat state, answer view (named failures, session expiry), freshness labels, campus-time formatting |
+
+ruff, mypy `--strict` (65 files), eslint, `tsc` and `next build` pass. CI never needs a Groq key.
+
+## Evaluation
+
+**Retrieval** (`evals/reports/retrieval-latest.md`, 50 held-out test questions over the official corpus,
+6 without a supporting document; thresholds chosen on the 21-question dev split):
+
+| Retriever | Recall@5 | MRR | nDCG@5 | Abstains when unanswerable | False abstention | Search p50 |
+|---|---|---|---|---|---|---|
+| hashing (default) | 0.52 | 0.44 | 0.45 | 6/6 | 37% | 17 ms |
+| FastEmbed bge-small | **0.85** | **0.77** | **0.78** | 6/6 | 14% | 37 ms |
+| hybrid (hashing + BM25, RRF) | 0.67 | 0.60 | 0.60 | 6/6 | 33% | 20 ms |
+| hybrid (FastEmbed + BM25) | 0.86 | 0.76 | 0.77 | 6/6 | 14% | 36 ms |
+
+Semantic retrieval clearly beats lexical hashing; hybrid helps hashing but adds nothing measurable on
+top of FastEmbed. The abstention sample is small (6 test questions).
+
+**Agent benchmark, mock provider** (deterministic keyword router: these numbers test the pipeline, not
+GPT-OSS-120B):
+
+| Run | Passed | Answer facts | Citations / abstention | Fault recovery | Latency p50 / p95 |
+|---|---|---|---|---|---|
+| v2, hashing (`latest.md`) | 62/66 | 95.5% | 9/10 | 7/7 | 49 / 312 ms |
+| v2, FastEmbed (`latest-fastembed.md`) | 64/66 | 97.0% | 10/10 | 7/7 | 53 / 311 ms |
+| v2 x 3 repeats (`latest-repeat3.md`) | 186/198, no unstable cases | 95.5% | 27/30 | 21/21 | 58 / 397 ms |
+| v1, original suite (`latest-v1.md`) | 50/51 | 98.0% | 16/17 | 4/4 | 42 / 312 ms |
+
+The v2 failures are academics answers where the hashing retriever ranks a less relevant page first or
+answers when it should abstain (`acad-03/06/09/10`); with FastEmbed two remain. Fault-injection
+scenarios (MCP down/timeout/flaky/malformed, model 429/timeout/malformed call/unknown tool/endless loop):
+12/12 handled. Latencies exclude model inference; p95 includes the injected 2 s timeouts.
+
+How everything is measured, and how to run, repeat and compare experiments: [docs/evaluation.md](docs/evaluation.md).
+
+## Known limitations
+
+- **No live Groq evaluation is included.** All agent numbers above are mock runs. Run
+  `python -m evals.run_eval --provider groq --yes-live` (prints the expected request count first).
+- The cafeteria menu is entirely synthetic; library holdings and opening hours are synthetic.
+- Two official PDFs are scanned images and are not indexed (OCR not implemented).
+- Some official notifications carry OCR noise from scanned letterheads; chunk text reflects it.
+- The default hashing retriever is lexical; FastEmbed retrieves much better but needs about 130 MB of
+  model files and more memory than Render's free instance offers alongside everything else.
+- The rate limiter and SQLite trace store are per process; several instances need shared stores.
+- `TRUSTED_PROXY_HOPS=2` for Render is based on Render's documented load-balancer behaviour and was not
+  verified on the deployed service.
+- The numeric citation check verifies numbers next to citations only; other claims are not verified.
 
 ## Repository layout
 
 ```
-frontend/                 Next.js 16 (App Router) + React 19 + Tailwind v4 + shadcn-style components
-backend/                  FastAPI app: api/, agent/ (orchestrator, prompts, citations, traces), llm/, mcp/
-services/library_mcp/     Library MCP server (search_books, get_book_availability, get_library_hours)
-services/events_mcp/      Events MCP server (search_events, get_upcoming_events, get_event_details)
-services/cafeteria_mcp/   Cafeteria MCP server (get_today_menu, search_menu_item, get_item_price)
-services/academics_mcp/   Academics MCP server (search_handbook, get_policy_details) + ingestion + demo PDFs
-evals/                    51-case benchmark, runner, reports
-tests/                    Cross-service integration tests (in-process and real HTTP processes)
-infra/                    Docker Compose
-docs/                     Architecture, API, evaluation, demo script, Google Calendar setup, screenshots
+frontend/                 Next.js 16 + React 19 + Tailwind v4; /api proxy route, sign-in gate
+backend/                  FastAPI: api/, agent/ (orchestrator, prompts, citations, traces), llm/, mcp/, security.py
+services/library_mcp/     catalogue + public book discovery; scripts/import_catalogue.py
+services/events_mcp/      event catalog over providers; scripts/build_events_fixture.py
+services/cafeteria_mcp/   rotation menus; scripts/build_menu_fixture.py
+services/academics_mcp/   official-source manifest + downloader, ingestion, hybrid retrieval
+evals/                    agent (v1, v2) and retrieval benchmarks, compare, recorded fixtures, reports/runs
+tests/                    integration (in-process + real HTTP processes), extensibility test, fixtures
+infra/                    Docker Compose; render/ (combined API image)
+docs/                     architecture, API, data sources, evaluation, security, demo script, upgrade plan
 ```
 
-## Setup
-
-**Prerequisites:** Python ≥ 3.11 (tested on 3.12 and 3.13), Node.js 22, npm. Docker is optional.
-
-```bash
-git clone <your-repo-url> campusos && cd campusos
-cp .env.example .env             # works as-is in mock mode; add GROQ_API_KEY for the real model
-make install                     # .venv with all packages from lock files + frontend deps
-```
-
-Without `make` (e.g. Windows PowerShell), the same steps:
-
-```bash
-python -m venv .venv && .venv/Scripts/activate      # macOS/Linux: source .venv/bin/activate
-for s in library events cafeteria academics; do pip install -r services/${s}_mcp/requirements.lock -e "services/${s}_mcp[dev]"; done
-pip install -r backend/requirements.lock -e "backend[dev]" ruff mypy pyyaml types-PyYAML
-cd frontend && npm ci
-```
-
-### Run locally (four terminals, or `make servers` + `make backend` + `make frontend`)
-
-```bash
-MCP_PORT=8101 python -m library_mcp
-MCP_PORT=8102 python -m events_mcp
-MCP_PORT=8103 python -m cafeteria_mcp
-MCP_PORT=8104 python -m academics_mcp        # ingests the demo PDFs on start (in-memory Qdrant by default)
-cd backend && uvicorn app.main:app_factory --factory --port 8000
-cd frontend && npm run dev                   # http://localhost:3000
-```
-
-API docs: http://localhost:8000/docs.
-
-### Run with Docker Compose
-
-```bash
-docker compose -f infra/docker-compose.yml up --build
-```
-
-This starts Qdrant (`qdrant/qdrant:v1.19.2`), the four MCP servers, the backend (`:8000`) and the frontend (`:3000`). The backend waits for the servers' health checks. Set `PUBLIC_API_BASE_URL` if the browser reaches the API on a different URL; it is inlined into the frontend at build time.
-
-> **Verification status:** `docker compose config` validates, but the images were **not built** in the development sandbox, which had no access to Docker Hub. CI builds them (`docker` job). Treat the first `up --build` as the real test.
-
-## Configuration
-
-All configuration comes from environment variables; see [`.env.example`](.env.example) for every variable with its default. The important ones:
-
-| Variable | Default | Purpose |
-|---|---|---|
-| `LLM_PROVIDER` | `mock` | `groq` for GroqCloud; `mock` runs fully offline |
-| `GROQ_API_KEY` | – | Required when `LLM_PROVIDER=groq`; read only by the backend, never sent to the browser or logged |
-| `GROQ_MODEL` | `openai/gpt-oss-120b` | Model id |
-| `GROQ_BASE_URL` | `https://api.groq.com/openai/v1` | Groq's OpenAI-compatible endpoint (the real OpenAI API is never called) |
-| `GROQ_REASONING_EFFORT` / `GROQ_INCLUDE_REASONING` | `low` / `false` | GPT-OSS reasoning controls |
-| `MCP_<ID>_URL` | from `backend/config/mcp_servers.json` | Override a server URL; empty means *not configured* |
-| `MCP_ALLOWED_HOSTS` | localhost + compose names | Backend refuses to connect to any other host |
-| `MAX_AGENT_ITERATIONS`, `MAX_TOOL_CALLS`, `TOOL_TIMEOUT_S`, `TOOL_MAX_RETRIES` | 5, 8, 8 s, 1 | Orchestration budgets |
-| `TOOL_EXECUTION_MODE` | `sequential` | `concurrent` for parallel execution within one model turn |
-| `ALLOW_FAULT_INJECTION` | `false` | Enables `simulate_failures` in chat requests (demo/testing) |
-| `QDRANT_URL` / `QDRANT_PATH` | – / `:memory:` | Qdrant server, or embedded store |
-| `EVENTS_PROVIDER`, `CAFETERIA_PROVIDER`, `LIBRARY_PROVIDER` | `demo` | Swap data providers per server |
-
-**No silent model fallback:** if `LLM_PROVIDER=groq` has no key, `/api/health` reports `degraded` and chat requests fail with `llm_not_configured`. If Groq is rate-limited (HTTP 429), the OpenAI client retries up to `GROQ_MAX_RETRIES` times honouring `retry-after`, and then the answer fails with `llm_rate_limited`, keeping any partial tool results.
-
-### Demo vs live integration modes
-
-| Server | Demo (default) | Other providers |
-|---|---|---|
-| Library | `demo_books.json`: real book titles, **simulated** copies/availability | Implement `LibraryProvider` for your ILS (Koha/Alma/Folio) |
-| Events | Fixture with dates **relative to today** | `EVENTS_PROVIDER=google`: read-only public Google Calendar ([setup](docs/google-calendar.md)) → `mode: live` |
-| Cafeteria | Weekly menu fixture | `json` / `pdf` import → `mode: imported`, with `stale: true` outside its validity window. Never labelled live |
-| Academics | Two fictional PDFs ("CampusOS Demo University") | Mount your PDFs and set `ACADEMICS_DATA_MODE=imported` |
-
-All demo content is fictional and labelled as such in the data, the tool output, the answers and the UI.
-
-## Example queries
-
-- *Find the next AI workshop, check whether Introduction to Algorithms is available in the library, and tell me which prerequisite the handbook specifies.* → Events + Library (search, then availability) + Academics, cited p. 4
-- *How much is the paneer butter masala, and what is the minimum attendance requirement?* → Cafeteria + Academics
-- *What are the library hours on Sunday?* → Library only
-- *What does the handbook say about parking permits?* → insufficient evidence, no citation
-- *hello* / *What is the weather in Paris?* → no tool calls
-
-## Testing and evaluation
-
-```bash
-make test          # every Python suite (each in its own pytest process) + frontend tests
-make lint typecheck
-make eval          # 51-case benchmark, deterministic (mock LLM, in-process MCP servers)
-python -m evals.run_eval --transport http          # same benchmark against running MCP server processes
-python -m evals.run_eval --provider groq --delay 3 # LIVE GroqCloud evaluation (uses your quota)
-```
-
-Tests executed for this version (all passing):
-
-| Suite | Tests | Covers |
-|---|---:|---|
-| `services/library_mcp` | 19 | Search ranking and stopwords, availability, hours/closures, MCP schema validation, tool errors |
-| `services/events_mcp` | 8 | Relative dates, word matching, date ranges, Google adapter with mocked HTTP (no key leakage) |
-| `services/cafeteria_mcp` | 7 | Weekday menus, prices, suggestions, stale imported menus, PDF menu parsing |
-| `services/academics_mcp` | 21 | Page boundaries, chunk metadata, idempotent/changed/removed re-ingestion, corrupt/blank PDFs, retrieval, insufficient evidence, injection redaction |
-| `backend` | 70 | Allowlist config, log secret redaction, discovery/registry, schema validation, routing, retries/timeouts, Groq adapter (request shape, streaming tool-call assembly, 429/401/400 mapping, streaming fallback), orchestrator budgets and failures, concurrency, SSE protocol, error format, CORS, limits |
-| `tests/` (integration) | 12 | All four servers in-process **and as separate OS processes over Streamable HTTP**, the multi-server flagship query, mid-request failure, down-at-discovery, timeout, injection, DNS-rebinding rejection |
-| `frontend` (Vitest) | 9 | SSE parser, chat-state reducer, answer view (route, partial notice, demo labels, citations) |
-
-Lint (`ruff`, `eslint`), strict type checking (`mypy --strict`, `tsc`) and `next build` pass. All Python suites were run on Python 3.13 (dev venv) and on Python 3.12 using only the lock files.
-
-### Measured results (mock provider)
-
-From `evals/reports/latest.md` (in-process) and `latest-http.md` (four MCP server processes over HTTP on one machine):
-
-| Metric | In-process | Over HTTP |
-|---|---|---|
-| Cases passed | 50/51 | 50/51 |
-| Tool-selection accuracy (exact server set) | 100% | 100% |
-| Answer correctness | 98.0% | 98.0% |
-| Citation correctness (17 cases) | 94.1% | 94.1% |
-| Unnecessary tool-call rate | 0% | 0% |
-| Recovery from simulated failures (4 cases) | 100% | 100% |
-| End-to-end latency p50 / p95 | 23 ms / 275 ms | 321 ms / 666 ms |
-| Tool-call duration p50 / p95 | 14 ms / 22 ms | 76 ms / 135 ms |
-
-**Read these carefully.** With the mock provider, tool selection comes from a keyword router written alongside this dataset, so 100% tool-selection accuracy shows the *pipeline* works; it is **not** a measure of GPT-OSS-120B. The meaningful signals are retrieval and citation accuracy, failure recovery, and latency without LLM inference. The one failure, `rag-07`, is a real limitation of the lexical embedder. **No live Groq evaluation has been run yet**: the development sandbox could not reach `api.groq.com`. Run `python -m evals.run_eval --provider groq` to produce `latest-groq.md`. See [docs/evaluation.md](docs/evaluation.md).
-
-## API
-
-| Method | Path | Purpose |
-|---|---|---|
-| `POST` | `/api/chat` | Ask; returns `AgentResult` (answer, status, citations, sources, tool calls, warnings, citation check, usage) |
-| `POST` | `/api/chat/stream` | Same, as Server-Sent Events: `start, discovery, llm_start, token, answer_reset, tool_start, tool_end, error, final, done` |
-| `GET` | `/api/sources[?refresh=true]` | Per-server status (`available`/`unavailable`/`not_configured`), latency, protocol, tools, data mode |
-| `GET` | `/api/tools` | Discovered tool registry with input schemas |
-| `GET` | `/api/traces`, `/api/traces/{id}` | Recent traces / full trace |
-| `GET` | `/api/evals/latest` | Latest evaluation report |
-| `GET` | `/api/health`, `/api/health/live` | Health (LLM configured?, sources up) / liveness |
-
-Errors always look like `{"error": {"code", "message", "request_id"}}`, never stack traces. Details in [docs/api.md](docs/api.md).
-
-## Security considerations
-
-Implemented and tested:
-- Secrets come only from the environment. `.env`, credentials and tokens are git-ignored, and logs pass through a redaction filter.
-- An MCP server **allowlist** (scheme and host) plus DNS-rebinding protection on every server.
-- Tool arguments are validated against discovered schemas, with unknown keys rejected. All tools are read-only. Model output never chooses a URL or file path: the Google Calendar id and menu paths come from configuration.
-- Per-call timeouts, bounded retries, iteration and tool-call budgets, a query-length limit (2,000 chars), a request-body limit (64 KB), and a concurrent-chat limit.
-- Retrieved content is treated as untrusted (wrapping, redaction, withheld injection-only passages) and covered by eval cases `inj-01`/`inj-02`.
-- CORS is restricted to configured origins. Fault injection is off by default.
-
-**Not implemented:** user authentication/authorisation, rate limiting per user, persistent trace storage, TLS termination. Don't expose this deployment publicly as-is.
-
-## Known limitations
-
-- The live Groq path is unit-tested against mocked HTTP only. Whether Groq accepts **streaming combined with tools** for GPT-OSS is undocumented, so the adapter falls back to non-streaming automatically if a streamed request is rejected. Verify with a real key.
-- Groq's free tier for `openai/gpt-oss-120b` lists **8K tokens/minute**. A multi-server query with 11 tool schemas can use several thousand tokens, so expect 429s on the free tier. Schemas and results are compacted to reduce this.
-- The hashing embedder is lexical (see `rag-07`). FastEmbed is wired in but not exercised in tests.
-- Traces live in memory (optional JSONL via `TRACE_LOG_PATH`), and the registry is per-process.
-- Docker images were not built in the sandbox (see above).
-
-## Deployment
-
-`infra/docker-compose.yml` is the container deployment. For a single VM: install Docker, copy `.env`, run `docker compose -f infra/docker-compose.yml up -d --build`, and put a TLS reverse proxy (Caddy/nginx) in front of ports 3000 and 8000. Set `CORS_ORIGINS` and `PUBLIC_API_BASE_URL` to your public URLs. Every service is a stateless container except Qdrant (a volume), so each can also run separately on any container platform, with the backend's `MCP_<ID>_URL` pointing at it. No hosted deployment has been made or verified.
-
-## Screenshots
-
-| Overview | Source status |
-|---|---|
-| ![Overview](docs/screenshots/overview.png) | ![Sources](docs/screenshots/sources.png) |
-| **Partial answer (Events down)** | **Execution trace** |
-| ![Failure](docs/screenshots/chat-failure.png) | ![Trace](docs/screenshots/traces.png) |
-
-Evaluation page: [docs/screenshots/evals.png](docs/screenshots/evals.png). A five-step walkthrough is in [docs/demo-script.md](docs/demo-script.md).
+A walkthrough is in [docs/demo-script.md](docs/demo-script.md); the change history of this upgrade is in
+[docs/upgrade-plan.md](docs/upgrade-plan.md).

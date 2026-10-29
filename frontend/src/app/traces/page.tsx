@@ -1,11 +1,15 @@
 import { Suspense } from "react";
 
+import { AuthGate } from "@/components/auth-gate";
+
 import { TracesView } from "./traces-view";
 
 export default function TracesPage() {
   return (
-    <Suspense>
-      <TracesView />
-    </Suspense>
+    <AuthGate what="execution traces">
+      <Suspense>
+        <TracesView />
+      </Suspense>
+    </AuthGate>
   );
 }

@@ -28,7 +28,8 @@ COPY services/cafeteria_mcp/pyproject.toml services/cafeteria_mcp/
 COPY services/cafeteria_mcp/cafeteria_mcp services/cafeteria_mcp/cafeteria_mcp
 COPY services/academics_mcp/pyproject.toml services/academics_mcp/
 COPY services/academics_mcp/academics_mcp services/academics_mcp/academics_mcp
-COPY services/academics_mcp/data/handbooks handbooks
+COPY services/academics_mcp/data/iitr iitr
+COPY services/academics_mcp/data/sources sources
 RUN pip install --no-deps ./services/library_mcp ./services/events_mcp \
         ./services/cafeteria_mcp ./services/academics_mcp
 
@@ -45,7 +46,7 @@ RUN sed -i 's/\r$//' /usr/local/bin/campusos-start && chmod +x /usr/local/bin/ca
 USER api
 
 WORKDIR /app/backend
-ENV HANDBOOK_DIR=/app/handbooks APP_ENV=production LOG_JSON=true PORT=8000
+ENV HANDBOOK_DIR=/app/iitr SOURCE_MANIFEST=/app/sources/iitr_sources.yaml APP_ENV=production LOG_JSON=true PORT=8000
 EXPOSE 8000
 HEALTHCHECK --interval=15s --timeout=3s --retries=10 CMD python -c "import os,urllib.request; urllib.request.urlopen(f'http://127.0.0.1:{os.environ[\"PORT\"]}/api/health/live', timeout=2)"
 CMD ["campusos-start"]

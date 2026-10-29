@@ -1,57 +1,6838 @@
 {
-  "_notice": "DEMO DATA. Menu items and prices are simulated for CampusOS demo mode and do not reflect a real cafeteria.",
-  "cafeteria": "Central Cafeteria (demo)",
-  "currency": "INR",
-  "data_as_of": "2026-10-01",
-  "valid_from": null,
-  "valid_to": null,
-  "always_available": [
-    {"name": "Masala Chai", "category": "beverages", "price": 20, "vegetarian": true},
-    {"name": "Filter Coffee", "category": "beverages", "price": 25, "vegetarian": true},
-    {"name": "Fresh Lime Soda", "category": "beverages", "price": 40, "vegetarian": true},
-    {"name": "Veg Sandwich", "category": "snacks", "price": 50, "vegetarian": true},
-    {"name": "Samosa (2 pcs)", "category": "snacks", "price": 30, "vegetarian": true},
-    {"name": "Bottled Water (1 L)", "category": "beverages", "price": 20, "vegetarian": true}
-  ],
-  "weekly": {
+ "description": "SYNTHETIC four-week menu rotation for three demo locations. Not IIT Roorkee mess or canteen data. Built by services/cafeteria_mcp/scripts/build_menu_fixture.py.",
+ "currency": "INR",
+ "data_as_of": null,
+ "rotation": {
+  "weeks": 4,
+  "anchor_monday": "2026-10-05"
+ },
+ "default_location": "central",
+ "locations": [
+  {
+   "id": "central",
+   "name": "Central Cafeteria (demo)",
+   "hours": "07:30-22:00",
+   "synthetic": true,
+   "always_available": [
+    {
+     "name": "Masala Chai",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "north indian",
+     "vegetarian": true,
+     "price": 20
+    },
+    {
+     "name": "Filter Coffee",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "south indian",
+     "vegetarian": true,
+     "price": 25
+    },
+    {
+     "name": "Fresh Lime Soda",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "regional",
+     "vegetarian": true,
+     "price": 35
+    },
+    {
+     "name": "Cold Coffee",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "continental",
+     "vegetarian": true,
+     "price": 60
+    },
+    {
+     "name": "Lassi",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "north indian",
+     "vegetarian": true,
+     "price": 45
+    },
+    {
+     "name": "Buttermilk",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "west indian",
+     "vegetarian": true,
+     "price": 25
+    },
+    {
+     "name": "Bottled Water (1 L)",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "regional",
+     "vegetarian": true,
+     "price": 20
+    },
+    {
+     "name": "Hot Chocolate",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "continental",
+     "vegetarian": true,
+     "price": 60
+    }
+   ]
+  },
+  {
+   "id": "hostel-mess",
+   "name": "Hostel Mess (demo)",
+   "hours": "07:30-09:30, 12:30-14:30, 19:30-21:30",
+   "synthetic": true,
+   "always_available": [
+    {
+     "name": "Masala Chai",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "north indian",
+     "vegetarian": true,
+     "price": 20
+    },
+    {
+     "name": "Bottled Water (1 L)",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "regional",
+     "vegetarian": true,
+     "price": 20
+    }
+   ]
+  },
+  {
+   "id": "night-canteen",
+   "name": "Night Canteen (demo)",
+   "hours": "20:00-02:00",
+   "synthetic": true,
+   "always_available": [
+    {
+     "name": "Masala Chai",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "north indian",
+     "vegetarian": true,
+     "price": 20
+    },
+    {
+     "name": "Cold Coffee",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "continental",
+     "vegetarian": true,
+     "price": 60
+    },
+    {
+     "name": "Bottled Water (1 L)",
+     "meal": "beverages",
+     "category": "beverages",
+     "cuisine": "regional",
+     "vegetarian": true,
+     "price": 20
+    }
+   ]
+  }
+ ],
+ "weeks": {
+  "1": {
+   "central": {
     "monday": [
-      {"name": "Idli Sambar", "category": "breakfast", "price": 40, "vegetarian": true},
-      {"name": "Rajma Chawal", "category": "lunch", "price": 80, "vegetarian": true},
-      {"name": "Chicken Biryani", "category": "lunch", "price": 140, "vegetarian": false},
-      {"name": "Paneer Butter Masala with Roti", "category": "dinner", "price": 120, "vegetarian": true}
+     {
+      "name": "Idli Sambar",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Masala Dosa",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Medu Vada",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Dal Makhani with Jeera Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Veg Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Chicken Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Veg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 80
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Kosha Mangsho with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 170
+     },
+     {
+      "name": "Bhindi Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 120
+     }
     ],
     "tuesday": [
-      {"name": "Poha", "category": "breakfast", "price": 35, "vegetarian": true},
-      {"name": "Veg Thali", "category": "lunch", "price": 100, "vegetarian": true},
-      {"name": "Egg Curry with Rice", "category": "lunch", "price": 90, "vegetarian": false},
-      {"name": "Veg Hakka Noodles", "category": "dinner", "price": 90, "vegetarian": true}
+     {
+      "name": "Upma",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Pongal",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Aloo Paratha with Curd",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Hyderabadi Egg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 120
+     },
+     {
+      "name": "Sambar Rice with Poriyal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Curd Rice with Pickle",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Bisi Bele Bath",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 70
+     },
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 130
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 160
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 140
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 170
+     }
     ],
     "wednesday": [
-      {"name": "Aloo Paratha with Curd", "category": "breakfast", "price": 50, "vegetarian": true},
-      {"name": "Chole Bhature", "category": "lunch", "price": 85, "vegetarian": true},
-      {"name": "Fish Curry with Rice", "category": "lunch", "price": 150, "vegetarian": false},
-      {"name": "Dal Makhani with Jeera Rice", "category": "dinner", "price": 110, "vegetarian": true}
+     {
+      "name": "Poha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Puri Bhaji",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chole Kulche",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Machher Jhol with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Shukto with Rice and Dal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Gujarati Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Malai Kofta with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Undhiyu with Puri",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Khichdi with Kadhi",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     }
     ],
     "thursday": [
-      {"name": "Masala Dosa", "category": "breakfast", "price": 55, "vegetarian": true},
-      {"name": "Veg Pulao with Raita", "category": "lunch", "price": 85, "vegetarian": true},
-      {"name": "Chicken Curry with Roti", "category": "lunch", "price": 130, "vegetarian": false},
-      {"name": "Pav Bhaji", "category": "dinner", "price": 80, "vegetarian": true}
+     {
+      "name": "Luchi Aloo Dum",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Sabudana Khichdi",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Thepla with Chutney",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Pav Bhaji",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Dal Baati Churma",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Curry with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 130
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Dal Tadka with Jeera Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Mixed Veg with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Butter Chicken with Naan",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 160
+     },
+     {
+      "name": "Egg Curry with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 90
+     }
     ],
     "friday": [
-      {"name": "Upma", "category": "breakfast", "price": 35, "vegetarian": true},
-      {"name": "Veg Biryani", "category": "lunch", "price": 100, "vegetarian": true},
-      {"name": "Chicken Biryani", "category": "lunch", "price": 140, "vegetarian": false},
-      {"name": "Margherita Pizza (personal)", "category": "dinner", "price": 150, "vegetarian": true}
+     {
+      "name": "Bread Omelette",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 45
+     },
+     {
+      "name": "Masala Omelette with Toast",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Cornflakes with Milk",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Veg Hakka Noodles",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Chilli Chicken with Fried Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Penne Arrabbiata",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 130
+     },
+     {
+      "name": "Margherita Pizza (personal)",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 150
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Lemon Rice with Rasam",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Vegetable Kurma with Parotta",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 95
+     },
+     {
+      "name": "Chicken Chettinad with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Aloo Posto with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 85
+     }
     ],
     "saturday": [
-      {"name": "Puri Bhaji", "category": "breakfast", "price": 45, "vegetarian": true},
-      {"name": "Kadhi Chawal", "category": "lunch", "price": 75, "vegetarian": true},
-      {"name": "Veg Fried Rice with Manchurian", "category": "dinner", "price": 110, "vegetarian": true}
+     {
+      "name": "Pancakes with Honey",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Uttapam",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Misal Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Grilled Chicken Sandwich",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 110
+     },
+     {
+      "name": "Veg Pulao with Raita",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Kerala Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Litti Chokha",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 80
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Kosha Mangsho with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 170
+     },
+     {
+      "name": "Bhindi Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 120
+     }
     ],
     "sunday": [
-      {"name": "Chole Kulche", "category": "brunch", "price": 70, "vegetarian": true},
-      {"name": "Special Veg Thali", "category": "lunch", "price": 130, "vegetarian": true}
+     {
+      "name": "Paneer Paratha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Egg Bhurji with Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Appam with Vegetable Stew",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Rajma Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Kadhi Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chole Bhature",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Dal Makhani with Jeera Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 70
+     },
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 130
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 160
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 140
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 170
+     }
     ]
+   },
+   "hostel-mess": {
+    "monday": [
+     {
+      "name": "Aloo Paratha with Curd",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Poha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Sambar Rice with Poriyal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Curd Rice with Pickle",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Bisi Bele Bath",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 120
+     },
+     {
+      "name": "Malai Kofta with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     }
+    ],
+    "tuesday": [
+     {
+      "name": "Puri Bhaji",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chole Kulche",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Machher Jhol with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Shukto with Rice and Dal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Undhiyu with Puri",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Khichdi with Kadhi",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     }
+    ],
+    "wednesday": [
+     {
+      "name": "Luchi Aloo Dum",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Sabudana Khichdi",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Gujarati Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Pav Bhaji",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Dal Baati Churma",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Dal Tadka with Jeera Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Mixed Veg with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Butter Chicken with Naan",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 160
+     }
+    ],
+    "thursday": [
+     {
+      "name": "Thepla with Chutney",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Bread Omelette",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 45
+     },
+     {
+      "name": "Chicken Curry with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 130
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Veg Hakka Noodles",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Egg Curry with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 90
+     },
+     {
+      "name": "Lemon Rice with Rasam",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Vegetable Kurma with Parotta",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 95
+     }
+    ],
+    "friday": [
+     {
+      "name": "Masala Omelette with Toast",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Cornflakes with Milk",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Chilli Chicken with Fried Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Grilled Chicken Sandwich",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 110
+     },
+     {
+      "name": "Veg Pulao with Raita",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Chicken Chettinad with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Aloo Posto with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Kosha Mangsho with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 170
+     }
+    ],
+    "saturday": [
+     {
+      "name": "Pancakes with Honey",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Uttapam",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Kerala Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Litti Chokha",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Rajma Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Bhindi Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 120
+     }
+    ],
+    "sunday": [
+     {
+      "name": "Misal Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Paneer Paratha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Kadhi Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chole Bhature",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Dal Makhani with Jeera Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Malai Kofta with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Undhiyu with Puri",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Khichdi with Kadhi",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 75
+     }
+    ]
+   },
+   "night-canteen": {
+    "monday": [
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 55
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 125
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 125
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 135
+     }
+    ],
+    "tuesday": [
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 165
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 145
+     }
+    ],
+    "wednesday": [
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 85
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 175
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 115
+     }
+    ],
+    "thursday": [
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 55
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 125
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 125
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 135
+     }
+    ],
+    "friday": [
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 165
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 145
+     }
+    ],
+    "saturday": [
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 85
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 175
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 115
+     }
+    ],
+    "sunday": [
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 55
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 125
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 125
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 135
+     }
+    ]
+   }
+  },
+  "2": {
+   "central": {
+    "monday": [
+     {
+      "name": "Idli Sambar",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Masala Dosa",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Medu Vada",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Veg Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Chicken Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Veg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Hyderabadi Egg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 120
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Malai Kofta with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Undhiyu with Puri",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Khichdi with Kadhi",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     }
+    ],
+    "tuesday": [
+     {
+      "name": "Upma",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Pongal",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Aloo Paratha with Curd",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Sambar Rice with Poriyal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Curd Rice with Pickle",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Bisi Bele Bath",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Dal Tadka with Jeera Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Mixed Veg with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Butter Chicken with Naan",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 160
+     },
+     {
+      "name": "Egg Curry with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 90
+     }
+    ],
+    "wednesday": [
+     {
+      "name": "Poha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Puri Bhaji",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chole Kulche",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Machher Jhol with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Shukto with Rice and Dal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Gujarati Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Pav Bhaji",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Lemon Rice with Rasam",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Vegetable Kurma with Parotta",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 95
+     },
+     {
+      "name": "Chicken Chettinad with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Aloo Posto with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 85
+     }
+    ],
+    "thursday": [
+     {
+      "name": "Luchi Aloo Dum",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Sabudana Khichdi",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Thepla with Chutney",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Dal Baati Churma",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Curry with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 130
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Veg Hakka Noodles",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 80
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Kosha Mangsho with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 170
+     },
+     {
+      "name": "Bhindi Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 120
+     }
+    ],
+    "friday": [
+     {
+      "name": "Bread Omelette",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 45
+     },
+     {
+      "name": "Masala Omelette with Toast",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Cornflakes with Milk",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Chilli Chicken with Fried Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Penne Arrabbiata",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 130
+     },
+     {
+      "name": "Margherita Pizza (personal)",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 150
+     },
+     {
+      "name": "Grilled Chicken Sandwich",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 110
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 70
+     },
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 130
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 160
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 140
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 170
+     }
+    ],
+    "saturday": [
+     {
+      "name": "Pancakes with Honey",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Uttapam",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Misal Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Veg Pulao with Raita",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Kerala Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Litti Chokha",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Rajma Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Malai Kofta with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Undhiyu with Puri",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Khichdi with Kadhi",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     }
+    ],
+    "sunday": [
+     {
+      "name": "Paneer Paratha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Egg Bhurji with Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Appam with Vegetable Stew",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Kadhi Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chole Bhature",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Dal Makhani with Jeera Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Veg Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Dal Tadka with Jeera Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Mixed Veg with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Butter Chicken with Naan",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 160
+     },
+     {
+      "name": "Egg Curry with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 90
+     }
+    ]
+   },
+   "hostel-mess": {
+    "monday": [
+     {
+      "name": "Egg Bhurji with Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Appam with Vegetable Stew",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Veg Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Chicken Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Veg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Dal Tadka with Jeera Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Mixed Veg with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     }
+    ],
+    "tuesday": [
+     {
+      "name": "Idli Sambar",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Masala Dosa",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Hyderabadi Egg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 120
+     },
+     {
+      "name": "Sambar Rice with Poriyal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Curd Rice with Pickle",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Butter Chicken with Naan",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 160
+     },
+     {
+      "name": "Egg Curry with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 90
+     },
+     {
+      "name": "Lemon Rice with Rasam",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 75
+     }
+    ],
+    "wednesday": [
+     {
+      "name": "Medu Vada",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Upma",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Bisi Bele Bath",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Machher Jhol with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Vegetable Kurma with Parotta",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 95
+     },
+     {
+      "name": "Chicken Chettinad with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Aloo Posto with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 85
+     }
+    ],
+    "thursday": [
+     {
+      "name": "Pongal",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Aloo Paratha with Curd",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Shukto with Rice and Dal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Gujarati Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Pav Bhaji",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Kosha Mangsho with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 170
+     },
+     {
+      "name": "Bhindi Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 110
+     }
+    ],
+    "friday": [
+     {
+      "name": "Poha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Puri Bhaji",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Dal Baati Churma",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Curry with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 130
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 120
+     },
+     {
+      "name": "Malai Kofta with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Undhiyu with Puri",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 110
+     }
+    ],
+    "saturday": [
+     {
+      "name": "Chole Kulche",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Luchi Aloo Dum",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Veg Hakka Noodles",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Chilli Chicken with Fried Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Grilled Chicken Sandwich",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 110
+     },
+     {
+      "name": "Khichdi with Kadhi",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Dal Tadka with Jeera Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 90
+     }
+    ],
+    "sunday": [
+     {
+      "name": "Sabudana Khichdi",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Thepla with Chutney",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Veg Pulao with Raita",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Kerala Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Litti Chokha",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Mixed Veg with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Butter Chicken with Naan",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 160
+     },
+     {
+      "name": "Egg Curry with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 90
+     }
+    ]
+   },
+   "night-canteen": {
+    "monday": [
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 165
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 145
+     }
+    ],
+    "tuesday": [
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 85
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 175
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 115
+     }
+    ],
+    "wednesday": [
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 55
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 125
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 125
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 135
+     }
+    ],
+    "thursday": [
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 165
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 145
+     }
+    ],
+    "friday": [
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 85
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 175
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 115
+     }
+    ],
+    "saturday": [
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 55
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 125
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 125
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 135
+     }
+    ],
+    "sunday": [
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 165
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 145
+     }
+    ]
+   }
+  },
+  "3": {
+   "central": {
+    "monday": [
+     {
+      "name": "Idli Sambar",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Masala Dosa",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Medu Vada",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Chicken Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Veg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Hyderabadi Egg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 120
+     },
+     {
+      "name": "Sambar Rice with Poriyal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Lemon Rice with Rasam",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Vegetable Kurma with Parotta",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 95
+     },
+     {
+      "name": "Chicken Chettinad with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Aloo Posto with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 85
+     }
+    ],
+    "tuesday": [
+     {
+      "name": "Upma",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Pongal",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Aloo Paratha with Curd",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Curd Rice with Pickle",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Bisi Bele Bath",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Machher Jhol with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 80
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Kosha Mangsho with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 170
+     },
+     {
+      "name": "Bhindi Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 120
+     }
+    ],
+    "wednesday": [
+     {
+      "name": "Poha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Puri Bhaji",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chole Kulche",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Shukto with Rice and Dal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Gujarati Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Pav Bhaji",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Dal Baati Churma",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 70
+     },
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 130
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 160
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 140
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 170
+     }
+    ],
+    "thursday": [
+     {
+      "name": "Luchi Aloo Dum",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Sabudana Khichdi",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Thepla with Chutney",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Chicken Curry with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 130
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Veg Hakka Noodles",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Chilli Chicken with Fried Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Malai Kofta with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Undhiyu with Puri",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Khichdi with Kadhi",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     }
+    ],
+    "friday": [
+     {
+      "name": "Bread Omelette",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 45
+     },
+     {
+      "name": "Masala Omelette with Toast",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Cornflakes with Milk",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Penne Arrabbiata",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 130
+     },
+     {
+      "name": "Margherita Pizza (personal)",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 150
+     },
+     {
+      "name": "Grilled Chicken Sandwich",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 110
+     },
+     {
+      "name": "Veg Pulao with Raita",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Dal Tadka with Jeera Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Mixed Veg with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Butter Chicken with Naan",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 160
+     },
+     {
+      "name": "Egg Curry with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 90
+     }
+    ],
+    "saturday": [
+     {
+      "name": "Pancakes with Honey",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Uttapam",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Misal Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Kerala Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Litti Chokha",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Rajma Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Kadhi Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Lemon Rice with Rasam",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Vegetable Kurma with Parotta",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 95
+     },
+     {
+      "name": "Chicken Chettinad with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Aloo Posto with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 85
+     }
+    ],
+    "sunday": [
+     {
+      "name": "Paneer Paratha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Egg Bhurji with Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Appam with Vegetable Stew",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Chole Bhature",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Dal Makhani with Jeera Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Veg Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Chicken Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 80
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Kosha Mangsho with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 170
+     },
+     {
+      "name": "Bhindi Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 120
+     }
+    ]
+   },
+   "hostel-mess": {
+    "monday": [
+     {
+      "name": "Bread Omelette",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 45
+     },
+     {
+      "name": "Masala Omelette with Toast",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Rajma Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Kadhi Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chole Bhature",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Lemon Rice with Rasam",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Vegetable Kurma with Parotta",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 95
+     },
+     {
+      "name": "Chicken Chettinad with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": false,
+      "price": 150
+     }
+    ],
+    "tuesday": [
+     {
+      "name": "Cornflakes with Milk",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Pancakes with Honey",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Dal Makhani with Jeera Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Veg Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Chicken Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Aloo Posto with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Kosha Mangsho with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 170
+     },
+     {
+      "name": "Bhindi Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     }
+    ],
+    "wednesday": [
+     {
+      "name": "Uttapam",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Misal Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Veg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Hyderabadi Egg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 120
+     },
+     {
+      "name": "Sambar Rice with Poriyal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 120
+     },
+     {
+      "name": "Malai Kofta with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     }
+    ],
+    "thursday": [
+     {
+      "name": "Paneer Paratha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Egg Bhurji with Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Curd Rice with Pickle",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Bisi Bele Bath",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Undhiyu with Puri",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Khichdi with Kadhi",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     }
+    ],
+    "friday": [
+     {
+      "name": "Appam with Vegetable Stew",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Idli Sambar",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Machher Jhol with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Shukto with Rice and Dal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Gujarati Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Dal Tadka with Jeera Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Mixed Veg with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Butter Chicken with Naan",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 160
+     }
+    ],
+    "saturday": [
+     {
+      "name": "Masala Dosa",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Medu Vada",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Pav Bhaji",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Dal Baati Churma",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Curry with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 130
+     },
+     {
+      "name": "Egg Curry with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 90
+     },
+     {
+      "name": "Lemon Rice with Rasam",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Vegetable Kurma with Parotta",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 95
+     }
+    ],
+    "sunday": [
+     {
+      "name": "Upma",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Pongal",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Veg Hakka Noodles",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Chilli Chicken with Fried Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Chicken Chettinad with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Aloo Posto with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Kosha Mangsho with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 170
+     }
+    ]
+   },
+   "night-canteen": {
+    "monday": [
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 85
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 175
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 115
+     }
+    ],
+    "tuesday": [
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 55
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 125
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 125
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 135
+     }
+    ],
+    "wednesday": [
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 165
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 145
+     }
+    ],
+    "thursday": [
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 85
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 175
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 115
+     }
+    ],
+    "friday": [
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 55
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 125
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 125
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 135
+     }
+    ],
+    "saturday": [
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 165
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 145
+     }
+    ],
+    "sunday": [
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 85
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 175
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 115
+     }
+    ]
+   }
+  },
+  "4": {
+   "central": {
+    "monday": [
+     {
+      "name": "Idli Sambar",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Masala Dosa",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Medu Vada",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Veg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Hyderabadi Egg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 120
+     },
+     {
+      "name": "Sambar Rice with Poriyal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Curd Rice with Pickle",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 70
+     },
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 130
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 160
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 140
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 170
+     }
+    ],
+    "tuesday": [
+     {
+      "name": "Upma",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Pongal",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Aloo Paratha with Curd",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Bisi Bele Bath",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Machher Jhol with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Shukto with Rice and Dal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Malai Kofta with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Undhiyu with Puri",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Khichdi with Kadhi",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     }
+    ],
+    "wednesday": [
+     {
+      "name": "Poha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Puri Bhaji",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chole Kulche",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Gujarati Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Pav Bhaji",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Dal Baati Churma",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Curry with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 130
+     },
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Dal Tadka with Jeera Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Mixed Veg with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Butter Chicken with Naan",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 160
+     },
+     {
+      "name": "Egg Curry with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 90
+     }
+    ],
+    "thursday": [
+     {
+      "name": "Luchi Aloo Dum",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Sabudana Khichdi",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Thepla with Chutney",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Veg Hakka Noodles",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Chilli Chicken with Fried Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Penne Arrabbiata",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 130
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 25
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Lemon Rice with Rasam",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Vegetable Kurma with Parotta",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 95
+     },
+     {
+      "name": "Chicken Chettinad with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Aloo Posto with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 85
+     }
+    ],
+    "friday": [
+     {
+      "name": "Bread Omelette",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 45
+     },
+     {
+      "name": "Masala Omelette with Toast",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Cornflakes with Milk",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Margherita Pizza (personal)",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 150
+     },
+     {
+      "name": "Grilled Chicken Sandwich",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 110
+     },
+     {
+      "name": "Veg Pulao with Raita",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Kerala Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 80
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Kosha Mangsho with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 170
+     },
+     {
+      "name": "Bhindi Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 120
+     }
+    ],
+    "saturday": [
+     {
+      "name": "Pancakes with Honey",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Uttapam",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Misal Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Litti Chokha",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Rajma Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Kadhi Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chole Bhature",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 70
+     },
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 130
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 160
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 140
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 170
+     }
+    ],
+    "sunday": [
+     {
+      "name": "Paneer Paratha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Egg Bhurji with Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Appam with Vegetable Stew",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Dal Makhani with Jeera Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Veg Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Chicken Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Veg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Malai Kofta with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Undhiyu with Puri",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Khichdi with Kadhi",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     }
+    ]
+   },
+   "hostel-mess": {
+    "monday": [
+     {
+      "name": "Aloo Paratha with Curd",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Poha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Grilled Chicken Sandwich",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 110
+     },
+     {
+      "name": "Veg Pulao with Raita",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Kerala Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Bhindi Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 120
+     }
+    ],
+    "tuesday": [
+     {
+      "name": "Puri Bhaji",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chole Kulche",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 55
+     },
+     {
+      "name": "Litti Chokha",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Rajma Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Kadhi Chawal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Malai Kofta with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Undhiyu with Puri",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Khichdi with Kadhi",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 75
+     }
+    ],
+    "wednesday": [
+     {
+      "name": "Luchi Aloo Dum",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Sabudana Khichdi",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Chole Bhature",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Dal Makhani with Jeera Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Veg Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Paneer Butter Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Dal Tadka with Jeera Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Mixed Veg with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     }
+    ],
+    "thursday": [
+     {
+      "name": "Thepla with Chutney",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 40
+     },
+     {
+      "name": "Bread Omelette",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 45
+     },
+     {
+      "name": "Chicken Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 140
+     },
+     {
+      "name": "Veg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 100
+     },
+     {
+      "name": "Hyderabadi Egg Biryani",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": false,
+      "price": 120
+     },
+     {
+      "name": "Butter Chicken with Naan",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 160
+     },
+     {
+      "name": "Egg Curry with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": false,
+      "price": 90
+     },
+     {
+      "name": "Lemon Rice with Rasam",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 75
+     }
+    ],
+    "friday": [
+     {
+      "name": "Masala Omelette with Toast",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 50
+     },
+     {
+      "name": "Cornflakes with Milk",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Sambar Rice with Poriyal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Curd Rice with Pickle",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Bisi Bele Bath",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Vegetable Kurma with Parotta",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 95
+     },
+     {
+      "name": "Chicken Chettinad with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "south indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Aloo Posto with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 85
+     }
+    ],
+    "saturday": [
+     {
+      "name": "Pancakes with Honey",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Uttapam",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "south indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Fish Curry with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Machher Jhol with Rice",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 150
+     },
+     {
+      "name": "Shukto with Rice and Dal",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 90
+     },
+     {
+      "name": "Kosha Mangsho with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 170
+     },
+     {
+      "name": "Bhindi Masala with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 85
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 110
+     }
+    ],
+    "sunday": [
+     {
+      "name": "Misal Pav",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 50
+     },
+     {
+      "name": "Paneer Paratha",
+      "meal": "breakfast",
+      "category": "breakfast",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 60
+     },
+     {
+      "name": "Gujarati Thali",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Pav Bhaji",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 80
+     },
+     {
+      "name": "Dal Baati Churma",
+      "meal": "lunch",
+      "category": "lunch",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 110
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 120
+     },
+     {
+      "name": "Malai Kofta with Roti",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 120
+     },
+     {
+      "name": "Undhiyu with Puri",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 110
+     }
+    ]
+   },
+   "night-canteen": {
+    "monday": [
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 55
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 125
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 125
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 135
+     }
+    ],
+    "tuesday": [
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 165
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 145
+     }
+    ],
+    "wednesday": [
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 85
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 175
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 115
+     }
+    ],
+    "thursday": [
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 55
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 125
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 125
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 135
+     }
+    ],
+    "friday": [
+     {
+      "name": "Samosa (2 pcs)",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Veg Sandwich",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Bread Pakora",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Vada Pav",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 30
+     },
+     {
+      "name": "Dhokla",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "west indian",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Veg Lasagne",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 165
+     },
+     {
+      "name": "Grilled Vegetables with Herb Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 145
+     }
+    ],
+    "saturday": [
+     {
+      "name": "Veg Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Chicken Momos",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 85
+     },
+     {
+      "name": "Spring Rolls",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "French Fries",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "continental",
+      "vegetarian": true,
+      "price": 65
+     },
+     {
+      "name": "Garlic Bread",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 75
+     },
+     {
+      "name": "Chicken Stroganoff with Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "continental",
+      "vegetarian": false,
+      "price": 175
+     },
+     {
+      "name": "Veg Fried Rice with Manchurian",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 115
+     }
+    ],
+    "sunday": [
+     {
+      "name": "Jhalmuri",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": true,
+      "price": 35
+     },
+     {
+      "name": "Egg Roll",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "east indian",
+      "vegetarian": false,
+      "price": 55
+     },
+     {
+      "name": "Paneer Tikka",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "north indian",
+      "vegetarian": true,
+      "price": 125
+     },
+     {
+      "name": "Maggi Noodles",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "chinese",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Masala Corn",
+      "meal": "snacks",
+      "category": "snacks",
+      "cuisine": "regional",
+      "vegetarian": true,
+      "price": 45
+     },
+     {
+      "name": "Chicken Fried Rice",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "chinese",
+      "vegetarian": false,
+      "price": 125
+     },
+     {
+      "name": "Spaghetti Aglio e Olio",
+      "meal": "dinner",
+      "category": "dinner",
+      "cuisine": "italian",
+      "vegetarian": true,
+      "price": 135
+     }
+    ]
+   }
   }
+ }
 }

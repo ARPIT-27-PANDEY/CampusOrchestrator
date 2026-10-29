@@ -3,19 +3,20 @@
 from __future__ import annotations
 
 import asyncio
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 from urllib.parse import urlparse, urlunparse
 
 import httpx
 
 from .agent.orchestrator import AgentLimits, Orchestrator
-from .agent.trace_store import TraceStore
+from .agent.trace_store import TracePrivacy, TraceStore
 from .config import Settings
 from .llm.base import LLMProvider
 from .llm.factory import build_provider
 from .mcp.config import ServerConfig, load_server_configs
 from .mcp.manager import Connector, MCPClientManager, http_connector
+from .security import Guard
 
 
 async def fetch_health(cfg: ServerConfig) -> dict[str, Any] | None:
@@ -40,6 +41,7 @@ class AppState:
     orchestrator: Orchestrator
     chat_slots: asyncio.Semaphore
     llm_error: str | None = None
+    guard: Guard = field(default=None)  # type: ignore[assignment]  # always set by build_state
 
 
 def build_state(
@@ -69,7 +71,18 @@ def build_state(
         except Exception as exc:  # noqa: BLE001 - reported via /api/health and chat errors; no silent fallback
             llm_error = str(exc)
             llm = _UnconfiguredProvider(settings, llm_error)
-    traces = TraceStore(settings.trace_capacity, settings.trace_log_path)
+    traces = TraceStore(
+        settings.trace_capacity,
+        settings.trace_log_path,
+        backend=settings.trace_backend,
+        db_path=settings.trace_db_path,
+        retention_s=settings.trace_retention_hours * 3600,
+        privacy=TracePrivacy(
+            keep_query=settings.keep_query_text,
+            keep_payloads=settings.keep_tool_payloads,
+            redact_text=settings.trace_redact,
+        ),
+    )
     limits = AgentLimits(
         max_iterations=settings.max_agent_iterations,
         max_tool_calls=settings.max_tool_calls,
@@ -81,9 +94,10 @@ def build_state(
         mcp=manager,
         llm=llm,
         traces=traces,
-        orchestrator=Orchestrator(llm, manager, traces, limits),
+        orchestrator=Orchestrator(llm, manager, traces, limits, timezone=settings.campus_timezone),
         chat_slots=asyncio.Semaphore(settings.max_concurrent_chats),
         llm_error=llm_error,
+        guard=Guard(settings),
     )
 
 

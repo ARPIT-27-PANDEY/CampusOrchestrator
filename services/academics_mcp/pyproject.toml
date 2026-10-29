@@ -7,6 +7,9 @@ dependencies = [
   "mcp==2.3.0",
   "pydantic>=2.14,<3",
   "uvicorn>=0.54,<1",
+  "tzdata>=2024.1",
+  "pyyaml>=6,<7",
+  "httpx>=0.28,<1",
   "pymupdf==2.0",
   "qdrant-client==1.20.0",
 ]

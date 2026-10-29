@@ -31,6 +31,10 @@ class IndexedDocument:
     ingested_at: str
     pages: int
     chunks: int
+    source_url: str | None = None
+    doc_status: str | None = None
+    issued: str | None = None
+    origin: str = "demo"  # "official" when the file is listed in the source manifest
 
 
 def make_client(url: str | None, path: str | None, api_key: str | None = None) -> QdrantClient:
@@ -97,13 +101,21 @@ class HandbookIndex:
     def delete_source(self, filename: str) -> None:
         self.client.delete(self.collection, points_selector=models.FilterSelector(filter=self._source_filter(filename)))
 
-    def upsert_chunks(self, chunks: list[Chunk], vectors: list[list[float]], page_count: int) -> None:
+    def upsert_chunks(
+        self,
+        chunks: list[Chunk],
+        vectors: list[list[float]],
+        page_count: int,
+        extra: dict[str, Any] | None = None,
+    ) -> None:
+        """``extra`` is per-document metadata (official title, URL, status, applicability...)."""
         ingested_at = datetime.now(UTC).isoformat(timespec="seconds")
         points = [
             models.PointStruct(
                 id=str(uuid.uuid5(uuid.NAMESPACE_URL, chunk.chunk_id)),
                 vector=vector,
                 payload={
+                    **(extra or {}),
                     **asdict(chunk),
                     "ingested_at": ingested_at,
                     "embedding_model": self.embedding_model,
@@ -142,6 +154,10 @@ class HandbookIndex:
                     "ingested_at": p["ingested_at"],
                     "pages": int(p.get("page_count", 0)),
                     "chunks": 0,
+                    "source_url": p.get("source_url"),
+                    "doc_status": p.get("doc_status"),
+                    "issued": p.get("issued"),
+                    "origin": "official" if p.get("source_id") else "demo",
                 },
             )
             entry["chunks"] += 1

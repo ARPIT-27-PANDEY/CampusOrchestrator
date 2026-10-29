@@ -1,0 +1,860 @@
+{
+ "kind": "agent",
+ "run_id": "agent-20261028T215357Z-mock-b35da0",
+ "generated_at": "2026-10-28T21:53:57+00:00",
+ "dataset": "campus_eval_v2.yaml",
+ "provider": "mock",
+ "model": "mock-deterministic-v1",
+ "transport": "inprocess",
+ "config": {
+  "provider": "mock",
+  "model": "mock-deterministic-v1",
+  "model_settings": {},
+  "prompt_version": "08bee2bd11bc",
+  "tool_schema_hash": "50f7ce4c0abc",
+  "dataset": "campus_eval_v2.yaml",
+  "dataset_version": 2,
+  "dataset_sha256": "233f1d56fafc",
+  "fixtures": "v2",
+  "retriever": "hashing",
+  "transport": "inprocess",
+  "repeat": 1,
+  "tool_timeout_s": 2.0,
+  "timezone": "Asia/Kolkata",
+  "clock": "2026-10-29T10:00:00+05:30",
+  "selection": {
+   "case": null,
+   "category": [
+    "failure",
+    "llm_failure",
+    "tool_budget"
+   ],
+   "limit": 0
+  },
+  "skipped": [],
+  "git": {
+   "commit": "06f2fce1f7bc4c9061b87be041f568634d1720ba",
+   "dirty": true
+  },
+  "python": "3.12.10",
+  "platform": "win32"
+ },
+ "note": "Mock-provider run: tool choice comes from a deterministic keyword router, so tool-selection numbers measure the pipeline (MCP discovery, routing, validation, retrieval, citations, failure handling), not GPT-OSS-120B's judgement. Run with --provider groq for a live-model evaluation.",
+ "latency_note": "Latency percentiles use requests that did not end in status=error; error and fault counts are reported separately. In-process transport has no network hop; the first case includes cold-start costs (no warm-up). p99 is reported only with at least 100 samples.",
+ "summary": {
+  "cases": 12,
+  "runs": 12,
+  "passed": 12,
+  "pass_rate": 1.0,
+  "tool_selection_accuracy": 1.0,
+  "server_selection_accuracy": 1.0,
+  "argument_accuracy": null,
+  "argument_cases": 0,
+  "answer_correctness": 1.0,
+  "citation_correctness": null,
+  "citation_cases": 0,
+  "source_mode_accuracy": null,
+  "unnecessary_tool_call_rate": 0.0,
+  "repeated_tool_call_rate": 0.2222,
+  "total_tool_calls": 18,
+  "failure_recovery_rate": 1.0,
+  "failure_cases": 7,
+  "budget_exhausted": 1,
+  "llm_turns_mean": 2.25,
+  "llm_infra_errors": 0,
+  "error_results": 3,
+  "failure_classes": {
+   "reasoning": 0,
+   "fault_handling": 0,
+   "infra_llm": 0
+  },
+  "latency_sample": 9,
+  "latency_p50_ms": 287.7,
+  "latency_p95_ms": 4310.5,
+  "latency_p99_ms": null,
+  "latency_mean_ms": 1080.9,
+  "first_token_p50_ms": 287.6,
+  "first_token_sample": 9,
+  "llm_wall_p50_ms": 1.1,
+  "tool_wall_p50_ms": 46.4,
+  "discovery_p50_ms": 13.8,
+  "tool_duration_p50_ms": 40.7,
+  "tool_duration_p95_ms": 4264.7,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "stability": null
+ },
+ "categories": [
+  {
+   "category": "failure",
+   "cases": 7,
+   "passed": 7
+  },
+  {
+   "category": "llm_failure",
+   "cases": 4,
+   "passed": 4
+  },
+  {
+   "category": "tool_budget",
+   "cases": 1,
+   "passed": 1
+  }
+ ],
+ "cases": [
+  {
+   "id": "fail2-01",
+   "category": "failure",
+   "query": "When is the career fair and what's on the menu today?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "cafeteria",
+    "events"
+   ],
+   "called_servers": [
+    "cafeteria",
+    "events"
+   ],
+   "called_tools": [
+    "cafeteria__get_today_menu",
+    "events__search_events"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 2,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": true,
+   "budget_exhausted": false,
+   "status": "partial",
+   "error_code": null,
+   "latency_ms": 334.8,
+   "timings": {
+    "wall_ms": 334.8,
+    "discovery_ms": 31.5,
+    "first_token_ms": 334.7,
+    "llm_wall_ms": 9.4,
+    "llm_call_ms": [
+     7.9,
+     1.5
+    ],
+    "tool_wall_ms": 293.0,
+    "tool_work_ms": 292.8,
+    "tool_ms_by_tool": {
+     "events__search_events": [
+      258.6
+     ],
+     "cafeteria__get_today_menu": [
+      34.2
+     ]
+    },
+    "tool_retries": 1,
+    "cache_hits": 0,
+    "orchestration_ms": 0.9
+   },
+   "tool_durations_ms": [
+    258.6,
+    34.2
+   ],
+   "iterations": 2,
+   "usage": {
+    "llm_calls": 2,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+   },
+   "note": null,
+   "answer": "The events service is unreachable right now, so I couldn't answer that part.\n\nToday's (Thursday) menu at Central Cafeteria (demo): Luchi Aloo Dum (INR 50); Sabudana Khichdi (INR 40); Thepla with Chutney (INR 40); Paneer Butter Masala with Roti (INR 120); Veg Hakka Noodles (INR 90); Chilli Chicken with Fried Rice (INR 140); Penne Arrabbiata (INR 130); Lemon Rice with Rasam (INR 75).\n\nNote: results from cafeteria are demo data, not live campus records.",
+   "repeat": 1
+  },
+  {
+   "id": "fail2-02",
+   "category": "failure",
+   "query": "What are the library hours today and when is the next AI workshop?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "events",
+    "library"
+   ],
+   "called_servers": [
+    "events",
+    "library"
+   ],
+   "called_tools": [
+    "events__search_events",
+    "library__get_library_hours"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 2,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": true,
+   "budget_exhausted": false,
+   "status": "partial",
+   "error_code": null,
+   "latency_ms": 4310.5,
+   "timings": {
+    "wall_ms": 4310.5,
+    "discovery_ms": 10.0,
+    "first_token_ms": 4310.3,
+    "llm_wall_ms": 1.9,
+    "llm_call_ms": [
+     0.6,
+     1.3
+    ],
+    "tool_wall_ms": 4298.0,
+    "tool_work_ms": 4297.9,
+    "tool_ms_by_tool": {
+     "library__get_library_hours": [
+      4266.1
+     ],
+     "events__search_events": [
+      31.8
+     ]
+    },
+    "tool_retries": 1,
+    "cache_hits": 0,
+    "orchestration_ms": 0.6
+   },
+   "tool_durations_ms": [
+    4266.1,
+    31.8
+   ],
+   "iterations": 2,
+   "usage": {
+    "llm_calls": 2,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+   },
+   "note": null,
+   "answer": "The library hours service did not respond in time, so I couldn't answer that part.\n\nThe next matching event is **Hands-on AI Workshop: Building Tool-Using Agents with MCP** on 2026-11-01 14:00 at CS Building, Lab 2.14 (EVT-101).\n\nNote: results from events are demo data, not live campus records.",
+   "repeat": 1
+  },
+  {
+   "id": "fail2-03",
+   "category": "failure",
+   "query": "What events are happening today?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [],
+   "called_servers": [],
+   "called_tools": [],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 0,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": true,
+   "budget_exhausted": false,
+   "status": "ok",
+   "error_code": null,
+   "latency_ms": 5.9,
+   "timings": {
+    "wall_ms": 5.9,
+    "discovery_ms": 5.3,
+    "first_token_ms": 5.8,
+    "llm_wall_ms": 0.4,
+    "llm_call_ms": [
+     0.4
+    ],
+    "tool_wall_ms": 0.0,
+    "tool_work_ms": 0.0,
+    "tool_ms_by_tool": {},
+    "tool_retries": 0,
+    "cache_hits": 0,
+    "orchestration_ms": 0.2
+   },
+   "tool_durations_ms": [],
+   "iterations": 1,
+   "usage": {
+    "llm_calls": 1,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+   },
+   "note": "Events is down at discovery: its tools are absent and the answer must say the service is unavailable.",
+   "answer": "The events service is currently unavailable, so I couldn't check that.",
+   "repeat": 1
+  },
+  {
+   "id": "fail2-04",
+   "category": "failure",
+   "query": "Is the library open today?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "library"
+   ],
+   "called_servers": [
+    "library"
+   ],
+   "called_tools": [
+    "library__get_library_hours"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 1,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": true,
+   "budget_exhausted": false,
+   "status": "ok",
+   "error_code": null,
+   "latency_ms": 287.7,
+   "timings": {
+    "wall_ms": 287.7,
+    "discovery_ms": 13.0,
+    "first_token_ms": 287.6,
+    "llm_wall_ms": 0.2,
+    "llm_call_ms": [
+     0.1,
+     0.1
+    ],
+    "tool_wall_ms": 274.1,
+    "tool_work_ms": 274.0,
+    "tool_ms_by_tool": {
+     "library__get_library_hours": [
+      274.0
+     ]
+    },
+    "tool_retries": 1,
+    "cache_hits": 0,
+    "orchestration_ms": 0.4
+   },
+   "tool_durations_ms": [
+    274.0
+   ],
+   "iterations": 2,
+   "usage": {
+    "llm_calls": 2,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+   },
+   "note": null,
+   "answer": "On 2026-10-29 the library is open 08:00\u201322:00.\n\nNote: results from library are demo data, not live campus records.",
+   "repeat": 1
+  },
+  {
+   "id": "fail2-05",
+   "category": "failure",
+   "query": "What events are happening today?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "events"
+   ],
+   "called_servers": [
+    "events"
+   ],
+   "called_tools": [
+    "events__get_events_for_date"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 1,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": true,
+   "budget_exhausted": false,
+   "status": "partial",
+   "error_code": null,
+   "latency_ms": 20.1,
+   "timings": {
+    "wall_ms": 20.1,
+    "discovery_ms": 14.9,
+    "first_token_ms": 19.9,
+    "llm_wall_ms": 2.2,
+    "llm_call_ms": [
+     1.4,
+     0.8
+    ],
+    "tool_wall_ms": 2.3,
+    "tool_work_ms": 2.2,
+    "tool_ms_by_tool": {
+     "events__get_events_for_date": [
+      2.2
+     ]
+    },
+    "tool_retries": 0,
+    "cache_hits": 0,
+    "orchestration_ms": 0.7
+   },
+   "tool_durations_ms": [
+    2.2
+   ],
+   "iterations": 2,
+   "usage": {
+    "llm_calls": 2,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+   },
+   "note": "A malformed response must not be reported as an empty calendar.",
+   "answer": "The events service could not be queried, so I couldn't answer that part.",
+   "repeat": 1
+  },
+  {
+   "id": "fail2-06",
+   "category": "failure",
+   "query": "Is Deep Learning available and what is the attendance policy?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "academics",
+    "library"
+   ],
+   "called_servers": [
+    "academics",
+    "library"
+   ],
+   "called_tools": [
+    "academics__search_handbook",
+    "library__get_book_availability",
+    "library__search_books"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 3,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": true,
+   "budget_exhausted": false,
+   "status": "partial",
+   "error_code": null,
+   "latency_ms": 355.1,
+   "timings": {
+    "wall_ms": 355.1,
+    "discovery_ms": 13.8,
+    "first_token_ms": 355.0,
+    "llm_wall_ms": 2.4,
+    "llm_call_ms": [
+     0.8,
+     0.8,
+     0.8
+    ],
+    "tool_wall_ms": 338.1,
+    "tool_work_ms": 337.9,
+    "tool_ms_by_tool": {
+     "library__search_books": [
+      44.9
+     ],
+     "academics__search_handbook": [
+      266.9
+     ],
+     "library__get_book_availability": [
+      26.1
+     ]
+    },
+    "tool_retries": 1,
+    "cache_hits": 0,
+    "orchestration_ms": 0.8
+   },
+   "tool_durations_ms": [
+    44.9,
+    266.9,
+    26.1
+   ],
+   "iterations": 3,
+   "usage": {
+    "llm_calls": 3,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+   },
+   "note": null,
+   "answer": "**Deep Learning** is currently not available (0 of 5 copies). The next copy is due back on 2026-11-04.\n\nThe academics service is unreachable right now, so I couldn't answer that part.\n\nNote: results from library are demo data, not live campus records.",
+   "repeat": 1
+  },
+  {
+   "id": "fail2-07",
+   "category": "failure",
+   "query": "What is on the cafeteria menu today?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "cafeteria"
+   ],
+   "called_servers": [
+    "cafeteria"
+   ],
+   "called_tools": [
+    "cafeteria__get_today_menu"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 1,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": true,
+   "budget_exhausted": false,
+   "status": "partial",
+   "error_code": null,
+   "latency_ms": 4291.0,
+   "timings": {
+    "wall_ms": 4291.0,
+    "discovery_ms": 24.2,
+    "first_token_ms": 4290.9,
+    "llm_wall_ms": 1.5,
+    "llm_call_ms": [
+     0.7,
+     0.8
+    ],
+    "tool_wall_ms": 4264.8,
+    "tool_work_ms": 4264.7,
+    "tool_ms_by_tool": {
+     "cafeteria__get_today_menu": [
+      4264.7
+     ]
+    },
+    "tool_retries": 1,
+    "cache_hits": 0,
+    "orchestration_ms": 0.5
+   },
+   "tool_durations_ms": [
+    4264.7
+   ],
+   "iterations": 2,
+   "usage": {
+    "llm_calls": 2,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+   },
+   "note": null,
+   "answer": "The cafeteria service did not respond in time, so I couldn't answer that part.",
+   "repeat": 1
+  },
+  {
+   "id": "llm-01",
+   "category": "llm_failure",
+   "query": "What is on the cafeteria menu today?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [],
+   "called_servers": [],
+   "called_tools": [],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 0,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": null,
+   "budget_exhausted": false,
+   "status": "error",
+   "error_code": "llm_rate_limited",
+   "latency_ms": 22.1,
+   "timings": {
+    "wall_ms": 22.1,
+    "discovery_ms": 21.6,
+    "first_token_ms": null,
+    "llm_wall_ms": 0.0,
+    "llm_call_ms": [
+     0.0
+    ],
+    "tool_wall_ms": 0.0,
+    "tool_work_ms": 0.0,
+    "tool_ms_by_tool": {},
+    "tool_retries": 0,
+    "cache_hits": 0,
+    "orchestration_ms": 0.5
+   },
+   "tool_durations_ms": [],
+   "iterations": 1,
+   "usage": {
+    "llm_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+   },
+   "note": null,
+   "answer": "The language model is rate-limited right now. Please try again in a minute.",
+   "repeat": 1
+  },
+  {
+   "id": "llm-02",
+   "category": "llm_failure",
+   "query": "What is on the cafeteria menu today?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [],
+   "called_servers": [],
+   "called_tools": [],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 0,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": null,
+   "budget_exhausted": false,
+   "status": "error",
+   "error_code": "llm_timeout",
+   "latency_ms": 11.3,
+   "timings": {
+    "wall_ms": 11.3,
+    "discovery_ms": 11.1,
+    "first_token_ms": null,
+    "llm_wall_ms": 0.0,
+    "llm_call_ms": [
+     0.0
+    ],
+    "tool_wall_ms": 0.0,
+    "tool_work_ms": 0.0,
+    "tool_ms_by_tool": {},
+    "tool_retries": 0,
+    "cache_hits": 0,
+    "orchestration_ms": 0.2
+   },
+   "tool_durations_ms": [],
+   "iterations": 1,
+   "usage": {
+    "llm_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+   },
+   "note": null,
+   "answer": "I wasn't able to produce an answer for this request.",
+   "repeat": 1
+  },
+  {
+   "id": "llm-03",
+   "category": "llm_failure",
+   "query": "What is on the cafeteria menu today?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "cafeteria"
+   ],
+   "called_servers": [
+    "cafeteria"
+   ],
+   "called_tools": [
+    "cafeteria__get_today_menu"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 1,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": null,
+   "budget_exhausted": false,
+   "status": "ok",
+   "error_code": null,
+   "latency_ms": 54.8,
+   "timings": {
+    "wall_ms": 54.8,
+    "discovery_ms": 6.7,
+    "first_token_ms": 54.7,
+    "llm_wall_ms": 0.9,
+    "llm_call_ms": [
+     0.0,
+     0.4,
+     0.5
+    ],
+    "tool_wall_ms": 46.4,
+    "tool_work_ms": 46.3,
+    "tool_ms_by_tool": {
+     "cafeteria__get_today_menu": [
+      46.3
+     ]
+    },
+    "tool_retries": 0,
+    "cache_hits": 0,
+    "orchestration_ms": 0.8
+   },
+   "tool_durations_ms": [
+    46.3
+   ],
+   "iterations": 3,
+   "usage": {
+    "llm_calls": 2,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+   },
+   "note": "First call is malformed; the orchestrator retries once and the mock then answers normally.",
+   "answer": "Today's (Thursday) menu at Central Cafeteria (demo): Luchi Aloo Dum (INR 50); Sabudana Khichdi (INR 40); Thepla with Chutney (INR 40); Paneer Butter Masala with Roti (INR 120); Veg Hakka Noodles (INR 90); Chilli Chicken with Fried Rice (INR 140); Penne Arrabbiata (INR 130); Lemon Rice with Rasam (INR 75).\n\nNote: results from cafeteria are demo data, not live campus records.",
+   "repeat": 1
+  },
+  {
+   "id": "llm-04",
+   "category": "llm_failure",
+   "query": "What is on the cafeteria menu today?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "cafeteria"
+   ],
+   "called_servers": [
+    "cafeteria"
+   ],
+   "called_tools": [
+    "cafeteria__get_today_menu"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 0,
+   "total_calls": 2,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": null,
+   "budget_exhausted": false,
+   "status": "ok",
+   "error_code": null,
+   "latency_ms": 68.2,
+   "timings": {
+    "wall_ms": 68.2,
+    "discovery_ms": 25.2,
+    "first_token_ms": 68.1,
+    "llm_wall_ms": 1.1,
+    "llm_call_ms": [
+     0.0,
+     0.6,
+     0.5
+    ],
+    "tool_wall_ms": 40.8,
+    "tool_work_ms": 40.7,
+    "tool_ms_by_tool": {
+     "nonexistent__teleport": [
+      0.0
+     ],
+     "cafeteria__get_today_menu": [
+      40.7
+     ]
+    },
+    "tool_retries": 0,
+    "cache_hits": 0,
+    "orchestration_ms": 1.1
+   },
+   "tool_durations_ms": [
+    0.0,
+    40.7
+   ],
+   "iterations": 3,
+   "usage": {
+    "llm_calls": 3,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+   },
+   "note": "The model first calls a tool that does not exist; it is rejected as unknown_tool, then the mock recovers.",
+   "answer": "Today's (Thursday) menu at Central Cafeteria (demo): Luchi Aloo Dum (INR 50); Sabudana Khichdi (INR 40); Thepla with Chutney (INR 40); Paneer Butter Masala with Roti (INR 120); Veg Hakka Noodles (INR 90); Chilli Chicken with Fried Rice (INR 140); Penne Arrabbiata (INR 130); Lemon Rice with Rasam (INR 75).\n\nNote: results from cafeteria are demo data, not live campus records.",
+   "repeat": 1
+  },
+  {
+   "id": "llm-05",
+   "category": "tool_budget",
+   "query": "What is on the cafeteria menu today?",
+   "passed": true,
+   "failures": [],
+   "failure_class": null,
+   "expected_servers": [
+    "cafeteria"
+   ],
+   "called_servers": [
+    "cafeteria"
+   ],
+   "called_tools": [
+    "cafeteria__get_today_menu"
+   ],
+   "tool_selection_correct": true,
+   "server_selection_correct": true,
+   "arguments_correct": null,
+   "unnecessary_calls": 0,
+   "repeated_calls": 4,
+   "total_calls": 5,
+   "answer_correct": true,
+   "citation_correct": null,
+   "source_modes_correct": null,
+   "recovered": null,
+   "budget_exhausted": true,
+   "status": "error",
+   "error_code": "max_iterations",
+   "latency_ms": 47.4,
+   "timings": {
+    "wall_ms": 47.4,
+    "discovery_ms": 9.0,
+    "first_token_ms": null,
+    "llm_wall_ms": 0.0,
+    "llm_call_ms": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "tool_wall_ms": 34.3,
+    "tool_work_ms": 34.1,
+    "tool_ms_by_tool": {
+     "cafeteria__get_today_menu": [
+      34.1
+     ]
+    },
+    "tool_retries": 0,
+    "cache_hits": 4,
+    "orchestration_ms": 4.1
+   },
+   "tool_durations_ms": [
+    34.1
+   ],
+   "iterations": 5,
+   "usage": {
+    "llm_calls": 6,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+   },
+   "note": "The model keeps requesting tools; the iteration/tool budget must stop it.",
+   "answer": "I couldn't finish within the step limit for this request. Partial tool results are listed below.",
+   "repeat": 1
+  }
+ ]
+}

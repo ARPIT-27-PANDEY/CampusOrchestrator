@@ -59,6 +59,33 @@ class HealthResponse(BaseModel):
     llm: dict[str, Any]
     mcp: dict[str, int]
     time: datetime
+    campus_time: str | None = Field(default=None, description="Current campus-local time (ISO, with offset).")
+    access_mode: str | None = None
+
+
+class LoginRequest(BaseModel):
+    password: str = Field(min_length=1, max_length=200)
+
+
+class SessionInfo(BaseModel):
+    access_mode: Literal["open", "password"]
+    authenticated: bool
+    expires_at: datetime | None = None
+
+
+class EvalRunInfo(BaseModel):
+    run_id: str
+    kind: Literal["agent", "retrieval"]
+    generated_at: str | None = None
+    dataset: str | None = None
+    provider: str | None = None
+    model: str | None = None
+    transport: str | None = None
+    retriever: str | None = None
+    repeat: int | None = None
+    pass_rate: float | None = None
+    cases: int | None = None
+    legacy: bool = False
 
 
 class TraceListItem(BaseModel):

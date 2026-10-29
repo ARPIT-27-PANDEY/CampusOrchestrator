@@ -1,0 +1,37 @@
+{
+  "retrieved_at": "2026-10-28T20:45:00Z",
+  "curated": 144,
+  "imported": 138,
+  "skipped": [
+    {
+      "title": "Surveying: Principles and Applications",
+      "author": "Kavanagh",
+      "reason": "no confident Open Library match"
+    },
+    {
+      "title": "Artificial Intelligence: A Modern Approach",
+      "author": "Russell",
+      "reason": "no confident Open Library match"
+    },
+    {
+      "title": "Influence: The Psychology of Persuasion",
+      "author": "Cialdini",
+      "reason": "no confident Open Library match"
+    },
+    {
+      "title": "Crime and Punishment",
+      "author": "Dostoyevsky",
+      "reason": "no confident Open Library match"
+    },
+    {
+      "title": "War and Peace",
+      "author": "Tolstoy",
+      "reason": "no confident Open Library match"
+    },
+    {
+      "title": "The Gene: An Intimate History",
+      "author": "Mukherjee",
+      "reason": "no confident Open Library match"
+    }
+  ]
+}

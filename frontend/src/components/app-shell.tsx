@@ -1,13 +1,14 @@
-"use client";
+﻿"use client";
 
 import { Activity, FlaskConical, LayoutGrid, MessageSquare, Signpost } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type * as React from "react";
 
+import { SignOutButton } from "@/components/auth-gate";
 import { api } from "@/lib/api";
 import { SERVICES } from "@/lib/services";
-import { cn } from "@/lib/utils";
+import { cn, formatTime } from "@/lib/utils";
 import { useApi } from "@/hooks/use-api";
 
 const NAV = [
@@ -27,8 +28,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <aside className="border-rule bg-panel md:sticky md:top-0 md:h-dvh md:w-60 md:shrink-0 md:border-r">
         <div className="flex items-center justify-between gap-3 px-4 py-4 md:block md:px-5 md:py-6">
           <Link href="/" className="block">
-            <span className="text-lg font-semibold tracking-tight">CampusOS AI</span>
-            <span className="hidden text-[13px] text-ink-muted md:block">Campus assistant over MCP</span>
+            <span className="text-lg font-semibold tracking-tight">CampusOrchestrator</span>
+            <span className="hidden text-[13px] text-ink-muted md:block">IIT Roorkee campus assistant</span>
           </Link>
         </div>
         <nav aria-label="Main" className="flex gap-1 overflow-x-auto px-2 pb-2 md:flex-col md:px-3">
@@ -72,6 +73,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <p>
                 {health.data.mcp.available} of {health.data.mcp.configured} sources up, {health.data.mcp.tools} tools
               </p>
+              {health.data.campus_time ? (
+                <p>
+                  Campus time: <span className="text-ink">{formatTime(health.data.campus_time)}</span>
+                </p>
+              ) : null}
+              <div className="pt-2">
+                <SignOutButton />
+              </div>
             </>
           ) : health.error ? (
             <p className="text-bad">Backend unreachable</p>

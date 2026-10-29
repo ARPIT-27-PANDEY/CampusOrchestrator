@@ -7,15 +7,16 @@ from datetime import date
 import pytest
 from mcp import Client
 
-from library_mcp.provider import BookNotFoundError, DemoLibraryProvider
+from library_mcp.provider import DEMO_DATA_PATH, BookNotFoundError, DemoLibraryProvider
 from library_mcp.server import build_server
 
+V1_CATALOGUE = DEMO_DATA_PATH.with_name("demo_books_v1.json")
 EXPECTED_TOOLS = {"search_books", "get_book_availability", "get_library_hours"}
 
 
 @pytest.fixture
 def provider() -> DemoLibraryProvider:
-    return DemoLibraryProvider()
+    return DemoLibraryProvider(V1_CATALOGUE)  # the original 23-book catalogue these tests describe
 
 
 def test_search_ranks_exact_title_first(provider: DemoLibraryProvider) -> None:

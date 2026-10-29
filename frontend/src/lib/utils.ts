@@ -1,6 +1,9 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+/** Campus timezone for displaying timestamps. Dates of menus and events come from the tools, never from here. */
+export const CAMPUS_TIME_ZONE = process.env.NEXT_PUBLIC_CAMPUS_TIMEZONE || "Asia/Kolkata";
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -10,10 +13,21 @@ export function formatMs(ms: number | null | undefined): string {
   return ms >= 1000 ? `${(ms / 1000).toFixed(1)} s` : `${Math.round(ms)} ms`;
 }
 
-export function formatTime(iso: string | null | undefined): string {
+/** Format an ISO timestamp in the campus timezone (not the browser's), labelled with the zone. */
+export function formatTime(iso: string | null | undefined, timeZone: string = CAMPUS_TIME_ZONE): string {
   if (!iso) return "never";
   const d = new Date(iso);
-  return d.toLocaleString(undefined, { hour: "2-digit", minute: "2-digit", second: "2-digit", month: "short", day: "numeric" });
+  if (Number.isNaN(d.getTime())) return iso;
+  const text = d.toLocaleString("en-IN", {
+    timeZone,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    month: "short",
+    day: "numeric",
+    hour12: false,
+  });
+  return `${text} ${timeZone === "Asia/Kolkata" ? "IST" : timeZone}`;
 }
 
 /** "library__search_books" -> { server: "library", tool: "search_books" } */

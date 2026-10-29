@@ -70,9 +70,19 @@ class HashingEmbedder:
         return self._embed(text)
 
 
+class EmbedderUnavailableError(RuntimeError):
+    """A requested embedding backend is not installed. Never silently replaced by another embedder."""
+
+
 class FastEmbedEmbedder:  # pragma: no cover - requires optional dependency and model download
     def __init__(self, model_name: str = "BAAI/bge-small-en-v1.5") -> None:
-        from fastembed import TextEmbedding
+        try:
+            from fastembed import TextEmbedding
+        except ImportError as exc:
+            raise EmbedderUnavailableError(
+                "EMBEDDING_PROVIDER=fastembed needs the optional dependency: "
+                "pip install 'campusos-academics-mcp[fastembed]' (downloads the ONNX model, ~130 MB, on first use)."
+            ) from exc
 
         self._model = TextEmbedding(model_name=model_name)
         self.name = f"fastembed:{model_name}"

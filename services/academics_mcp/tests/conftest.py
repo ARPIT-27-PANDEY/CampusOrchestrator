@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from academics_mcp.config import DEFAULT_HANDBOOK_DIR, AcademicsSettings
+from academics_mcp.config import DEMO_HANDBOOK_DIR, AcademicsSettings
 from academics_mcp.server import build_service
 from academics_mcp.service import HandbookService
 
@@ -13,7 +13,7 @@ from academics_mcp.service import HandbookService
 @pytest.fixture
 def handbook_dir(tmp_path: Path) -> Path:
     target = tmp_path / "handbooks"
-    shutil.copytree(DEFAULT_HANDBOOK_DIR, target)
+    shutil.copytree(DEMO_HANDBOOK_DIR, target)
     return target
 
 

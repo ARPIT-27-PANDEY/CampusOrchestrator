@@ -23,14 +23,14 @@ from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from typing import Any
-from zoneinfo import ZoneInfo
 
+from ..campus_time import CampusClock
 from ..llm.base import ChatMessage, LLMError, LLMProvider, LLMResponse, LLMToolCallFormatError, ToolCall, ToolSpec
 from ..mcp.manager import MCPClientManager
 from ..mcp.models import FAILURE_STATUSES, ServerStatus, ToolExecution, ToolStatus
 from . import prompts
 from .citations import collect_citations, collect_sources, verify_citations
-from .models import AgentResult, AgentTrace, ToolCallSummary, TraceStep
+from .models import AgentResult, AgentTrace, RunTimings, ToolCallSummary, TraceStep
 from .trace_store import TraceStore
 
 EventSink = Callable[[str, dict[str, Any]], Awaitable[None]]
@@ -56,14 +56,20 @@ class Orchestrator:
         traces: TraceStore,
         limits: AgentLimits | None = None,
         timezone: str = "Asia/Kolkata",
-        clock: Callable[[], datetime] | None = None,
+        clock: CampusClock | Callable[[], datetime] | None = None,
     ) -> None:
         self.llm = llm
         self.mcp = mcp
         self.traces = traces
         self.limits = limits or AgentLimits()
-        self._tz = ZoneInfo(timezone)
-        self._clock = clock or (lambda: datetime.now(self._tz))
+        # The campus clock is the source of truth for "today"; the model never is.
+        if isinstance(clock, CampusClock):
+            self.clock = clock
+        else:
+            self.clock = CampusClock(timezone, clock)
+
+    def _clock(self) -> datetime:
+        return self.clock.now()
 
     def tool_specs(self) -> list[ToolSpec]:
         return [ToolSpec(t.qualified_name, t.description, t.input_schema) for t in self.mcp.tools]
@@ -94,6 +100,10 @@ class _Run:
         self.usage: dict[str, int] = {"llm_calls": 0, "prompt_tokens": 0, "completion_tokens": 0}
         self.t0 = time.perf_counter()
         self.streamed_text = False
+        self.first_token_ms: float | None = None
+        self.discovery_ms = 0.0
+        self.llm_call_ms: list[float] = []
+        self.tool_wall_ms = 0.0
 
     # ------------------------------------------------------------------ helpers
     def _step(self, kind: str, started: float, **detail: Any) -> None:
@@ -108,6 +118,8 @@ class _Run:
 
     async def _on_text(self, text: str) -> None:
         self.streamed_text = True
+        if self.first_token_ms is None:
+            self.first_token_ms = round((time.perf_counter() - self.t0) * 1000, 1)
         await self.emit("token", {"text": text})
 
     async def _call_llm(
@@ -119,8 +131,10 @@ class _Run:
         try:
             resp = await self.o.llm.complete(messages, tools, on_text=self._on_text, allow_tools=allow_tools)
         except LLMError as exc:
+            self.llm_call_ms.append(round((time.perf_counter() - started) * 1000, 1))
             self._step("llm", started, iteration=iteration, error=exc.code, message=str(exc))
             raise
+        self.llm_call_ms.append(round((time.perf_counter() - started) * 1000, 1))
         self.usage["llm_calls"] += 1
         for key in ("prompt_tokens", "completion_tokens"):
             self.usage[key] += int(resp.usage.get(key, 0))
@@ -181,6 +195,7 @@ class _Run:
             outcomes = await asyncio.gather(*(self._execute_one(c, ok) for c, ok in plans))
         else:
             outcomes = [await self._execute_one(c, ok) for c, ok in plans]
+        self.tool_wall_ms += (time.perf_counter() - started) * 1000
 
         messages: list[ChatMessage] = []
         for call, ex, cached in outcomes:
@@ -226,6 +241,7 @@ class _Run:
         states = self.o.mcp.server_states
         unavailable = [s.name for s in states if s.status is ServerStatus.UNAVAILABLE]
         tools = self.o.tool_specs()
+        self.discovery_ms = round((time.perf_counter() - started) * 1000, 1)
         self._step("discovery", started, tools=[t.name for t in tools], servers={s.id: s.status.value for s in states})
         await self.emit(
             "discovery", {"tool_count": len(tools), "servers": [{"id": s.id, "status": s.status.value} for s in states]}
@@ -282,6 +298,28 @@ class _Run:
 
         return await self._finish(answer, error_code, iteration)
 
+    def _timings(self) -> RunTimings:
+        wall = round((time.perf_counter() - self.t0) * 1000, 1)
+        by_tool: dict[str, list[float]] = {}
+        for s in self.summaries:
+            if not s.cached and s.status != "budget_exceeded":
+                by_tool.setdefault(s.tool, []).append(s.duration_ms)
+        llm_wall = round(sum(self.llm_call_ms), 1)
+        tool_wall = round(self.tool_wall_ms, 1)
+        return RunTimings(
+            wall_ms=wall,
+            discovery_ms=self.discovery_ms,
+            first_token_ms=self.first_token_ms,
+            llm_wall_ms=llm_wall,
+            llm_call_ms=self.llm_call_ms,
+            tool_wall_ms=tool_wall,
+            tool_work_ms=round(sum(v for vals in by_tool.values() for v in vals), 1),
+            tool_ms_by_tool=by_tool,
+            tool_retries=sum(max(0, s.attempts - 1) for s in self.summaries),
+            cache_hits=sum(1 for s in self.summaries if s.cached),
+            orchestration_ms=round(max(0.0, wall - self.discovery_ms - llm_wall - tool_wall), 1),
+        )
+
     async def _finish(self, answer: str | None, error_code: str | None, iteration: int) -> AgentResult:
         citations = collect_citations(self.executions)
         names = {s.id: s.name for s in self.o.mcp.server_states}
@@ -321,6 +359,7 @@ class _Run:
             iterations=iteration,
             latency_ms=round((time.perf_counter() - self.t0) * 1000, 1),
             usage=self.usage,
+            timings=self._timings(),
         )
         self.trace.status = result.status
         self.trace.latency_ms = result.latency_ms

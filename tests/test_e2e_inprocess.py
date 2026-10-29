@@ -35,10 +35,14 @@ def orchestrator(
     return Orchestrator(MockProvider(), mgr, TraceStore(), AgentLimits())
 
 
-async def test_discovers_all_eleven_tools_over_mcp(servers: dict[str, object]) -> None:
+async def test_discovers_all_tools_over_mcp(servers: dict[str, object]) -> None:
     orch = orchestrator(servers)
     await orch.mcp.refresh()
-    assert len(orch.mcp.tools) == 11
+    # 14 = the original 11 + events__get_events_for_date + cafeteria__get_menu_for_date
+    # + cafeteria__list_dining_locations (discovery is disabled in tests: no public-book tool).
+    names = {t.qualified_name for t in orch.mcp.tools}
+    assert len(names) == 14
+    assert {"events__get_events_for_date", "cafeteria__get_menu_for_date", "cafeteria__list_dining_locations"} <= names
     assert {t.server_id for t in orch.mcp.tools} == set(IDS)
 
 

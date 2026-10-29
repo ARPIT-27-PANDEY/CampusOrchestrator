@@ -34,12 +34,13 @@ _FILLER = {
 
 EVENT_WORDS = (
     "event", "events", "workshop", "workshops", "hackathon", "lecture", "seminar", "career fair", "contest",
-    "competition", "cultural night", "reading group", "football", "happening", "coming up", "talk",
+    "competition", "cultural night", "reading group", "football", "happening", "coming up", "talk", "holiday",
+    "fest", "thomso", "cognizance", "sangram", "convocation",
 )  # fmt: skip
 LIBRARY_BOOK_WORDS = (
     "book",
-    "books",
     "borrow",
+    "ebook",
     "copies",
     "copy of",
     "textbook",
@@ -59,7 +60,9 @@ ACADEMIC_WORDS = (
     "re-evaluation", "reevaluation", "plagiarism", "integrity", "internship", "credit", "probation",
     "examination", "rule", "regulation", "allowed", "fine", "fines", "id card", "hostel", "curfew",
     "certificate", "scholarship", "condonation", "generative ai", "chatgpt", "re-register", "make-up",
-    "makeup exam", "debarred", "notice board", "faq", "moocs", "mooc", "waiver",
+    "makeup exam", "debarred", "notice board", "faq", "moocs", "mooc", "waiver", "register for", "semester",
+    "penalty", "unfair means", "prohibited", "cheating", "duration", "programme", "b.tech", "phd", "ph.d", "thesis",
+    "academic bank", "minor programme", "minor program", "re-examination", "backlog", "branch change",
 )  # fmt: skip
 GREETING = re.compile(r"^\s*(hi|hello|hey|good (morning|afternoon|evening)|thanks|thank you)\b[!. ]*$", re.I)
 VAGUE = re.compile(r"^\s*(is it|how much( is it)?|when is it|where is it|what about (it|that)|and that)\??\s*$", re.I)
@@ -80,8 +83,9 @@ SERVE_ITEM = re.compile(
 
 
 def _has(text: str, words: tuple[str, ...]) -> bool:
+    """Whole-word match that also accepts a plural ('textbook' matches 'textbooks')."""
     low = f" {text.lower()} "
-    return any(re.search(rf"(?<![a-z]){re.escape(w.strip())}(?![a-z])", low) for w in words)
+    return any(re.search(rf"(?<![a-z]){re.escape(w.strip())}(?:e?s)?(?![a-z])", low) for w in words)
 
 
 def _keywords(text: str) -> str:
@@ -125,11 +129,11 @@ def split_clauses(query: str) -> list[str]:
 
 
 _WEEKDAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
-_TODAY_RE = re.compile(r"Current date and time: \w+ (\d{4}-\d{2}-\d{2})")
+_TODAY_RE = re.compile(r"Today on campus is \w+, (\d{4}-\d{2}-\d{2})")
 
 
-def resolve_date(clause: str, today: date | None) -> str | None:
-    """Turn 'today', 'tomorrow', a weekday name or an ISO date into YYYY-MM-DD."""
+def resolve_date(clause: str, today: date | None, *, explicit_today: bool = False) -> str | None:
+    """Turn 'today', 'tomorrow', a weekday name or an ISO date into YYYY-MM-DD (campus date from the prompt)."""
     if m := re.search(r"\b(\d{4}-\d{2}-\d{2})\b", clause):
         return m.group(1)
     if today is None:
@@ -137,24 +141,48 @@ def resolve_date(clause: str, today: date | None) -> str | None:
     low = clause.lower()
     if "tomorrow" in low:
         return (today + timedelta(days=1)).isoformat()
+    if explicit_today and re.search(r"\b(today|tonight)\b", low):
+        return today.isoformat()
     for i, name in enumerate(_WEEKDAYS):
         if re.search(rf"\b{name}\b", low):
             return (today + timedelta(days=(i - today.weekday()) % 7)).isoformat()
     return None
 
 
+_DATE_WORDS = re.compile(r"\b(today|tonight|tomorrow|monday|tuesday|wednesday|thursday|friday|saturday|sunday|\d{4}-\d{2}-\d{2})\b", re.I)  # fmt: skip
+_MEAL = re.compile(r"\b(breakfast|lunch|dinner|snacks?)\b", re.I)
+_CUISINE = re.compile(
+    r"\b(north indian|south indian|east indian|west indian|chinese|italian|continental|regional)\b", re.I
+)
+_OPEN_BOOKS = re.compile(
+    r"\b(open[- ]access|free(ly)?|download(able)?|pdfs?|read online|public domain|e-?books?)\b", re.I
+)
+
+
 def plan(query: str, today: date | None = None) -> list[Intent]:
     intents: list[Intent] = []
+    if VAGUE.match(query):
+        return intents  # "how much is it?" - nothing to look up; ask for clarification instead
     for clause in split_clauses(query):
         domain = classify(clause)
         if domain is None:
             continue
         if domain == "events":
-            kw = _keywords(re.sub(r"\bevents?\b", "", clause, flags=re.I))
-            if not kw:
+            kw = _keywords(re.sub(r"\bevents?\b", "", _DATE_WORDS.sub("", clause), flags=re.I))
+            day = resolve_date(clause, today, explicit_today=True) if _DATE_WORDS.search(clause) else None
+            if day and not kw:
+                intents.append(Intent("events", clause, {"date": day}, "get_events_for_date"))
+            elif not kw:
                 intents.append(Intent("events", clause, {"limit": 5}, "get_upcoming_events"))
             else:
                 intents.append(Intent("events", clause, {"query": kw or clause}, "search_events"))
+        elif domain == "library" and _OPEN_BOOKS.search(clause):
+            topic = _keywords(
+                _OPEN_BOOKS.sub(
+                    "", re.sub(r"\b(books?|textbooks?|library|available|online|on|in)\b", "", clause, flags=re.I)
+                )
+            )
+            intents.append(Intent("public_books", clause, {"query": topic or clause, "open_access_only": True}, "discover_public_books"))  # fmt: skip
         elif domain == "library":
             m = TITLE_AVAILABLE.search(clause) or QUOTED.search(clause)
             if m:
@@ -169,12 +197,28 @@ def plan(query: str, today: date | None = None) -> list[Intent]:
             day = resolve_date(clause, today)
             intents.append(Intent("library_hours", clause, {"date": day} if day else {}, "get_library_hours"))
         elif domain == "cafeteria":
+            meal = _MEAL.search(clause)
+            cuisine = _CUISINE.search(clause)
+            veg = re.search(r"\b(veg|vegetarian)\b", clause, re.I) and not re.search(r"non[- ]?veg", clause, re.I)
+            day = resolve_date(clause, today, explicit_today=bool(cuisine or veg))
+            filters: dict[str, Any] = {}
+            if meal:
+                filters["meal"] = meal.group(1).lower().rstrip("s") if meal.group(1).lower() != "snacks" else "snacks"
             if mp := PRICE_OF.search(clause):
                 intents.append(Intent("cafeteria", clause, {"item_name": mp.group("item").strip()}, "get_item_price"))
+            elif day and (
+                cuisine or veg or "tomorrow" in clause.lower() or re.search(r"\d{4}-\d{2}-\d{2}|day\b", clause)
+            ):
+                args = {"date": day, **filters}
+                if cuisine:
+                    args["cuisine"] = cuisine.group(1).lower()
+                if veg:
+                    args["vegetarian"] = True
+                intents.append(Intent("cafeteria", clause, args, "get_menu_for_date"))
             elif re.search(r"menu|today|lunch|dinner|breakfast|what.*eat|food", clause, re.I) and not re.search(
                 r"when|which day", clause, re.I
             ):
-                intents.append(Intent("cafeteria", clause, {}, "get_today_menu"))
+                intents.append(Intent("cafeteria", clause, filters, "get_today_menu"))
             else:
                 ms = SERVE_ITEM.search(clause)
                 item = ms.group("item") if ms else _keywords(clause)
@@ -221,8 +265,12 @@ def _parse_tool_results(messages: list[ChatMessage]) -> dict[str, tuple[str, dic
 
 def _best_sentences(text: str, query: str, limit: int = 2) -> str:
     """Extractive synthesis: quote the passage sentences that share the most words with the question."""
-    # Split on sentence ends, but not after abbreviations such as "Rs." or "No." (prices, numbers).
-    sentences = [x.strip() for x in re.split(r"(?<!\bRs\.)(?<!\bNo\.)(?<!\be\.g\.)(?<=[.?!])\s+", text) if x.strip()]
+    # Split on sentence ends, but not after abbreviations ("Rs.", "No.", "B.Tech.", "Ph.D.", "M.Sc." ...).
+    protected = re.sub(
+        r"\b(Rs|No|e\.g|i\.e|B\.Tech|M\.Tech|B\.Arch|B\.Des|Ph\.D|M\.Sc|Dr|Prof|viz)\.", r"\1<DOT>", text
+    )
+    parts = [x.strip() for x in re.split(r"(?<=[.?!])\s+", protected) if x.strip()]
+    sentences = [p.replace("<DOT>", ".") for p in parts]
     q = {w for w in _WORD.findall(query.lower()) if w not in _FILLER and len(w) > 2}
 
     def overlap(sentence: str) -> int:
@@ -236,6 +284,30 @@ def _best_sentences(text: str, query: str, limit: int = 2) -> str:
 def _fmt_dt(value: str) -> str:
     # 2026-10-26T14:00:00+05:30 -> 2026-10-26 14:00
     return value.replace("T", " ")[:16]
+
+
+def generic_intent(query: str, tools: list[ToolSpec]) -> Intent | None:
+    """Fallback for tools the keyword rules do not know: pick the discovered tool whose name and
+    description share the most content words with the query, and fill its required string
+    arguments with the query keywords. Uses only discovered metadata - no hard-coded names."""
+    q = {w for w in _WORD.findall(query.lower()) if w not in _FILLER and len(w) > 2}
+    best: tuple[int, ToolSpec] | None = None
+    for t in tools:
+        words = set(_WORD.findall(f"{t.name.replace('_', ' ')} {t.description}".lower()))
+        stems = {w.rstrip("s") for w in words}
+        overlap = sum(1 for w in q if w in words or w.rstrip("s") in stems)
+        if overlap >= 2 and (best is None or overlap > best[0]):
+            best = (overlap, t)
+    if best is None:
+        return None
+    tool = best[1]
+    props = tool.parameters.get("properties", {})
+    args: dict[str, Any] = {}
+    for name in tool.parameters.get("required", []):
+        spec = props.get(name, {})
+        if spec.get("type") == "string" or "anyOf" not in spec:
+            args[name] = _keywords(query) or query
+    return Intent("generic", query, args, tool.name.split("__", 1)[-1])
 
 
 class MockProvider:
@@ -256,6 +328,14 @@ class MockProvider:
         system = next((m.content or "" for m in messages if m.role == "system"), "")
         today_match = _TODAY_RE.search(system)
         intents = plan(query, date.fromisoformat(today_match.group(1)) if today_match else None)
+        if not intents and not GREETING.match(query) and not VAGUE.match(query):
+            known = {"search_books", "get_book_availability", "get_library_hours", "discover_public_books",
+                     "search_events", "get_events_for_date", "get_upcoming_events", "get_event_details",
+                     "get_today_menu", "get_menu_for_date", "search_menu_item", "get_item_price",
+                     "list_dining_locations", "search_handbook", "get_policy_details"}  # fmt: skip
+            # Only tools the rules above do not cover are candidates for the generic fallback.
+            fallback = generic_intent(query, [t for t in tools if t.name.split("__", 1)[-1] not in known])
+            intents = [fallback] if fallback else []
         called = {name for name, _, _ in results.values()}
 
         calls: list[ToolCall] = []
@@ -347,6 +427,34 @@ class MockProvider:
         by_tool: dict[str, list[tuple[dict[str, Any] | None, str]]],
     ) -> str:
         tool = intent.tool
+        if tool == "get_events_for_date":
+            events = payload.get("events") or []
+            day = payload.get("date") or intent.args.get("date")
+            if not events:
+                return f"The events calendar was checked and lists no events on {day}."
+            parts = []
+            for e in events[:6]:
+                when = "all day" if e.get("all_day") else _fmt_dt(e["start"])[11:]
+                tags = [
+                    t
+                    for t in (
+                        "tentative" if e.get("tentative") else "",
+                        "demo event" if e.get("origin") == "synthetic" else "",
+                    )
+                    if t
+                ]
+                parts.append(f"{e['title']} ({when}{'; ' + ', '.join(tags) if tags else ''})")
+            return f"Events on {day}: " + "; ".join(parts) + "."
+        if tool == "discover_public_books":
+            books = payload.get("books") or []
+            failed = [p["provider"] for p in payload.get("providers") or [] if p.get("status") not in ("ok", "cached")]
+            note = f" ({', '.join(failed)} could not be searched.)" if failed else ""
+            if not books:
+                return f'No openly accessible books matched "{intent.args.get("query")}" in the public catalogues searched.{note}'
+            listing = "; ".join(
+                f"**{b['title']}** ({b['metadata_provider']}, {b['access_type'].replace('_', ' ')})" for b in books[:3]
+            )
+            return f"Public catalogues (not the campus library) list: {listing}.{note}"
         if tool in ("search_events", "get_upcoming_events"):
             events = payload.get("events") or []
             if not events:
@@ -359,7 +467,9 @@ class MockProvider:
         if tool == "search_books":
             books = payload.get("books") or []
             if not books:
-                return f'The library catalogue has no match for "{intent.args.get("query")}".'
+                related = payload.get("suggestions") or []
+                extra = f" Related subjects in the catalogue: {', '.join(related)}." if related else ""
+                return f'The campus library catalogue has no match for "{intent.args.get("query")}".{extra}'
             avail = next((p for p, s in by_tool.get("get_book_availability", []) if s == "success" and p), None)
             if avail and avail.get("book_id") == books[0]["book_id"]:
                 title = avail.get("title", books[0].get("title"))
@@ -375,11 +485,15 @@ class MockProvider:
             if not payload.get("is_open"):
                 return f"The library is closed on {payload['date']} ({payload.get('note') or 'closure'})."
             return f"On {payload['date']} the library is open {payload['open_time']}–{payload['close_time']}."
-        if tool == "get_today_menu":
+        if tool in ("get_today_menu", "get_menu_for_date"):
             items = payload.get("items") or []
             meals = [i for i in items if i.get("category") not in ("beverages", "snacks")] or items
-            listing = "; ".join(f"{i['name']} ({i['currency']} {i['price']:g})" for i in meals)
-            return f"Today's ({payload.get('weekday', '').title()}) menu: {listing}."
+            label = "Today's" if tool == "get_today_menu" else f"The {payload.get('date')}"
+            where = f" at {payload['cafeteria']}" if payload.get("cafeteria") else ""
+            if not items:
+                return f"{label} ({payload.get('weekday', '').title()}) menu{where} has no items matching that request."
+            listing = "; ".join(f"{i['name']} ({i['currency']} {i['price']:g})" for i in meals[:8])
+            return f"{label} ({payload.get('weekday', '').title()}) menu{where}: {listing}."
         if tool == "get_item_price":
             if payload.get("found"):
                 return f"{payload['matched_item']} costs {payload['currency']} {payload['price']:g}."
@@ -404,7 +518,9 @@ class MockProvider:
             p = passages[0]
             excerpt = _best_sentences(p["excerpt"], str(intent.args.get("query") or intent.clause))
             return f'According to the {p["document_title"]} (p. {p["page"]}): "{excerpt}" [{p["document_title"]}, p. {p["page"]}]'
-        return json.dumps(payload)[:300]
+        # Unknown (dynamically discovered) tool: report its structured result compactly, without the source block.
+        body = {k: v for k, v in payload.items() if k != "source"}
+        return f"From {tool.replace('_', ' ')}: {json.dumps(body, ensure_ascii=False)[:400]}"
 
 
 class ScriptedProvider:

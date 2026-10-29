@@ -13,11 +13,12 @@ log = logging.getLogger("campusos.api")
 
 
 class ApiError(Exception):
-    def __init__(self, status: int, code: str, message: str) -> None:
+    def __init__(self, status: int, code: str, message: str, headers: dict[str, str] | None = None) -> None:
         super().__init__(message)
         self.status = status
         self.code = code
         self.message = message
+        self.headers = headers or {}
 
 
 def _body(
@@ -36,7 +37,7 @@ def _body(
 def install_error_handlers(app: FastAPI) -> None:
     @app.exception_handler(ApiError)
     async def _api_error(request: Request, exc: ApiError) -> JSONResponse:
-        return JSONResponse(_body(request, exc.code, exc.message), status_code=exc.status)
+        return JSONResponse(_body(request, exc.code, exc.message), status_code=exc.status, headers=exc.headers)
 
     @app.exception_handler(RequestValidationError)
     async def _validation(request: Request, exc: RequestValidationError) -> JSONResponse:

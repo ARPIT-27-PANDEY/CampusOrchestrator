@@ -8,7 +8,7 @@ import subprocess
 import sys
 import time
 from collections.abc import Iterator
-from datetime import date, datetime
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
@@ -21,26 +21,41 @@ ROOT = Path(__file__).resolve().parents[1]
 FIXED_NOW = datetime(2026, 10, 23, 9, 0, tzinfo=ZoneInfo("Asia/Kolkata"))
 
 
-def inprocess_servers() -> dict[str, Any]:
-    """Real MCPServer instances with deterministic clocks (connected in-process via the SDK Client)."""
-    from academics_mcp.config import AcademicsSettings
+def inprocess_servers(now: datetime = FIXED_NOW) -> dict[str, Any]:
+    """Real MCPServer instances sharing one fixed campus clock (connected in-process via the SDK Client)."""
+    from academics_mcp.config import DEMO_HANDBOOK_DIR, AcademicsSettings
     from academics_mcp.server import build_server as academics
     from academics_mcp.server import build_service
+    from cafeteria_mcp.campus_time import CampusClock as CafeteriaClock
     from cafeteria_mcp.provider import DEMO_MENU_PATH, MenuProvider, menu_from_json
     from cafeteria_mcp.server import build_server as cafeteria
+    from events_mcp.campus_time import CampusClock as EventsClock
+    from events_mcp.provider import DEMO_DATA_PATH as EVENTS_DATA
     from events_mcp.provider import DemoEventsProvider
     from events_mcp.server import build_server as events
+    from library_mcp.campus_time import CampusClock as LibraryClock
+    from library_mcp.provider import DEMO_DATA_PATH as LIB_DATA
+    from library_mcp.provider import DemoLibraryProvider
     from library_mcp.server import build_server as library
 
     return {
-        "library": library(),
-        "events": events(DemoEventsProvider(clock=lambda: FIXED_NOW)),
+        "library": library(
+            DemoLibraryProvider(LIB_DATA.with_name("demo_books_v1.json"), clock=LibraryClock.fixed(now)), discovery=None
+        ),
+        "events": events(
+            DemoEventsProvider(EVENTS_DATA.with_name("demo_events_v1.json"), clock=EventsClock.fixed(now))
+        ),
         "cafeteria": cafeteria(
             MenuProvider(
-                menu_from_json(DEMO_MENU_PATH), mode="demo", provider="demo-json", today=lambda: date(2026, 10, 23)
+                menu_from_json(DEMO_MENU_PATH.with_name("demo_menu_v1.json")),
+                mode="demo",
+                provider="demo-json",
+                clock=CafeteriaClock.fixed(now),
             )
         ),
-        "academics": academics(build_service(AcademicsSettings(qdrant_path=":memory:"))),
+        "academics": academics(
+            build_service(AcademicsSettings(handbook_dir=DEMO_HANDBOOK_DIR, manifest_path=None, qdrant_path=":memory:"))
+        ),
     }
 
 
@@ -72,6 +87,12 @@ def http_servers() -> Iterator[dict[str, str]]:
                 "MCP_HOST": "127.0.0.1",
                 "LOG_LEVEL": "warning",
                 "QDRANT_PATH": ":memory:",
+                # These process-level tests exercise the v1 demo data (fixed expectations).
+                "HANDBOOK_DIR": str(ROOT / "services" / "academics_mcp" / "data" / "handbooks"),
+                "SOURCE_MANIFEST": "",
+                "PUBLIC_BOOK_PROVIDERS": "",  # no outbound calls to public book APIs in tests
+                "LIBRARY_DEMO_DATA": str(ROOT / "services/library_mcp/library_mcp/data/demo_books_v1.json"),
+                "EVENTS_DEMO_DATA": str(ROOT / "services/events_mcp/events_mcp/data/demo_events_v1.json"),
             }
             procs.append(
                 subprocess.Popen(

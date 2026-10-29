@@ -6,7 +6,7 @@ export function CitationList({ citations }: { citations: Citation[] }) {
   if (!citations.length) return null;
   return (
     <div>
-      <h3 className="mb-2 text-sm font-medium">Handbook evidence</h3>
+      <h3 className="mb-2 text-sm font-medium">Document evidence</h3>
       <ul className="space-y-2">
         {citations.map((c) => (
           <li key={c.citation_id}>
@@ -28,7 +28,18 @@ export function CitationList({ citations }: { citations: Citation[] }) {
                 </blockquote>
                 <p className="mt-2 text-xs text-ink-muted">
                   {c.source_filename}, version {c.document_version}, passage {c.citation_id}
+                  {c.doc_status === "superseded" ? " · superseded by a newer document" : ""}
                 </p>
+                {c.source_url ? (
+                  <a
+                    href={`${c.source_url}#page=${c.page}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block text-xs text-focus underline-offset-2 hover:underline"
+                  >
+                    Open the official document at page {c.page}
+                  </a>
+                ) : null}
               </div>
             </details>
           </li>

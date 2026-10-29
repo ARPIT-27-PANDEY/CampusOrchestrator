@@ -1,18 +1,2172 @@
 {
-  "_notice": "DEMO DATA. Events are simulated for CampusOS demo mode. Dates are generated relative to the current date (day_offset) so the demo always has upcoming events.",
-  "timezone": "Asia/Kolkata",
-  "events": [
-    {"event_id": "EVT-101", "title": "Hands-on AI Workshop: Building Tool-Using Agents with MCP", "category": "workshop", "tags": ["ai", "artificial intelligence", "agents", "mcp", "llm", "workshop"], "day_offset": 3, "start_time": "14:00", "duration_minutes": 180, "location": "CS Building, Lab 2.14", "organizer": "AI & Data Science Club", "registration_required": true, "capacity": 40, "description": "Build a small agent that discovers tools over the Model Context Protocol. Part of the AI Workshop Series; see the Academic Handbook for the series prerequisite."},
-    {"event_id": "EVT-102", "title": "Intro to Machine Learning Workshop", "category": "workshop", "tags": ["ai", "machine learning", "ml", "python", "workshop"], "day_offset": 10, "start_time": "10:00", "duration_minutes": 120, "location": "Library Seminar Room A", "organizer": "Department of Computer Science", "registration_required": true, "capacity": 60, "description": "Gentle introduction to supervised learning with scikit-learn. Part of the AI Workshop Series."},
-    {"event_id": "EVT-103", "title": "Campus Career Fair: Software & Data Roles", "category": "career", "tags": ["career", "internship", "jobs", "software", "data"], "day_offset": 6, "start_time": "09:30", "duration_minutes": 420, "location": "Main Auditorium", "organizer": "Career Services", "registration_required": false, "capacity": null, "description": "Meet recruiters hiring for SDE and data analytics internships."},
-    {"event_id": "EVT-104", "title": "Guest Lecture: Retrieval-Augmented Generation in Practice", "category": "lecture", "tags": ["ai", "rag", "nlp", "lecture"], "day_offset": 8, "start_time": "16:00", "duration_minutes": 90, "location": "Lecture Hall 3", "organizer": "Department of Computer Science", "registration_required": false, "capacity": 200, "description": "How retrieval, chunking, and citation design affect LLM answer quality."},
-    {"event_id": "EVT-105", "title": "24-Hour Campus Hackathon", "category": "competition", "tags": ["hackathon", "coding", "competition"], "day_offset": 17, "start_time": "09:00", "duration_minutes": 1440, "location": "Innovation Hub", "organizer": "Coding Club", "registration_required": true, "capacity": 120, "description": "Teams of up to four build campus tools in 24 hours."},
-    {"event_id": "EVT-106", "title": "Competitive Programming Contest (Div. 2)", "category": "competition", "tags": ["competitive programming", "algorithms", "contest"], "day_offset": 5, "start_time": "18:00", "duration_minutes": 150, "location": "Online / CS Lab 1.02", "organizer": "Coding Club", "registration_required": true, "capacity": null, "description": "Five problems, ICPC-style scoring."},
-    {"event_id": "EVT-107", "title": "Autumn Cultural Night", "category": "cultural", "tags": ["music", "dance", "cultural", "fest"], "day_offset": 12, "start_time": "18:30", "duration_minutes": 180, "location": "Open Air Theatre", "organizer": "Student Council", "registration_required": false, "capacity": null, "description": "Performances by student cultural societies."},
-    {"event_id": "EVT-108", "title": "Library Research Skills Session", "category": "workshop", "tags": ["library", "research", "citations", "workshop"], "day_offset": 2, "start_time": "11:00", "duration_minutes": 60, "location": "Main Library, Training Room", "organizer": "Central Library", "registration_required": false, "capacity": 30, "description": "Finding papers, managing citations, and using the catalogue."},
-    {"event_id": "EVT-109", "title": "Mid-Semester Examination Week Begins", "category": "academic", "tags": ["exams", "academic calendar"], "day_offset": 21, "start_time": "09:00", "duration_minutes": 480, "location": "Various", "organizer": "Office of the Registrar", "registration_required": false, "capacity": null, "description": "Mid-semester examinations for all undergraduate programmes."},
-    {"event_id": "EVT-110", "title": "Deep Learning Reading Group", "category": "lecture", "tags": ["ai", "deep learning", "reading group"], "day_offset": -4, "start_time": "17:00", "duration_minutes": 60, "location": "CS Building, Room 3.01", "organizer": "AI & Data Science Club", "registration_required": false, "capacity": 25, "description": "Past session (kept to test date filtering)."},
-    {"event_id": "EVT-111", "title": "Data Visualization with Python Workshop", "category": "workshop", "tags": ["data", "visualization", "python", "analytics", "workshop"], "day_offset": 14, "start_time": "14:00", "duration_minutes": 120, "location": "CS Lab 1.04", "organizer": "Analytics Society", "registration_required": true, "capacity": 35, "description": "Matplotlib and Plotly for clear charts."},
-    {"event_id": "EVT-112", "title": "Inter-Department Football Final", "category": "sports", "tags": ["sports", "football"], "day_offset": 9, "start_time": "16:30", "duration_minutes": 120, "location": "Main Sports Ground", "organizer": "Sports Committee", "registration_required": false, "capacity": null, "description": "Season final."}
-  ]
+ "description": "Events fixture for CampusOrchestrator. origin=official records are transcribed from IIT Roorkee academic calendar PDFs (see documents); origin=synthetic records are invented demo events with dates relative to today. Generated by services/events_mcp/scripts/build_events_fixture.py.",
+ "documents": {
+  "iitr-calendar-autumn-2026-27": {
+   "title": "Academic Calendar, Autumn Semester 2026-27: All Programs (Other than MBA), IIT Roorkee",
+   "url": "https://iitr.ac.in/Academics/static/Calendar/Autumn%202026-27/Autumn_Calander_2026-27_All_Programme_other_than_MBA.pdf",
+   "issued": "2026-04-06",
+   "sha256": "68f07e29a57ed81fd62c353573ca21df894b88504fd1a98a12baeee812f04a81"
+  },
+  "iitr-calendar-spring-2025-26": {
+   "title": "Academic Calendar, Spring Semester 2025-26: All Programs (Other than MBA), IIT Roorkee",
+   "url": "https://iitr.ac.in/Academics/static/Calendar/Spring%202025-26/All_Programs_Other_than_MBA_Spring_Calendar_2025-26.pdf",
+   "issued": "2025-11-26",
+   "sha256": "c7d959596393ce72b871f0bfb51f9f50174f3a9b9f62195eb063631f721f3a1b"
+  }
+ },
+ "events": [
+  {
+   "event_id": "IITR-A26-01",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Admission cum Academic Registration for new Ph.D. and Masters' students",
+   "category": "registration",
+   "tags": [
+    "registration",
+    "phd",
+    "masters",
+    "admission"
+   ],
+   "date": "2026-07-14",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-02",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Academic Registration for existing students in physical mode",
+   "category": "registration",
+   "tags": [
+    "registration"
+   ],
+   "date": "2026-07-14",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-07-15"
+  },
+  {
+   "event_id": "IITR-A26-03",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Orientation Program for new Ph.D. and Masters' students",
+   "category": "orientation",
+   "tags": [
+    "orientation",
+    "phd",
+    "masters"
+   ],
+   "date": "2026-07-15",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-04",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Commencement of Classes (except UG I year)",
+   "category": "academic",
+   "tags": [
+    "classes",
+    "semester start"
+   ],
+   "date": "2026-07-16",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-05",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Re-examination and second examination (for Spring Semester 2025-26)",
+   "category": "examination",
+   "tags": [
+    "exam",
+    "re-examination",
+    "second examination"
+   ],
+   "date": "2026-07-16",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-07-18"
+  },
+  {
+   "event_id": "IITR-A26-06",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Academic Registration for new UG students (subject to JoSAA counselling)",
+   "category": "registration",
+   "tags": [
+    "registration",
+    "ug",
+    "first year"
+   ],
+   "date": "2026-07-24",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-07a",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Orientation Program - Newly Admitted UG Students (part 1)",
+   "category": "orientation",
+   "tags": [
+    "orientation",
+    "ug",
+    "first year"
+   ],
+   "date": "2026-07-25",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-07-26"
+  },
+  {
+   "event_id": "IITR-A26-07b",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Orientation Program - Newly Admitted UG Students (part 2)",
+   "category": "orientation",
+   "tags": [
+    "orientation",
+    "ug",
+    "first year"
+   ],
+   "date": "2026-08-01",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-08-02"
+  },
+  {
+   "event_id": "IITR-A26-08",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Commencement of Classes for UG I year (subject to JoSAA counselling)",
+   "category": "academic",
+   "tags": [
+    "classes",
+    "first year",
+    "ug"
+   ],
+   "date": "2026-07-27",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-09",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Last date for Academic Registration with a late fine",
+   "category": "deadline",
+   "tags": [
+    "registration",
+    "deadline",
+    "late fine"
+   ],
+   "date": "2026-07-31",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-10",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Last date for adding/changing courses for all programs",
+   "category": "deadline",
+   "tags": [
+    "courses",
+    "deadline",
+    "add drop"
+   ],
+   "date": "2026-08-03",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-11",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Last date for submission of mandatory documents for newly admitted students",
+   "category": "deadline",
+   "tags": [
+    "documents",
+    "deadline"
+   ],
+   "date": "2026-08-27",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-13",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Mid-Term Examinations (except Sunday)",
+   "category": "examination",
+   "tags": [
+    "exam",
+    "mid-term",
+    "mte"
+   ],
+   "date": "2026-09-10",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-09-15"
+  },
+  {
+   "event_id": "IITR-A26-14",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Last date for informing the students about performance in MTE and internal assessment",
+   "category": "deadline",
+   "tags": [
+    "mte",
+    "marks",
+    "deadline"
+   ],
+   "date": "2026-09-28",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-15",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Submission of the feedback/response form - I on the online portal",
+   "category": "academic",
+   "tags": [
+    "feedback"
+   ],
+   "date": "2026-09-28",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-10-01"
+  },
+  {
+   "event_id": "IITR-A26-16",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Sangram 2026",
+   "category": "sports",
+   "tags": [
+    "sports",
+    "fest",
+    "sangram"
+   ],
+   "date": "2026-10-03",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-10-04"
+  },
+  {
+   "event_id": "IITR-A26-17",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Last date for withdrawal of courses",
+   "category": "deadline",
+   "tags": [
+    "courses",
+    "withdrawal",
+    "deadline"
+   ],
+   "date": "2026-10-05",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-18",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Thomso 2026",
+   "category": "cultural",
+   "tags": [
+    "cultural",
+    "fest",
+    "thomso"
+   ],
+   "date": "2026-10-09",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-10-11"
+  },
+  {
+   "event_id": "IITR-A26-19",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Submission of the feedback/response form - II on the online portal",
+   "category": "academic",
+   "tags": [
+    "feedback"
+   ],
+   "date": "2026-11-05",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-11-11"
+  },
+  {
+   "event_id": "IITR-A26-20",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Last date of teaching",
+   "category": "academic",
+   "tags": [
+    "teaching",
+    "semester end"
+   ],
+   "date": "2026-11-11",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-21",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "End Term Examinations (excluding Sunday and declared holidays)",
+   "category": "examination",
+   "tags": [
+    "exam",
+    "end-term",
+    "ete"
+   ],
+   "date": "2026-11-13",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-11-24"
+  },
+  {
+   "event_id": "IITR-A26-22",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Institute Foundation Day",
+   "category": "institute",
+   "tags": [
+    "foundation day"
+   ],
+   "date": "2026-11-25",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-23",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Last date of showing the End Term Examinations answer scripts",
+   "category": "deadline",
+   "tags": [
+    "exam",
+    "answer scripts",
+    "deadline"
+   ],
+   "date": "2026-12-01",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-24",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Last date of electronic communication of grades to students",
+   "category": "deadline",
+   "tags": [
+    "grades",
+    "deadline"
+   ],
+   "date": "2026-12-03",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-25",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Last date for students to apply for grade revision, if any",
+   "category": "deadline",
+   "tags": [
+    "grades",
+    "grade revision",
+    "deadline"
+   ],
+   "date": "2026-12-04",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-26",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Winter vacation for UG students (except IDD final Year)",
+   "category": "vacation",
+   "tags": [
+    "vacation",
+    "winter",
+    "ug"
+   ],
+   "date": "2026-12-05",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2027-01-06"
+  },
+  {
+   "event_id": "IITR-A26-27",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Last date for the evaluation of Project/Thesis/Seminar for all programs",
+   "category": "deadline",
+   "tags": [
+    "project",
+    "thesis",
+    "deadline"
+   ],
+   "date": "2026-12-03",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-28",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Last date for sending final grades to AAO",
+   "category": "deadline",
+   "tags": [
+    "grades",
+    "deadline"
+   ],
+   "date": "2026-12-08",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-29",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Last date for the submission of Progress Reports (Ph.D. students) to the AAO",
+   "category": "deadline",
+   "tags": [
+    "phd",
+    "progress report",
+    "deadline"
+   ],
+   "date": "2026-12-09",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-30",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Online Choices for branch change",
+   "category": "academic",
+   "tags": [
+    "branch change"
+   ],
+   "date": "2026-12-10",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-12-14"
+  },
+  {
+   "event_id": "IITR-A26-31",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Declaration of the final list of branch change (Tentative Date)",
+   "category": "academic",
+   "tags": [
+    "branch change"
+   ],
+   "date": "2026-12-31",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-32",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Admission cum Academic Registration for New Ph.D. Students (Spring Semester 2026-27)",
+   "category": "registration",
+   "tags": [
+    "registration",
+    "phd"
+   ],
+   "date": "2027-01-07",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-33",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Academic registration of all existing students for Spring Semester 2026-27 in physical mode",
+   "category": "registration",
+   "tags": [
+    "registration",
+    "spring"
+   ],
+   "date": "2027-01-07",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2027-01-08"
+  },
+  {
+   "event_id": "IITR-A26-34",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Commencement of classes for Spring Semester 2026-27",
+   "category": "academic",
+   "tags": [
+    "classes",
+    "semester start",
+    "spring"
+   ],
+   "date": "2027-01-11",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-35",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Re-examination and Second examination (for Autumn Semester 2026-27)",
+   "category": "examination",
+   "tags": [
+    "exam",
+    "re-examination",
+    "second examination"
+   ],
+   "date": "2027-01-11",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2027-01-13"
+  },
+  {
+   "event_id": "IITR-A26-12",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 1,
+   "title": "Convocation 2026",
+   "category": "institute",
+   "tags": [
+    "convocation",
+    "degree"
+   ],
+   "date": "2026-09-19",
+   "all_day": true,
+   "tentative": true,
+   "date_note": "The calendar lists 19.09.2026 OR 26.09.2026; the final date will be notified in due course.",
+   "organizer": "IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-TT1",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Time-table rescheduling: Fridays' time table on Wednesday (all programs)",
+   "category": "timetable",
+   "tags": [
+    "timetable",
+    "rescheduling"
+   ],
+   "date": "2026-09-23",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-TT2",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Time-table rescheduling: Fridays' time table on Wednesday (all programs)",
+   "category": "timetable",
+   "tags": [
+    "timetable",
+    "rescheduling"
+   ],
+   "date": "2026-10-28",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-H01",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Holiday: Independence Day",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-08-15",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-H02",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Holiday: Id-e-Milad (Prophet Mohammad's Birthday) - subject to moon sighting",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-08-26",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-H03",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Holiday: Raksha Bandhan",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-08-28",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-H04",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Holiday: Janamashtami",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-09-04",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-H05",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Holiday: Mahatma Gandhi's Birthday",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-10-02",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-H06",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Holiday: Mahashtami",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-10-19",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-H07",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Holiday: Mahanavmi/Dussehra (Vijaydashmi)",
+   "category": "holiday",
+   "tags": [
+    "holiday",
+    "dussehra"
+   ],
+   "date": "2026-10-20",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-H08",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Holiday: Diwali (Deepavali)",
+   "category": "holiday",
+   "tags": [
+    "holiday",
+    "diwali"
+   ],
+   "date": "2026-11-08",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-H09",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Holiday: Govardhan Puja",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-11-09",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-H10",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Holiday: Guru Nanak's Birthday",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-11-24",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-A26-H11",
+   "origin": "official",
+   "document": "iitr-calendar-autumn-2026-27",
+   "page": 2,
+   "title": "Holiday: Christmas Day",
+   "category": "holiday",
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "date": "2026-12-25",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-01",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Admission cum Academic Registration for new Ph.D. students",
+   "category": "registration",
+   "tags": [
+    "registration",
+    "phd"
+   ],
+   "date": "2026-01-08",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-02",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Academic Registration for existing students for Spring Semester 2025-26",
+   "category": "registration",
+   "tags": [
+    "registration"
+   ],
+   "date": "2026-01-08",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-01-09"
+  },
+  {
+   "event_id": "IITR-S26-03",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Commencement of Classes for Spring Semester 2025-26",
+   "category": "academic",
+   "tags": [
+    "classes",
+    "semester start"
+   ],
+   "date": "2026-01-12",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-04",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Re-examination and second examination (for Autumn Semester 2025-26)",
+   "category": "examination",
+   "tags": [
+    "exam",
+    "re-examination"
+   ],
+   "date": "2026-01-12",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-01-14"
+  },
+  {
+   "event_id": "IITR-S26-05",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date for sending the grades of Re-examination and second examination for Autumn Semester 2025-26",
+   "category": "deadline",
+   "tags": [
+    "grades",
+    "deadline"
+   ],
+   "date": "2026-01-19",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-06",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date for Academic Registration with a late fine",
+   "category": "deadline",
+   "tags": [
+    "registration",
+    "deadline"
+   ],
+   "date": "2026-01-23",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-07",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date for adding/changing courses for all programs",
+   "category": "deadline",
+   "tags": [
+    "courses",
+    "deadline"
+   ],
+   "date": "2026-01-27",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-08",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date for submission of mandatory documents for newly admitted Ph.D. students",
+   "category": "deadline",
+   "tags": [
+    "documents",
+    "phd",
+    "deadline"
+   ],
+   "date": "2026-02-13",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-09",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Mid-Term Examinations (except Sunday)",
+   "category": "examination",
+   "tags": [
+    "exam",
+    "mid-term",
+    "mte"
+   ],
+   "date": "2026-02-26",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-03-03"
+  },
+  {
+   "event_id": "IITR-S26-10",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "National Science Day",
+   "category": "institute",
+   "tags": [
+    "science day"
+   ],
+   "date": "2026-02-28",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-11",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Mid Term Break",
+   "category": "vacation",
+   "tags": [
+    "break"
+   ],
+   "date": "2026-03-04",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-03-08"
+  },
+  {
+   "event_id": "IITR-S26-12",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date for informing the students about performance in MTE and internal assessment",
+   "category": "deadline",
+   "tags": [
+    "mte",
+    "deadline"
+   ],
+   "date": "2026-03-11",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-13",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Submission of the feedback/response form - I on the online portal",
+   "category": "academic",
+   "tags": [
+    "feedback"
+   ],
+   "date": "2026-03-11",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-03-13"
+  },
+  {
+   "event_id": "IITR-S26-14",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Institute Research Day",
+   "category": "institute",
+   "tags": [
+    "research day"
+   ],
+   "date": "2026-03-13",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-15",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Cognizance-2026 (tentative)",
+   "category": "technical",
+   "tags": [
+    "fest",
+    "cognizance",
+    "technical"
+   ],
+   "date": "2026-03-13",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-03-15"
+  },
+  {
+   "event_id": "IITR-S26-16",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date for withdrawal of courses",
+   "category": "deadline",
+   "tags": [
+    "courses",
+    "withdrawal",
+    "deadline"
+   ],
+   "date": "2026-04-27",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-17",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Submission of the feedback/response form - II on the online portal",
+   "category": "academic",
+   "tags": [
+    "feedback"
+   ],
+   "date": "2026-04-28",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-04-30"
+  },
+  {
+   "event_id": "IITR-S26-18",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date of teaching",
+   "category": "academic",
+   "tags": [
+    "teaching"
+   ],
+   "date": "2026-04-30",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-19",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "End Term Examinations (excluding Sunday)",
+   "category": "examination",
+   "tags": [
+    "exam",
+    "end-term"
+   ],
+   "date": "2026-05-02",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-05-11"
+  },
+  {
+   "event_id": "IITR-S26-20",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date of showing the End Term Examinations answer scripts",
+   "category": "deadline",
+   "tags": [
+    "exam",
+    "deadline"
+   ],
+   "date": "2026-05-18",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-21",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date of electronic communication of grades to students",
+   "category": "deadline",
+   "tags": [
+    "grades",
+    "deadline"
+   ],
+   "date": "2026-05-21",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-22",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date for students to apply for grade revision, if any",
+   "category": "deadline",
+   "tags": [
+    "grades",
+    "deadline"
+   ],
+   "date": "2026-05-23",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-23",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date for the evaluation of Project/Thesis/Seminar for all programs",
+   "category": "deadline",
+   "tags": [
+    "project",
+    "deadline"
+   ],
+   "date": "2026-05-28",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-24",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date for sending final grades to AAO",
+   "category": "deadline",
+   "tags": [
+    "grades",
+    "deadline"
+   ],
+   "date": "2026-05-29",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-25",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Last date for submission of the progress report for the PhD Students",
+   "category": "deadline",
+   "tags": [
+    "phd",
+    "deadline"
+   ],
+   "date": "2026-06-05",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-26",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 1,
+   "title": "Summer vacation for UG students (except IDD final Year)",
+   "category": "vacation",
+   "tags": [
+    "vacation",
+    "summer"
+   ],
+   "date": "2026-05-19",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown",
+   "end_date": "2026-07-14"
+  },
+  {
+   "event_id": "IITR-S26-H01",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 2,
+   "title": "Holiday: Republic Day",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-01-26",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-H02",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 2,
+   "title": "Holiday: Holi",
+   "category": "holiday",
+   "tags": [
+    "holiday",
+    "holi"
+   ],
+   "date": "2026-03-04",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-H03",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 2,
+   "title": "Holiday: Idu'l Fitr - subject to moon sighting",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-03-21",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-H04",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 2,
+   "title": "Holiday: Mahavir Jayanti",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-03-31",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-H05",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 2,
+   "title": "Holiday: Good Friday",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-04-03",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-H06",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 2,
+   "title": "Holiday: Buddha Purnima",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-05-01",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-H07",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 2,
+   "title": "Holiday: Idu'l Zuha (Bakrid) - subject to moon sighting",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-05-27",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "IITR-S26-H08",
+   "origin": "official",
+   "document": "iitr-calendar-spring-2025-26",
+   "page": 2,
+   "title": "Holiday: Muharram - subject to moon sighting",
+   "category": "holiday",
+   "tags": [
+    "holiday"
+   ],
+   "date": "2026-06-26",
+   "all_day": true,
+   "organizer": "Academic Affairs Office, IIT Roorkee",
+   "location": "IIT Roorkee",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "EVT-101",
+   "origin": "synthetic",
+   "title": "Hands-on AI Workshop: Building Tool-Using Agents with MCP",
+   "category": "workshop",
+   "day_offset": 3,
+   "start_time": "14:00",
+   "duration_minutes": 180,
+   "tags": [
+    "ai",
+    "artificial intelligence",
+    "agents",
+    "mcp",
+    "llm",
+    "workshop"
+   ],
+   "location": "CS Building, Lab 2.14",
+   "organizer": "AI & Data Science Club (demo)",
+   "registration_required": true,
+   "registration_status": "open",
+   "capacity": 40,
+   "registration_deadline_offset": 2,
+   "description": "Build a small agent that discovers tools over the Model Context Protocol. Part of the AI Workshop Series; see the Academic Handbook for the series prerequisite."
+  },
+  {
+   "event_id": "EVT-102",
+   "origin": "synthetic",
+   "title": "Intro to Machine Learning Workshop",
+   "category": "workshop",
+   "day_offset": 10,
+   "start_time": "10:00",
+   "duration_minutes": 120,
+   "tags": [
+    "ai",
+    "machine learning",
+    "ml",
+    "python",
+    "workshop"
+   ],
+   "location": "Library Seminar Room A",
+   "organizer": "Department of Computer Science (demo)",
+   "registration_required": true,
+   "registration_status": "open",
+   "capacity": 60,
+   "description": "Gentle introduction to supervised learning with scikit-learn. Part of the AI Workshop Series."
+  },
+  {
+   "event_id": "EVT-103",
+   "origin": "synthetic",
+   "title": "Campus Career Fair: Software & Data Roles",
+   "category": "career",
+   "day_offset": 6,
+   "start_time": "09:30",
+   "duration_minutes": 420,
+   "tags": [
+    "career",
+    "internship",
+    "jobs",
+    "software",
+    "data",
+    "recruitment"
+   ],
+   "location": "Main Auditorium",
+   "organizer": "Career Services (demo)",
+   "registration_required": false,
+   "registration_status": "not_required",
+   "description": "Meet recruiters hiring for SDE and data analytics internships."
+  },
+  {
+   "event_id": "EVT-104",
+   "origin": "synthetic",
+   "title": "Guest Lecture: Retrieval-Augmented Generation in Practice",
+   "category": "lecture",
+   "day_offset": 8,
+   "start_time": "16:00",
+   "duration_minutes": 90,
+   "tags": [
+    "ai",
+    "rag",
+    "llm",
+    "lecture",
+    "talk"
+   ],
+   "location": "Lecture Hall 3",
+   "organizer": "CSE Department (demo)",
+   "registration_required": false,
+   "registration_status": "not_required",
+   "capacity": 200,
+   "description": "How retrieval, citations and evaluation make LLM answers trustworthy."
+  },
+  {
+   "event_id": "EVT-105",
+   "origin": "synthetic",
+   "title": "24-Hour Campus Hackathon",
+   "category": "competition",
+   "day_offset": 17,
+   "start_time": "09:00",
+   "duration_minutes": 1440,
+   "tags": [
+    "hackathon",
+    "coding",
+    "competition"
+   ],
+   "location": "Innovation Hub",
+   "organizer": "Coding Club (demo)",
+   "registration_required": true,
+   "registration_status": "open",
+   "capacity": 120,
+   "registration_deadline_offset": 12,
+   "description": "Teams of up to four build a working prototype in 24 hours."
+  },
+  {
+   "event_id": "EVT-106",
+   "origin": "synthetic",
+   "title": "Competitive Programming Contest (Div. 2)",
+   "category": "competition",
+   "day_offset": 5,
+   "start_time": "18:00",
+   "duration_minutes": 150,
+   "tags": [
+    "competitive programming",
+    "contest",
+    "coding"
+   ],
+   "location": "Online / CS Lab 1.02",
+   "online_url": "https://example.org/demo-contest",
+   "organizer": "Coding Club (demo)",
+   "registration_required": true,
+   "registration_status": "open"
+  },
+  {
+   "event_id": "EVT-107",
+   "origin": "synthetic",
+   "title": "Autumn Cultural Night",
+   "category": "cultural",
+   "day_offset": 12,
+   "start_time": "18:30",
+   "duration_minutes": 180,
+   "tags": [
+    "cultural",
+    "music",
+    "dance"
+   ],
+   "location": "Open Air Theatre",
+   "organizer": "Cultural Council (demo)",
+   "registration_required": false,
+   "registration_status": "not_required",
+   "description": "Music and dance performances by student societies."
+  },
+  {
+   "event_id": "EVT-108",
+   "origin": "synthetic",
+   "title": "Library Research Skills Session",
+   "category": "workshop",
+   "day_offset": 2,
+   "start_time": "11:00",
+   "duration_minutes": 60,
+   "tags": [
+    "library",
+    "research",
+    "citations",
+    "workshop"
+   ],
+   "location": "Main Library, Training Room",
+   "organizer": "Library (demo)",
+   "registration_required": false,
+   "registration_status": "not_required",
+   "capacity": 30,
+   "description": "Searching databases, maintaining references and training on citation tools."
+  },
+  {
+   "event_id": "EVT-110",
+   "origin": "synthetic",
+   "title": "Deep Learning Reading Group",
+   "category": "lecture",
+   "day_offset": -4,
+   "start_time": "17:00",
+   "duration_minutes": 60,
+   "tags": [
+    "deep learning",
+    "reading group",
+    "ai"
+   ],
+   "location": "CS Building, Room 3.01",
+   "organizer": "AI & Data Science Club (demo)",
+   "registration_required": false,
+   "registration_status": "not_required",
+   "capacity": 25,
+   "recurrence": "Weekly",
+   "description": "Weekly paper discussion."
+  },
+  {
+   "event_id": "EVT-111",
+   "origin": "synthetic",
+   "title": "Data Visualization with Python Workshop",
+   "category": "workshop",
+   "day_offset": 14,
+   "start_time": "14:00",
+   "duration_minutes": 120,
+   "tags": [
+    "python",
+    "data visualization",
+    "workshop"
+   ],
+   "location": "CS Lab 1.04",
+   "organizer": "Data Science Club (demo)",
+   "registration_required": true,
+   "registration_status": "closed",
+   "capacity": 35,
+   "description": "Matplotlib and Plotly basics. Registration is full."
+  },
+  {
+   "event_id": "EVT-112",
+   "origin": "synthetic",
+   "title": "Inter-Department Football Final",
+   "category": "sports",
+   "day_offset": 9,
+   "start_time": "16:30",
+   "duration_minutes": 120,
+   "tags": [
+    "football",
+    "sports"
+   ],
+   "location": "Main Sports Ground",
+   "organizer": "Sports Council (demo)",
+   "registration_required": false,
+   "registration_status": "not_required"
+  },
+  {
+   "event_id": "EVT-113",
+   "origin": "synthetic",
+   "title": "Robotics Workshop: Line-Following Bots",
+   "category": "workshop",
+   "day_offset": 0,
+   "start_time": "15:00",
+   "duration_minutes": 120,
+   "tags": [
+    "robotics",
+    "electronics",
+    "workshop",
+    "arduino"
+   ],
+   "location": "Electronics Lab (demo)",
+   "organizer": "Robotics Club (demo)",
+   "registration_required": true,
+   "registration_status": "open",
+   "capacity": 30
+  },
+  {
+   "event_id": "EVT-114",
+   "origin": "synthetic",
+   "title": "Night Sky Observation Session",
+   "category": "club",
+   "day_offset": 0,
+   "start_time": "22:30",
+   "duration_minutes": 180,
+   "tags": [
+    "astronomy",
+    "club"
+   ],
+   "location": "Main Sports Ground",
+   "organizer": "Astronomy Club (demo)",
+   "registration_required": false,
+   "registration_status": "not_required",
+   "description": "Runs past midnight."
+  },
+  {
+   "event_id": "EVT-115",
+   "origin": "synthetic",
+   "title": "Seminar: Earthquake-Resistant Structures",
+   "category": "seminar",
+   "day_offset": 0,
+   "start_time": "15:00",
+   "duration_minutes": 90,
+   "tags": [
+    "civil engineering",
+    "earthquake",
+    "structures",
+    "seminar"
+   ],
+   "location": "Civil Engg. Seminar Hall (demo)",
+   "organizer": "Civil Engineering Society (demo)",
+   "registration_status": "unknown"
+  },
+  {
+   "event_id": "EVT-116",
+   "origin": "synthetic",
+   "title": "Startup Pitch Practice",
+   "category": "entrepreneurship",
+   "day_offset": 1,
+   "start_time": "17:00",
+   "duration_minutes": 120,
+   "tags": [
+    "entrepreneurship",
+    "startup",
+    "pitch"
+   ],
+   "location": "Incubation Centre (demo)",
+   "organizer": "Entrepreneurship Cell (demo)",
+   "registration_required": true,
+   "registration_status": "open",
+   "capacity": 20
+  },
+  {
+   "event_id": "EVT-117",
+   "origin": "synthetic",
+   "title": "Thermodynamics Doubt-Clearing Session",
+   "category": "academic",
+   "day_offset": 1,
+   "start_time": "18:00",
+   "duration_minutes": 60,
+   "tags": [
+    "thermodynamics",
+    "mechanical",
+    "tutorial"
+   ],
+   "location": "LHC Room 101 (demo)",
+   "organizer": "Mechanical Engineering Society (demo)"
+  },
+  {
+   "event_id": "EVT-118",
+   "origin": "synthetic",
+   "title": "Chess Blitz Tournament",
+   "category": "sports",
+   "day_offset": 2,
+   "start_time": "19:00",
+   "duration_minutes": 150,
+   "tags": [
+    "chess",
+    "sports",
+    "tournament"
+   ],
+   "location": "Student Activity Centre (demo)",
+   "organizer": "Chess Club (demo)",
+   "registration_required": true,
+   "registration_status": "open"
+  },
+  {
+   "event_id": "EVT-119",
+   "origin": "synthetic",
+   "title": "Cybersecurity Capture-the-Flag",
+   "category": "competition",
+   "day_offset": 4,
+   "start_time": "10:00",
+   "duration_minutes": 480,
+   "tags": [
+    "cybersecurity",
+    "ctf",
+    "competition",
+    "security"
+   ],
+   "location": "Online",
+   "online_url": "https://example.org/demo-ctf",
+   "organizer": "Security Club (demo)",
+   "registration_required": true,
+   "registration_status": "open",
+   "capacity": 200
+  },
+  {
+   "event_id": "EVT-120",
+   "origin": "synthetic",
+   "title": "Guest Talk: Careers in Power Systems",
+   "category": "lecture",
+   "day_offset": 4,
+   "start_time": "16:00",
+   "duration_minutes": 60,
+   "tags": [
+    "electrical",
+    "power systems",
+    "career",
+    "talk"
+   ],
+   "location": "EE Seminar Room (demo)",
+   "organizer": "Electrical Engineering Society (demo)",
+   "status": "cancelled",
+   "description": "Cancelled by the organisers."
+  },
+  {
+   "event_id": "EVT-121",
+   "origin": "synthetic",
+   "title": "Photography Walk",
+   "category": "club",
+   "day_offset": 3,
+   "start_time": "07:00",
+   "duration_minutes": 120,
+   "tags": [
+    "photography",
+    "club"
+   ],
+   "location": "Campus main gate (demo)",
+   "organizer": "Photography Club (demo)",
+   "status": "rescheduled",
+   "original_day_offset": 1,
+   "original_start_time": "07:00",
+   "registration_status": "not_required"
+  },
+  {
+   "event_id": "EVT-122",
+   "origin": "synthetic",
+   "title": "Pre-Placement Talk: Analytics Firm",
+   "category": "career",
+   "day_offset": 7,
+   "start_time": "18:00",
+   "duration_minutes": 90,
+   "tags": [
+    "placement",
+    "recruitment",
+    "career",
+    "ppt"
+   ],
+   "location": "LHC Auditorium (demo)",
+   "organizer": "Placement Office (demo)",
+   "registration_required": true,
+   "registration_status": "closed"
+  },
+  {
+   "event_id": "EVT-123",
+   "origin": "synthetic",
+   "title": "Debate: Should Exams Be Open-Book?",
+   "category": "cultural",
+   "day_offset": 7,
+   "start_time": "18:00",
+   "duration_minutes": 90,
+   "tags": [
+    "debate",
+    "literary"
+   ],
+   "location": "Student Activity Centre (demo)",
+   "organizer": "Literary Society (demo)"
+  },
+  {
+   "event_id": "EVT-124",
+   "origin": "synthetic",
+   "title": "Basketball League Match",
+   "category": "sports",
+   "day_offset": 8,
+   "start_time": "17:30",
+   "duration_minutes": 90,
+   "tags": [
+    "basketball",
+    "sports"
+   ],
+   "location": "Basketball Courts (demo)",
+   "organizer": "Sports Council (demo)",
+   "registration_status": "not_required"
+  },
+  {
+   "event_id": "EVT-125",
+   "origin": "synthetic",
+   "title": "Signals and Systems Problem-Solving Marathon",
+   "category": "academic",
+   "day_offset": 11,
+   "start_time": "14:00",
+   "duration_minutes": 240,
+   "tags": [
+    "signals and systems",
+    "electronics",
+    "ece",
+    "tutorial"
+   ],
+   "location": "ECE Tutorial Room (demo)",
+   "organizer": "ECE Society (demo)"
+  },
+  {
+   "event_id": "EVT-126",
+   "origin": "synthetic",
+   "title": "Open Mic Evening",
+   "category": "cultural",
+   "day_offset": 13,
+   "start_time": "19:00",
+   "duration_minutes": 120,
+   "tags": [
+    "music",
+    "poetry",
+    "cultural"
+   ],
+   "location": "Cafe Lawn (demo)",
+   "organizer": "Music Club (demo)",
+   "registration_required": false,
+   "registration_status": "not_required"
+  },
+  {
+   "event_id": "EVT-127",
+   "origin": "synthetic",
+   "title": "Environmental Awareness Tree Plantation",
+   "category": "social",
+   "day_offset": 15,
+   "start_time": "08:00",
+   "duration_minutes": 120,
+   "tags": [
+    "environment",
+    "sustainability",
+    "social"
+   ],
+   "location": "Campus Green Belt (demo)",
+   "organizer": "Environment Club (demo)",
+   "registration_required": false,
+   "registration_status": "not_required"
+  },
+  {
+   "event_id": "EVT-128",
+   "origin": "synthetic",
+   "title": "Mock Interview Clinic",
+   "category": "career",
+   "day_offset": 16,
+   "start_time": "10:00",
+   "duration_minutes": 360,
+   "tags": [
+    "career",
+    "interview",
+    "placement"
+   ],
+   "location": "Career Centre (demo)",
+   "organizer": "Career Services (demo)",
+   "registration_required": true,
+   "registration_status": "open",
+   "capacity": 50
+  },
+  {
+   "event_id": "EVT-129",
+   "origin": "synthetic",
+   "title": "Hackathon Kick-off Briefing",
+   "category": "competition",
+   "day_offset": 16,
+   "start_time": "18:00",
+   "duration_minutes": 45,
+   "tags": [
+    "hackathon",
+    "briefing"
+   ],
+   "location": "Innovation Hub",
+   "organizer": "Coding Club (demo)"
+  },
+  {
+   "event_id": "EVT-130",
+   "origin": "synthetic",
+   "title": "Badminton Doubles Open",
+   "category": "sports",
+   "day_offset": 19,
+   "start_time": "09:00",
+   "duration_minutes": 2880,
+   "tags": [
+    "badminton",
+    "sports",
+    "tournament"
+   ],
+   "location": "Indoor Sports Hall (demo)",
+   "organizer": "Sports Council (demo)",
+   "registration_required": true,
+   "registration_status": "open",
+   "description": "Two-day tournament."
+  },
+  {
+   "event_id": "EVT-131",
+   "origin": "synthetic",
+   "title": "Quantum Computing Reading Group",
+   "category": "lecture",
+   "day_offset": 3,
+   "start_time": "17:00",
+   "duration_minutes": 60,
+   "tags": [
+    "quantum",
+    "physics",
+    "reading group"
+   ],
+   "location": "Physics Dept. Room (demo)",
+   "organizer": "Physics Society (demo)",
+   "recurrence": "Weekly"
+  },
+  {
+   "event_id": "EVT-132",
+   "origin": "synthetic",
+   "title": "Alumni Talk: Building a Hardware Startup",
+   "category": "lecture",
+   "day_offset": -2,
+   "start_time": "18:00",
+   "duration_minutes": 60,
+   "tags": [
+    "alumni",
+    "startup",
+    "hardware"
+   ],
+   "location": "LHC Room 201 (demo)",
+   "organizer": "Entrepreneurship Cell (demo)",
+   "status": "completed"
+  },
+  {
+   "event_id": "EVT-133",
+   "origin": "synthetic",
+   "title": "Surveying Field Practice Briefing",
+   "category": "academic",
+   "day_offset": 5,
+   "start_time": "09:00",
+   "duration_minutes": 60,
+   "tags": [
+    "surveying",
+    "civil engineering"
+   ],
+   "location": "Civil Engg. Lab (demo)",
+   "organizer": "Civil Engineering Society (demo)"
+  },
+  {
+   "event_id": "EVT-134",
+   "origin": "synthetic",
+   "title": "Psychology of Learning: Public Lecture",
+   "category": "lecture",
+   "day_offset": 6,
+   "start_time": "17:00",
+   "duration_minutes": 75,
+   "tags": [
+    "psychology",
+    "lecture"
+   ],
+   "location": "LHC Room 102 (demo)",
+   "organizer": "HSS Society (demo)"
+  },
+  {
+   "event_id": "EVT-135",
+   "origin": "synthetic",
+   "title": "Inter-Hostel Quiz",
+   "category": "cultural",
+   "day_offset": 9,
+   "start_time": "16:30",
+   "duration_minutes": 120,
+   "tags": [
+    "quiz",
+    "cultural"
+   ],
+   "location": "LHC Auditorium (demo)",
+   "organizer": "Quiz Club (demo)"
+  },
+  {
+   "event_id": "EVT-136",
+   "origin": "synthetic",
+   "title": "Embedded Systems Workshop (Online)",
+   "category": "workshop",
+   "day_offset": 20,
+   "start_time": "19:00",
+   "duration_minutes": 120,
+   "tags": [
+    "embedded systems",
+    "electronics",
+    "workshop",
+    "online"
+   ],
+   "location": "Online",
+   "online_url": "https://example.org/demo-embedded",
+   "organizer": "Electronics Club (demo)",
+   "registration_required": true,
+   "registration_status": "open"
+  },
+  {
+   "event_id": "EVT-137",
+   "origin": "synthetic",
+   "title": "Fluid Mechanics Lab Demo",
+   "category": "academic",
+   "day_offset": 22,
+   "start_time": "11:00",
+   "duration_minutes": 90,
+   "tags": [
+    "fluid mechanics",
+    "mechanical",
+    "lab"
+   ],
+   "location": "Hydraulics Lab (demo)",
+   "organizer": "Mechanical Engineering Society (demo)"
+  },
+  {
+   "event_id": "EVT-138",
+   "origin": "synthetic",
+   "title": "Drama Club Production",
+   "category": "cultural",
+   "day_offset": 25,
+   "start_time": "19:00",
+   "duration_minutes": 150,
+   "tags": [
+    "drama",
+    "theatre",
+    "cultural"
+   ],
+   "location": "Open Air Theatre",
+   "organizer": "Dramatics Society (demo)",
+   "registration_status": "not_required"
+  },
+  {
+   "event_id": "EVT-139",
+   "origin": "synthetic",
+   "title": "Yoga Morning",
+   "category": "wellness",
+   "day_offset": 1,
+   "start_time": "06:30",
+   "duration_minutes": 60,
+   "tags": [
+    "yoga",
+    "wellness",
+    "health"
+   ],
+   "location": "Sports Ground (demo)",
+   "organizer": "Wellness Centre (demo)",
+   "recurrence": "Daily",
+   "registration_status": "not_required"
+  },
+  {
+   "event_id": "EVT-140",
+   "origin": "synthetic",
+   "title": "Linear Algebra Revision Session",
+   "category": "academic",
+   "day_offset": 3,
+   "start_time": "17:00",
+   "duration_minutes": 90,
+   "tags": [
+    "linear algebra",
+    "mathematics",
+    "tutorial"
+   ],
+   "location": "Maths Dept. Room (demo)",
+   "organizer": "Mathematics Society (demo)"
+  }
+ ]
 }

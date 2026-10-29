@@ -4,6 +4,8 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
 import type { Turn } from "@/lib/chat-state";
+import { serviceMeta } from "@/lib/services";
+import type { ToolCallSummary } from "@/lib/types";
 import { formatMs } from "@/lib/utils";
 
 import { Notice } from "@/components/ui/notice";
@@ -12,6 +14,29 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { CitationList } from "./citations";
 import { SourceTags } from "./source-tags";
 import { ToolRoute } from "./tool-route";
+
+const FAILURE_TITLE: Record<string, string> = {
+  auth_required: "Please sign in again",
+  rate_limited: "Too many questions in a short time",
+  too_many_requests: "The assistant is busy",
+  backend_unreachable: "Can't reach the assistant",
+};
+
+const FAILURE_TEXT: Record<string, string> = {
+  timeout: "did not respond in time",
+  unavailable: "is unreachable",
+  protocol_error: "returned an invalid response",
+  malformed_response: "returned malformed data",
+  tool_error: "reported an error",
+};
+
+/** One line per failed tool call, e.g. "Events: did not respond in time". */
+export function failedCalls(calls: ToolCallSummary[]): string[] {
+  const lines = calls
+    .filter((c) => c.status in FAILURE_TEXT)
+    .map((c) => `${serviceMeta(c.server_id ?? "").name}: ${FAILURE_TEXT[c.status]}`);
+  return [...new Set(lines)];
+}
 
 const PHASE_TEXT: Record<Turn["phase"], string> = {
   connecting: "Connecting…",
@@ -46,16 +71,23 @@ export function TurnView({ turn }: { turn: Turn }) {
           {!finished && <p className="text-[13px] text-ink-muted" aria-live="polite">{PHASE_TEXT[turn.phase]}</p>}
 
           {turn.phase === "failed" && !r && (
-            <Notice tone="bad" title="The answer didn't arrive">
-              {turn.error?.message ?? "The connection closed before the backend finished. Try asking again."}
+            <Notice tone="bad" title={FAILURE_TITLE[turn.error?.code ?? ""] ?? "The answer didn't arrive"}>
+              {turn.error?.code === "auth_required"
+                ? "Your session has expired. Reload the page and sign in again."
+                : (turn.error?.message ?? "The connection closed before the backend finished. Try asking again.")}
             </Notice>
           )}
 
           {r && (
             <>
               {r.status === "partial" && (
-                <Notice tone="warn" title="Partial answer">
-                  Some systems didn&apos;t respond, so parts of this answer are missing. {r.warnings.join(" ")}
+                <Notice tone="warn" title="Partial answer: some systems could not be checked">
+                  <ul className="mt-1 list-disc pl-4">
+                    {failedCalls(r.tool_calls).map((f) => (
+                      <li key={f}>{f}</li>
+                    ))}
+                  </ul>
+                  <p className="mt-1">Anything from those systems is missing from the answer; it was not treated as &quot;no results&quot;.</p>
                 </Notice>
               )}
               {r.status === "error" && (
@@ -71,6 +103,12 @@ export function TurnView({ turn }: { turn: Turn }) {
               {r.citation_check.unsupported.length > 0 && (
                 <Notice tone="warn" title="Unverified page reference">
                   These references don&apos;t match any retrieved passage: {r.citation_check.unsupported.join(", ")}
+                </Notice>
+              )}
+              {(r.citation_check.unsupported_numbers?.length ?? 0) > 0 && (
+                <Notice tone="warn" title="Number not found in the cited passage">
+                  {r.citation_check.unsupported_numbers?.join(", ")} appear next to a citation but not in the cited text.
+                  Check the excerpt before relying on them.
                 </Notice>
               )}
               <SourceTags sources={r.sources} />

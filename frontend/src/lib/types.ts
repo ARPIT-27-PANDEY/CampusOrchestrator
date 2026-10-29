@@ -8,6 +8,7 @@ export type ToolStatus =
   | "timeout"
   | "unavailable"
   | "protocol_error"
+  | "malformed_response"
   | "budget_exceeded";
 
 export type ServerStatus = "available" | "unavailable" | "not_configured" | "unknown";
@@ -21,6 +22,8 @@ export interface Citation {
   page: number;
   section: string | null;
   excerpt: string;
+  source_url?: string | null;
+  doc_status?: string | null;
 }
 
 export interface SourceRef {
@@ -29,8 +32,16 @@ export interface SourceRef {
   tool: string;
   mode: string | null;
   provider: string | null;
+  /** Public page the data came from (https only; filtered by the backend). */
+  source_url?: string | null;
+  /** When the service queried its source (UTC ISO). */
+  retrieved_at?: string | null;
+  /** Upstream update/version date, if the source states it. Not the query time. */
   data_as_of: string | null;
+  /** true = out of date, false = current, null = cannot be determined. */
   stale: boolean | null;
+  staleness_reason?: string | null;
+  note?: string | null;
 }
 
 export interface ToolCallSummary {
@@ -56,7 +67,7 @@ export interface AgentResult {
   sources: SourceRef[];
   tool_calls: ToolCallSummary[];
   warnings: string[];
-  citation_check: { checked: number; unsupported: string[] };
+  citation_check: { checked: number; unsupported: string[]; numbers_checked?: number; unsupported_numbers?: string[] };
   provider: string;
   model: string;
   iterations: number;
@@ -93,6 +104,57 @@ export interface HealthResponse {
   llm: { provider: string; model: string; configured: boolean; error: string | null };
   mcp: { configured: number; available: number; tools: number };
   time: string;
+  campus_time?: string | null;
+  access_mode?: "open" | "password" | null;
+}
+
+export interface SessionInfo {
+  access_mode: "open" | "password";
+  authenticated: boolean;
+  expires_at: string | null;
+}
+
+export interface EvalRunInfo {
+  run_id: string;
+  kind: "agent" | "retrieval";
+  generated_at: string | null;
+  dataset: string | null;
+  provider: string | null;
+  model: string | null;
+  transport: string | null;
+  retriever: string | null;
+  repeat: number | null;
+  pass_rate: number | null;
+  cases: number | null;
+  legacy: boolean;
+}
+
+export interface RetrievalSplit {
+  queries: number;
+  answerable: number;
+  no_answer: number;
+  [metric: string]: number | string | null;
+}
+
+export interface RetrievalResult {
+  retriever: string;
+  status: "ok" | "not_run";
+  reason?: string;
+  embedding_model?: string;
+  retrieval_mode?: string;
+  thresholds?: { min_score: number; bm25_min_score: number };
+  index_build_s?: number;
+  splits?: { dev: RetrievalSplit; test: RetrievalSplit };
+}
+
+export interface RetrievalReport {
+  kind: "retrieval";
+  run_id: string;
+  generated_at: string;
+  dataset: string;
+  k: number;
+  tuned: boolean;
+  results: RetrievalResult[];
 }
 
 export interface TraceListItem {
@@ -134,21 +196,32 @@ export interface EvalCategory {
   passed: number;
 }
 
+export interface EvalCase {
+  id: string;
+  category: string;
+  query: string;
+  passed: boolean;
+  expected_servers: string[];
+  called_servers: string[];
+  called_tools?: string[];
+  latency_ms: number;
+  failures: string[];
+  failure_class?: string | null;
+  repeat?: number;
+}
+
 export interface EvalReport {
+  kind?: "agent";
+  run_id?: string;
   generated_at: string;
+  dataset?: string;
   provider: string;
   model: string;
+  transport?: string;
   note: string;
-  summary: Record<string, number | string | null>;
+  latency_note?: string;
+  config?: Record<string, unknown> & { dataset_version?: number; retriever?: string; repeat?: number };
+  summary: Record<string, unknown>;
   categories: EvalCategory[];
-  cases: {
-    id: string;
-    category: string;
-    query: string;
-    passed: boolean;
-    expected_servers: string[];
-    called_servers: string[];
-    latency_ms: number;
-    failures: string[];
-  }[];
+  cases: EvalCase[];
 }

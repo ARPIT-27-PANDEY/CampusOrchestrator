@@ -42,7 +42,9 @@ describe("TurnView", () => {
   it("shows the answer, the route with failures, demo labelling and citations", () => {
     render(<TurnView turn={turn(result())} />);
     expect(screen.getByText("CS 210")).toBeInTheDocument();
-    expect(screen.getByText("Partial answer")).toBeInTheDocument();
+    expect(screen.getByText(/^Partial answer/)).toBeInTheDocument();
+    expect(screen.getByText("Events: is unreachable")).toBeInTheDocument(); // the failed service is named
+    expect(screen.getByText(/not treated as "no results"/)).toBeInTheDocument();
     expect(screen.getByText(/Unreachable after 2 attempts/)).toBeInTheDocument();
     expect(screen.getByText("Demo data")).toBeInTheDocument();
     expect(screen.getByText(/Academic Handbook 2026-27, page 4/)).toBeInTheDocument();
@@ -57,6 +59,16 @@ describe("TurnView", () => {
     );
     expect(screen.getByText("No supporting passage found")).toBeInTheDocument();
     expect(screen.getByText(/\[Handbook, p. 9\]/)).toBeInTheDocument();
+  });
+
+  it("asks the user to sign in again when the session expired", () => {
+    render(
+      <TurnView
+        turn={{ id: "1", query: "q", phase: "failed", draft: "", toolCalls: [], error: { code: "auth_required", message: "Please sign in." } }}
+      />,
+    );
+    expect(screen.getByText("Please sign in again")).toBeInTheDocument();
+    expect(screen.getByText(/session has expired/)).toBeInTheDocument();
   });
 
   it("shows a loading state while streaming", () => {

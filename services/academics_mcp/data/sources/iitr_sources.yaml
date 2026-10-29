@@ -1,0 +1,209 @@
+# Curated IIT Roorkee academic sources for the Academics MCP server.
+#
+# Hand-maintained metadata. Fetch results (sha256, retrieval time, size, page/text counts, status)
+# are written by `python -m academics_mcp.sources fetch` to iitr_sources.lock.json next to this file.
+# Titles, issue numbers and dates are copied from the listing pages named in `listed_on`.
+#
+# Only URLs on the hosts in `allowed_hosts` are ever downloaded; this is not a crawler.
+#
+# Fields
+#   id               stable id (also the PDF file name: <id>.pdf)
+#   title            official title as listed by IIT Roorkee
+#   authority        issuing body
+#   doc_type         regulation | notification | calendar
+#   url              canonical PDF URL
+#   listed_on        official page that links the PDF
+#   issued           issue date (YYYY-MM-DD) as printed in the listing, or null if not stated
+#   reference        circular / Senate item number, if stated
+#   effective        effective date or academic year, if stated (null = not stated)
+#   academic_year    academic year the document is for, if it is year-specific
+#   applies_to       programmes / students the document addresses (from its title; "all" if not limited)
+#   status           current | superseded | uncertain
+#   supersedes / superseded_by   ids of related documents, when the relation is established
+#   usage_note       why we may use it
+version: 1
+authority_default: "Academic Affairs Office, IIT Roorkee"
+allowed_hosts: [iitr.ac.in, www.iitr.ac.in]
+usage_note_default: >-
+  Public document published by IIT Roorkee on iitr.ac.in for students. Redistributed unmodified for
+  retrieval with attribution and a link to the official URL. The official URL is authoritative.
+
+documents:
+  - id: iitr-ug-ordinance-2025
+    title: "UG Ordinances and Regulations 2025"
+    doc_type: regulation
+    url: "https://iitr.ac.in/Academics/static/Regulation/UG/UG_Ordinance_BoG_2025.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/Academic%20Regulations.html"
+    issued: null
+    effective: "2025"
+    applies_to: [undergraduate]
+    status: current
+    supersedes: [iitr-ug-ordinance-2016]
+
+  - id: iitr-ug-ordinance-2016
+    title: "UG Ordinances and Regulations 2016"
+    doc_type: regulation
+    url: "https://iitr.ac.in/Academics/static/Regulation/UG/Academic_Syllabus_2016-17.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/Academic%20Regulations.html"
+    issued: null
+    effective: "2016"
+    applies_to: [undergraduate]
+    status: superseded
+    superseded_by: [iitr-ug-ordinance-2025]
+    note: "Kept for conflict/supersession tests; may still govern earlier batches - applicability not established."
+
+  - id: iitr-phd-regulations-2026
+    title: "New Ph.D. Rules and Regulations-2026"
+    doc_type: regulation
+    url: "https://iitr.ac.in/Academics/static/PhD/PhD_Regulations_2026.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/Academic%20Regulations.html"
+    issued: null
+    effective: "2026"
+    applies_to: [phd]
+    status: current
+    supersedes: [iitr-phd-regulations-2019]
+
+  - id: iitr-phd-regulations-2019
+    title: "Ph.D. Rules and Regulations-2019 (updated)"
+    doc_type: regulation
+    url: "https://iitr.ac.in/Academics/static/Regulation/PhD/PhD_Rules_and_Regulations2019_updated.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/Academic%20Regulations.html"
+    issued: null
+    effective: "2019"
+    applies_to: [phd]
+    status: superseded
+    superseded_by: [iitr-phd-regulations-2026]
+    note: "Older Ph.D. regulations; may still apply to scholars admitted under them - not established."
+
+  - id: iitr-calendar-autumn-2026-27
+    title: "Academic Calendar, Autumn Semester 2026-27: All Programs (Other than MBA)"
+    doc_type: calendar
+    url: "https://iitr.ac.in/Academics/static/Calendar/Autumn%202026-27/Autumn_Calander_2026-27_All_Programme_other_than_MBA.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/Academic%20Calendar.html"
+    issued: "2026-04-06"
+    reference: "Item No. 108.18, No.Acad/9846/Senate-108"
+    academic_year: "2026-27"
+    applies_to: [all programmes except MBA]
+    status: current
+
+  - id: iitr-calendar-spring-2025-26
+    title: "Academic Calendar, Spring Semester 2025-26: All Programs (Other than MBA)"
+    doc_type: calendar
+    url: "https://iitr.ac.in/Academics/static/Calendar/Spring%202025-26/All_Programs_Other_than_MBA_Spring_Calendar_2025-26.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/Academic%20Calendar.html"
+    issued: "2025-11-26"
+    reference: "Item No. 107.5, No.Acad/9176/Senate-107"
+    academic_year: "2025-26"
+    applies_to: [all programmes except MBA]
+    status: current
+
+  - id: iitr-attendance-policy-2024
+    title: "Attendance policy for the students"
+    doc_type: notification
+    url: "https://iitr.ac.in/Academics/static/Notifications/General%20Notifications/101.5_Attendance_Policy.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/General%20Notifications.html"
+    issued: "2024-06-21"
+    reference: "Item No. 101.5, No. Acd./6544/Senate-101"
+    applies_to: [all]
+    status: current
+
+  - id: iitr-ufm-guidelines-2025
+    title: "Guidelines w.r.t. handling of Unfair Means during examination"
+    doc_type: notification
+    url: "https://iitr.ac.in/Academics/static/Notifications/General%20Notifications/103.15_UFM.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/General%20Notifications.html"
+    issued: "2025-02-04"
+    reference: "Item No. 103.15, No. Acd./7673/Senate-103"
+    applies_to: [all]
+    status: superseded
+    superseded_by: [iitr-ufm-revision-2026]
+
+  - id: iitr-ufm-revision-2026
+    title: "Revision in the existing guidelines on handling of Unfair Means during examination"
+    doc_type: notification
+    url: "https://iitr.ac.in/Academics/static/Notifications/General%20Notifications/Senate_108.6.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/General%20Notifications.html"
+    issued: "2026-04-15"
+    reference: "Item No. 108.6, No.Acad/9932/Senate-108"
+    applies_to: [all]
+    status: current
+    supersedes: [iitr-ufm-guidelines-2025]
+
+  - id: iitr-grading-policy-2025
+    title: "Policy for awarding the grades to students"
+    doc_type: notification
+    url: "https://iitr.ac.in/Academics/static/Notifications/General%20Notifications/104.3_Policy_awarding_grades.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/General%20Notifications.html"
+    issued: "2025-05-19"
+    reference: "Item No. 104.3, No.Acad/8180/Senate-104"
+    applies_to: [all]
+    status: current
+
+  - id: iitr-second-exam-grades-2024
+    title: "Awarding of grade point in Second Examination"
+    doc_type: notification
+    url: "https://iitr.ac.in/Academics/static/Notifications/General%20Notifications/99.19_Awarding_of_grades.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/General%20Notifications.html"
+    issued: "2024-01-08"
+    reference: "Item No. 99.19, No.Acd./5442/Senate-99"
+    applies_to: [all]
+    status: current
+
+  - id: iitr-mte-second-exam-2025
+    title: "Decentralization of the second examination on medical grounds/ extraordinary circumstances during MTE"
+    doc_type: notification
+    url: "https://iitr.ac.in/Academics/static/Notifications/General%20Notifications/103.19_MTE.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/General%20Notifications.html"
+    issued: "2025-02-04"
+    reference: "Item No. 103.19, No.Acd./7676/Senate-103"
+    applies_to: [all]
+    status: current
+
+  - id: iitr-academic-bank-of-credits-2025
+    title: "Establishment and operation of the Academic Bank of Credits at IIT Roorkee"
+    doc_type: notification
+    url: "https://iitr.ac.in/Academics/static/Notifications/General%20Notifications/103.16_ABC_IITR.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/General%20Notifications.html"
+    issued: "2025-02-04"
+    reference: "Item No. 103.16, No. Acd./7674/Senate-103"
+    applies_to: [all]
+    status: current
+
+  - id: iitr-cgpa-percentage-conversion
+    title: "Consolidated Notification: CGPA to Percentage Calculation Formulae"
+    doc_type: notification
+    url: "https://iitr.ac.in/Academics/static/Notifications/General%20Notifications/CGPA_Conversion_Notification.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/General%20Notifications.html"
+    issued: null
+    applies_to: [all]
+    status: current
+
+  - id: iitr-minor-cgpa-2026
+    title: "Separate CGPA for the Minor Program"
+    doc_type: notification
+    url: "https://iitr.ac.in/Academics/static/Notifications/General%20Notifications/Senate_108.19.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/General%20Notifications.html"
+    issued: "2026-04-17"
+    reference: "Item No. 108.19, No.Acad/9939/Senate-108"
+    applies_to: [students in minor programmes]
+    status: current
+
+  - id: iitr-exit-policy-2022
+    title: "Guidelines for EXIT Policy for academic programs"
+    doc_type: notification
+    url: "https://iitr.ac.in/Academics/static/Notifications/General%20Notifications/90.4_Exit_Policy.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/General%20Notifications.html"
+    issued: "2022-05-09"
+    reference: "Item No. 90.4, No. Acd./1419/Senate-90"
+    applies_to: [all]
+    status: current
+
+  - id: iitr-grade-moderation-2023
+    title: "Existing provision on Moderation of Grades of the courses"
+    doc_type: notification
+    url: "https://iitr.ac.in/Academics/static/Notifications/General%20Notifications/96.10_Grade_Moderation.pdf"
+    listed_on: "https://www.iitr.ac.in/Academics/General%20Notifications.html"
+    issued: "2023-06-26"
+    reference: "Item No. 96.10, No. Acd./4563/Senate-96"
+    applies_to: [all]
+    status: current

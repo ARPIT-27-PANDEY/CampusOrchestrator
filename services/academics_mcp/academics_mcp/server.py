@@ -15,7 +15,7 @@ from starlette.responses import JSONResponse
 from .config import AcademicsSettings
 from .ingest import ingest_directory
 from .models import HandbookSearchResult, PolicyDetails
-from .service import HandbookService, build_index_and_embedder
+from .service import HandbookService, build_index_and_embedder, load_manifest_for
 
 SERVER_NAME = "campus-academics"
 log = logging.getLogger("academics_mcp")
@@ -24,10 +24,15 @@ log = logging.getLogger("academics_mcp")
 def build_service(settings: AcademicsSettings | None = None, connect_retries: int = 15) -> HandbookService:
     cfg = settings or AcademicsSettings.from_env()
     index, embedder = build_index_and_embedder(cfg)
+    manifest = load_manifest_for(cfg)
+    not_indexed: list[str] = []
     for attempt in range(1, connect_retries + 1):  # Qdrant may still be starting (e.g. under Docker Compose)
         try:
             if cfg.auto_ingest:
-                ingest_directory(cfg.handbook_dir, index, embedder)
+                report = ingest_directory(cfg.handbook_dir, index, embedder, manifest=manifest)
+                not_indexed = [f"{n} (scanned PDF: needs OCR or manual text)" for n in report.needs_ocr]
+                not_indexed += [f"{n} (no extractable text)" for n in report.empty]
+                not_indexed += [f"{n} ({err})" for n, err in report.errors.items()]
             else:
                 index.ensure_collection()
             break
@@ -36,7 +41,11 @@ def build_service(settings: AcademicsSettings | None = None, connect_retries: in
                 raise
             log.warning("Qdrant not ready (%s); retrying in 2s (%d/%d)", type(exc).__name__, attempt, connect_retries)
             time.sleep(2)
-    return HandbookService(index, embedder, cfg)
+    if manifest:
+        present = {p.name for p in cfg.handbook_dir.glob("*.pdf")} if cfg.handbook_dir.exists() else set()
+        not_indexed += [f"{d.filename} (not downloaded; run academics_mcp.sources fetch)" for d in
+                        manifest.documents if d.filename not in present]  # fmt: skip
+    return HandbookService(index, embedder, cfg, manifest=manifest, not_indexed=not_indexed)
 
 
 def build_server(service: HandbookService | None = None) -> MCPServer:
@@ -45,8 +54,11 @@ def build_server(service: HandbookService | None = None) -> MCPServer:
         SERVER_NAME,
         version="0.1.0",
         instructions=(
-            "Retrieval over academic handbooks and policy PDFs. Every passage includes document title, page and "
-            "citation_id. If found=false there is no supporting evidence; do not answer from general knowledge."
+            "Retrieval over IIT Roorkee academic regulations, Senate notifications and academic calendars "
+            "(official PDFs from iitr.ac.in; origin=demo passages are fictional). Every passage includes the "
+            "document title, page, citation_id and official source_url. If found=false there is no supporting "
+            "evidence; do not answer from general knowledge. Always relay applicability_notes: superseded "
+            "documents and programme-specific rules must not be presented as applying to everyone."
         ),
     )
 

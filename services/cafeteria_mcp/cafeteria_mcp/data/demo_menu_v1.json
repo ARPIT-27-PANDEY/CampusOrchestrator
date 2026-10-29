@@ -1,0 +1,57 @@
+{
+  "_notice": "DEMO DATA. Menu items and prices are simulated for CampusOS demo mode and do not reflect a real cafeteria.",
+  "cafeteria": "Central Cafeteria (demo)",
+  "currency": "INR",
+  "data_as_of": "2026-10-01",
+  "valid_from": null,
+  "valid_to": null,
+  "always_available": [
+    {"name": "Masala Chai", "category": "beverages", "price": 20, "vegetarian": true},
+    {"name": "Filter Coffee", "category": "beverages", "price": 25, "vegetarian": true},
+    {"name": "Fresh Lime Soda", "category": "beverages", "price": 40, "vegetarian": true},
+    {"name": "Veg Sandwich", "category": "snacks", "price": 50, "vegetarian": true},
+    {"name": "Samosa (2 pcs)", "category": "snacks", "price": 30, "vegetarian": true},
+    {"name": "Bottled Water (1 L)", "category": "beverages", "price": 20, "vegetarian": true}
+  ],
+  "weekly": {
+    "monday": [
+      {"name": "Idli Sambar", "category": "breakfast", "price": 40, "vegetarian": true},
+      {"name": "Rajma Chawal", "category": "lunch", "price": 80, "vegetarian": true},
+      {"name": "Chicken Biryani", "category": "lunch", "price": 140, "vegetarian": false},
+      {"name": "Paneer Butter Masala with Roti", "category": "dinner", "price": 120, "vegetarian": true}
+    ],
+    "tuesday": [
+      {"name": "Poha", "category": "breakfast", "price": 35, "vegetarian": true},
+      {"name": "Veg Thali", "category": "lunch", "price": 100, "vegetarian": true},
+      {"name": "Egg Curry with Rice", "category": "lunch", "price": 90, "vegetarian": false},
+      {"name": "Veg Hakka Noodles", "category": "dinner", "price": 90, "vegetarian": true}
+    ],
+    "wednesday": [
+      {"name": "Aloo Paratha with Curd", "category": "breakfast", "price": 50, "vegetarian": true},
+      {"name": "Chole Bhature", "category": "lunch", "price": 85, "vegetarian": true},
+      {"name": "Fish Curry with Rice", "category": "lunch", "price": 150, "vegetarian": false},
+      {"name": "Dal Makhani with Jeera Rice", "category": "dinner", "price": 110, "vegetarian": true}
+    ],
+    "thursday": [
+      {"name": "Masala Dosa", "category": "breakfast", "price": 55, "vegetarian": true},
+      {"name": "Veg Pulao with Raita", "category": "lunch", "price": 85, "vegetarian": true},
+      {"name": "Chicken Curry with Roti", "category": "lunch", "price": 130, "vegetarian": false},
+      {"name": "Pav Bhaji", "category": "dinner", "price": 80, "vegetarian": true}
+    ],
+    "friday": [
+      {"name": "Upma", "category": "breakfast", "price": 35, "vegetarian": true},
+      {"name": "Veg Biryani", "category": "lunch", "price": 100, "vegetarian": true},
+      {"name": "Chicken Biryani", "category": "lunch", "price": 140, "vegetarian": false},
+      {"name": "Margherita Pizza (personal)", "category": "dinner", "price": 150, "vegetarian": true}
+    ],
+    "saturday": [
+      {"name": "Puri Bhaji", "category": "breakfast", "price": 45, "vegetarian": true},
+      {"name": "Kadhi Chawal", "category": "lunch", "price": 75, "vegetarian": true},
+      {"name": "Veg Fried Rice with Manchurian", "category": "dinner", "price": 110, "vegetarian": true}
+    ],
+    "sunday": [
+      {"name": "Chole Kulche", "category": "brunch", "price": 70, "vegetarian": true},
+      {"name": "Special Veg Thali", "category": "lunch", "price": 130, "vegetarian": true}
+    ]
+  }
+}

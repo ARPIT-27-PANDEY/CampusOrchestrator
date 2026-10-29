@@ -16,8 +16,18 @@ from typing import Any, Literal
 from .config import ServerConfig
 from .manager import Connector, MCPSession
 
-FaultKind = Literal["down", "timeout", "slow", "flaky"]
+FaultKind = Literal["down", "timeout", "slow", "flaky", "malformed"]
 FaultScope = Literal["calls", "all"]
+
+
+class _MalformedResult:
+    """What a misbehaving server might send: no structured content, non-JSON text."""
+
+    is_error = False
+    structured_content = None
+
+    def __init__(self) -> None:
+        self.content = [type("Text", (), {"text": "<html><body>502 Bad Gateway</body></html>"})()]
 
 
 class _FaultySession:
@@ -32,6 +42,8 @@ class _FaultySession:
 
     async def call_tool(self, *args: Any, **kwargs: Any) -> Any:
         await self._owner.inject(self._fault, self._server_id)
+        if self._fault == "malformed":
+            return _MalformedResult()
         return await self._inner.call_tool(*args, **kwargs)
 
 

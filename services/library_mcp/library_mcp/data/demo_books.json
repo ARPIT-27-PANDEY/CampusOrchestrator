@@ -1,28 +1,5106 @@
 {
-  "_notice": "DEMO DATA. Titles and authors are real published books; copy counts, call numbers, and availability are simulated for CampusOS demo mode.",
-  "data_as_of": "2026-10-01",
-  "books": [
-    {"book_id": "LIB-0001", "title": "Introduction to Algorithms", "authors": ["Thomas H. Cormen", "Charles E. Leiserson", "Ronald L. Rivest", "Clifford Stein"], "edition": "4th", "year": 2022, "subjects": ["algorithms", "data structures", "computer science"], "call_number": "QA76.6 .C662 2022", "location": "Main Library, Floor 2", "total_copies": 4, "available_copies": 1, "due_dates": ["2026-11-02", "2026-11-05", "2026-11-12"]},
-    {"book_id": "LIB-0002", "title": "Artificial Intelligence: A Modern Approach", "authors": ["Stuart Russell", "Peter Norvig"], "edition": "4th", "year": 2020, "subjects": ["artificial intelligence", "machine learning", "agents"], "call_number": "Q335 .R86 2020", "location": "Main Library, Floor 2", "total_copies": 3, "available_copies": 0, "due_dates": ["2026-10-30", "2026-11-04", "2026-11-10"]},
-    {"book_id": "LIB-0003", "title": "Deep Learning", "authors": ["Ian Goodfellow", "Yoshua Bengio", "Aaron Courville"], "edition": "1st", "year": 2016, "subjects": ["deep learning", "neural networks", "machine learning"], "call_number": "Q325.5 .G66 2016", "location": "Main Library, Floor 2", "total_copies": 2, "available_copies": 2, "due_dates": []},
-    {"book_id": "LIB-0004", "title": "Pattern Recognition and Machine Learning", "authors": ["Christopher M. Bishop"], "edition": "1st", "year": 2006, "subjects": ["machine learning", "statistics", "pattern recognition"], "call_number": "Q327 .B52 2006", "location": "Science Annex", "total_copies": 2, "available_copies": 1, "due_dates": ["2026-11-08"]},
-    {"book_id": "LIB-0005", "title": "Designing Data-Intensive Applications", "authors": ["Martin Kleppmann"], "edition": "1st", "year": 2017, "subjects": ["distributed systems", "databases", "software engineering"], "call_number": "QA76.9 .D3 K54 2017", "location": "Main Library, Floor 3", "total_copies": 3, "available_copies": 2, "due_dates": ["2026-11-01"]},
-    {"book_id": "LIB-0006", "title": "Operating System Concepts", "authors": ["Abraham Silberschatz", "Peter B. Galvin", "Greg Gagne"], "edition": "10th", "year": 2018, "subjects": ["operating systems", "computer science"], "call_number": "QA76.76 .O63 S55 2018", "location": "Main Library, Floor 2", "total_copies": 5, "available_copies": 3, "due_dates": ["2026-10-29", "2026-11-03"]},
-    {"book_id": "LIB-0007", "title": "Computer Networking: A Top-Down Approach", "authors": ["James F. Kurose", "Keith W. Ross"], "edition": "8th", "year": 2021, "subjects": ["networking", "computer science"], "call_number": "TK5105.875 .I57 K88 2021", "location": "Main Library, Floor 2", "total_copies": 3, "available_copies": 0, "due_dates": ["2026-10-27", "2026-11-06", "2026-11-14"]},
-    {"book_id": "LIB-0008", "title": "Database System Concepts", "authors": ["Abraham Silberschatz", "Henry F. Korth", "S. Sudarshan"], "edition": "7th", "year": 2019, "subjects": ["databases", "sql", "computer science"], "call_number": "QA76.9 .D3 S5637 2019", "location": "Main Library, Floor 3", "total_copies": 4, "available_copies": 4, "due_dates": []},
-    {"book_id": "LIB-0009", "title": "Clean Code", "authors": ["Robert C. Martin"], "edition": "1st", "year": 2008, "subjects": ["software engineering", "programming practice"], "call_number": "QA76.76 .D47 M3765 2008", "location": "Main Library, Floor 3", "total_copies": 2, "available_copies": 1, "due_dates": ["2026-11-09"]},
-    {"book_id": "LIB-0010", "title": "Linear Algebra and Its Applications", "authors": ["David C. Lay", "Steven R. Lay", "Judi J. McDonald"], "edition": "6th", "year": 2021, "subjects": ["linear algebra", "mathematics"], "call_number": "QA184.2 .L39 2021", "location": "Science Annex", "total_copies": 6, "available_copies": 5, "due_dates": ["2026-11-11"]},
-    {"book_id": "LIB-0011", "title": "Probability and Statistics for Engineering and the Sciences", "authors": ["Jay L. Devore"], "edition": "9th", "year": 2015, "subjects": ["statistics", "probability", "mathematics"], "call_number": "QA273 .D46 2015", "location": "Science Annex", "total_copies": 3, "available_copies": 2, "due_dates": ["2026-11-02"]},
-    {"book_id": "LIB-0012", "title": "Speech and Language Processing", "authors": ["Daniel Jurafsky", "James H. Martin"], "edition": "2nd", "year": 2008, "subjects": ["natural language processing", "artificial intelligence"], "call_number": "P98 .J87 2008", "location": "Main Library, Floor 2", "total_copies": 1, "available_copies": 1, "due_dates": []},
-    {"book_id": "LIB-0013", "title": "The Pragmatic Programmer", "authors": ["David Thomas", "Andrew Hunt"], "edition": "20th Anniversary", "year": 2019, "subjects": ["software engineering", "programming practice"], "call_number": "QA76.6 .H857 2019", "location": "Main Library, Floor 3", "total_copies": 2, "available_copies": 0, "due_dates": ["2026-10-31", "2026-11-07"]},
-    {"book_id": "LIB-0014", "title": "Python for Data Analysis", "authors": ["Wes McKinney"], "edition": "3rd", "year": 2022, "subjects": ["data analysis", "python", "pandas"], "call_number": "QA76.73 .P98 M42 2022", "location": "Main Library, Floor 3", "total_copies": 3, "available_copies": 1, "due_dates": ["2026-11-01", "2026-11-04"]},
-    {"book_id": "LIB-0015", "title": "Algorithm Design", "authors": ["Jon Kleinberg", "Éva Tardos"], "edition": "1st", "year": 2005, "subjects": ["algorithms", "computer science"], "call_number": "QA76.9 .A43 K54 2005", "location": "Main Library, Floor 2", "total_copies": 2, "available_copies": 1, "due_dates": ["2026-11-06"]}
-  ],
-  "hours": {
-    "weekday": {"open": "08:00", "close": "22:00"},
-    "saturday": {"open": "09:00", "close": "18:00"},
-    "sunday": {"open": "12:00", "close": "18:00"},
-    "closures": {"2026-11-08": "Diwali holiday (demo calendar)", "2026-12-25": "Christmas Day (demo calendar)", "2027-01-26": "Republic Day (demo calendar)"},
-    "special": {"2026-12-07": {"open": "08:00", "close": "02:00", "note": "Extended exam-week hours (demo calendar)"}}
+ "description": "Demo campus catalogue. Bibliographic fields come from Open Library (see metadata.record_url); copies, availability, shelf locations, call numbers and due dates are SYNTHETIC and do not describe IIT Roorkee library holdings. Built by services/library_mcp/scripts/import_catalogue.py.",
+ "data_as_of": "2026-10-28",
+ "holdings": "synthetic",
+ "hours": {
+  "weekday": {
+   "open": "08:00",
+   "close": "22:00"
+  },
+  "saturday": {
+   "open": "09:00",
+   "close": "18:00"
+  },
+  "sunday": {
+   "open": "12:00",
+   "close": "18:00"
+  },
+  "closures": {
+   "2026-11-08": "Diwali holiday (demo calendar)",
+   "2026-12-25": "Christmas Day (demo calendar)",
+   "2027-01-26": "Republic Day (demo calendar)"
+  },
+  "special": {
+   "2026-12-07": {
+    "open": "08:00",
+    "close": "02:00",
+    "note": "Extended exam-week hours (demo calendar)"
+   }
   }
+ },
+ "books": [
+  {
+   "book_id": "LIB-1001",
+   "title": "Engineering Mechanics Statics",
+   "authors": [
+    "J. L. Meriam",
+    "L. G. Kraige"
+   ],
+   "year": 1987,
+   "publisher": "Wiley",
+   "isbn_13": [
+    "9780470496985",
+    "9780470736166"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "mechanics",
+    "statics",
+    "engineering mechanics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL28981822W",
+    "openlibrary_work": "OL28981822W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 3,
+   "location": "Demo stacks, ME section, shelf 27",
+   "call_number": "DEMO-ME-0001",
+   "due_in_days": [
+    3
+   ]
+  },
+  {
+   "book_id": "LIB-1002",
+   "title": "Engineering Mechanics Dynamics",
+   "authors": [
+    "J. L. Meriam",
+    "L. G. Kraige"
+   ],
+   "year": 1982,
+   "publisher": "John Wiley & Sons",
+   "isbn_13": [
+    "9780471787037",
+    "9781119022534"
+   ],
+   "language": [
+    "eng",
+    "ara"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "mechanics",
+    "dynamics",
+    "engineering mechanics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL28977818W",
+    "openlibrary_work": "OL28977818W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 1,
+   "location": "Demo stacks, ME section, shelf 22",
+   "call_number": "DEMO-ME-0002",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1003",
+   "title": "Vector Mechanics for Engineers, Dynamics",
+   "authors": [
+    "Ferdinand Pierre Beer",
+    "E. Russell Johnston, Jr.",
+    "William E. Clausen",
+    "Phillip J. Cornwell"
+   ],
+   "year": 1962,
+   "publisher": "McGraw-Hill Education",
+   "isbn_13": [
+    "9780072930795",
+    "9780070043893"
+   ],
+   "language": [
+    "eng",
+    "spa",
+    "tur"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "mechanics",
+    "statics",
+    "dynamics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1440578W",
+    "openlibrary_work": "OL1440578W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 0,
+   "location": "Demo stacks, ME section, shelf 31",
+   "call_number": "DEMO-ME-0003",
+   "due_in_days": [
+    19
+   ]
+  },
+  {
+   "book_id": "LIB-1004",
+   "title": "Engineering mechanics",
+   "authors": [
+    "Stephen Timoshenko"
+   ],
+   "year": 1937,
+   "publisher": "McGraw-Hill",
+   "isbn_13": [],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "mechanics",
+    "statics",
+    "dynamics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL10514322W",
+    "openlibrary_work": "OL10514322W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 2,
+   "location": "Demo stacks, ME section, shelf 19",
+   "call_number": "DEMO-ME-0004",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1005",
+   "title": "Mechanics of materials",
+   "authors": [
+    "James M. Gere"
+   ],
+   "year": 1984,
+   "publisher": "Nelson Thornes Ltd",
+   "isbn_13": [
+    "9780534371333",
+    "9780534553975"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "mechanics of materials",
+    "strength of materials",
+    "solid mechanics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3276497W",
+    "openlibrary_work": "OL3276497W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 0,
+   "location": "Demo stacks, ME section, shelf 19",
+   "call_number": "DEMO-ME-0005",
+   "due_in_days": [
+    4,
+    17,
+    19,
+    25
+   ]
+  },
+  {
+   "book_id": "LIB-1006",
+   "title": "Mechanics of materials",
+   "authors": [
+    "R. C. Hibbeler"
+   ],
+   "year": 1991,
+   "publisher": "Prentice Hall International",
+   "isbn_13": [
+    "9789332584037",
+    "9780131866386"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "mechanics of materials",
+    "strength of materials"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1865035W",
+    "openlibrary_work": "OL1865035W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 0,
+   "location": "Demo stacks, ME section, shelf 28",
+   "call_number": "DEMO-ME-0006",
+   "due_in_days": [
+    11,
+    15,
+    22,
+    27
+   ]
+  },
+  {
+   "book_id": "LIB-1007",
+   "title": "Strength of materials",
+   "authors": [
+    "Stephen Timoshenko"
+   ],
+   "year": 1930,
+   "publisher": "D. Van Nostrand Company, inc.",
+   "isbn_13": [
+    "9780882754208"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "strength of materials",
+    "mechanics of materials"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3142929W",
+    "openlibrary_work": "OL3142929W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 0,
+   "location": "Demo stacks, ME section, shelf 8",
+   "call_number": "DEMO-ME-0007",
+   "due_in_days": [
+    13,
+    26
+   ]
+  },
+  {
+   "book_id": "LIB-1008",
+   "title": "Thermodynamics, An Engineering Approach",
+   "authors": [
+    "Yunus A. Çengel"
+   ],
+   "year": 1993,
+   "publisher": "McGraw",
+   "isbn_13": [
+    "9780071141048"
+   ],
+   "language": [
+    "und"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "thermodynamics",
+    "thermal engineering"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL5838743W",
+    "openlibrary_work": "OL5838743W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 0,
+   "location": "Demo stacks, ME section, shelf 25",
+   "call_number": "DEMO-ME-0008",
+   "due_in_days": [
+    12,
+    13,
+    22
+   ]
+  },
+  {
+   "book_id": "LIB-1009",
+   "title": "Fundamentals of engineering thermodynamics",
+   "authors": [
+    "Michael J. Moran",
+    "Howard N. Shapiro"
+   ],
+   "year": 1988,
+   "publisher": "John Wiley & Sons, Ltd.",
+   "isbn_13": [
+    "9780470086445",
+    "9780471452416"
+   ],
+   "language": [
+    "eng",
+    "und"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "thermodynamics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2916926W",
+    "openlibrary_work": "OL2916926W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 3,
+   "location": "Demo stacks, ME section, shelf 7",
+   "call_number": "DEMO-ME-0009",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1010",
+   "title": "Engineering Thermodynamics",
+   "authors": [
+    "P.K. Nag"
+   ],
+   "year": 1982,
+   "publisher": "McGraw-Hill Education",
+   "isbn_13": [
+    "9780070965300"
+   ],
+   "language": [],
+   "discipline": "mechanical",
+   "subjects": [
+    "thermodynamics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL9263448W",
+    "openlibrary_work": "OL9263448W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 3,
+   "location": "Demo stacks, ME section, shelf 1",
+   "call_number": "DEMO-ME-0010",
+   "due_in_days": [
+    8,
+    28,
+    28
+   ]
+  },
+  {
+   "book_id": "LIB-1011",
+   "title": "Fluid mechanics",
+   "authors": [
+    "Frank M. White"
+   ],
+   "year": 1979,
+   "publisher": "McGraw-Hill Companies",
+   "isbn_13": [
+    "9780071215664",
+    "9780071199117"
+   ],
+   "language": [
+    "und",
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "fluid mechanics",
+    "fluids"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1911850W",
+    "openlibrary_work": "OL1911850W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 1,
+   "location": "Demo stacks, ME section, shelf 21",
+   "call_number": "DEMO-ME-0011",
+   "due_in_days": [
+    2
+   ]
+  },
+  {
+   "book_id": "LIB-1012",
+   "title": "Introduction to fluid mechanics",
+   "authors": [
+    "Fox, Robert W."
+   ],
+   "year": 1973,
+   "publisher": "J. Wiley",
+   "isbn_13": [
+    "9780471270355",
+    "9780471592747"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "fluid mechanics",
+    "fluids"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL580621W",
+    "openlibrary_work": "OL580621W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 2,
+   "location": "Demo stacks, ME section, shelf 37",
+   "call_number": "DEMO-ME-0012",
+   "due_in_days": [
+    28
+   ]
+  },
+  {
+   "book_id": "LIB-1013",
+   "title": "Heat transfer",
+   "authors": [
+    "J. P. Holman"
+   ],
+   "year": 1934,
+   "publisher": "McGraw-Hill Companies",
+   "isbn_13": [
+    "9780070296206",
+    "9780070295988"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "heat transfer",
+    "thermal engineering"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3267454W",
+    "openlibrary_work": "OL3267454W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 1,
+   "location": "Demo stacks, ME section, shelf 30",
+   "call_number": "DEMO-ME-0013",
+   "due_in_days": [
+    4,
+    10,
+    10,
+    14
+   ]
+  },
+  {
+   "book_id": "LIB-1014",
+   "title": "Fundamentals of heat and mass transfer",
+   "authors": [
+    "Frank P. Incropera",
+    "David P. DeWitt"
+   ],
+   "year": 1985,
+   "publisher": "J. Wiley",
+   "isbn_13": [
+    "9780471612469",
+    "9780471825616"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "heat transfer",
+    "mass transfer"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2975219W",
+    "openlibrary_work": "OL2975219W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 0,
+   "location": "Demo stacks, ME section, shelf 31",
+   "call_number": "DEMO-ME-0014",
+   "due_in_days": [
+    2,
+    5,
+    10
+   ]
+  },
+  {
+   "book_id": "LIB-1015",
+   "title": "Shigley's mechanical engineering design",
+   "authors": [
+    "Richard G. Budynas",
+    "Richard Budynas",
+    "J. Keith Nisbett"
+   ],
+   "year": 2006,
+   "publisher": "McGraw-Hill Education",
+   "isbn_13": [
+    "9780071077835",
+    "9780071311137"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "machine design",
+    "design"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1923658W",
+    "openlibrary_work": "OL1923658W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 1,
+   "location": "Demo stacks, ME section, shelf 11",
+   "call_number": "DEMO-ME-0015",
+   "due_in_days": [
+    12,
+    12,
+    19
+   ]
+  },
+  {
+   "book_id": "LIB-1016",
+   "title": "Design of Machine Elements",
+   "authors": [
+    "BHANDARI"
+   ],
+   "year": 2010,
+   "publisher": "MHE",
+   "isbn_13": [
+    "9780070681798"
+   ],
+   "language": [],
+   "discipline": "mechanical",
+   "subjects": [
+    "machine design"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL22492704W",
+    "openlibrary_work": "OL22492704W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 0,
+   "location": "Demo stacks, ME section, shelf 10",
+   "call_number": "DEMO-ME-0016",
+   "due_in_days": [
+    14
+   ]
+  },
+  {
+   "book_id": "LIB-1017",
+   "title": "Manufacturing engineering and technology",
+   "authors": [
+    "Serope Kalpakjian",
+    "Steven Schmid"
+   ],
+   "year": 1989,
+   "publisher": "Prentice Hall",
+   "isbn_13": [
+    "9780201538465",
+    "9780131976399"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "manufacturing",
+    "production"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3289918W",
+    "openlibrary_work": "OL3289918W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 0,
+   "location": "Demo stacks, ME section, shelf 24",
+   "call_number": "DEMO-ME-0017",
+   "due_in_days": [
+    14
+   ]
+  },
+  {
+   "book_id": "LIB-1018",
+   "title": "Theory of machines and mechanisms",
+   "authors": [
+    "John J. Uicker",
+    "Gordon R. Pennock",
+    "Joseph E. Shigley"
+   ],
+   "year": 2003,
+   "publisher": "Oxford University Press",
+   "isbn_13": [
+    "9780190658908",
+    "9780195155983"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "theory of machines",
+    "mechanisms",
+    "kinematics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL18699414W",
+    "openlibrary_work": "OL18699414W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 2,
+   "location": "Demo stacks, ME section, shelf 26",
+   "call_number": "DEMO-ME-0018",
+   "due_in_days": [
+    1,
+    2,
+    21
+   ]
+  },
+  {
+   "book_id": "LIB-1019",
+   "title": "Mechanical vibrations",
+   "authors": [
+    "Rao, S. S.",
+    "RAO"
+   ],
+   "year": 1986,
+   "publisher": "Addison-Wesley",
+   "isbn_13": [
+    "9780201592894",
+    "9780131967519"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "vibrations",
+    "dynamics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL569028W",
+    "openlibrary_work": "OL569028W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 4,
+   "location": "Demo stacks, ME section, shelf 9",
+   "call_number": "DEMO-ME-0019",
+   "due_in_days": [
+    13,
+    24
+   ]
+  },
+  {
+   "book_id": "LIB-1020",
+   "title": "Machine design",
+   "authors": [
+    "Robert L. Norton"
+   ],
+   "year": 1996,
+   "publisher": "Prentice-Hall",
+   "isbn_13": [
+    "9780130177063",
+    "9780135214800"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mechanical",
+   "subjects": [
+    "machine design"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1802156W",
+    "openlibrary_work": "OL1802156W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 0,
+   "location": "Demo stacks, ME section, shelf 11",
+   "call_number": "DEMO-ME-0020",
+   "due_in_days": [
+    27
+   ]
+  },
+  {
+   "book_id": "LIB-1021",
+   "title": "Engineering circuit analysis",
+   "authors": [
+    "William H. Hayt"
+   ],
+   "year": 1979,
+   "publisher": "McGraw",
+   "isbn_13": [
+    "9781265845292",
+    "9780073366616"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "circuit analysis",
+    "circuits",
+    "network analysis"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL283807W",
+    "openlibrary_work": "OL283807W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 2,
+   "location": "Demo stacks, EE section, shelf 16",
+   "call_number": "DEMO-EE-0021",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1022",
+   "title": "Fundamentals of electric circuits",
+   "authors": [
+    "Charles K. Alexander",
+    "Matthew N. O. Sadiku",
+    "Charles Alexander",
+    "Matthew Sadiku"
+   ],
+   "year": 2002,
+   "publisher": "McGraw-Hill Science/Engineering/Math",
+   "isbn_13": [
+    "9780072463316",
+    "9780072977189"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "circuit analysis",
+    "circuits"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL5850081W",
+    "openlibrary_work": "OL5850081W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 0,
+   "location": "Demo stacks, EE section, shelf 4",
+   "call_number": "DEMO-EE-0022",
+   "due_in_days": [
+    4,
+    11,
+    11,
+    13
+   ]
+  },
+  {
+   "book_id": "LIB-1023",
+   "title": "Signals and Systems",
+   "authors": [
+    "Alan V. Oppenheim",
+    "Alan S. Willsky"
+   ],
+   "year": 1983,
+   "publisher": "Pearson Prentice Hall",
+   "isbn_13": [
+    "9780136169390",
+    "9788178086880"
+   ],
+   "language": [
+    "chi",
+    "spa",
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "signals and systems",
+    "signal processing"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3270906W",
+    "openlibrary_work": "OL3270906W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 5,
+   "location": "Demo stacks, EE section, shelf 11",
+   "call_number": "DEMO-EE-0023",
+   "due_in_days": [
+    25
+   ]
+  },
+  {
+   "book_id": "LIB-1024",
+   "title": "Signals and systems",
+   "authors": [
+    "Simon S. Haykin",
+    "Simon Haykin",
+    "Barry Van Veen"
+   ],
+   "year": 1998,
+   "publisher": "Wiley",
+   "isbn_13": [
+    "9780471707899",
+    "9780471164746"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "signals and systems"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1824447W",
+    "openlibrary_work": "OL1824447W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 2,
+   "location": "Demo stacks, EE section, shelf 31",
+   "call_number": "DEMO-EE-0024",
+   "due_in_days": [
+    14,
+    17,
+    28,
+    28
+   ]
+  },
+  {
+   "book_id": "LIB-1025",
+   "title": "Modern control engineering",
+   "authors": [
+    "Katsuhiko Ogata"
+   ],
+   "year": 1970,
+   "publisher": "Prentice Hall",
+   "isbn_13": [
+    "9780135987315",
+    "9789813026940"
+   ],
+   "language": [
+    "eng",
+    "spa"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "control systems",
+    "control engineering"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2717669W",
+    "openlibrary_work": "OL2717669W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 1,
+   "location": "Demo stacks, EE section, shelf 23",
+   "call_number": "DEMO-EE-0025",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1026",
+   "title": "Control Systems Engineering",
+   "authors": [
+    "Norman S. Nise"
+   ],
+   "year": 1992,
+   "publisher": "Wiley",
+   "isbn_13": [
+    "9780471727491",
+    "9780471445777"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "control systems"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3505210W",
+    "openlibrary_work": "OL3505210W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 5,
+   "location": "Demo stacks, EE section, shelf 31",
+   "call_number": "DEMO-EE-0026",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1027",
+   "title": "Microelectronic circuits\t",
+   "authors": [
+    "Adel S. Sedra",
+    "Kenneth C. Smith"
+   ],
+   "year": 1995,
+   "publisher": "Oxford University Press",
+   "isbn_13": [
+    "9780199339181",
+    "9780195103847"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "electronics",
+    "analog electronics",
+    "microelectronics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL17770472W",
+    "openlibrary_work": "OL17770472W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 2,
+   "location": "Demo stacks, EE section, shelf 24",
+   "call_number": "DEMO-EE-0027",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1028",
+   "title": "Digital design",
+   "authors": [
+    "M. Morris Mano",
+    "Michael Ciletti"
+   ],
+   "year": 1984,
+   "publisher": "Prentice-Hall International",
+   "isbn_13": [
+    "9780132340434",
+    "9780132129374"
+   ],
+   "language": [
+    "eng",
+    "spa"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "digital electronics",
+    "logic design"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3281307W",
+    "openlibrary_work": "OL3281307W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 0,
+   "location": "Demo stacks, EE section, shelf 17",
+   "call_number": "DEMO-EE-0028",
+   "due_in_days": [
+    10
+   ]
+  },
+  {
+   "book_id": "LIB-1029",
+   "title": "The art of electronics",
+   "authors": [
+    "Paul Horowitz",
+    "Winfield Hill"
+   ],
+   "year": 1980,
+   "publisher": "Camb. U. P.",
+   "isbn_13": [
+    "9780521370950",
+    "9780521498463"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "electronics",
+    "analog electronics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL4770496W",
+    "openlibrary_work": "OL4770496W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 4,
+   "location": "Demo stacks, EE section, shelf 1",
+   "call_number": "DEMO-EE-0029",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1030",
+   "title": "Communication Systems",
+   "authors": [
+    "Michael Moher",
+    "Simon Haykin"
+   ],
+   "year": 2008,
+   "publisher": "Wiley & Sons, Limited, John",
+   "isbn_13": [
+    "9781118836682",
+    "9781118836675"
+   ],
+   "language": [
+    "eng",
+    "hin"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "communication systems",
+    "communications"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL26352612W",
+    "openlibrary_work": "OL26352612W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 1,
+   "location": "Demo stacks, EE section, shelf 24",
+   "call_number": "DEMO-EE-0030",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1031",
+   "title": "Principles of communication systems",
+   "authors": [
+    "Herbert Taub"
+   ],
+   "year": 1970,
+   "publisher": "McGraw-Hill",
+   "isbn_13": [
+    "9780070629233",
+    "9780070629561"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "communication systems"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL5095491W",
+    "openlibrary_work": "OL5095491W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 0,
+   "location": "Demo stacks, EE section, shelf 37",
+   "call_number": "DEMO-EE-0031",
+   "due_in_days": [
+    10
+   ]
+  },
+  {
+   "book_id": "LIB-1032",
+   "title": "Power system analysis",
+   "authors": [
+    "John J. Grainger"
+   ],
+   "year": 1994,
+   "publisher": "TATA McGRAW-HILL",
+   "isbn_13": [
+    "9780070612938",
+    "9780070585157"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "power systems"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3950179W",
+    "openlibrary_work": "OL3950179W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 1,
+   "location": "Demo stacks, EE section, shelf 21",
+   "call_number": "DEMO-EE-0032",
+   "due_in_days": [
+    6,
+    9,
+    12,
+    15,
+    21
+   ]
+  },
+  {
+   "book_id": "LIB-1033",
+   "title": "Electric machinery",
+   "authors": [
+    "A. E. Fitzgerald"
+   ],
+   "year": 1952,
+   "publisher": "McGraw-Hill",
+   "isbn_13": [
+    "9780070211407",
+    "9780070662865"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "electrical machines",
+    "power systems"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL4805823W",
+    "openlibrary_work": "OL4805823W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 2,
+   "location": "Demo stacks, EE section, shelf 17",
+   "call_number": "DEMO-EE-0033",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1034",
+   "title": "Introduction to embedded systems",
+   "authors": [
+    "Edward Ashford Lee"
+   ],
+   "year": 2011,
+   "publisher": "MIT Press",
+   "isbn_13": [
+    "9780262340526",
+    "9780262340519"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "embedded systems",
+    "cyber-physical systems"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL16921081W",
+    "openlibrary_work": "OL16921081W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 4,
+   "location": "Demo stacks, EE section, shelf 4",
+   "call_number": "DEMO-EE-0034",
+   "due_in_days": [
+    9
+   ]
+  },
+  {
+   "book_id": "LIB-1035",
+   "title": "The 8051 microcontroller and embedded systems",
+   "authors": [
+    "Muhammad ali mazidi",
+    "Janice Mazidi",
+    "Rolin McKinlay",
+    "Khadim Ullah Jan"
+   ],
+   "year": 1999,
+   "publisher": "Pearson",
+   "isbn_13": [
+    "9780131194021",
+    "9780138610227"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "embedded systems",
+    "microcontrollers"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2062593W",
+    "openlibrary_work": "OL2062593W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 5,
+   "location": "Demo stacks, EE section, shelf 39",
+   "call_number": "DEMO-EE-0035",
+   "due_in_days": [
+    13
+   ]
+  },
+  {
+   "book_id": "LIB-1036",
+   "title": "Digital signal processing",
+   "authors": [
+    "John G. Proakis",
+    "Dimitris K Manolakis"
+   ],
+   "year": 1992,
+   "publisher": "Maxwell Macmillan International",
+   "isbn_13": [
+    "9780131873742",
+    "9780132287319"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "signal processing",
+    "dsp"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2706142W",
+    "openlibrary_work": "OL2706142W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 2,
+   "location": "Demo stacks, EE section, shelf 29",
+   "call_number": "DEMO-EE-0036",
+   "due_in_days": [
+    8,
+    24
+   ]
+  },
+  {
+   "book_id": "LIB-1037",
+   "title": "Electronic devices and circuit theory",
+   "authors": [
+    "Robert L. Boylestad",
+    "Louis Nashelsky"
+   ],
+   "year": 1972,
+   "publisher": "Prentice Hall",
+   "isbn_13": [
+    "9780137692828",
+    "9781282693722"
+   ],
+   "language": [
+    "eng",
+    "por"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "electronics",
+    "devices"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1904074W",
+    "openlibrary_work": "OL1904074W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 3,
+   "location": "Demo stacks, EE section, shelf 26",
+   "call_number": "DEMO-EE-0037",
+   "due_in_days": [
+    5,
+    11,
+    22
+   ]
+  },
+  {
+   "book_id": "LIB-1038",
+   "title": "Power electronics",
+   "authors": [
+    "M. H. Rashid"
+   ],
+   "year": 1988,
+   "publisher": "Prentice Hall",
+   "isbn_13": [
+    "9780136789963",
+    "9780131011403"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "power electronics",
+    "power systems"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2686417W",
+    "openlibrary_work": "OL2686417W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 1,
+   "location": "Demo stacks, EE section, shelf 17",
+   "call_number": "DEMO-EE-0038",
+   "due_in_days": [
+    3
+   ]
+  },
+  {
+   "book_id": "LIB-1039",
+   "title": "Electromagnetic waves and radiating systems",
+   "authors": [
+    "Edward Conrad Jordan"
+   ],
+   "year": 1950,
+   "publisher": "Constable",
+   "isbn_13": [
+    "9780132499958"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "electrical",
+   "subjects": [
+    "electromagnetics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL153446W",
+    "openlibrary_work": "OL153446W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 2,
+   "location": "Demo stacks, EE section, shelf 18",
+   "call_number": "DEMO-EE-0039",
+   "due_in_days": [
+    5,
+    7,
+    20
+   ]
+  },
+  {
+   "book_id": "LIB-1040",
+   "title": "Structural analysis",
+   "authors": [
+    "R. C. Hibbeler"
+   ],
+   "year": 1985,
+   "publisher": "Pearson Books",
+   "isbn_13": [
+    "9780023540417",
+    "9780134045719"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "civil",
+   "subjects": [
+    "structural engineering",
+    "structures"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1865036W",
+    "openlibrary_work": "OL1865036W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 1,
+   "location": "Demo stacks, CE section, shelf 15",
+   "call_number": "DEMO-CE-0040",
+   "due_in_days": [
+    12,
+    14
+   ]
+  },
+  {
+   "book_id": "LIB-1041",
+   "title": "Design of reinforced concrete",
+   "authors": [
+    "Jack C. McCormac"
+   ],
+   "year": 1978,
+   "publisher": "Addison-Wesley",
+   "isbn_13": [
+    "9781118476628",
+    "9781118879016"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "civil",
+   "subjects": [
+    "structural engineering",
+    "concrete",
+    "rcc"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1864859W",
+    "openlibrary_work": "OL1864859W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 4,
+   "location": "Demo stacks, CE section, shelf 34",
+   "call_number": "DEMO-CE-0041",
+   "due_in_days": [
+    5,
+    21
+   ]
+  },
+  {
+   "book_id": "LIB-1042",
+   "title": "Steel Design",
+   "authors": [
+    "William T. Segui"
+   ],
+   "year": 2006,
+   "publisher": "Wadsworth",
+   "isbn_13": [
+    "9780495244738",
+    "9781337094740"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "civil",
+   "subjects": [
+    "structural engineering",
+    "steel structures"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1923582W",
+    "openlibrary_work": "OL1923582W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 1,
+   "location": "Demo stacks, CE section, shelf 36",
+   "call_number": "DEMO-CE-0042",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1043",
+   "title": "Principles of geotechnical engineering",
+   "authors": [
+    "Braja M. Das"
+   ],
+   "year": 1985,
+   "publisher": "PWS Engineering",
+   "isbn_13": [
+    "9780534933753",
+    "9780534951795"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "civil",
+   "subjects": [
+    "geotechnical engineering",
+    "soil mechanics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL50683W",
+    "openlibrary_work": "OL50683W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 4,
+   "location": "Demo stacks, CE section, shelf 31",
+   "call_number": "DEMO-CE-0043",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1044",
+   "title": "Soil mechanics in engineering practice",
+   "authors": [
+    "Karl Terzaghi"
+   ],
+   "year": 1948,
+   "publisher": "Wiley",
+   "isbn_13": [
+    "9781446514146",
+    "9780471086581"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "civil",
+   "subjects": [
+    "geotechnical engineering",
+    "soil mechanics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL10445880W",
+    "openlibrary_work": "OL10445880W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 5,
+   "location": "Demo stacks, CE section, shelf 25",
+   "call_number": "DEMO-CE-0044",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1045",
+   "title": "Open-channel hydraulics",
+   "authors": [
+    "Ven Te Chow"
+   ],
+   "year": 1959,
+   "publisher": "McGraw-Hill International",
+   "isbn_13": [
+    "9780070859067",
+    "9780070107762"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "civil",
+   "subjects": [
+    "hydraulics",
+    "water resources"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1332594W",
+    "openlibrary_work": "OL1332594W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 1,
+   "location": "Demo stacks, CE section, shelf 10",
+   "call_number": "DEMO-CE-0045",
+   "due_in_days": [
+    2,
+    4,
+    7,
+    15,
+    23
+   ]
+  },
+  {
+   "book_id": "LIB-1046",
+   "title": "Hydraulics in civil and environmental engineering",
+   "authors": [
+    "A. J. Chadwick"
+   ],
+   "year": 1993,
+   "publisher": "E & FN Spon",
+   "isbn_13": [
+    "9780419225805",
+    "9780415306089"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "civil",
+   "subjects": [
+    "hydraulics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2269304W",
+    "openlibrary_work": "OL2269304W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 2,
+   "location": "Demo stacks, CE section, shelf 27",
+   "call_number": "DEMO-CE-0046",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1047",
+   "title": "Traffic engineering",
+   "authors": [
+    "Roger P. Roess",
+    "Elena S. Prassas",
+    "William R. McShane"
+   ],
+   "year": 2003,
+   "publisher": "Pearson Education, Limited",
+   "isbn_13": [
+    "9780131918771",
+    "9780134599717"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "civil",
+   "subjects": [
+    "transportation engineering",
+    "traffic"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3363061W",
+    "openlibrary_work": "OL3363061W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 2,
+   "location": "Demo stacks, CE section, shelf 11",
+   "call_number": "DEMO-CE-0047",
+   "due_in_days": [
+    14
+   ]
+  },
+  {
+   "book_id": "LIB-1048",
+   "title": "Principles of highway engineering and traffic analysis",
+   "authors": [
+    "Fred L. Mannering",
+    "Walter P. Kilareski",
+    "Scott S. Washburn"
+   ],
+   "year": 1990,
+   "publisher": "John Wiley",
+   "isbn_13": [
+    "9781118524442",
+    "9780471517771"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "civil",
+   "subjects": [
+    "transportation engineering",
+    "highways"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2626415W",
+    "openlibrary_work": "OL2626415W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 1,
+   "location": "Demo stacks, CE section, shelf 39",
+   "call_number": "DEMO-CE-0048",
+   "due_in_days": [
+    16,
+    18,
+    23
+   ]
+  },
+  {
+   "book_id": "LIB-1049",
+   "title": "Elementary surveying",
+   "authors": [
+    "Paul R. Wolf",
+    "Brinker, Russell C.",
+    "Paul Richard Wolf",
+    "Charles D. Ghilani"
+   ],
+   "year": 1951,
+   "publisher": "HarperCollins",
+   "isbn_13": [
+    "9780321014610",
+    "9780132083072"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "civil",
+   "subjects": [
+    "surveying"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL509008W",
+    "openlibrary_work": "OL509008W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 1,
+   "location": "Demo stacks, CE section, shelf 30",
+   "call_number": "DEMO-CE-0049",
+   "due_in_days": [
+    10
+   ]
+  },
+  {
+   "book_id": "LIB-1051",
+   "title": "Construction planning, equipment, and methods",
+   "authors": [
+    "R. L. Peurifoy",
+    "Robert L Peurifoy",
+    "Clifford J. Schexnayder",
+    "Robert Peurifoy"
+   ],
+   "year": 1956,
+   "publisher": "McGraw",
+   "isbn_13": [
+    "9780070497634",
+    "9780072964202"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "civil",
+   "subjects": [
+    "construction",
+    "construction management"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2975574W",
+    "openlibrary_work": "OL2975574W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 6,
+   "location": "Demo stacks, CE section, shelf 10",
+   "call_number": "DEMO-CE-0051",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1052",
+   "title": "Environmental engineering",
+   "authors": [
+    "Howard S. Peavy"
+   ],
+   "year": 1985,
+   "publisher": "McGraw-Hill",
+   "isbn_13": [
+    "9780071002318",
+    "9780070491342"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "civil",
+   "subjects": [
+    "environmental engineering",
+    "water supply"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL5354560W",
+    "openlibrary_work": "OL5354560W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 1,
+   "location": "Demo stacks, CE section, shelf 4",
+   "call_number": "DEMO-CE-0052",
+   "due_in_days": [
+    8,
+    11,
+    19,
+    25,
+    27
+   ]
+  },
+  {
+   "book_id": "LIB-1053",
+   "title": "Engineering Hydrology",
+   "authors": [
+    "K. Subramanya"
+   ],
+   "year": 1985,
+   "publisher": "McGraw-Hill Education",
+   "isbn_13": [
+    "9780074519431",
+    "9780074624494"
+   ],
+   "language": [],
+   "discipline": "civil",
+   "subjects": [
+    "hydrology",
+    "water resources"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL9308384W",
+    "openlibrary_work": "OL9308384W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 0,
+   "location": "Demo stacks, CE section, shelf 4",
+   "call_number": "DEMO-CE-0053",
+   "due_in_days": [
+    4,
+    5,
+    14,
+    20
+   ]
+  },
+  {
+   "book_id": "LIB-1054",
+   "title": "Introduction to Algorithms",
+   "authors": [
+    "Thomas H. Cormen",
+    "Charles E. Leiserson",
+    "Ronald L. Rivest",
+    "Clifford Stein"
+   ],
+   "year": 1990,
+   "publisher": "PHI Learning Pvt. Ltd. (Originally MIT Press)",
+   "isbn_13": [
+    "9780070131514",
+    "9780262031417"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "algorithms",
+    "data structures"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL4781294W",
+    "openlibrary_work": "OL4781294W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 0,
+   "location": "Demo stacks, CS section, shelf 15",
+   "call_number": "DEMO-CS-0054",
+   "due_in_days": [
+    1
+   ]
+  },
+  {
+   "book_id": "LIB-1055",
+   "title": "Algorithm design",
+   "authors": [
+    "Jon Kleinberg",
+    "Éva Tardos"
+   ],
+   "year": 1922,
+   "publisher": "Addison Wesley",
+   "isbn_13": [
+    "9780273752332",
+    "9780321295354"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "algorithms"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL9166321W",
+    "openlibrary_work": "OL9166321W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 0,
+   "location": "Demo stacks, CS section, shelf 9",
+   "call_number": "DEMO-CS-0055",
+   "due_in_days": [
+    18,
+    19
+   ]
+  },
+  {
+   "book_id": "LIB-1056",
+   "title": "The algorithm design manual",
+   "authors": [
+    "Steven S. Skiena"
+   ],
+   "year": 1998,
+   "publisher": "TELOS--the Electronic Library of Science",
+   "isbn_13": [
+    "9783030542580",
+    "9781848000698"
+   ],
+   "language": [
+    "hin",
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "algorithms"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2677499W",
+    "openlibrary_work": "OL2677499W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 2,
+   "location": "Demo stacks, CS section, shelf 33",
+   "call_number": "DEMO-CS-0056",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1057",
+   "title": "Data structures and algorithm analysis in C",
+   "authors": [
+    "Mark Allen Weiss"
+   ],
+   "year": 1993,
+   "publisher": "Pearson Addison-Wesley",
+   "isbn_13": [
+    "9780805354409",
+    "9780321189950"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "data structures",
+    "algorithms"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1958940W",
+    "openlibrary_work": "OL1958940W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 5,
+   "location": "Demo stacks, CS section, shelf 29",
+   "call_number": "DEMO-CS-0057",
+   "due_in_days": [
+    10
+   ]
+  },
+  {
+   "book_id": "LIB-1059",
+   "title": "Pattern Recognition and Machine Learning (Information Science and Statistics)",
+   "authors": [
+    "Christopher M. Bishop"
+   ],
+   "year": 2008,
+   "publisher": "Springer",
+   "isbn_13": [
+    "9780387310732"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "machine learning",
+    "pattern recognition"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2963587W",
+    "openlibrary_work": "OL2963587W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 4,
+   "location": "Demo stacks, CS section, shelf 21",
+   "call_number": "DEMO-CS-0059",
+   "due_in_days": [
+    11,
+    24
+   ]
+  },
+  {
+   "book_id": "LIB-1060",
+   "title": "Deep Learning",
+   "authors": [
+    "Ian Goodfellow",
+    "Yoshua Bengio",
+    "Aaron Courville",
+    "Francis Bach"
+   ],
+   "year": 2016,
+   "publisher": "MIT Press",
+   "isbn_13": [
+    "9780262035613",
+    "9780262337373"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "deep learning",
+    "machine learning",
+    "neural networks"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL17801809W",
+    "openlibrary_work": "OL17801809W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 0,
+   "location": "Demo stacks, CS section, shelf 8",
+   "call_number": "DEMO-CS-0060",
+   "due_in_days": [
+    6,
+    13,
+    14,
+    16,
+    19
+   ]
+  },
+  {
+   "book_id": "LIB-1061",
+   "title": "The Elements of Statistical Learning",
+   "authors": [
+    "Trevor Hastie",
+    "Robert Tibshirani",
+    "Jerome Friedman"
+   ],
+   "year": 2001,
+   "publisher": "Springer",
+   "isbn_13": [
+    "9780387848846",
+    "9780387848570"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "machine learning",
+    "statistics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL4147338W",
+    "openlibrary_work": "OL4147338W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 0,
+   "location": "Demo stacks, CS section, shelf 6",
+   "call_number": "DEMO-CS-0061",
+   "due_in_days": [
+    7
+   ]
+  },
+  {
+   "book_id": "LIB-1062",
+   "title": "Machine learning",
+   "authors": [
+    "John Robert Anderson",
+    "Ryszard Stanislaw Michalski",
+    "Jaime G. Carbonell",
+    "Tom M. Mitchell"
+   ],
+   "year": 1982,
+   "publisher": "Elsevier Science & Technology",
+   "isbn_13": [
+    "9781493303526",
+    "9780935382051"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "machine learning"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL18297859W",
+    "openlibrary_work": "OL18297859W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 1,
+   "location": "Demo stacks, CS section, shelf 25",
+   "call_number": "DEMO-CS-0062",
+   "due_in_days": [
+    20,
+    28
+   ]
+  },
+  {
+   "book_id": "LIB-1063",
+   "title": "Database system concepts",
+   "authors": [
+    "Abraham Silberschatz"
+   ],
+   "year": 1997,
+   "publisher": "Oracle Corp.",
+   "isbn_13": [
+    "9780070310865",
+    "9780070447561"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "databases",
+    "dbms"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1854539W",
+    "openlibrary_work": "OL1854539W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 0,
+   "location": "Demo stacks, CS section, shelf 36",
+   "call_number": "DEMO-CS-0063",
+   "due_in_days": [
+    8,
+    13,
+    18,
+    18,
+    20
+   ]
+  },
+  {
+   "book_id": "LIB-1064",
+   "title": "Fundamentals of database systems",
+   "authors": [
+    "Ramez Elmasri",
+    "Shamkant B. Navathe"
+   ],
+   "year": 1989,
+   "publisher": "Pearson Education, Limited",
+   "isbn_13": [
+    "9780321122261",
+    "9781292025605"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "databases",
+    "dbms"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3947220W",
+    "openlibrary_work": "OL3947220W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 2,
+   "location": "Demo stacks, CS section, shelf 37",
+   "call_number": "DEMO-CS-0064",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1065",
+   "title": "Operating System Concepts",
+   "authors": [
+    "Abraham Silberschatz"
+   ],
+   "year": 1988,
+   "publisher": "J. Wiley & Sons",
+   "isbn_13": [
+    "9780471417439",
+    "9780470279939"
+   ],
+   "language": [
+    "und",
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "operating systems"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1854541W",
+    "openlibrary_work": "OL1854541W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 1,
+   "location": "Demo stacks, CS section, shelf 38",
+   "call_number": "DEMO-CS-0065",
+   "due_in_days": [
+    5,
+    14,
+    25,
+    28,
+    28
+   ]
+  },
+  {
+   "book_id": "LIB-1066",
+   "title": "Modern Operating Systems",
+   "authors": [
+    "Andrew S. Tanenbaum",
+    "Herbert Bos"
+   ],
+   "year": 1992,
+   "publisher": "Pearson India",
+   "isbn_13": [
+    "9781292061429",
+    "9780135881873"
+   ],
+   "language": [
+    "fre",
+    "chi",
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "operating systems"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1970688W",
+    "openlibrary_work": "OL1970688W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 0,
+   "location": "Demo stacks, CS section, shelf 9",
+   "call_number": "DEMO-CS-0066",
+   "due_in_days": [
+    8,
+    19,
+    22
+   ]
+  },
+  {
+   "book_id": "LIB-1067",
+   "title": "Computer Networks",
+   "authors": [
+    "Andrew S. Tanenbaum",
+    "John David Wetherall",
+    "David J. Wetherall",
+    "Nickolas Feamster"
+   ],
+   "year": 1981,
+   "publisher": "Prentice-Hall of India",
+   "isbn_13": [
+    "9789702601623",
+    "9781292374062"
+   ],
+   "language": [
+    "ita",
+    "ger",
+    "fre"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "computer networks",
+    "networking"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1970691W",
+    "openlibrary_work": "OL1970691W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 1,
+   "location": "Demo stacks, CS section, shelf 15",
+   "call_number": "DEMO-CS-0067",
+   "due_in_days": [
+    6,
+    11,
+    21
+   ]
+  },
+  {
+   "book_id": "LIB-1068",
+   "title": "Computer Networking a Top-Down Approach",
+   "authors": [
+    "James Kurose",
+    "Keith Ross"
+   ],
+   "year": 2025,
+   "publisher": "Pearson Education",
+   "isbn_13": [
+    "9780135415504",
+    "9780135415535"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "computer networks",
+    "networking"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL45032796W",
+    "openlibrary_work": "OL45032796W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 1,
+   "location": "Demo stacks, CS section, shelf 31",
+   "call_number": "DEMO-CS-0068",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1069",
+   "title": "Software engineering",
+   "authors": [
+    "Ian Sommerville",
+    "Sommerville, Ian.",
+    "Ian Sommerville"
+   ],
+   "year": 1982,
+   "publisher": "Pearson",
+   "isbn_13": [
+    "9780201398151",
+    "9780137035151"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "software engineering"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2960016W",
+    "openlibrary_work": "OL2960016W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 1,
+   "location": "Demo stacks, CS section, shelf 22",
+   "call_number": "DEMO-CS-0069",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1070",
+   "title": "Clean Code",
+   "authors": [
+    "Robert C. Martin"
+   ],
+   "year": 2008,
+   "publisher": "Prentice Hall",
+   "isbn_13": [
+    "9780136083221",
+    "9782326002890"
+   ],
+   "language": [
+    "eng",
+    "fre",
+    "hun"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "software engineering",
+    "programming"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL17618370W",
+    "openlibrary_work": "OL17618370W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 3,
+   "location": "Demo stacks, CS section, shelf 22",
+   "call_number": "DEMO-CS-0070",
+   "due_in_days": [
+    8
+   ]
+  },
+  {
+   "book_id": "LIB-1071",
+   "title": "Design Patterns",
+   "authors": [
+    "Erich Gamma",
+    "John Vlissides",
+    "Richard Helm",
+    "Ralph Johnson"
+   ],
+   "year": 1995,
+   "publisher": "Addison-Wesley",
+   "isbn_13": [
+    "9780133052664",
+    "9788131700075"
+   ],
+   "language": [
+    "ger",
+    "dut",
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "software engineering",
+    "design patterns"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL6030812W",
+    "openlibrary_work": "OL6030812W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 2,
+   "location": "Demo stacks, CS section, shelf 19",
+   "call_number": "DEMO-CS-0071",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1072",
+   "title": "Security Engineering",
+   "authors": [
+    "Ross J. Anderson"
+   ],
+   "year": 2001,
+   "publisher": "Wiley & Sons, Incorporated, John",
+   "isbn_13": [
+    "9780470313114",
+    "9781119642831"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "cybersecurity",
+    "security"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL8229364W",
+    "openlibrary_work": "OL8229364W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 1,
+   "location": "Demo stacks, CS section, shelf 26",
+   "call_number": "DEMO-CS-0072",
+   "due_in_days": [
+    12,
+    25
+   ]
+  },
+  {
+   "book_id": "LIB-1073",
+   "title": "Cryptography and Network Security",
+   "authors": [
+    "William Stallings"
+   ],
+   "year": 2002,
+   "publisher": "Pearson Education do Brasil",
+   "isbn_13": [
+    "9780134444666",
+    "9780132023221"
+   ],
+   "language": [
+    "eng",
+    "por"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "cybersecurity",
+    "cryptography"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL21381347W",
+    "openlibrary_work": "OL21381347W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 6,
+   "location": "Demo stacks, CS section, shelf 14",
+   "call_number": "DEMO-CS-0073",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1074",
+   "title": "Structure and Interpretation of Computer Programs (SICP)",
+   "authors": [
+    "Harold Abelson",
+    "Gerald Jay Sussman",
+    "Julie Sussman"
+   ],
+   "year": 1985,
+   "publisher": "Springer",
+   "isbn_13": [
+    "9780262510875",
+    "9783540638988"
+   ],
+   "language": [
+    "chi",
+    "fre",
+    "ger"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "programming"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3267304W",
+    "openlibrary_work": "OL3267304W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 0,
+   "location": "Demo stacks, CS section, shelf 26",
+   "call_number": "DEMO-CS-0074",
+   "due_in_days": [
+    23
+   ]
+  },
+  {
+   "book_id": "LIB-1075",
+   "title": "The C Programming Language",
+   "authors": [
+    "Brian W. Kernighan",
+    "Dennis MacAlistair Ritchie"
+   ],
+   "year": 1978,
+   "publisher": "Wydawnictwa Naukowo-Techniczne",
+   "isbn_13": [
+    "9780131107502",
+    "9780131103306"
+   ],
+   "language": [
+    "spa",
+    "pol",
+    "chi"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "programming",
+    "c"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL4617640W",
+    "openlibrary_work": "OL4617640W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 3,
+   "location": "Demo stacks, CS section, shelf 13",
+   "call_number": "DEMO-CS-0075",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1076",
+   "title": "Computer Organization and Design",
+   "authors": [
+    "John L. Hennessy",
+    "David A. Patterson"
+   ],
+   "year": 1994,
+   "publisher": "Morgan Kaufmann Publishers",
+   "isbn_13": [
+    "9781558604285",
+    "9780123744937"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "computer architecture"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2664272W",
+    "openlibrary_work": "OL2664272W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 3,
+   "location": "Demo stacks, CS section, shelf 7",
+   "call_number": "DEMO-CS-0076",
+   "due_in_days": [
+    4,
+    19,
+    20
+   ]
+  },
+  {
+   "book_id": "LIB-1077",
+   "title": "Compilers, principles, techniques, and tools",
+   "authors": [
+    "Alfred V. Aho",
+    "Monica S. Lam",
+    "Ravi Sethi",
+    "Jeffrey D. Ullman"
+   ],
+   "year": 1986,
+   "publisher": "Addison-Wesley",
+   "isbn_13": [
+    "9780201100884",
+    "9788320426564"
+   ],
+   "language": [
+    "ger",
+    "und",
+    "eng"
+   ],
+   "discipline": "computer science",
+   "subjects": [
+    "compilers"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3509433W",
+    "openlibrary_work": "OL3509433W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 1,
+   "location": "Demo stacks, CS section, shelf 12",
+   "call_number": "DEMO-CS-0077",
+   "due_in_days": [
+    8,
+    14,
+    28
+   ]
+  },
+  {
+   "book_id": "LIB-1078",
+   "title": "Linear algebra and its applications",
+   "authors": [
+    "Gilbert Strang"
+   ],
+   "year": 1976,
+   "publisher": "Academic Press",
+   "isbn_13": [
+    "9780155510074",
+    "9780155510050"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mathematics",
+   "subjects": [
+    "linear algebra"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3285496W",
+    "openlibrary_work": "OL3285496W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 0,
+   "location": "Demo stacks, MA section, shelf 21",
+   "call_number": "DEMO-MA-0078",
+   "due_in_days": [
+    3,
+    7,
+    17,
+    26
+   ]
+  },
+  {
+   "book_id": "LIB-1079",
+   "title": "Introduction to linear algebra",
+   "authors": [
+    "Gilbert Strang"
+   ],
+   "year": 1998,
+   "publisher": "Wellesley College",
+   "isbn_13": [
+    "9780961408893",
+    "9781733146678"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mathematics",
+   "subjects": [
+    "linear algebra"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3285486W",
+    "openlibrary_work": "OL3285486W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 0,
+   "location": "Demo stacks, MA section, shelf 2",
+   "call_number": "DEMO-MA-0079",
+   "due_in_days": [
+    1,
+    13,
+    24
+   ]
+  },
+  {
+   "book_id": "LIB-1080",
+   "title": "Linear Algebra Done Right",
+   "authors": [
+    "Sheldon Jay Axler"
+   ],
+   "year": 2004,
+   "publisher": "Springer",
+   "isbn_13": [
+    "9780387982588",
+    "9783319110806"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mathematics",
+   "subjects": [
+    "linear algebra"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL8059441W",
+    "openlibrary_work": "OL8059441W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 2,
+   "location": "Demo stacks, MA section, shelf 16",
+   "call_number": "DEMO-MA-0080",
+   "due_in_days": [
+    19,
+    21,
+    28
+   ]
+  },
+  {
+   "book_id": "LIB-1081",
+   "title": "Calculus on manifolds",
+   "authors": [
+    "Michael Spivak"
+   ],
+   "year": 1965,
+   "publisher": "Avalon Publishing",
+   "isbn_13": [
+    "9780813346120",
+    "9780367091903"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mathematics",
+   "subjects": [
+    "calculus"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3169379W",
+    "openlibrary_work": "OL3169379W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 1,
+   "location": "Demo stacks, MA section, shelf 13",
+   "call_number": "DEMO-MA-0081",
+   "due_in_days": [
+    12,
+    18,
+    19,
+    26
+   ]
+  },
+  {
+   "book_id": "LIB-1082",
+   "title": "Thomas' Calculus",
+   "authors": [
+    "George Brinton Thomas",
+    "Ross L. Finney",
+    "Maurice D. Weir",
+    "Frank R. Giordano"
+   ],
+   "year": 2000,
+   "publisher": "Addison-Wesley",
+   "isbn_13": [
+    "9780321888549",
+    "9780134439419"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mathematics",
+   "subjects": [
+    "calculus"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL21371820W",
+    "openlibrary_work": "OL21371820W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 2,
+   "location": "Demo stacks, MA section, shelf 3",
+   "call_number": "DEMO-MA-0082",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1083",
+   "title": "Advanced Engineering Mathematics",
+   "authors": [
+    "Erwin Kreyszig"
+   ],
+   "year": 1957,
+   "publisher": "John Wiley & Sons Inc",
+   "isbn_13": [
+    "9780471889410",
+    "9780471507291"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mathematics",
+   "subjects": [
+    "engineering mathematics",
+    "calculus",
+    "differential equations"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1400344W",
+    "openlibrary_work": "OL1400344W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 0,
+   "location": "Demo stacks, MA section, shelf 34",
+   "call_number": "DEMO-MA-0083",
+   "due_in_days": [
+    6
+   ]
+  },
+  {
+   "book_id": "LIB-1084",
+   "title": "A first course in probability",
+   "authors": [
+    "Sheldon M. Ross"
+   ],
+   "year": 1976,
+   "publisher": "Pearson Higher Education & Professional Group",
+   "isbn_13": [
+    "9781292024929",
+    "9780321656810"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mathematics",
+   "subjects": [
+    "probability",
+    "statistics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL17047555W",
+    "openlibrary_work": "OL17047555W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 3,
+   "location": "Demo stacks, MA section, shelf 25",
+   "call_number": "DEMO-MA-0084",
+   "due_in_days": [
+    1,
+    21
+   ]
+  },
+  {
+   "book_id": "LIB-1085",
+   "title": "Probability and statistics for engineers and scientists",
+   "authors": [
+    "Ronald E. Walpole",
+    "Raymond H. Myers"
+   ],
+   "year": 1972,
+   "publisher": "Dewan Bahasa dan Pustaka, Malaysia",
+   "isbn_13": [
+    "9780024242105",
+    "9780024241702"
+   ],
+   "language": [
+    "may",
+    "eng"
+   ],
+   "discipline": "mathematics",
+   "subjects": [
+    "probability",
+    "statistics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2736168W",
+    "openlibrary_work": "OL2736168W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 2,
+   "location": "Demo stacks, MA section, shelf 2",
+   "call_number": "DEMO-MA-0085",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1086",
+   "title": "Introduction to Probability",
+   "authors": [
+    "Dimitri P. Bertsekas",
+    "John N. Tsitsiklis"
+   ],
+   "year": 2008,
+   "publisher": "Athena Scientific",
+   "isbn_13": [
+    "9781886529236"
+   ],
+   "language": [],
+   "discipline": "mathematics",
+   "subjects": [
+    "probability"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL17816074W",
+    "openlibrary_work": "OL17816074W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 0,
+   "location": "Demo stacks, MA section, shelf 25",
+   "call_number": "DEMO-MA-0086",
+   "due_in_days": [
+    6,
+    14,
+    15,
+    18,
+    20
+   ]
+  },
+  {
+   "book_id": "LIB-1087",
+   "title": "All of Statistics",
+   "authors": [
+    "Larry Wasserman"
+   ],
+   "year": 2004,
+   "publisher": "Springer",
+   "isbn_13": [
+    "9780387217369",
+    "9781468495522"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mathematics",
+   "subjects": [
+    "statistics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL8055600W",
+    "openlibrary_work": "OL8055600W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 4,
+   "location": "Demo stacks, MA section, shelf 12",
+   "call_number": "DEMO-MA-0087",
+   "due_in_days": [
+    5,
+    24
+   ]
+  },
+  {
+   "book_id": "LIB-1088",
+   "title": "Numerical methods for engineers",
+   "authors": [
+    "Steven C. Chapra",
+    "Raymond P. Canale"
+   ],
+   "year": 1985,
+   "publisher": "McGraw-Hill Education",
+   "isbn_13": [
+    "9780072431933",
+    "9780071004121"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mathematics",
+   "subjects": [
+    "numerical methods"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2720189W",
+    "openlibrary_work": "OL2720189W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 3,
+   "location": "Demo stacks, MA section, shelf 32",
+   "call_number": "DEMO-MA-0088",
+   "due_in_days": [
+    7,
+    10,
+    23
+   ]
+  },
+  {
+   "book_id": "LIB-1089",
+   "title": "NUMERICAL RECIPES IN C",
+   "authors": [
+    "William H. Press",
+    "Brian P. Flannery",
+    "Saul A. Teukolsky",
+    "William T. Vetterling"
+   ],
+   "year": 1988,
+   "publisher": "Cambridge University Press",
+   "isbn_13": [
+    "9780521354660",
+    "9780521431088"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "mathematics",
+   "subjects": [
+    "numerical methods",
+    "scientific computing"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL12830304W",
+    "openlibrary_work": "OL12830304W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 1,
+   "location": "Demo stacks, MA section, shelf 31",
+   "call_number": "DEMO-MA-0089",
+   "due_in_days": [
+    4,
+    14,
+    25,
+    26,
+    28
+   ]
+  },
+  {
+   "book_id": "LIB-1090",
+   "title": "Fundamentals of physics",
+   "authors": [
+    "David Halliday",
+    "Robert Resnick",
+    "Jearl  Walker"
+   ],
+   "year": 1970,
+   "publisher": "صفار",
+   "isbn_13": [
+    "9780471332350",
+    "9780471033639"
+   ],
+   "language": [
+    "por",
+    "eng",
+    "per"
+   ],
+   "discipline": "physics",
+   "subjects": [
+    "physics",
+    "mechanics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2538490W",
+    "openlibrary_work": "OL2538490W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 5,
+   "location": "Demo stacks, PH section, shelf 8",
+   "call_number": "DEMO-PH-0090",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1091",
+   "title": "The Feynman Lectures on Physics",
+   "authors": [
+    "Richard Phillips Feynman"
+   ],
+   "year": 1963,
+   "publisher": "Brand: Basic Books",
+   "isbn_13": [
+    "9780738202983",
+    "9780738202976"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "physics",
+   "subjects": [
+    "physics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL514630W",
+    "openlibrary_work": "OL514630W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 1,
+   "location": "Demo stacks, PH section, shelf 6",
+   "call_number": "DEMO-PH-0091",
+   "due_in_days": [
+    12
+   ]
+  },
+  {
+   "book_id": "LIB-1092",
+   "title": "Concepts of physics",
+   "authors": [
+    "Harish Chandra Verma"
+   ],
+   "year": 1993,
+   "publisher": "Bharati bhavan ",
+   "isbn_13": [
+    "9788177091878",
+    "9788177092325"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "physics",
+   "subjects": [
+    "physics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL19836917W",
+    "openlibrary_work": "OL19836917W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 0,
+   "location": "Demo stacks, PH section, shelf 26",
+   "call_number": "DEMO-PH-0092",
+   "due_in_days": [
+    5
+   ]
+  },
+  {
+   "book_id": "LIB-1093",
+   "title": "Introduction to electrodynamics",
+   "authors": [
+    "David Jeffrey Griffiths"
+   ],
+   "year": 1981,
+   "publisher": "Prentice-Hall",
+   "isbn_13": [
+    "9781009397759",
+    "9781292021423"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "physics",
+   "subjects": [
+    "physics",
+    "electromagnetics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1999763W",
+    "openlibrary_work": "OL1999763W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 1,
+   "location": "Demo stacks, PH section, shelf 36",
+   "call_number": "DEMO-PH-0093",
+   "due_in_days": [
+    2,
+    2,
+    4,
+    28
+   ]
+  },
+  {
+   "book_id": "LIB-1094",
+   "title": "Introduction to Quantum Mechanics (2nd Edition) by David J. Griffiths",
+   "authors": [
+    "David Jeffrey Griffiths",
+    "Darrell F. Schroeter"
+   ],
+   "year": 1994,
+   "publisher": "Cambridge University Press",
+   "isbn_13": [
+    "9780131118928",
+    "9798682023110"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "physics",
+   "subjects": [
+    "physics",
+    "quantum mechanics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1999759W",
+    "openlibrary_work": "OL1999759W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 2,
+   "location": "Demo stacks, PH section, shelf 1",
+   "call_number": "DEMO-PH-0094",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1095",
+   "title": "Physical chemistry",
+   "authors": [
+    "Peter W. Atkins",
+    "Julio De Paula"
+   ],
+   "year": 1978,
+   "publisher": "W.H. Freeman",
+   "isbn_13": [
+    "9780198551867",
+    "9780198552840"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "chemistry",
+   "subjects": [
+    "chemistry",
+    "physical chemistry"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1907523W",
+    "openlibrary_work": "OL1907523W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 4,
+   "location": "Demo stacks, CY section, shelf 23",
+   "call_number": "DEMO-CY-0095",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1096",
+   "title": "Organic chemistry",
+   "authors": [
+    "Jonathan Clayden"
+   ],
+   "year": 2001,
+   "publisher": "Oxford University Press",
+   "isbn_13": [
+    "9780198503477",
+    "9780198503460"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "chemistry",
+   "subjects": [
+    "chemistry",
+    "organic chemistry"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL16667558W",
+    "openlibrary_work": "OL16667558W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 1,
+   "location": "Demo stacks, CY section, shelf 16",
+   "call_number": "DEMO-CY-0096",
+   "due_in_days": [
+    12
+   ]
+  },
+  {
+   "book_id": "LIB-1097",
+   "title": "Inorganic chemistry",
+   "authors": [
+    "D. F. Shriver"
+   ],
+   "year": 1990,
+   "publisher": "W.H. Freeman",
+   "isbn_13": [
+    "9780716723981",
+    "9780198552314"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "chemistry",
+   "subjects": [
+    "chemistry",
+    "inorganic chemistry"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2004904W",
+    "openlibrary_work": "OL2004904W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 0,
+   "location": "Demo stacks, CY section, shelf 20",
+   "call_number": "DEMO-CY-0097",
+   "due_in_days": [
+    9,
+    12
+   ]
+  },
+  {
+   "book_id": "LIB-1098",
+   "title": "Chemistry the Central Science",
+   "authors": [
+    "Theodore L. Brown"
+   ],
+   "year": 1994,
+   "publisher": "Pearson College Div",
+   "isbn_13": [
+    "9780136002864",
+    "9780130840998"
+   ],
+   "language": [],
+   "discipline": "chemistry",
+   "subjects": [
+    "chemistry"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL33801932W",
+    "openlibrary_work": "OL33801932W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 1,
+   "location": "Demo stacks, CY section, shelf 17",
+   "call_number": "DEMO-CY-0098",
+   "due_in_days": [
+    4,
+    8
+   ]
+  },
+  {
+   "book_id": "LIB-1099",
+   "title": "Principles of Economics",
+   "authors": [
+    "N. Gregory Mankiw"
+   ],
+   "year": 1998,
+   "publisher": "Harcourt College Pub",
+   "isbn_13": [
+    "9780538453059",
+    "9780030982385"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "economics",
+   "subjects": [
+    "economics",
+    "microeconomics",
+    "macroeconomics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3361621W",
+    "openlibrary_work": "OL3361621W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 0,
+   "location": "Demo stacks, HS section, shelf 3",
+   "call_number": "DEMO-HS-0099",
+   "due_in_days": [
+    10,
+    16,
+    16,
+    26
+   ]
+  },
+  {
+   "book_id": "LIB-1100",
+   "title": "Economics, an introductory analysis",
+   "authors": [
+    "Paul Anthony Samuelson",
+    "Nordhaus, William D.",
+    "William D. Nordhaus"
+   ],
+   "year": 1948,
+   "publisher": "Universidad del País Vasco",
+   "isbn_13": [
+    "9780070822054",
+    "9782200311261"
+   ],
+   "language": [
+    "spa",
+    "ger",
+    "fre"
+   ],
+   "discipline": "economics",
+   "subjects": [
+    "economics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2197894W",
+    "openlibrary_work": "OL2197894W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 3,
+   "location": "Demo stacks, HS section, shelf 1",
+   "call_number": "DEMO-HS-0100",
+   "due_in_days": [
+    11,
+    12
+   ]
+  },
+  {
+   "book_id": "LIB-1101",
+   "title": "The Wealth of Nations",
+   "authors": [
+    "Adam Smith"
+   ],
+   "year": 1776,
+   "publisher": "F.F. Collier and Son",
+   "isbn_13": [
+    "9783406053931",
+    "9781432625467"
+   ],
+   "language": [
+    "eng",
+    "ger"
+   ],
+   "discipline": "economics",
+   "subjects": [
+    "economics",
+    "classics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL76827W",
+    "openlibrary_work": "OL76827W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 1,
+   "location": "Demo stacks, HS section, shelf 2",
+   "call_number": "DEMO-HS-0101",
+   "due_in_days": [
+    14,
+    16
+   ]
+  },
+  {
+   "book_id": "LIB-1102",
+   "title": "Thinking, fast and slow",
+   "authors": [
+    "Daniel Kahneman"
+   ],
+   "year": 2011,
+   "publisher": "Allen Lane",
+   "isbn_13": [
+    "9780385676519",
+    "9780374275631"
+   ],
+   "language": [
+    "fre",
+    "eng",
+    "dut"
+   ],
+   "discipline": "psychology",
+   "subjects": [
+    "psychology",
+    "behavioural economics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL15992072W",
+    "openlibrary_work": "OL15992072W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 3,
+   "location": "Demo stacks, HS section, shelf 4",
+   "call_number": "DEMO-HS-0102",
+   "due_in_days": [
+    9,
+    9,
+    27
+   ]
+  },
+  {
+   "book_id": "LIB-1103",
+   "title": "Psychology",
+   "authors": [
+    "David G. Myers"
+   ],
+   "year": 1986,
+   "publisher": "Worth Publishers",
+   "isbn_13": [
+    "9781429203609",
+    "9780716752523"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "psychology",
+   "subjects": [
+    "psychology"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL14859351W",
+    "openlibrary_work": "OL14859351W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 4,
+   "location": "Demo stacks, HS section, shelf 24",
+   "call_number": "DEMO-HS-0103",
+   "due_in_days": [
+    22
+   ]
+  },
+  {
+   "book_id": "LIB-1105",
+   "title": "The Lean Startup",
+   "authors": [
+    "Eric Ries"
+   ],
+   "year": 2011,
+   "publisher": "Portfolio Penguin",
+   "isbn_13": [
+    "9783868815672",
+    "9782744066405"
+   ],
+   "language": [
+    "ger",
+    "ind",
+    "fre"
+   ],
+   "discipline": "entrepreneurship",
+   "subjects": [
+    "entrepreneurship",
+    "startups"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL16086010W",
+    "openlibrary_work": "OL16086010W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 2,
+   "location": "Demo stacks, MS section, shelf 22",
+   "call_number": "DEMO-MS-0105",
+   "due_in_days": [
+    3,
+    11,
+    21
+   ]
+  },
+  {
+   "book_id": "LIB-1106",
+   "title": "Zero to One",
+   "authors": [
+    "Peter A. Thiel",
+    "Blake Masters"
+   ],
+   "year": 2001,
+   "publisher": "Campus Verlag GmbH",
+   "isbn_13": [
+    "9780804165259",
+    "9784140816585"
+   ],
+   "language": [
+    "chi",
+    "swa",
+    "por"
+   ],
+   "discipline": "entrepreneurship",
+   "subjects": [
+    "entrepreneurship",
+    "startups"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL17078706W",
+    "openlibrary_work": "OL17078706W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 1,
+   "location": "Demo stacks, MS section, shelf 1",
+   "call_number": "DEMO-MS-0106",
+   "due_in_days": [
+    3,
+    5,
+    25,
+    28
+   ]
+  },
+  {
+   "book_id": "LIB-1107",
+   "title": "Innovation and Entrepreneurship",
+   "authors": [
+    "Peter F. Drucker"
+   ],
+   "year": 1985,
+   "publisher": "HarperCollins",
+   "isbn_13": [
+    "9780434904075",
+    "9780887306181"
+   ],
+   "language": [
+    "spa",
+    "eng",
+    "chi"
+   ],
+   "discipline": "entrepreneurship",
+   "subjects": [
+    "entrepreneurship",
+    "innovation"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL272925W",
+    "openlibrary_work": "OL272925W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 1,
+   "location": "Demo stacks, MS section, shelf 15",
+   "call_number": "DEMO-MS-0107",
+   "due_in_days": [
+    3,
+    22,
+    23
+   ]
+  },
+  {
+   "book_id": "LIB-1108",
+   "title": "The Effective Executive ",
+   "authors": [
+    "Peter F Drucker"
+   ],
+   "year": 1967,
+   "publisher": "Heinemann",
+   "isbn_13": [],
+   "language": [
+    "eng"
+   ],
+   "discipline": "management",
+   "subjects": [
+    "management"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL43372163W",
+    "openlibrary_work": "OL43372163W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 0,
+   "location": "Demo stacks, MS section, shelf 27",
+   "call_number": "DEMO-MS-0108",
+   "due_in_days": [
+    3,
+    7,
+    27
+   ]
+  },
+  {
+   "book_id": "LIB-1109",
+   "title": "Good to Great",
+   "authors": [
+    "Collins, James C.",
+    "Jim Collins"
+   ],
+   "year": 2001,
+   "publisher": "HarperAudio",
+   "isbn_13": [
+    "9780712676090",
+    "9780694526079"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "management",
+   "subjects": [
+    "management",
+    "leadership"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3486275W",
+    "openlibrary_work": "OL3486275W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 0,
+   "location": "Demo stacks, MS section, shelf 33",
+   "call_number": "DEMO-MS-0109",
+   "due_in_days": [
+    6,
+    26
+   ]
+  },
+  {
+   "book_id": "LIB-1110",
+   "title": "Marketing management",
+   "authors": [
+    "Philip Kotler"
+   ],
+   "year": 1973,
+   "publisher": "Pearson Education International",
+   "isbn_13": [
+    "9780130156846",
+    "9780136034322"
+   ],
+   "language": [
+    "eng",
+    "ger",
+    "nor"
+   ],
+   "discipline": "management",
+   "subjects": [
+    "management",
+    "marketing"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1807518W",
+    "openlibrary_work": "OL1807518W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 0,
+   "location": "Demo stacks, MS section, shelf 9",
+   "call_number": "DEMO-MS-0110",
+   "due_in_days": [
+    6,
+    6
+   ]
+  },
+  {
+   "book_id": "LIB-1111",
+   "title": "On Writing Well",
+   "authors": [
+    "William Knowlton Zinsser"
+   ],
+   "year": 1976,
+   "publisher": "HarperCollins",
+   "isbn_13": [
+    "9780060147983",
+    "9780062735232"
+   ],
+   "language": [
+    "por",
+    "eng"
+   ],
+   "discipline": "communication",
+   "subjects": [
+    "communication",
+    "writing"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL2742235W",
+    "openlibrary_work": "OL2742235W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 1,
+   "location": "Demo stacks, HS section, shelf 32",
+   "call_number": "DEMO-HS-0111",
+   "due_in_days": [
+    3,
+    14,
+    27
+   ]
+  },
+  {
+   "book_id": "LIB-1112",
+   "title": "The Elements of Style",
+   "authors": [
+    "William Strunk, Jr.",
+    "E. B. White"
+   ],
+   "year": 1920,
+   "publisher": "Franklin Classics",
+   "isbn_13": [
+    "9798547907852",
+    "9781095548820"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "communication",
+   "subjects": [
+    "communication",
+    "writing"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL38285W",
+    "openlibrary_work": "OL38285W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 1,
+   "location": "Demo stacks, HS section, shelf 25",
+   "call_number": "DEMO-HS-0112",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1113",
+   "title": "How to Win Friends and Influence People",
+   "authors": [
+    "Dale Carnegie"
+   ],
+   "year": 1936,
+   "publisher": "Magdalene Press",
+   "isbn_13": [
+    "9787511333483",
+    "9780671355005"
+   ],
+   "language": [
+    "fre",
+    "spa",
+    "eng"
+   ],
+   "discipline": "communication",
+   "subjects": [
+    "communication",
+    "soft skills"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1063267W",
+    "openlibrary_work": "OL1063267W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 4,
+   "location": "Demo stacks, HS section, shelf 25",
+   "call_number": "DEMO-HS-0113",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1114",
+   "title": "Sapiens",
+   "authors": [
+    "Yuval Noah Harari"
+   ],
+   "year": 2011,
+   "publisher": "Blackstone Pub",
+   "isbn_13": [
+    "9781716994982",
+    "9786559213016"
+   ],
+   "language": [
+    "fre",
+    "spa",
+    "hrv"
+   ],
+   "discipline": "history",
+   "subjects": [
+    "history",
+    "anthropology"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL17075811W",
+    "openlibrary_work": "OL17075811W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 0,
+   "location": "Demo stacks, HS section, shelf 21",
+   "call_number": "DEMO-HS-0114",
+   "due_in_days": [
+    1
+   ]
+  },
+  {
+   "book_id": "LIB-1115",
+   "title": "Guns, Germs, and Steel",
+   "authors": [
+    "Jared Diamond"
+   ],
+   "year": 1997,
+   "publisher": "Jonathan Cape",
+   "isbn_13": [
+    "9783596145393",
+    "9782070347506"
+   ],
+   "language": [
+    "vie",
+    "kor",
+    "urd"
+   ],
+   "discipline": "history",
+   "subjects": [
+    "history",
+    "geography"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL276558W",
+    "openlibrary_work": "OL276558W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 0,
+   "location": "Demo stacks, HS section, shelf 13",
+   "call_number": "DEMO-HS-0115",
+   "due_in_days": [
+    16,
+    19,
+    20,
+    21,
+    26,
+    27
+   ]
+  },
+  {
+   "book_id": "LIB-1116",
+   "title": "The discovery of India",
+   "authors": [
+    "Jawaharlal Nehru"
+   ],
+   "year": 1946,
+   "publisher": "Anchor Books",
+   "isbn_13": [
+    "9780195623949",
+    "9780670058013"
+   ],
+   "language": [
+    "hin",
+    "mal",
+    "eng"
+   ],
+   "discipline": "history",
+   "subjects": [
+    "history",
+    "india"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL296039W",
+    "openlibrary_work": "OL296039W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 1,
+   "location": "Demo stacks, HS section, shelf 16",
+   "call_number": "DEMO-HS-0116",
+   "due_in_days": [
+    9
+   ]
+  },
+  {
+   "book_id": "LIB-1117",
+   "title": "India's Struggle for Independence",
+   "authors": [
+    "Bipan Chandra"
+   ],
+   "year": 1989,
+   "publisher": "Penguin Books India",
+   "isbn_13": [
+    "9780140107814"
+   ],
+   "language": [],
+   "discipline": "history",
+   "subjects": [
+    "history",
+    "india"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL42914W",
+    "openlibrary_work": "OL42914W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 0,
+   "location": "Demo stacks, HS section, shelf 33",
+   "call_number": "DEMO-HS-0117",
+   "due_in_days": [
+    6,
+    8,
+    12
+   ]
+  },
+  {
+   "book_id": "LIB-1118",
+   "title": "Sociology",
+   "authors": [
+    "Anthony Giddens"
+   ],
+   "year": 1982,
+   "publisher": "Polity",
+   "isbn_13": [
+    "9780333427392",
+    "9780155820012"
+   ],
+   "language": [
+    "und",
+    "eng"
+   ],
+   "discipline": "sociology",
+   "subjects": [
+    "sociology"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL38123W",
+    "openlibrary_work": "OL38123W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 0,
+   "location": "Demo stacks, HS section, shelf 27",
+   "call_number": "DEMO-HS-0118",
+   "due_in_days": [
+    5,
+    7
+   ]
+  },
+  {
+   "book_id": "LIB-1119",
+   "title": "To Kill a Mockingbird",
+   "authors": [
+    "Harper Lee"
+   ],
+   "year": 1960,
+   "publisher": "Arrow Books Ltd",
+   "isbn_13": [
+    "9788417247201",
+    "9788429774498"
+   ],
+   "language": [
+    "urd",
+    "spa",
+    "heb"
+   ],
+   "discipline": "fiction",
+   "subjects": [
+    "fiction",
+    "novel"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL3140822W",
+    "openlibrary_work": "OL3140822W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 1,
+   "location": "Demo stacks, GR section, shelf 36",
+   "call_number": "DEMO-GR-0119",
+   "due_in_days": [
+    2,
+    5,
+    8,
+    10
+   ]
+  },
+  {
+   "book_id": "LIB-1120",
+   "title": "Nineteen Eighty-Four",
+   "authors": [
+    "George Orwell"
+   ],
+   "year": 1949,
+   "publisher": "Mestas Ediciones",
+   "isbn_13": [
+    "9781434104335",
+    "9780140862546"
+   ],
+   "language": [
+    "por",
+    "spa",
+    "ukr"
+   ],
+   "discipline": "fiction",
+   "subjects": [
+    "fiction",
+    "novel",
+    "dystopia"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1168083W",
+    "openlibrary_work": "OL1168083W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 1,
+   "location": "Demo stacks, GR section, shelf 26",
+   "call_number": "DEMO-GR-0120",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1121",
+   "title": "Pride and Prejudice",
+   "authors": [
+    "Jane Austen"
+   ],
+   "year": 1813,
+   "publisher": "El Cid Editor Incorporated",
+   "isbn_13": [
+    "9780606186513",
+    "9781500802004"
+   ],
+   "language": [
+    "fin",
+    "chi",
+    "pan"
+   ],
+   "discipline": "fiction",
+   "subjects": [
+    "fiction",
+    "classics",
+    "public domain"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL66554W",
+    "openlibrary_work": "OL66554W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 1,
+   "location": "Demo stacks, GR section, shelf 9",
+   "call_number": "DEMO-GR-0121",
+   "due_in_days": [
+    14,
+    16
+   ]
+  },
+  {
+   "book_id": "LIB-1122",
+   "title": "Frankenstein; or, The Modern Prometheus",
+   "authors": [
+    "Mary Shelley"
+   ],
+   "year": 1818,
+   "publisher": "MC/Summertown ELT",
+   "isbn_13": [
+    "9781435136168",
+    "9781548209582"
+   ],
+   "language": [
+    "dut",
+    "rus",
+    "ger"
+   ],
+   "discipline": "fiction",
+   "subjects": [
+    "fiction",
+    "classics",
+    "public domain"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL450063W",
+    "openlibrary_work": "OL450063W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 4,
+   "location": "Demo stacks, GR section, shelf 8",
+   "call_number": "DEMO-GR-0122",
+   "due_in_days": [
+    9
+   ]
+  },
+  {
+   "book_id": "LIB-1123",
+   "title": "The God of Small Things",
+   "authors": [
+    "Arundhati Roy"
+   ],
+   "year": 1997,
+   "publisher": "Random House.",
+   "isbn_13": [
+    "9780006551096",
+    "9781299057753"
+   ],
+   "language": [
+    "ita",
+    "cat",
+    "jpn"
+   ],
+   "discipline": "fiction",
+   "subjects": [
+    "fiction",
+    "indian literature"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1052133W",
+    "openlibrary_work": "OL1052133W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 0,
+   "location": "Demo stacks, GR section, shelf 7",
+   "call_number": "DEMO-GR-0123",
+   "due_in_days": [
+    18,
+    22,
+    26
+   ]
+  },
+  {
+   "book_id": "LIB-1124",
+   "title": "Malgudi days",
+   "authors": [
+    "Rasipuram Krishnaswamy Narayan"
+   ],
+   "year": 1982,
+   "publisher": "Heinemann",
+   "isbn_13": [
+    "9780670451784",
+    "9788170730286"
+   ],
+   "language": [
+    "hin",
+    "eng"
+   ],
+   "discipline": "fiction",
+   "subjects": [
+    "fiction",
+    "indian literature",
+    "short stories"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1057177W",
+    "openlibrary_work": "OL1057177W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 3,
+   "location": "Demo stacks, GR section, shelf 8",
+   "call_number": "DEMO-GR-0124",
+   "due_in_days": [
+    9,
+    10,
+    25
+   ]
+  },
+  {
+   "book_id": "LIB-1125",
+   "title": "Gitanjali (song offerings)",
+   "authors": [
+    "Rabindranath Tagore",
+    "Marie Luise Gothein",
+    "William Butler Yeats"
+   ],
+   "year": 1910,
+   "publisher": "Meteor Books",
+   "isbn_13": [
+    "9781727197716",
+    "9781512076561"
+   ],
+   "language": [
+    "eng",
+    "guj",
+    "vie"
+   ],
+   "discipline": "literature",
+   "subjects": [
+    "poetry",
+    "indian literature",
+    "public domain"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL308575W",
+    "openlibrary_work": "OL308575W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 2,
+   "location": "Demo stacks, GR section, shelf 34",
+   "call_number": "DEMO-GR-0125",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1126",
+   "title": "The Great Gatsby",
+   "authors": [
+    "F. Scott Fitzgerald"
+   ],
+   "year": 1920,
+   "publisher": "Naxos Audio Books",
+   "isbn_13": [
+    "9780743246392",
+    "9780141008561"
+   ],
+   "language": [
+    "por",
+    "heb",
+    "swe"
+   ],
+   "discipline": "fiction",
+   "subjects": [
+    "fiction",
+    "classics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL468431W",
+    "openlibrary_work": "OL468431W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 0,
+   "location": "Demo stacks, GR section, shelf 14",
+   "call_number": "DEMO-GR-0126",
+   "due_in_days": [
+    6,
+    20,
+    27
+   ]
+  },
+  {
+   "book_id": "LIB-1128",
+   "title": "The Adventures of Sherlock Holmes [12 stories]",
+   "authors": [
+    "Arthur Conan Doyle"
+   ],
+   "year": 1892,
+   "publisher": "Amazon?",
+   "isbn_13": [
+    "9798847921541",
+    "9781098525064"
+   ],
+   "language": [
+    "dut",
+    "srp",
+    "spa"
+   ],
+   "discipline": "fiction",
+   "subjects": [
+    "fiction",
+    "mystery",
+    "public domain"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL262421W",
+    "openlibrary_work": "OL262421W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 0,
+   "location": "Demo stacks, GR section, shelf 35",
+   "call_number": "DEMO-GR-0128",
+   "due_in_days": [
+    7,
+    14
+   ]
+  },
+  {
+   "book_id": "LIB-1129",
+   "title": "Hamlet",
+   "authors": [
+    "William Shakespeare"
+   ],
+   "year": 1603,
+   "publisher": "Published for the proprietors by W. Simpkin and R. Marshall ...; and C. Chapple ...",
+   "isbn_13": [
+    "9789873874109",
+    "9781984293480"
+   ],
+   "language": [
+    "fre",
+    "und",
+    "eng"
+   ],
+   "discipline": "literature",
+   "subjects": [
+    "drama",
+    "classics",
+    "public domain"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL9170454W",
+    "openlibrary_work": "OL9170454W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 1,
+   "available_copies": 1,
+   "location": "Demo stacks, GR section, shelf 8",
+   "call_number": "DEMO-GR-0129",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1131",
+   "title": "Meditations",
+   "authors": [
+    "Marcus Aurelius"
+   ],
+   "year": 1626,
+   "publisher": "J.W. Lovell",
+   "isbn_13": [
+    "9798759632832",
+    "9781535332835"
+   ],
+   "language": [
+    "ita",
+    "slo",
+    "dut"
+   ],
+   "discipline": "literature",
+   "subjects": [
+    "philosophy",
+    "classics",
+    "public domain"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1317211W",
+    "openlibrary_work": "OL1317211W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 0,
+   "location": "Demo stacks, GR section, shelf 19",
+   "call_number": "DEMO-GR-0131",
+   "due_in_days": [
+    3,
+    4,
+    9,
+    18
+   ]
+  },
+  {
+   "book_id": "LIB-1132",
+   "title": "Wings of Fire",
+   "authors": [
+    "A. P. J. Abdul Kalam"
+   ],
+   "year": 1999,
+   "publisher": "Distributed by Orient Longman",
+   "isbn_13": [
+    "9788173715181",
+    "9788173711466"
+   ],
+   "language": [
+    "hin",
+    "eng"
+   ],
+   "discipline": "biography",
+   "subjects": [
+    "biography",
+    "autobiography",
+    "india"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1037811W",
+    "openlibrary_work": "OL1037811W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 6,
+   "location": "Demo stacks, GR section, shelf 3",
+   "call_number": "DEMO-GR-0132",
+   "due_in_days": []
+  },
+  {
+   "book_id": "LIB-1133",
+   "title": "The Story of My Experiments with Truth",
+   "authors": [
+    "M.K.. Gandhi"
+   ],
+   "year": 1927,
+   "publisher": "Navjivan Press",
+   "isbn_13": [],
+   "language": [
+    "eng"
+   ],
+   "discipline": "biography",
+   "subjects": [
+    "biography",
+    "autobiography",
+    "india"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL32193455W",
+    "openlibrary_work": "OL32193455W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 0,
+   "location": "Demo stacks, GR section, shelf 27",
+   "call_number": "DEMO-GR-0133",
+   "due_in_days": [
+    6,
+    8,
+    25,
+    25
+   ]
+  },
+  {
+   "book_id": "LIB-1134",
+   "title": "Steve Jobs",
+   "authors": [
+    "Walter Isaacson"
+   ],
+   "year": 2011,
+   "publisher": "Tian xia yuan jian chu ban gu fen you xian gong si",
+   "isbn_13": [
+    "9788804680246",
+    "9780349139593"
+   ],
+   "language": [
+    "jpn",
+    "cat",
+    "swe"
+   ],
+   "discipline": "biography",
+   "subjects": [
+    "biography",
+    "technology"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL16085155W",
+    "openlibrary_work": "OL16085155W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 2,
+   "location": "Demo stacks, GR section, shelf 11",
+   "call_number": "DEMO-GR-0134",
+   "due_in_days": [
+    5
+   ]
+  },
+  {
+   "book_id": "LIB-1135",
+   "title": "\"Surely You're Joking, Mr. Feynman\"",
+   "authors": [
+    "Richard Phillips Feynman",
+    "Ralph Leighton"
+   ],
+   "year": 1984,
+   "publisher": "W. W. Norton/Commonwealth Publishing",
+   "isbn_13": [
+    "9783492030182",
+    "9780848828486"
+   ],
+   "language": [
+    "rus",
+    "eng",
+    "cmn"
+   ],
+   "discipline": "biography",
+   "subjects": [
+    "biography",
+    "physics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL514629W",
+    "openlibrary_work": "OL514629W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 0,
+   "location": "Demo stacks, GR section, shelf 2",
+   "call_number": "DEMO-GR-0135",
+   "due_in_days": [
+    11,
+    12,
+    25,
+    26
+   ]
+  },
+  {
+   "book_id": "LIB-1136",
+   "title": "The Diary of a Young Girl- Anne Frank",
+   "authors": [
+    "Anne Frank"
+   ],
+   "year": 2001,
+   "publisher": "B Jain Publishers Pvt Ltd",
+   "isbn_13": [
+    "9789352782772",
+    "9789389567953"
+   ],
+   "language": [
+    "eng"
+   ],
+   "discipline": "biography",
+   "subjects": [
+    "biography",
+    "history"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL27294413W",
+    "openlibrary_work": "OL27294413W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 5,
+   "available_copies": 1,
+   "location": "Demo stacks, GR section, shelf 20",
+   "call_number": "DEMO-GR-0136",
+   "due_in_days": [
+    4,
+    4,
+    13,
+    23
+   ]
+  },
+  {
+   "book_id": "LIB-1137",
+   "title": "Silent Spring",
+   "authors": [
+    "Rachel Carson"
+   ],
+   "year": 1962,
+   "publisher": "Demco Media",
+   "isbn_13": [
+    "9780395166116",
+    "9788575552353"
+   ],
+   "language": [
+    "spa",
+    "por",
+    "und"
+   ],
+   "discipline": "environment",
+   "subjects": [
+    "environment",
+    "ecology",
+    "environmental studies"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1884862W",
+    "openlibrary_work": "OL1884862W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 1,
+   "location": "Demo stacks, GR section, shelf 14",
+   "call_number": "DEMO-GR-0137",
+   "due_in_days": [
+    18
+   ]
+  },
+  {
+   "book_id": "LIB-1138",
+   "title": "The Sixth Extinction",
+   "authors": [
+    "Elizabeth Kolbert",
+    "Marcel Blanc"
+   ],
+   "year": 2014,
+   "publisher": "Guy Saint-Jean éditeur",
+   "isbn_13": [
+    "9782311100617",
+    "9782897580216"
+   ],
+   "language": [
+    "fre",
+    "eng",
+    "chi"
+   ],
+   "discipline": "environment",
+   "subjects": [
+    "environment",
+    "ecology",
+    "climate"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL16820830W",
+    "openlibrary_work": "OL16820830W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 6,
+   "available_copies": 3,
+   "location": "Demo stacks, GR section, shelf 27",
+   "call_number": "DEMO-GR-0138",
+   "due_in_days": [
+    3,
+    15,
+    23
+   ]
+  },
+  {
+   "book_id": "LIB-1139",
+   "title": "This Changes Everything",
+   "authors": [
+    "Naomi Klein"
+   ],
+   "year": 2013,
+   "publisher": "Vintage Canada",
+   "isbn_13": [
+    "9789571364704",
+    "9782330047849"
+   ],
+   "language": [
+    "spa",
+    "chi",
+    "fre"
+   ],
+   "discipline": "environment",
+   "subjects": [
+    "environment",
+    "climate change"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL17062332W",
+    "openlibrary_work": "OL17062332W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 2,
+   "available_copies": 0,
+   "location": "Demo stacks, GR section, shelf 5",
+   "call_number": "DEMO-GR-0139",
+   "due_in_days": [
+    3,
+    6
+   ]
+  },
+  {
+   "book_id": "LIB-1140",
+   "title": "A Brief History of Time",
+   "authors": [
+    "Stephen Hawking"
+   ],
+   "year": 1988,
+   "publisher": "Alfa Yayınları",
+   "isbn_13": [
+    "9789879317679",
+    "9789607023025"
+   ],
+   "language": [
+    "dut",
+    "rus",
+    "ger"
+   ],
+   "discipline": "general science",
+   "subjects": [
+    "science",
+    "cosmology",
+    "physics"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1892617W",
+    "openlibrary_work": "OL1892617W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 0,
+   "location": "Demo stacks, GR section, shelf 21",
+   "call_number": "DEMO-GR-0140",
+   "due_in_days": [
+    5,
+    23,
+    26
+   ]
+  },
+  {
+   "book_id": "LIB-1141",
+   "title": "The Selfish Gene",
+   "authors": [
+    "Richard Dawkins"
+   ],
+   "year": 1976,
+   "publisher": "Odile Jacob",
+   "isbn_13": [
+    "9782738112439",
+    "9789754030327"
+   ],
+   "language": [
+    "pol",
+    "kor",
+    "eng"
+   ],
+   "discipline": "general science",
+   "subjects": [
+    "science",
+    "biology",
+    "evolution"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL1966488W",
+    "openlibrary_work": "OL1966488W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 4,
+   "available_copies": 3,
+   "location": "Demo stacks, GR section, shelf 40",
+   "call_number": "DEMO-GR-0141",
+   "due_in_days": [
+    6
+   ]
+  },
+  {
+   "book_id": "LIB-1142",
+   "title": "Cosmos",
+   "authors": [
+    "Carl Sagan"
+   ],
+   "year": 1980,
+   "publisher": "Altın Kitaplar",
+   "isbn_13": [
+    "9784444412193",
+    "9781559603140"
+   ],
+   "language": [
+    "spa",
+    "pol",
+    "bur"
+   ],
+   "discipline": "general science",
+   "subjects": [
+    "science",
+    "astronomy"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL15829966W",
+    "openlibrary_work": "OL15829966W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 1,
+   "location": "Demo stacks, GR section, shelf 24",
+   "call_number": "DEMO-GR-0142",
+   "due_in_days": [
+    17,
+    23
+   ]
+  },
+  {
+   "book_id": "LIB-1143",
+   "title": "On the origin of species by means of natural selection",
+   "authors": [
+    "Charles Darwin"
+   ],
+   "year": 1859,
+   "publisher": "L.J. Hiertas förlagsexpedition",
+   "isbn_13": [
+    "9780674637528",
+    "9781602061453"
+   ],
+   "language": [
+    "spa",
+    "dan",
+    "chi"
+   ],
+   "discipline": "general science",
+   "subjects": [
+    "science",
+    "biology",
+    "evolution",
+    "public domain"
+   ],
+   "metadata": {
+    "provider": "Open Library",
+    "record_url": "https://openlibrary.org/works/OL515051W",
+    "openlibrary_work": "OL515051W",
+    "retrieved_at": "2026-10-28T20:45:00Z",
+    "note": "year = first publication of the work; publisher and ISBNs belong to some edition."
+   },
+   "total_copies": 3,
+   "available_copies": 0,
+   "location": "Demo stacks, GR section, shelf 10",
+   "call_number": "DEMO-GR-0143",
+   "due_in_days": [
+    8,
+    11,
+    12
+   ]
+  }
+ ]
 }

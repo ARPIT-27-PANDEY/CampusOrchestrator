@@ -37,7 +37,9 @@ async def test_discovery_and_multi_server_query_over_http(http_servers: dict[str
     await mgr.refresh()
     assert all(s.status is ServerStatus.AVAILABLE for s in mgr.server_states)
     assert all(s.protocol_version for s in mgr.server_states)
-    assert len(mgr.tools) == 11
+    names = {t.qualified_name for t in mgr.tools}
+    assert len(names) == 14  # original 11 + get_events_for_date, get_menu_for_date, list_dining_locations
+    assert {"events__get_events_for_date", "cafeteria__get_menu_for_date", "cafeteria__list_dining_locations"} <= names
     orch = Orchestrator(MockProvider(), mgr, TraceStore())
     result = await orch.run(
         "Find the next AI workshop, check whether Introduction to Algorithms is available in the library, "

@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import "./globals.css";
 
 import { AppShell } from "@/components/app-shell";
 
 export const metadata: Metadata = {
-  title: "CampusOS AI",
-  description: "Ask one question across the campus library, events, cafeteria and academic handbook.",
+  title: "CampusOrchestrator",
+  description: "IIT Roorkee campus assistant: library, events, dining and official academic regulations, with sources.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

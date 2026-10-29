@@ -176,6 +176,7 @@ class MCPClientManager:
                     tool_name=tool.name,
                     description=(tool.description or "").strip()[:1024],
                     input_schema=compact_schema(dict(tool.input_schema or {"type": "object"})),
+                    has_output_schema=bool(getattr(tool, "output_schema", None)),
                     discovered_at=discovered,
                 )
             state.status = ServerStatus.AVAILABLE
@@ -219,7 +220,9 @@ class MCPClientManager:
             last = self._last_refresh.get(sid)
             state = self._states[sid]
             limit = self._recheck if state.status is not ServerStatus.AVAILABLE else self._ttl
-            if last is None or now - last > limit:
+            # ">=": monotonic() can return the same value twice on coarse clocks (Windows ~15 ms),
+            # which with a 0 s recheck interval would otherwise never re-check a failed server.
+            if last is None or now - last >= limit:
                 stale.append(sid)
         if stale:
             await self.refresh(stale)
@@ -315,6 +318,12 @@ class MCPClientManager:
                     data = parsed if isinstance(parsed, dict) else {"result": parsed}
                 except ValueError:
                     data = None
+            if tool.has_output_schema and not isinstance(data, dict):
+                # The tool promised structured output and did not deliver it: never treat as a result.
+                return self._result(
+                    call_id, qualified_name, args, ToolStatus.MALFORMED_RESPONSE, started, t0, tool,
+                    error="The server returned a malformed or missing structured response.", attempts=attempts,
+                )  # fmt: skip
             self._states[cfg.id].status = ServerStatus.AVAILABLE
             return self._result(
                 call_id, qualified_name, args, ToolStatus.SUCCESS, started, t0, tool,

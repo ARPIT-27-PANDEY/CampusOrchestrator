@@ -26,11 +26,17 @@ class ToolStatus(StrEnum):
     TIMEOUT = "timeout"
     UNAVAILABLE = "unavailable"
     PROTOCOL_ERROR = "protocol_error"
+    MALFORMED_RESPONSE = "malformed_response"  # declared structured output missing or not an object
     BUDGET_EXCEEDED = "budget_exceeded"
 
 
 TRANSIENT_STATUSES = {ToolStatus.TIMEOUT, ToolStatus.UNAVAILABLE}
-FAILURE_STATUSES = {ToolStatus.TIMEOUT, ToolStatus.UNAVAILABLE, ToolStatus.PROTOCOL_ERROR}
+FAILURE_STATUSES = {
+    ToolStatus.TIMEOUT,
+    ToolStatus.UNAVAILABLE,
+    ToolStatus.PROTOCOL_ERROR,
+    ToolStatus.MALFORMED_RESPONSE,
+}
 
 
 class RegisteredTool(BaseModel):
@@ -39,6 +45,7 @@ class RegisteredTool(BaseModel):
     tool_name: str
     description: str
     input_schema: dict[str, Any]
+    has_output_schema: bool = Field(default=False, description="The tool declared a structured output schema.")
     discovered_at: datetime
 
 

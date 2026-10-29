@@ -14,11 +14,12 @@ from cafeteria_mcp.provider import DEMO_MENU_PATH, MenuProvider, menu_from_json,
 from cafeteria_mcp.server import build_server
 
 FRIDAY = date(2026, 10, 23)
+V1_MENU = DEMO_MENU_PATH.with_name("demo_menu_v1.json")  # the original one-week menu these tests describe
 
 
 @pytest.fixture
 def demo() -> MenuProvider:
-    return MenuProvider(menu_from_json(DEMO_MENU_PATH), mode="demo", provider="demo-json", today=lambda: FRIDAY)
+    return MenuProvider(menu_from_json(V1_MENU), mode="demo", provider="demo-json", today=lambda: FRIDAY)
 
 
 def test_today_menu_uses_weekday_and_always_items(demo: MenuProvider) -> None:
@@ -50,7 +51,7 @@ def test_price_ambiguous_partial_returns_suggestions(demo: MenuProvider) -> None
 
 
 def test_imported_json_menu_is_flagged_stale_outside_window(tmp_path: Path) -> None:
-    raw = json.loads(DEMO_MENU_PATH.read_text())
+    raw = json.loads(V1_MENU.read_text())
     raw.update(valid_from="2026-09-01", valid_to="2026-09-30")
     path = tmp_path / "menu.json"
     path.write_text(json.dumps(raw))
@@ -74,12 +75,14 @@ def test_pdf_menu_import(tmp_path: Path) -> None:
 
 
 async def test_mcp_tools() -> None:
-    prov = MenuProvider(menu_from_json(DEMO_MENU_PATH), mode="demo", provider="demo-json", today=lambda: FRIDAY)
+    prov = MenuProvider(menu_from_json(V1_MENU), mode="demo", provider="demo-json", today=lambda: FRIDAY)
     async with Client(build_server(prov)) as client:
         assert {t.name for t in (await client.list_tools()).tools} == {
             "get_today_menu",
+            "get_menu_for_date",  # added: explicit dates (tomorrow, a given day)
             "search_menu_item",
             "get_item_price",
+            "list_dining_locations",  # added: multiple dining locations
         }
         res = await client.call_tool("get_item_price", {"item_name": "Masala Chai"})
         assert res.structured_content is not None and res.structured_content["price"] == 20

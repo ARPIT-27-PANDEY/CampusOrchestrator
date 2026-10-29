@@ -1,0 +1,8151 @@
+{
+ "kind": "retrieval",
+ "run_id": "retrieval-20261028T221029Z-b025a8",
+ "generated_at": "2026-10-28T22:10:29+00:00",
+ "dataset": "retrieval_iitr_v1.yaml",
+ "dataset_sha256": "b025a88d983065c2434838da9ff8d271c5d96de1f0c5bbf49efbb235c95fdf1e",
+ "k": 5,
+ "tuned": true,
+ "corpus": {
+  "documents": 17,
+  "lock_sha256": "45d93d994f7fcfb2a5c61b1e7704319879c503628eb19b40cec8d1a8666c80cc"
+ },
+ "results": [
+  {
+   "retriever": "hashing",
+   "status": "ok",
+   "embedding_model": "hashing-v1-512",
+   "embedding_dim": 512,
+   "retrieval_mode": "dense",
+   "collection": "campus_handbooks__hashing_v1_512",
+   "thresholds": {
+    "min_score": 0.2,
+    "bm25_min_score": 6.0
+   },
+   "tuning": {
+    "objective": "dev balanced accuracy of answer-vs-abstain decisions",
+    "chosen": {
+     "min_score": 0.2,
+     "bm25_min_score": 6.0
+    },
+    "dev_balanced_accuracy": 0.9722,
+    "trials": 20
+   },
+   "documents_indexed": 16,
+   "chunks_indexed": 492,
+   "not_indexed": [
+    "iitr-exit-policy-2022.pdf (scanned PDF: needs OCR or manual text)",
+    "iitr-ug-ordinance-2016.pdf (scanned PDF: needs OCR or manual text)"
+   ],
+   "index_build_s": 4.88,
+   "python_heap_peak_mb": 11.2,
+   "splits": {
+    "dev": {
+     "queries": 22,
+     "answerable": 18,
+     "no_answer": 4,
+     "recall@1": 0.3611,
+     "recall@3": 0.5278,
+     "recall@5": 0.6111,
+     "mrr": 0.5463,
+     "ndcg@5": 0.5423,
+     "abstain_precision": 0.8,
+     "abstain_recall": 1.0,
+     "false_abstention_rate": 0.0556,
+     "top_citation_supported": 0.4118,
+     "top_citation_cases": 17,
+     "current_doc_first": "1/1",
+     "injection_sanitized": null,
+     "retrieve_p50_ms": 2.03,
+     "retrieve_p95_ms": 2.64,
+     "search_p50_ms": 20.56,
+     "search_p95_ms": 43.78
+    },
+    "test": {
+     "queries": 49,
+     "answerable": 43,
+     "no_answer": 6,
+     "recall@1": 0.314,
+     "recall@3": 0.4767,
+     "recall@5": 0.5233,
+     "mrr": 0.4388,
+     "ndcg@5": 0.4513,
+     "abstain_precision": 0.2727,
+     "abstain_recall": 1.0,
+     "false_abstention_rate": 0.3721,
+     "top_citation_supported": 0.5926,
+     "top_citation_cases": 27,
+     "current_doc_first": "0/1",
+     "injection_sanitized": "1/1",
+     "retrieve_p50_ms": 2.05,
+     "retrieve_p95_ms": 3.05,
+     "search_p50_ms": 17.21,
+     "search_p95_ms": 43.12
+    }
+   },
+   "test_categories": {
+    "applicability": {
+     "queries": 2,
+     "recall@5": 0.25,
+     "mrr": 0.25,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "exact": {
+     "queries": 13,
+     "recall@5": 0.5769,
+     "mrr": 0.5641,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.3077
+    },
+    "injection": {
+     "queries": 1,
+     "recall@5": 1.0,
+     "mrr": 1.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "misleading": {
+     "queries": 1,
+     "recall@5": 0.0,
+     "mrr": 0.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 1.0
+    },
+    "multi_passage": {
+     "queries": 1,
+     "recall@5": 1.0,
+     "mrr": 1.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "no_answer": {
+     "queries": 6,
+     "recall@5": null,
+     "mrr": null,
+     "abstain_recall": 1.0,
+     "false_abstention_rate": null
+    },
+    "numeric": {
+     "queries": 9,
+     "recall@5": 0.7778,
+     "mrr": 0.6667,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.1111
+    },
+    "paraphrase": {
+     "queries": 11,
+     "recall@5": 0.4091,
+     "mrr": 0.2576,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.5455
+    },
+    "short": {
+     "queries": 2,
+     "recall@5": 0.0,
+     "mrr": 0.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 1.0
+    },
+    "superseded": {
+     "queries": 1,
+     "recall@5": 1.0,
+     "mrr": 0.2,
+     "abstain_recall": null,
+     "false_abstention_rate": 1.0
+    },
+    "synonym": {
+     "queries": 2,
+     "recall@5": 0.0,
+     "mrr": 0.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.5
+    }
+   },
+   "rows": [
+    {
+     "id": "r01",
+     "split": "dev",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.6131471927654584,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.19,
+     "search_ms": 23.83,
+     "top": [
+      "iitr-attendance-policy-2024:p1",
+      "iitr-attendance-policy-2024:p1",
+      "iitr-attendance-policy-2024:p1"
+     ]
+    },
+    {
+     "id": "r05",
+     "split": "dev",
+     "category": "superseded",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.639909328045346,
+     "top_citation_supported": false,
+     "current_first": true,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.92,
+     "search_ms": 27.86,
+     "top": [
+      "iitr-ug-ordinance-2025:p49",
+      "iitr-ufm-revision-2026:p1",
+      "iitr-phd-regulations-2026:p43"
+     ]
+    },
+    {
+     "id": "r08",
+     "split": "dev",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.13,
+     "search_ms": 17.1,
+     "top": [
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-ug-ordinance-2025:p50",
+      "iitr-ug-ordinance-2025:p5"
+     ]
+    },
+    {
+     "id": "r11",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.96,
+     "search_ms": 26.63,
+     "top": [
+      "iitr-ug-ordinance-2025:p41",
+      "iitr-grading-policy-2025:p2",
+      "iitr-ug-ordinance-2025:p35"
+     ]
+    },
+    {
+     "id": "r14",
+     "split": "dev",
+     "category": "short",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.19,
+     "search_ms": 37.79,
+     "top": [
+      "iitr-second-exam-grades-2024:p1",
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-ug-ordinance-2025:p42"
+     ]
+    },
+    {
+     "id": "r17",
+     "split": "dev",
+     "category": "multi_passage",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.8772153153380493,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.94,
+     "search_ms": 43.78,
+     "top": [
+      "iitr-second-exam-grades-2024:p1",
+      "iitr-mte-second-exam-2025:p1",
+      "iitr-ug-ordinance-2025:p34"
+     ]
+    },
+    {
+     "id": "r20",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 0.3333333333333333,
+     "ndcg@5": 0.5437713091520254,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.08,
+     "search_ms": 28.36,
+     "top": [
+      "iitr-ug-ordinance-2025:p46",
+      "iitr-mte-second-exam-2025:p1",
+      "iitr-ug-ordinance-2025:p33"
+     ]
+    },
+    {
+     "id": "r22",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.64,
+     "search_ms": 20.85,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p2",
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-academic-bank-of-credits-2025:p1"
+     ]
+    },
+    {
+     "id": "r27",
+     "split": "dev",
+     "category": "applicability",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.88,
+     "search_ms": 17.63,
+     "top": [
+      "iitr-ug-ordinance-2025:p41",
+      "iitr-ug-ordinance-2025:p44",
+      "iitr-ug-ordinance-2025:p41"
+     ]
+    },
+    {
+     "id": "r31",
+     "split": "dev",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.03,
+     "search_ms": 21.57,
+     "top": [
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-ug-ordinance-2025:p36"
+     ]
+    },
+    {
+     "id": "r32",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.8262346571285599,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.98,
+     "search_ms": 18.65,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-phd-regulations-2026:p31",
+      "iitr-ug-ordinance-2025:p16"
+     ]
+    },
+    {
+     "id": "r35",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.6,
+     "search_ms": 20.61,
+     "top": [
+      "iitr-ug-ordinance-2025:p46",
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-phd-regulations-2026:p38"
+     ]
+    },
+    {
+     "id": "r38",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.12,
+     "search_ms": 16.17,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ug-ordinance-2025:p7",
+      "iitr-calendar-spring-2025-26:p1"
+     ]
+    },
+    {
+     "id": "r41",
+     "split": "dev",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.07,
+     "search_ms": 43.82,
+     "top": [
+      "iitr-ug-ordinance-2025:p13",
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-ug-ordinance-2025:p41"
+     ]
+    },
+    {
+     "id": "r44",
+     "split": "dev",
+     "category": "long",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.03,
+     "search_ms": 19.67,
+     "top": [
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-ug-ordinance-2025:p22",
+      "iitr-ug-ordinance-2025:p34"
+     ]
+    },
+    {
+     "id": "r49",
+     "split": "dev",
+     "category": "short",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.96,
+     "search_ms": 30.41,
+     "top": [
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-ufm-guidelines-2025:p3",
+      "iitr-ug-ordinance-2025:p49"
+     ]
+    },
+    {
+     "id": "r53",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.14,
+     "search_ms": 19.54,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p4",
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-ug-ordinance-2025:p44"
+     ]
+    },
+    {
+     "id": "r56",
+     "split": "dev",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.08,
+     "search_ms": 20.56,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-calendar-spring-2025-26:p1",
+      "iitr-ug-ordinance-2025:p8"
+     ]
+    },
+    {
+     "id": "r61",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.96,
+     "search_ms": 16.3,
+     "top": [
+      "iitr-ug-ordinance-2025:p17",
+      "iitr-ug-ordinance-2025:p1",
+      "iitr-ug-ordinance-2025:p25"
+     ]
+    },
+    {
+     "id": "r62",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.93,
+     "search_ms": 16.68,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p1"
+     ]
+    },
+    {
+     "id": "r63",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.03,
+     "search_ms": 14.27,
+     "top": [
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-phd-regulations-2019:p5"
+     ]
+    },
+    {
+     "id": "r64",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.98,
+     "search_ms": 18.16,
+     "top": [
+      "iitr-phd-regulations-2026:p3",
+      "iitr-ug-ordinance-2025:p4",
+      "iitr-phd-regulations-2026:p6"
+     ]
+    },
+    {
+     "id": "r02",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.1,
+     "search_ms": 15.17,
+     "top": [
+      "iitr-ug-ordinance-2025:p29",
+      "iitr-phd-regulations-2026:p40",
+      "iitr-phd-regulations-2026:p34"
+     ]
+    },
+    {
+     "id": "r03",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.3,
+     "search_ms": 15.41,
+     "top": [
+      "iitr-cgpa-percentage-conversion:p1",
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-phd-regulations-2026:p33"
+     ]
+    },
+    {
+     "id": "r04",
+     "split": "test",
+     "category": "misleading",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.23,
+     "search_ms": 17.28,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p1",
+      "iitr-ug-ordinance-2025:p13",
+      "iitr-ug-ordinance-2025:p36"
+     ]
+    },
+    {
+     "id": "r06",
+     "split": "test",
+     "category": "superseded",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 1.0,
+     "rr": 0.2,
+     "ndcg@5": 0.38685280723454163,
+     "top_citation_supported": null,
+     "current_first": false,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.02,
+     "search_ms": 14.58,
+     "top": [
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-ufm-guidelines-2025:p4",
+      "iitr-ug-ordinance-2025:p23"
+     ]
+    },
+    {
+     "id": "r07",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.87,
+     "search_ms": 15.41,
+     "top": [
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-ufm-guidelines-2025:p5"
+     ]
+    },
+    {
+     "id": "r09",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.8,
+     "search_ms": 39.25,
+     "top": [
+      "iitr-ug-ordinance-2025:p50",
+      "iitr-ufm-guidelines-2025:p3",
+      "iitr-phd-regulations-2026:p43"
+     ]
+    },
+    {
+     "id": "r10",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.03,
+     "search_ms": 16.12,
+     "top": [
+      "iitr-phd-regulations-2026:p18",
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-ug-ordinance-2025:p53"
+     ]
+    },
+    {
+     "id": "r12",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.3333333333333333,
+     "ndcg@5": 0.5,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.09,
+     "search_ms": 15.08,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-spring-2025-26:p1",
+      "iitr-grading-policy-2025:p2"
+     ]
+    },
+    {
+     "id": "r13",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.91,
+     "search_ms": 15.62,
+     "top": [
+      "iitr-ug-ordinance-2025:p11",
+      "iitr-phd-regulations-2019:p3",
+      "iitr-ug-ordinance-2025:p37"
+     ]
+    },
+    {
+     "id": "r15",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.22,
+     "search_ms": 23.19,
+     "top": [
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-ug-ordinance-2025:p44",
+      "iitr-ug-ordinance-2025:p42"
+     ]
+    },
+    {
+     "id": "r16",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.11,
+     "search_ms": 14.47,
+     "top": [
+      "iitr-grading-policy-2025:p2",
+      "iitr-phd-regulations-2026:p43",
+      "iitr-ug-ordinance-2025:p28"
+     ]
+    },
+    {
+     "id": "r18",
+     "split": "test",
+     "category": "multi_passage",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.17,
+     "search_ms": 43.12,
+     "top": [
+      "iitr-second-exam-grades-2024:p1",
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-ug-ordinance-2025:p34"
+     ]
+    },
+    {
+     "id": "r19",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6509209298071326,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.05,
+     "search_ms": 14.26,
+     "top": [
+      "iitr-ug-ordinance-2025:p46",
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-phd-regulations-2026:p28"
+     ]
+    },
+    {
+     "id": "r21",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.6131471927654584,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.12,
+     "search_ms": 81.61,
+     "top": [
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-ug-ordinance-2025:p21",
+      "iitr-ug-ordinance-2025:p18"
+     ]
+    },
+    {
+     "id": "r23",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.48,
+     "search_ms": 26.14,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-ug-ordinance-2025:p14",
+      "iitr-phd-regulations-2026:p29"
+     ]
+    },
+    {
+     "id": "r24",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.03,
+     "search_ms": 19.89,
+     "top": [
+      "iitr-ug-ordinance-2025:p6",
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-ug-ordinance-2025:p12"
+     ]
+    },
+    {
+     "id": "r25",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.02,
+     "search_ms": 17.51,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p4",
+      "iitr-phd-regulations-2026:p29",
+      "iitr-phd-regulations-2019:p3"
+     ]
+    },
+    {
+     "id": "r26",
+     "split": "test",
+     "category": "applicability",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 0.5,
+     "ndcg@5": 0.3868528072345416,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.84,
+     "search_ms": 19.58,
+     "top": [
+      "iitr-phd-regulations-2019:p3",
+      "iitr-ug-ordinance-2025:p37",
+      "iitr-phd-regulations-2026:p29"
+     ]
+    },
+    {
+     "id": "r28",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.9327783893101107,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.05,
+     "search_ms": 19.02,
+     "top": [
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-phd-regulations-2026:p1",
+      "iitr-ug-ordinance-2025:p39"
+     ]
+    },
+    {
+     "id": "r29",
+     "split": "test",
+     "category": "synonym",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.17,
+     "search_ms": 29.8,
+     "top": [
+      "iitr-ug-ordinance-2025:p42",
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-phd-regulations-2026:p15"
+     ]
+    },
+    {
+     "id": "r30",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.93,
+     "search_ms": 17.21,
+     "top": [
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-ug-ordinance-2025:p21",
+      "iitr-ug-ordinance-2025:p37"
+     ]
+    },
+    {
+     "id": "r33",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.98,
+     "search_ms": 17.9,
+     "top": [
+      "iitr-ug-ordinance-2025:p5",
+      "iitr-ug-ordinance-2025:p21",
+      "iitr-phd-regulations-2019:p7"
+     ]
+    },
+    {
+     "id": "r34",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.97,
+     "search_ms": 24.02,
+     "top": [
+      "iitr-ug-ordinance-2025:p5",
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-ug-ordinance-2025:p16"
+     ]
+    },
+    {
+     "id": "r36",
+     "split": "test",
+     "category": "synonym",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.04,
+     "search_ms": 17.68,
+     "top": [
+      "iitr-grade-moderation-2023:p1",
+      "iitr-academic-bank-of-credits-2025:p1",
+      "iitr-ug-ordinance-2025:p29"
+     ]
+    },
+    {
+     "id": "r37",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.79,
+     "search_ms": 23.84,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-ug-ordinance-2025:p38"
+     ]
+    },
+    {
+     "id": "r39",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 0.3333333333333333,
+     "ndcg@5": 0.41311732856427996,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.91,
+     "search_ms": 27.13,
+     "top": [
+      "iitr-ug-ordinance-2025:p31",
+      "iitr-ug-ordinance-2025:p42",
+      "iitr-ug-ordinance-2025:p23"
+     ]
+    },
+    {
+     "id": "r40",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.87,
+     "search_ms": 16.42,
+     "top": [
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-ug-ordinance-2025:p45",
+      "iitr-ug-ordinance-2025:p45"
+     ]
+    },
+    {
+     "id": "r42",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.85,
+     "search_ms": 17.93,
+     "top": [
+      "iitr-ug-ordinance-2025:p36",
+      "iitr-phd-regulations-2026:p27",
+      "iitr-ug-ordinance-2025:p37"
+     ]
+    },
+    {
+     "id": "r43",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.07,
+     "search_ms": 45.15,
+     "top": [
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-second-exam-grades-2024:p1"
+     ]
+    },
+    {
+     "id": "r45",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.76,
+     "search_ms": 24.65,
+     "top": [
+      "iitr-ug-ordinance-2025:p35",
+      "iitr-ug-ordinance-2025:p24",
+      "iitr-ug-ordinance-2025:p46"
+     ]
+    },
+    {
+     "id": "r46",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.04,
+     "search_ms": 15.53,
+     "top": [
+      "iitr-phd-regulations-2026:p29",
+      "iitr-ug-ordinance-2025:p48",
+      "iitr-ug-ordinance-2025:p25"
+     ]
+    },
+    {
+     "id": "r47",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.95,
+     "search_ms": 17.23,
+     "top": [
+      "iitr-ug-ordinance-2025:p39",
+      "iitr-phd-regulations-2026:p38",
+      "iitr-ug-ordinance-2025:p20"
+     ]
+    },
+    {
+     "id": "r48",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.92,
+     "search_ms": 16.43,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-phd-regulations-2026:p15",
+      "iitr-ug-ordinance-2025:p5"
+     ]
+    },
+    {
+     "id": "r50",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.02,
+     "search_ms": 17.1,
+     "top": [
+      "iitr-ug-ordinance-2025:p26",
+      "iitr-ug-ordinance-2025:p14",
+      "iitr-ug-ordinance-2025:p13"
+     ]
+    },
+    {
+     "id": "r51",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.04,
+     "search_ms": 30.75,
+     "top": [
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-ug-ordinance-2025:p13",
+      "iitr-ug-ordinance-2025:p14"
+     ]
+    },
+    {
+     "id": "r52",
+     "split": "test",
+     "category": "applicability",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.97,
+     "search_ms": 31.28,
+     "top": [
+      "iitr-phd-regulations-2026:p28",
+      "iitr-phd-regulations-2026:p29",
+      "iitr-ug-ordinance-2025:p28"
+     ]
+    },
+    {
+     "id": "r54",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.13,
+     "search_ms": 14.16,
+     "top": [
+      "iitr-phd-regulations-2026:p33",
+      "iitr-ug-ordinance-2025:p16",
+      "iitr-ufm-revision-2026:p1"
+     ]
+    },
+    {
+     "id": "r55",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.12,
+     "search_ms": 22.57,
+     "top": [
+      "iitr-phd-regulations-2026:p37",
+      "iitr-phd-regulations-2026:p36",
+      "iitr-phd-regulations-2026:p18"
+     ]
+    },
+    {
+     "id": "r57",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.17,
+     "search_ms": 35.48,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p2"
+     ]
+    },
+    {
+     "id": "r58",
+     "split": "test",
+     "category": "short",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.43,
+     "search_ms": 15.07,
+     "top": [
+      "iitr-ufm-guidelines-2025:p5",
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-phd-regulations-2026:p5"
+     ]
+    },
+    {
+     "id": "r59",
+     "split": "test",
+     "category": "short",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.05,
+     "search_ms": 16.72,
+     "top": [
+      "iitr-ug-ordinance-2025:p51",
+      "iitr-phd-regulations-2026:p44",
+      "iitr-phd-regulations-2019:p7"
+     ]
+    },
+    {
+     "id": "r60",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.87,
+     "search_ms": 14.65,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-ug-ordinance-2025:p37",
+      "iitr-phd-regulations-2019:p3"
+     ]
+    },
+    {
+     "id": "r65",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.05,
+     "search_ms": 16.67,
+     "top": [
+      "iitr-ug-ordinance-2025:p2",
+      "iitr-ug-ordinance-2025:p4",
+      "iitr-cgpa-percentage-conversion:p1"
+     ]
+    },
+    {
+     "id": "r66",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.18,
+     "search_ms": 14.24,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-ug-ordinance-2025:p3",
+      "iitr-ug-ordinance-2025:p35"
+     ]
+    },
+    {
+     "id": "r67",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.55,
+     "search_ms": 15.43,
+     "top": [
+      "iitr-ug-ordinance-2025:p50",
+      "iitr-ug-ordinance-2025:p47",
+      "iitr-phd-regulations-2026:p33"
+     ]
+    },
+    {
+     "id": "r68",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 1.98,
+     "search_ms": 15.45,
+     "top": [
+      "iitr-calendar-spring-2025-26:p1",
+      "iitr-phd-regulations-2026:p12",
+      "iitr-ug-ordinance-2025:p5"
+     ]
+    },
+    {
+     "id": "r69",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.09,
+     "search_ms": 14.52,
+     "top": [
+      "iitr-phd-regulations-2026:p31",
+      "iitr-ufm-guidelines-2025:p1",
+      "iitr-phd-regulations-2019:p5"
+     ]
+    },
+    {
+     "id": "r70",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.03,
+     "search_ms": 16.01,
+     "top": [
+      "iitr-ug-ordinance-2025:p11",
+      "iitr-phd-regulations-2026:p11",
+      "iitr-phd-regulations-2026:p2"
+     ]
+    },
+    {
+     "id": "r71",
+     "split": "test",
+     "category": "injection",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": true,
+     "retrieve_ms": 1.85,
+     "search_ms": 15.27,
+     "top": [
+      "bench-injection-notice:p1",
+      "iitr-phd-regulations-2026:p7",
+      "iitr-ug-ordinance-2025:p22"
+     ]
+    }
+   ],
+   "resolved_label_chunks": {
+    "r01#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r01#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r02#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r02#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r03#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r03#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r04#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r04#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r05#0": [
+     "d8500da5c017-p1-c2"
+    ],
+    "r05#1": [
+     "0df94248f760-p2-c1"
+    ],
+    "r06#0": [
+     "d8500da5c017-p1-c2"
+    ],
+    "r07#0": [
+     "0df94248f760-p2-c1"
+    ],
+    "r07#1": [
+     "0763c24467ef-p51-c2"
+    ],
+    "r08#0": [
+     "0df94248f760-p2-c2"
+    ],
+    "r09#0": [
+     "0df94248f760-p3-c2"
+    ],
+    "r10#0": [
+     "0df94248f760-p2-c0"
+    ],
+    "r11#0": [
+     "c80054b9fae7-p2-c0"
+    ],
+    "r12#0": [
+     "c80054b9fae7-p2-c0"
+    ],
+    "r13#0": [
+     "c80054b9fae7-p2-c3"
+    ],
+    "r14#0": [
+     "c80054b9fae7-p3-c0"
+    ],
+    "r15#0": [
+     "c80054b9fae7-p3-c0"
+    ],
+    "r16#0": [
+     "48fa1fc59bc2-p1-c1"
+    ],
+    "r17#0": [
+     "a2ca2110c660-p1-c0"
+    ],
+    "r17#1": [
+     "0763c24467ef-p34-c0"
+    ],
+    "r18#0": [
+     "a2ca2110c660-p1-c0"
+    ],
+    "r18#1": [
+     "0763c24467ef-p34-c0"
+    ],
+    "r19#0": [
+     "6f142936b2e8-p1-c1"
+    ],
+    "r19#1": [
+     "0763c24467ef-p33-c0"
+    ],
+    "r20#0": [
+     "6f142936b2e8-p1-c2"
+    ],
+    "r20#1": [
+     "0763c24467ef-p33-c0",
+     "0763c24467ef-p33-c1"
+    ],
+    "r21#0": [
+     "6f142936b2e8-p1-c1"
+    ],
+    "r21#1": [
+     "0763c24467ef-p33-c0",
+     "0763c24467ef-p33-c2"
+    ],
+    "r22#0": [
+     "d8820b0090a5-p3-c0",
+     "d8820b0090a5-p3-c3"
+    ],
+    "r23#0": [
+     "d8820b0090a5-p3-c1"
+    ],
+    "r24#0": [
+     "d8820b0090a5-p3-c2"
+    ],
+    "r25#0": [
+     "d8820b0090a5-p4-c0"
+    ],
+    "r26#0": [
+     "0763c24467ef-p37-c1"
+    ],
+    "r26#1": [
+     "d8820b0090a5-p3-c0",
+     "d8820b0090a5-p3-c3"
+    ],
+    "r27#0": [
+     "8edf5c3a2db7-p1-c1"
+    ],
+    "r27#1": [
+     "0763c24467ef-p27-c3"
+    ],
+    "r28#0": [
+     "0763c24467ef-p27-c3"
+    ],
+    "r28#1": [
+     "8edf5c3a2db7-p1-c3"
+    ],
+    "r29#0": [
+     "8edf5c3a2db7-p1-c0",
+     "8edf5c3a2db7-p1-c1"
+    ],
+    "r29#1": [
+     "0763c24467ef-p27-c3"
+    ],
+    "r30#0": [
+     "8b54af07c20d-p1-c1"
+    ],
+    "r31#0": [
+     "8b54af07c20d-p1-c1"
+    ],
+    "r32#0": [
+     "0763c24467ef-p20-c2"
+    ],
+    "r32#1": [
+     "0763c24467ef-p35-c1"
+    ],
+    "r33#0": [
+     "0763c24467ef-p21-c0"
+    ],
+    "r34#0": [
+     "0763c24467ef-p20-c3"
+    ],
+    "r35#0": [
+     "0763c24467ef-p25-c1"
+    ],
+    "r36#0": [
+     "0763c24467ef-p25-c2"
+    ],
+    "r36#1": [
+     "ca23bb8d09dc-p1-c2"
+    ],
+    "r36#2": [
+     "2482fd871d4c-p1-c1"
+    ],
+    "r37#0": [
+     "0763c24467ef-p23-c1"
+    ],
+    "r38#0": [
+     "0763c24467ef-p23-c1"
+    ],
+    "r39#0": [
+     "0763c24467ef-p23-c3"
+    ],
+    "r39#1": [
+     "ca23bb8d09dc-p1-c6"
+    ],
+    "r40#0": [
+     "0763c24467ef-p28-c1"
+    ],
+    "r41#0": [
+     "0763c24467ef-p28-c3"
+    ],
+    "r42#0": [
+     "0763c24467ef-p29-c4"
+    ],
+    "r43#0": [
+     "0763c24467ef-p34-c2"
+    ],
+    "r44#0": [
+     "0763c24467ef-p34-c1"
+    ],
+    "r45#0": [
+     "0763c24467ef-p35-c2"
+    ],
+    "r46#0": [
+     "0763c24467ef-p36-c0"
+    ],
+    "r47#0": [
+     "0763c24467ef-p39-c3"
+    ],
+    "r48#0": [
+     "0763c24467ef-p37-c2"
+    ],
+    "r49#0": [
+     "0763c24467ef-p27-c0"
+    ],
+    "r50#0": [
+     "0763c24467ef-p26-c1"
+    ],
+    "r51#0": [
+     "0763c24467ef-p25-c4"
+    ],
+    "r52#0": [
+     "c909164888e2-p26-c2"
+    ],
+    "r53#0": [
+     "c909164888e2-p29-c0"
+    ],
+    "r54#0": [
+     "c909164888e2-p35-c0"
+    ],
+    "r55#0": [
+     "c909164888e2-p36-c1"
+    ],
+    "r56#0": [
+     "ca23bb8d09dc-p1-c1"
+    ],
+    "r57#0": [
+     "ca23bb8d09dc-p1-c4"
+    ],
+    "r58#0": [
+     "ca23bb8d09dc-p2-c3"
+    ],
+    "r59#0": [
+     "ca23bb8d09dc-p1-c3"
+    ],
+    "r60#0": [
+     "ca23bb8d09dc-p1-c5"
+    ],
+    "r71#0": [
+     "145ee857bf5f-p1-c0"
+    ]
+   }
+  },
+  {
+   "retriever": "fastembed",
+   "status": "ok",
+   "embedding_model": "fastembed:BAAI/bge-small-en-v1.5",
+   "embedding_dim": 384,
+   "retrieval_mode": "dense",
+   "collection": "campus_handbooks__fastembed_baai_bge_small_en_v1_5",
+   "thresholds": {
+    "min_score": 0.72,
+    "bm25_min_score": 6.0
+   },
+   "tuning": {
+    "objective": "dev balanced accuracy of answer-vs-abstain decisions",
+    "chosen": {
+     "min_score": 0.72,
+     "bm25_min_score": 6.0
+    },
+    "dev_balanced_accuracy": 1.0,
+    "trials": 20
+   },
+   "documents_indexed": 16,
+   "chunks_indexed": 492,
+   "not_indexed": [
+    "iitr-exit-policy-2022.pdf (scanned PDF: needs OCR or manual text)",
+    "iitr-ug-ordinance-2016.pdf (scanned PDF: needs OCR or manual text)"
+   ],
+   "index_build_s": 86.7,
+   "python_heap_peak_mb": 9.3,
+   "splits": {
+    "dev": {
+     "queries": 22,
+     "answerable": 18,
+     "no_answer": 4,
+     "recall@1": 0.7778,
+     "recall@3": 0.9167,
+     "recall@5": 0.9722,
+     "mrr": 0.9722,
+     "ndcg@5": 0.9555,
+     "abstain_precision": 1.0,
+     "abstain_recall": 1.0,
+     "false_abstention_rate": 0.0,
+     "top_citation_supported": 0.9444,
+     "top_citation_cases": 18,
+     "current_doc_first": "1/1",
+     "injection_sanitized": null,
+     "retrieve_p50_ms": 10.25,
+     "retrieve_p95_ms": 14.01,
+     "search_p50_ms": 39.79,
+     "search_p95_ms": 67.88
+    },
+    "test": {
+     "queries": 49,
+     "answerable": 43,
+     "no_answer": 6,
+     "recall@1": 0.5659,
+     "recall@3": 0.8178,
+     "recall@5": 0.8527,
+     "mrr": 0.774,
+     "ndcg@5": 0.7781,
+     "abstain_precision": 0.5,
+     "abstain_recall": 1.0,
+     "false_abstention_rate": 0.1395,
+     "top_citation_supported": 0.6757,
+     "top_citation_cases": 37,
+     "current_doc_first": "1/1",
+     "injection_sanitized": "1/1",
+     "retrieve_p50_ms": 9.64,
+     "retrieve_p95_ms": 14.6,
+     "search_p50_ms": 36.95,
+     "search_p95_ms": 53.92
+    }
+   },
+   "test_categories": {
+    "applicability": {
+     "queries": 2,
+     "recall@5": 0.5,
+     "mrr": 0.5,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "exact": {
+     "queries": 13,
+     "recall@5": 0.8846,
+     "mrr": 0.75,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "injection": {
+     "queries": 1,
+     "recall@5": 1.0,
+     "mrr": 1.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "misleading": {
+     "queries": 1,
+     "recall@5": 0.0,
+     "mrr": 0.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "multi_passage": {
+     "queries": 1,
+     "recall@5": 1.0,
+     "mrr": 1.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "no_answer": {
+     "queries": 6,
+     "recall@5": null,
+     "mrr": null,
+     "abstain_recall": 1.0,
+     "false_abstention_rate": null
+    },
+    "numeric": {
+     "queries": 9,
+     "recall@5": 1.0,
+     "mrr": 0.9259,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "paraphrase": {
+     "queries": 11,
+     "recall@5": 0.8182,
+     "mrr": 0.7455,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.3636
+    },
+    "short": {
+     "queries": 2,
+     "recall@5": 1.0,
+     "mrr": 0.75,
+     "abstain_recall": null,
+     "false_abstention_rate": 1.0
+    },
+    "superseded": {
+     "queries": 1,
+     "recall@5": 1.0,
+     "mrr": 1.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "synonym": {
+     "queries": 2,
+     "recall@5": 0.5833,
+     "mrr": 0.75,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    }
+   },
+   "rows": [
+    {
+     "id": "r01",
+     "split": "dev",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.8772153153380493,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.45,
+     "search_ms": 34.31,
+     "top": [
+      "iitr-attendance-policy-2024:p1",
+      "iitr-attendance-policy-2024:p1",
+      "iitr-attendance-policy-2024:p1"
+     ]
+    },
+    {
+     "id": "r05",
+     "split": "dev",
+     "category": "superseded",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.944847956559586,
+     "top_citation_supported": true,
+     "current_first": true,
+     "injection_sanitized": null,
+     "retrieve_ms": 13.77,
+     "search_ms": 67.88,
+     "top": [
+      "iitr-ufm-revision-2026:p1",
+      "iitr-ug-ordinance-2025:p49",
+      "iitr-ug-ordinance-2025:p51"
+     ]
+    },
+    {
+     "id": "r08",
+     "split": "dev",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.51,
+     "search_ms": 24.1,
+     "top": [
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-ug-ordinance-2025:p50",
+      "iitr-phd-regulations-2026:p43"
+     ]
+    },
+    {
+     "id": "r11",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.25,
+     "search_ms": 45.91,
+     "top": [
+      "iitr-ug-ordinance-2025:p42",
+      "iitr-grading-policy-2025:p2",
+      "iitr-ug-ordinance-2025:p43"
+     ]
+    },
+    {
+     "id": "r14",
+     "split": "dev",
+     "category": "short",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 7.88,
+     "search_ms": 39.79,
+     "top": [
+      "iitr-grading-policy-2025:p3",
+      "iitr-grading-policy-2025:p2",
+      "iitr-ug-ordinance-2025:p44"
+     ]
+    },
+    {
+     "id": "r17",
+     "split": "dev",
+     "category": "multi_passage",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.84,
+     "search_ms": 66.76,
+     "top": [
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-second-exam-grades-2024:p1",
+      "iitr-ug-ordinance-2025:p33"
+     ]
+    },
+    {
+     "id": "r20",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 14.01,
+     "search_ms": 84.91,
+     "top": [
+      "iitr-mte-second-exam-2025:p1",
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-ug-ordinance-2025:p33"
+     ]
+    },
+    {
+     "id": "r22",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.42,
+     "search_ms": 44.91,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-ug-ordinance-2025:p37"
+     ]
+    },
+    {
+     "id": "r27",
+     "split": "dev",
+     "category": "applicability",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.9197207891481876,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.35,
+     "search_ms": 38.12,
+     "top": [
+      "iitr-cgpa-percentage-conversion:p1",
+      "iitr-cgpa-percentage-conversion:p1",
+      "iitr-ug-ordinance-2025:p27"
+     ]
+    },
+    {
+     "id": "r31",
+     "split": "dev",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.59,
+     "search_ms": 48.86,
+     "top": [
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-minor-cgpa-2026:p1"
+     ]
+    },
+    {
+     "id": "r32",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.8262346571285599,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.77,
+     "search_ms": 57.75,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-ug-ordinance-2025:p21",
+      "iitr-ug-ordinance-2025:p20"
+     ]
+    },
+    {
+     "id": "r35",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.78,
+     "search_ms": 46.5,
+     "top": [
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-ug-ordinance-2025:p46",
+      "iitr-ug-ordinance-2025:p25"
+     ]
+    },
+    {
+     "id": "r38",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.64,
+     "search_ms": 32.39,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ug-ordinance-2025:p24",
+      "iitr-ug-ordinance-2025:p38"
+     ]
+    },
+    {
+     "id": "r41",
+     "split": "dev",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.37,
+     "search_ms": 34.15,
+     "top": [
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-ug-ordinance-2025:p34"
+     ]
+    },
+    {
+     "id": "r44",
+     "split": "dev",
+     "category": "long",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 20.13,
+     "search_ms": 65.88,
+     "top": [
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-ug-ordinance-2025:p43",
+      "iitr-ug-ordinance-2025:p34"
+     ]
+    },
+    {
+     "id": "r49",
+     "split": "dev",
+     "category": "short",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.36,
+     "search_ms": 23.91,
+     "top": [
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-phd-regulations-2026:p42",
+      "iitr-ug-ordinance-2025:p49"
+     ]
+    },
+    {
+     "id": "r53",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.9,
+     "search_ms": 46.5,
+     "top": [
+      "iitr-phd-regulations-2026:p29",
+      "iitr-phd-regulations-2019:p3",
+      "iitr-ug-ordinance-2025:p46"
+     ]
+    },
+    {
+     "id": "r56",
+     "split": "dev",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.21,
+     "search_ms": 54.31,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-calendar-autumn-2026-27:p1"
+     ]
+    },
+    {
+     "id": "r61",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.12,
+     "search_ms": 22.74,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-calendar-spring-2025-26:p1",
+      "iitr-ug-ordinance-2025:p34"
+     ]
+    },
+    {
+     "id": "r62",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.11,
+     "search_ms": 24.82,
+     "top": [
+      "bench-injection-notice:p1",
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-spring-2025-26:p1"
+     ]
+    },
+    {
+     "id": "r63",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.2,
+     "search_ms": 24.19,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ufm-guidelines-2025:p2"
+     ]
+    },
+    {
+     "id": "r64",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.68,
+     "search_ms": 33.08,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-spring-2025-26:p1",
+      "iitr-calendar-autumn-2026-27:p2"
+     ]
+    },
+    {
+     "id": "r02",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.6131471927654584,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 15.57,
+     "search_ms": 28.29,
+     "top": [
+      "iitr-ug-ordinance-2025:p32",
+      "iitr-ug-ordinance-2025:p44",
+      "iitr-ug-ordinance-2025:p1"
+     ]
+    },
+    {
+     "id": "r03",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.9197207891481876,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.19,
+     "search_ms": 36.95,
+     "top": [
+      "iitr-ug-ordinance-2025:p32",
+      "iitr-attendance-policy-2024:p1",
+      "iitr-attendance-policy-2024:p1"
+     ]
+    },
+    {
+     "id": "r04",
+     "split": "test",
+     "category": "misleading",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.31,
+     "search_ms": 28.13,
+     "top": [
+      "iitr-attendance-policy-2024:p1",
+      "iitr-grade-moderation-2023:p1",
+      "iitr-second-exam-grades-2024:p1"
+     ]
+    },
+    {
+     "id": "r06",
+     "split": "test",
+     "category": "superseded",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": true,
+     "injection_sanitized": null,
+     "retrieve_ms": 14.34,
+     "search_ms": 40.62,
+     "top": [
+      "iitr-ufm-revision-2026:p1",
+      "iitr-ug-ordinance-2025:p49",
+      "iitr-ufm-guidelines-2025:p2"
+     ]
+    },
+    {
+     "id": "r07",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.5,
+     "rr": 0.25,
+     "ndcg@5": 0.35583989829307827,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.9,
+     "search_ms": 46.91,
+     "top": [
+      "iitr-phd-regulations-2026:p44",
+      "iitr-ug-ordinance-2025:p49",
+      "iitr-phd-regulations-2026:p43"
+     ]
+    },
+    {
+     "id": "r09",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.83,
+     "search_ms": 43.58,
+     "top": [
+      "iitr-phd-regulations-2026:p42",
+      "iitr-ufm-guidelines-2025:p3",
+      "iitr-ug-ordinance-2025:p49"
+     ]
+    },
+    {
+     "id": "r10",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.64,
+     "search_ms": 24.06,
+     "top": [
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-phd-regulations-2026:p43",
+      "iitr-ug-ordinance-2025:p51"
+     ]
+    },
+    {
+     "id": "r12",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 14.6,
+     "search_ms": 40.52,
+     "top": [
+      "iitr-grading-policy-2025:p2",
+      "iitr-ug-ordinance-2025:p42",
+      "iitr-grading-policy-2025:p2"
+     ]
+    },
+    {
+     "id": "r13",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.13,
+     "search_ms": 22.17,
+     "top": [
+      "iitr-grading-policy-2025:p2",
+      "iitr-ug-ordinance-2025:p43",
+      "iitr-ug-ordinance-2025:p41"
+     ]
+    },
+    {
+     "id": "r15",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.41,
+     "search_ms": 53.92,
+     "top": [
+      "iitr-ug-ordinance-2025:p44",
+      "iitr-grading-policy-2025:p3",
+      "iitr-ug-ordinance-2025:p42"
+     ]
+    },
+    {
+     "id": "r16",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.03,
+     "search_ms": 26.03,
+     "top": [
+      "iitr-grading-policy-2025:p2",
+      "iitr-ug-ordinance-2025:p46",
+      "iitr-grading-policy-2025:p2"
+     ]
+    },
+    {
+     "id": "r18",
+     "split": "test",
+     "category": "multi_passage",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.71,
+     "search_ms": 48.76,
+     "top": [
+      "iitr-second-exam-grades-2024:p1",
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-second-exam-grades-2024:p1"
+     ]
+    },
+    {
+     "id": "r19",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.9197207891481876,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.68,
+     "search_ms": 39.93,
+     "top": [
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-mte-second-exam-2025:p1"
+     ]
+    },
+    {
+     "id": "r21",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.98,
+     "search_ms": 38.68,
+     "top": [
+      "iitr-mte-second-exam-2025:p1",
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-ug-ordinance-2025:p35"
+     ]
+    },
+    {
+     "id": "r23",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 16.09,
+     "search_ms": 86.84,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-academic-bank-of-credits-2025:p2"
+     ]
+    },
+    {
+     "id": "r24",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.12,
+     "search_ms": 41.33,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-ug-ordinance-2025:p29",
+      "iitr-ug-ordinance-2025:p28"
+     ]
+    },
+    {
+     "id": "r25",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.36,
+     "search_ms": 51.28,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p4",
+      "iitr-phd-regulations-2019:p5",
+      "iitr-ug-ordinance-2025:p46"
+     ]
+    },
+    {
+     "id": "r26",
+     "split": "test",
+     "category": "applicability",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.7,
+     "search_ms": 37.57,
+     "top": [
+      "iitr-ug-ordinance-2025:p37",
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-ug-ordinance-2025:p37"
+     ]
+    },
+    {
+     "id": "r28",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.7967075809905066,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.81,
+     "search_ms": 37.15,
+     "top": [
+      "iitr-cgpa-percentage-conversion:p1",
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-cgpa-percentage-conversion:p1"
+     ]
+    },
+    {
+     "id": "r29",
+     "split": "test",
+     "category": "synonym",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 0.5,
+     "ndcg@5": 0.52129602861432,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.08,
+     "search_ms": 50.66,
+     "top": [
+      "iitr-grading-policy-2025:p3",
+      "iitr-cgpa-percentage-conversion:p1",
+      "iitr-ug-ordinance-2025:p27"
+     ]
+    },
+    {
+     "id": "r30",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.98,
+     "search_ms": 40.59,
+     "top": [
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-minor-cgpa-2026:p1"
+     ]
+    },
+    {
+     "id": "r33",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.36,
+     "search_ms": 27.36,
+     "top": [
+      "iitr-ug-ordinance-2025:p5",
+      "iitr-ug-ordinance-2025:p21",
+      "iitr-phd-regulations-2026:p38"
+     ]
+    },
+    {
+     "id": "r34",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.31,
+     "search_ms": 44.34,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-ug-ordinance-2025:p5",
+      "iitr-phd-regulations-2026:p16"
+     ]
+    },
+    {
+     "id": "r36",
+     "split": "test",
+     "category": "synonym",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.3333333333333333,
+     "recall@3": 0.6666666666666666,
+     "recall@5": 0.6666666666666666,
+     "rr": 1.0,
+     "ndcg@5": 0.8344475896326595,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.92,
+     "search_ms": 36.47,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-spring-2025-26:p1",
+      "iitr-ug-ordinance-2025:p25"
+     ]
+    },
+    {
+     "id": "r37",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.25,
+     "search_ms": 27.13,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-phd-regulations-2026:p18"
+     ]
+    },
+    {
+     "id": "r39",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.8262346571285599,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.37,
+     "search_ms": 39.44,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-phd-regulations-2026:p22",
+      "iitr-ug-ordinance-2025:p24"
+     ]
+    },
+    {
+     "id": "r40",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.88,
+     "search_ms": 46.15,
+     "top": [
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-phd-regulations-2026:p27",
+      "iitr-phd-regulations-2026:p26"
+     ]
+    },
+    {
+     "id": "r42",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.3333333333333333,
+     "ndcg@5": 0.5,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.35,
+     "search_ms": 41.34,
+     "top": [
+      "iitr-phd-regulations-2026:p26",
+      "iitr-phd-regulations-2026:p27",
+      "iitr-ug-ordinance-2025:p29"
+     ]
+    },
+    {
+     "id": "r43",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.94,
+     "search_ms": 32.29,
+     "top": [
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-second-exam-grades-2024:p1"
+     ]
+    },
+    {
+     "id": "r45",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.35,
+     "search_ms": 30.63,
+     "top": [
+      "iitr-ug-ordinance-2025:p35",
+      "iitr-ug-ordinance-2025:p36",
+      "iitr-calendar-autumn-2026-27:p1"
+     ]
+    },
+    {
+     "id": "r46",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.63,
+     "search_ms": 39.59,
+     "top": [
+      "iitr-ug-ordinance-2025:p36",
+      "iitr-ug-ordinance-2025:p36",
+      "iitr-ug-ordinance-2025:p46"
+     ]
+    },
+    {
+     "id": "r47",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.14,
+     "search_ms": 24.46,
+     "top": [
+      "iitr-ug-ordinance-2025:p39",
+      "iitr-phd-regulations-2026:p38",
+      "iitr-ug-ordinance-2025:p33"
+     ]
+    },
+    {
+     "id": "r48",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.55,
+     "search_ms": 24.68,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-ug-ordinance-2025:p37",
+      "iitr-ug-ordinance-2025:p16"
+     ]
+    },
+    {
+     "id": "r50",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.36,
+     "search_ms": 29.83,
+     "top": [
+      "iitr-ug-ordinance-2025:p26",
+      "iitr-phd-regulations-2026:p27",
+      "iitr-phd-regulations-2026:p26"
+     ]
+    },
+    {
+     "id": "r51",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.34,
+     "search_ms": 65.37,
+     "top": [
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-ug-ordinance-2025:p25"
+     ]
+    },
+    {
+     "id": "r52",
+     "split": "test",
+     "category": "applicability",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.32,
+     "search_ms": 43.96,
+     "top": [
+      "iitr-phd-regulations-2019:p3",
+      "iitr-phd-regulations-2026:p27",
+      "iitr-phd-regulations-2019:p4"
+     ]
+    },
+    {
+     "id": "r54",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.36,
+     "search_ms": 33.89,
+     "top": [
+      "iitr-phd-regulations-2026:p32",
+      "iitr-phd-regulations-2026:p35",
+      "iitr-phd-regulations-2019:p6"
+     ]
+    },
+    {
+     "id": "r55",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.85,
+     "search_ms": 47.97,
+     "top": [
+      "iitr-phd-regulations-2026:p36",
+      "iitr-phd-regulations-2026:p18",
+      "iitr-phd-regulations-2026:p37"
+     ]
+    },
+    {
+     "id": "r57",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.22,
+     "search_ms": 44.71,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p2"
+     ]
+    },
+    {
+     "id": "r58",
+     "split": "test",
+     "category": "short",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.1,
+     "search_ms": 19.75,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-calendar-spring-2025-26:p2",
+      "iitr-calendar-autumn-2026-27:p2"
+     ]
+    },
+    {
+     "id": "r59",
+     "split": "test",
+     "category": "short",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.34,
+     "search_ms": 28.08,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-spring-2025-26:p2"
+     ]
+    },
+    {
+     "id": "r60",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 1.0,
+     "rr": 0.2,
+     "ndcg@5": 0.38685280723454163,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.01,
+     "search_ms": 27.54,
+     "top": [
+      "iitr-calendar-spring-2025-26:p1",
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p1"
+     ]
+    },
+    {
+     "id": "r65",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.66,
+     "search_ms": 23.51,
+     "top": [
+      "iitr-ufm-revision-2026:p1",
+      "iitr-phd-regulations-2026:p5",
+      "iitr-phd-regulations-2026:p4"
+     ]
+    },
+    {
+     "id": "r66",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.53,
+     "search_ms": 28.1,
+     "top": [
+      "iitr-ug-ordinance-2025:p5",
+      "iitr-phd-regulations-2026:p1",
+      "iitr-phd-regulations-2026:p5"
+     ]
+    },
+    {
+     "id": "r67",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.29,
+     "search_ms": 28.75,
+     "top": [
+      "iitr-ug-ordinance-2025:p11",
+      "iitr-ug-ordinance-2025:p11",
+      "iitr-ug-ordinance-2025:p15"
+     ]
+    },
+    {
+     "id": "r68",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.77,
+     "search_ms": 29.29,
+     "top": [
+      "iitr-phd-regulations-2026:p5",
+      "iitr-ug-ordinance-2025:p3",
+      "iitr-ug-ordinance-2025:p19"
+     ]
+    },
+    {
+     "id": "r69",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.88,
+     "search_ms": 25.02,
+     "top": [
+      "iitr-ug-ordinance-2025:p18",
+      "iitr-ug-ordinance-2025:p19",
+      "iitr-ug-ordinance-2025:p19"
+     ]
+    },
+    {
+     "id": "r70",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.26,
+     "search_ms": 26.34,
+     "top": [
+      "iitr-ug-ordinance-2025:p19",
+      "iitr-phd-regulations-2026:p40",
+      "iitr-phd-regulations-2026:p40"
+     ]
+    },
+    {
+     "id": "r71",
+     "split": "test",
+     "category": "injection",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": true,
+     "retrieve_ms": 7.94,
+     "search_ms": 29.63,
+     "top": [
+      "bench-injection-notice:p1",
+      "iitr-ufm-revision-2026:p1",
+      "iitr-calendar-spring-2025-26:p2"
+     ]
+    }
+   ],
+   "resolved_label_chunks": {
+    "r01#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r01#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r02#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r02#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r03#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r03#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r04#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r04#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r05#0": [
+     "d8500da5c017-p1-c2"
+    ],
+    "r05#1": [
+     "0df94248f760-p2-c1"
+    ],
+    "r06#0": [
+     "d8500da5c017-p1-c2"
+    ],
+    "r07#0": [
+     "0df94248f760-p2-c1"
+    ],
+    "r07#1": [
+     "0763c24467ef-p51-c2"
+    ],
+    "r08#0": [
+     "0df94248f760-p2-c2"
+    ],
+    "r09#0": [
+     "0df94248f760-p3-c2"
+    ],
+    "r10#0": [
+     "0df94248f760-p2-c0"
+    ],
+    "r11#0": [
+     "c80054b9fae7-p2-c0"
+    ],
+    "r12#0": [
+     "c80054b9fae7-p2-c0"
+    ],
+    "r13#0": [
+     "c80054b9fae7-p2-c3"
+    ],
+    "r14#0": [
+     "c80054b9fae7-p3-c0"
+    ],
+    "r15#0": [
+     "c80054b9fae7-p3-c0"
+    ],
+    "r16#0": [
+     "48fa1fc59bc2-p1-c1"
+    ],
+    "r17#0": [
+     "a2ca2110c660-p1-c0"
+    ],
+    "r17#1": [
+     "0763c24467ef-p34-c0"
+    ],
+    "r18#0": [
+     "a2ca2110c660-p1-c0"
+    ],
+    "r18#1": [
+     "0763c24467ef-p34-c0"
+    ],
+    "r19#0": [
+     "6f142936b2e8-p1-c1"
+    ],
+    "r19#1": [
+     "0763c24467ef-p33-c0"
+    ],
+    "r20#0": [
+     "6f142936b2e8-p1-c2"
+    ],
+    "r20#1": [
+     "0763c24467ef-p33-c0",
+     "0763c24467ef-p33-c1"
+    ],
+    "r21#0": [
+     "6f142936b2e8-p1-c1"
+    ],
+    "r21#1": [
+     "0763c24467ef-p33-c0",
+     "0763c24467ef-p33-c2"
+    ],
+    "r22#0": [
+     "d8820b0090a5-p3-c0",
+     "d8820b0090a5-p3-c3"
+    ],
+    "r23#0": [
+     "d8820b0090a5-p3-c1"
+    ],
+    "r24#0": [
+     "d8820b0090a5-p3-c2"
+    ],
+    "r25#0": [
+     "d8820b0090a5-p4-c0"
+    ],
+    "r26#0": [
+     "0763c24467ef-p37-c1"
+    ],
+    "r26#1": [
+     "d8820b0090a5-p3-c0",
+     "d8820b0090a5-p3-c3"
+    ],
+    "r27#0": [
+     "8edf5c3a2db7-p1-c1"
+    ],
+    "r27#1": [
+     "0763c24467ef-p27-c3"
+    ],
+    "r28#0": [
+     "0763c24467ef-p27-c3"
+    ],
+    "r28#1": [
+     "8edf5c3a2db7-p1-c3"
+    ],
+    "r29#0": [
+     "8edf5c3a2db7-p1-c0",
+     "8edf5c3a2db7-p1-c1"
+    ],
+    "r29#1": [
+     "0763c24467ef-p27-c3"
+    ],
+    "r30#0": [
+     "8b54af07c20d-p1-c1"
+    ],
+    "r31#0": [
+     "8b54af07c20d-p1-c1"
+    ],
+    "r32#0": [
+     "0763c24467ef-p20-c2"
+    ],
+    "r32#1": [
+     "0763c24467ef-p35-c1"
+    ],
+    "r33#0": [
+     "0763c24467ef-p21-c0"
+    ],
+    "r34#0": [
+     "0763c24467ef-p20-c3"
+    ],
+    "r35#0": [
+     "0763c24467ef-p25-c1"
+    ],
+    "r36#0": [
+     "0763c24467ef-p25-c2"
+    ],
+    "r36#1": [
+     "ca23bb8d09dc-p1-c2"
+    ],
+    "r36#2": [
+     "2482fd871d4c-p1-c1"
+    ],
+    "r37#0": [
+     "0763c24467ef-p23-c1"
+    ],
+    "r38#0": [
+     "0763c24467ef-p23-c1"
+    ],
+    "r39#0": [
+     "0763c24467ef-p23-c3"
+    ],
+    "r39#1": [
+     "ca23bb8d09dc-p1-c6"
+    ],
+    "r40#0": [
+     "0763c24467ef-p28-c1"
+    ],
+    "r41#0": [
+     "0763c24467ef-p28-c3"
+    ],
+    "r42#0": [
+     "0763c24467ef-p29-c4"
+    ],
+    "r43#0": [
+     "0763c24467ef-p34-c2"
+    ],
+    "r44#0": [
+     "0763c24467ef-p34-c1"
+    ],
+    "r45#0": [
+     "0763c24467ef-p35-c2"
+    ],
+    "r46#0": [
+     "0763c24467ef-p36-c0"
+    ],
+    "r47#0": [
+     "0763c24467ef-p39-c3"
+    ],
+    "r48#0": [
+     "0763c24467ef-p37-c2"
+    ],
+    "r49#0": [
+     "0763c24467ef-p27-c0"
+    ],
+    "r50#0": [
+     "0763c24467ef-p26-c1"
+    ],
+    "r51#0": [
+     "0763c24467ef-p25-c4"
+    ],
+    "r52#0": [
+     "c909164888e2-p26-c2"
+    ],
+    "r53#0": [
+     "c909164888e2-p29-c0"
+    ],
+    "r54#0": [
+     "c909164888e2-p35-c0"
+    ],
+    "r55#0": [
+     "c909164888e2-p36-c1"
+    ],
+    "r56#0": [
+     "ca23bb8d09dc-p1-c1"
+    ],
+    "r57#0": [
+     "ca23bb8d09dc-p1-c4"
+    ],
+    "r58#0": [
+     "ca23bb8d09dc-p2-c3"
+    ],
+    "r59#0": [
+     "ca23bb8d09dc-p1-c3"
+    ],
+    "r60#0": [
+     "ca23bb8d09dc-p1-c5"
+    ],
+    "r71#0": [
+     "145ee857bf5f-p1-c0"
+    ]
+   }
+  },
+  {
+   "retriever": "hybrid",
+   "status": "ok",
+   "embedding_model": "hashing-v1-512",
+   "embedding_dim": 512,
+   "retrieval_mode": "hybrid",
+   "collection": "campus_handbooks__hashing_v1_512",
+   "thresholds": {
+    "min_score": 0.2,
+    "bm25_min_score": 15.0
+   },
+   "tuning": {
+    "objective": "dev balanced accuracy of answer-vs-abstain decisions",
+    "chosen": {
+     "min_score": 0.2,
+     "bm25_min_score": 15.0
+    },
+    "dev_balanced_accuracy": 1.0,
+    "trials": 160
+   },
+   "documents_indexed": 16,
+   "chunks_indexed": 492,
+   "not_indexed": [
+    "iitr-exit-policy-2022.pdf (scanned PDF: needs OCR or manual text)",
+    "iitr-ug-ordinance-2016.pdf (scanned PDF: needs OCR or manual text)"
+   ],
+   "index_build_s": 4.52,
+   "python_heap_peak_mb": 11.1,
+   "splits": {
+    "dev": {
+     "queries": 22,
+     "answerable": 18,
+     "no_answer": 4,
+     "recall@1": 0.4444,
+     "recall@3": 0.6389,
+     "recall@5": 0.7222,
+     "mrr": 0.6481,
+     "ndcg@5": 0.6417,
+     "abstain_precision": 1.0,
+     "abstain_recall": 1.0,
+     "false_abstention_rate": 0.0,
+     "top_citation_supported": 0.5,
+     "top_citation_cases": 18,
+     "current_doc_first": "1/1",
+     "injection_sanitized": null,
+     "retrieve_p50_ms": 3.45,
+     "retrieve_p95_ms": 5.11,
+     "search_p50_ms": 28.62,
+     "search_p95_ms": 50.68
+    },
+    "test": {
+     "queries": 49,
+     "answerable": 43,
+     "no_answer": 6,
+     "recall@1": 0.438,
+     "recall@3": 0.6008,
+     "recall@5": 0.6705,
+     "mrr": 0.595,
+     "ndcg@5": 0.6,
+     "abstain_precision": 0.3,
+     "abstain_recall": 1.0,
+     "false_abstention_rate": 0.3256,
+     "top_citation_supported": 0.7586,
+     "top_citation_cases": 29,
+     "current_doc_first": "1/1",
+     "injection_sanitized": "1/1",
+     "retrieve_p50_ms": 2.96,
+     "retrieve_p95_ms": 3.76,
+     "search_p50_ms": 20.4,
+     "search_p95_ms": 40.84
+    }
+   },
+   "test_categories": {
+    "applicability": {
+     "queries": 2,
+     "recall@5": 0.75,
+     "mrr": 0.625,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "exact": {
+     "queries": 13,
+     "recall@5": 0.7692,
+     "mrr": 0.6731,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.2308
+    },
+    "injection": {
+     "queries": 1,
+     "recall@5": 1.0,
+     "mrr": 1.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "misleading": {
+     "queries": 1,
+     "recall@5": 0.0,
+     "mrr": 0.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 1.0
+    },
+    "multi_passage": {
+     "queries": 1,
+     "recall@5": 1.0,
+     "mrr": 1.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "no_answer": {
+     "queries": 6,
+     "recall@5": null,
+     "mrr": null,
+     "abstain_recall": 1.0,
+     "false_abstention_rate": null
+    },
+    "numeric": {
+     "queries": 9,
+     "recall@5": 0.8889,
+     "mrr": 0.75,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.1111
+    },
+    "paraphrase": {
+     "queries": 11,
+     "recall@5": 0.4545,
+     "mrr": 0.4394,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.5455
+    },
+    "short": {
+     "queries": 2,
+     "recall@5": 0.5,
+     "mrr": 0.25,
+     "abstain_recall": null,
+     "false_abstention_rate": 1.0
+    },
+    "superseded": {
+     "queries": 1,
+     "recall@5": 1.0,
+     "mrr": 0.5,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "synonym": {
+     "queries": 2,
+     "recall@5": 0.1667,
+     "mrr": 0.5,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.5
+    }
+   },
+   "rows": [
+    {
+     "id": "r01",
+     "split": "dev",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.6131471927654584,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.89,
+     "search_ms": 24.09,
+     "top": [
+      "iitr-attendance-policy-2024:p1",
+      "iitr-attendance-policy-2024:p1",
+      "iitr-attendance-policy-2024:p1"
+     ]
+    },
+    {
+     "id": "r05",
+     "split": "dev",
+     "category": "superseded",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.639909328045346,
+     "top_citation_supported": false,
+     "current_first": true,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.4,
+     "search_ms": 34.43,
+     "top": [
+      "iitr-ug-ordinance-2025:p49",
+      "iitr-ufm-revision-2026:p1",
+      "iitr-phd-regulations-2026:p43"
+     ]
+    },
+    {
+     "id": "r08",
+     "split": "dev",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.7,
+     "search_ms": 21.77,
+     "top": [
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-ug-ordinance-2025:p50",
+      "iitr-phd-regulations-2019:p7"
+     ]
+    },
+    {
+     "id": "r11",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 4.39,
+     "search_ms": 26.23,
+     "top": [
+      "iitr-ug-ordinance-2025:p41",
+      "iitr-grading-policy-2025:p2",
+      "iitr-ug-ordinance-2025:p43"
+     ]
+    },
+    {
+     "id": "r14",
+     "split": "dev",
+     "category": "short",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.63,
+     "search_ms": 44.15,
+     "top": [
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-second-exam-grades-2024:p1",
+      "iitr-ug-ordinance-2025:p42"
+     ]
+    },
+    {
+     "id": "r17",
+     "split": "dev",
+     "category": "multi_passage",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.9197207891481876,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 4.34,
+     "search_ms": 50.68,
+     "top": [
+      "iitr-second-exam-grades-2024:p1",
+      "iitr-mte-second-exam-2025:p1",
+      "iitr-ug-ordinance-2025:p34"
+     ]
+    },
+    {
+     "id": "r20",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.8772153153380493,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.45,
+     "search_ms": 41.66,
+     "top": [
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-mte-second-exam-2025:p1",
+      "iitr-ug-ordinance-2025:p46"
+     ]
+    },
+    {
+     "id": "r22",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.3333333333333333,
+     "ndcg@5": 0.5,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 4.06,
+     "search_ms": 30.67,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p2",
+      "iitr-academic-bank-of-credits-2025:p1",
+      "iitr-academic-bank-of-credits-2025:p3"
+     ]
+    },
+    {
+     "id": "r27",
+     "split": "dev",
+     "category": "applicability",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 0.3333333333333333,
+     "ndcg@5": 0.5437713091520254,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.21,
+     "search_ms": 26.04,
+     "top": [
+      "iitr-ug-ordinance-2025:p41",
+      "iitr-cgpa-percentage-conversion:p1",
+      "iitr-cgpa-percentage-conversion:p1"
+     ]
+    },
+    {
+     "id": "r31",
+     "split": "dev",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.67,
+     "search_ms": 22.13,
+     "top": [
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-minor-cgpa-2026:p1"
+     ]
+    },
+    {
+     "id": "r32",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.8262346571285599,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 4.19,
+     "search_ms": 28.62,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-phd-regulations-2026:p31",
+      "iitr-ug-ordinance-2025:p5"
+     ]
+    },
+    {
+     "id": "r35",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.77,
+     "search_ms": 38.34,
+     "top": [
+      "iitr-ug-ordinance-2025:p46",
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-ug-ordinance-2025:p26"
+     ]
+    },
+    {
+     "id": "r38",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 4.44,
+     "search_ms": 22.34,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ug-ordinance-2025:p7",
+      "iitr-phd-regulations-2026:p4"
+     ]
+    },
+    {
+     "id": "r41",
+     "split": "dev",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.35,
+     "search_ms": 48.37,
+     "top": [
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-ug-ordinance-2025:p41",
+      "iitr-ug-ordinance-2025:p44"
+     ]
+    },
+    {
+     "id": "r44",
+     "split": "dev",
+     "category": "long",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 5.11,
+     "search_ms": 49.16,
+     "top": [
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-ug-ordinance-2025:p22",
+      "iitr-ug-ordinance-2025:p41"
+     ]
+    },
+    {
+     "id": "r49",
+     "split": "dev",
+     "category": "short",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.49,
+     "search_ms": 41.33,
+     "top": [
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-ufm-guidelines-2025:p3",
+      "iitr-ug-ordinance-2025:p49"
+     ]
+    },
+    {
+     "id": "r53",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.94,
+     "search_ms": 19.12,
+     "top": [
+      "iitr-phd-regulations-2019:p3",
+      "iitr-ug-ordinance-2025:p8",
+      "iitr-phd-regulations-2026:p30"
+     ]
+    },
+    {
+     "id": "r56",
+     "split": "dev",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.89,
+     "search_ms": 31.14,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-calendar-spring-2025-26:p1",
+      "iitr-ug-ordinance-2025:p26"
+     ]
+    },
+    {
+     "id": "r61",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.96,
+     "search_ms": 16.33,
+     "top": [
+      "iitr-phd-regulations-2019:p1",
+      "iitr-ug-ordinance-2025:p17",
+      "iitr-phd-regulations-2026:p22"
+     ]
+    },
+    {
+     "id": "r62",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.97,
+     "search_ms": 17.68,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-ug-ordinance-2025:p24",
+      "iitr-calendar-autumn-2026-27:p1"
+     ]
+    },
+    {
+     "id": "r63",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.42,
+     "search_ms": 16.01,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ufm-guidelines-2025:p2"
+     ]
+    },
+    {
+     "id": "r64",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.58,
+     "search_ms": 75.83,
+     "top": [
+      "iitr-ug-ordinance-2025:p4",
+      "iitr-phd-regulations-2026:p6",
+      "iitr-ug-ordinance-2025:p2"
+     ]
+    },
+    {
+     "id": "r02",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 0.3333333333333333,
+     "ndcg@5": 0.3065735963827292,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.88,
+     "search_ms": 17.86,
+     "top": [
+      "iitr-phd-regulations-2026:p34",
+      "iitr-ug-ordinance-2025:p29",
+      "iitr-ug-ordinance-2025:p32"
+     ]
+    },
+    {
+     "id": "r03",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 1.0,
+     "rr": 0.25,
+     "ndcg@5": 0.5012658353418872,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.58,
+     "search_ms": 15.27,
+     "top": [
+      "iitr-cgpa-percentage-conversion:p1",
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-attendance-policy-2024:p1"
+     ]
+    },
+    {
+     "id": "r04",
+     "split": "test",
+     "category": "misleading",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.83,
+     "search_ms": 16.82,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p1",
+      "iitr-phd-regulations-2026:p2",
+      "iitr-phd-regulations-2019:p3"
+     ]
+    },
+    {
+     "id": "r06",
+     "split": "test",
+     "category": "superseded",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": true,
+     "current_first": true,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.86,
+     "search_ms": 31.32,
+     "top": [
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-ufm-revision-2026:p1",
+      "iitr-ufm-guidelines-2025:p4"
+     ]
+    },
+    {
+     "id": "r07",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.63,
+     "search_ms": 16.83,
+     "top": [
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-ug-ordinance-2025:p52",
+      "iitr-ug-ordinance-2025:p33"
+     ]
+    },
+    {
+     "id": "r09",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.28,
+     "search_ms": 39.87,
+     "top": [
+      "iitr-ug-ordinance-2025:p50",
+      "iitr-ufm-guidelines-2025:p3",
+      "iitr-phd-regulations-2026:p43"
+     ]
+    },
+    {
+     "id": "r10",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.15,
+     "search_ms": 16.94,
+     "top": [
+      "iitr-phd-regulations-2026:p43",
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-phd-regulations-2026:p18"
+     ]
+    },
+    {
+     "id": "r12",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.04,
+     "search_ms": 21.19,
+     "top": [
+      "iitr-grading-policy-2025:p2",
+      "iitr-ug-ordinance-2025:p42",
+      "iitr-calendar-autumn-2026-27:p1"
+     ]
+    },
+    {
+     "id": "r13",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.2,
+     "search_ms": 16.13,
+     "top": [
+      "iitr-ug-ordinance-2025:p11",
+      "iitr-ug-ordinance-2025:p43",
+      "iitr-ug-ordinance-2025:p38"
+     ]
+    },
+    {
+     "id": "r15",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.88,
+     "search_ms": 37.68,
+     "top": [
+      "iitr-ug-ordinance-2025:p44",
+      "iitr-grading-policy-2025:p3",
+      "iitr-ug-ordinance-2025:p48"
+     ]
+    },
+    {
+     "id": "r16",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.73,
+     "search_ms": 16.18,
+     "top": [
+      "iitr-grading-policy-2025:p2",
+      "iitr-grading-policy-2025:p2",
+      "iitr-ug-ordinance-2025:p43"
+     ]
+    },
+    {
+     "id": "r18",
+     "split": "test",
+     "category": "multi_passage",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.83,
+     "search_ms": 43.1,
+     "top": [
+      "iitr-second-exam-grades-2024:p1",
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-ug-ordinance-2025:p34"
+     ]
+    },
+    {
+     "id": "r19",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6934264036172708,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.37,
+     "search_ms": 15.23,
+     "top": [
+      "iitr-ug-ordinance-2025:p46",
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-mte-second-exam-2025:p1"
+     ]
+    },
+    {
+     "id": "r21",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.9197207891481876,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.13,
+     "search_ms": 28.56,
+     "top": [
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-ug-ordinance-2025:p35",
+      "iitr-mte-second-exam-2025:p1"
+     ]
+    },
+    {
+     "id": "r23",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.49,
+     "search_ms": 25.59,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-ug-ordinance-2025:p14",
+      "iitr-academic-bank-of-credits-2025:p4"
+     ]
+    },
+    {
+     "id": "r24",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.1,
+     "search_ms": 22.03,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-ug-ordinance-2025:p6",
+      "iitr-ug-ordinance-2025:p12"
+     ]
+    },
+    {
+     "id": "r25",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.03,
+     "search_ms": 20.4,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p4",
+      "iitr-phd-regulations-2026:p29",
+      "iitr-phd-regulations-2019:p3"
+     ]
+    },
+    {
+     "id": "r26",
+     "split": "test",
+     "category": "applicability",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.6131471927654584,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.07,
+     "search_ms": 25.1,
+     "top": [
+      "iitr-ug-ordinance-2025:p37",
+      "iitr-phd-regulations-2019:p3",
+      "iitr-ug-ordinance-2025:p37"
+     ]
+    },
+    {
+     "id": "r28",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.67,
+     "search_ms": 22.38,
+     "top": [
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-cgpa-percentage-conversion:p1",
+      "iitr-cgpa-percentage-conversion:p1"
+     ]
+    },
+    {
+     "id": "r29",
+     "split": "test",
+     "category": "synonym",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.7,
+     "search_ms": 32.76,
+     "top": [
+      "iitr-ug-ordinance-2025:p42",
+      "iitr-phd-regulations-2026:p15",
+      "iitr-ug-ordinance-2025:p27"
+     ]
+    },
+    {
+     "id": "r30",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.06,
+     "search_ms": 20.51,
+     "top": [
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-ug-ordinance-2025:p21"
+     ]
+    },
+    {
+     "id": "r33",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.96,
+     "search_ms": 28.29,
+     "top": [
+      "iitr-ug-ordinance-2025:p21",
+      "iitr-ug-ordinance-2025:p5",
+      "iitr-phd-regulations-2019:p7"
+     ]
+    },
+    {
+     "id": "r34",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 4.72,
+     "search_ms": 24.7,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-ug-ordinance-2025:p5",
+      "iitr-ug-ordinance-2025:p16"
+     ]
+    },
+    {
+     "id": "r36",
+     "split": "test",
+     "category": "synonym",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.3333333333333333,
+     "recall@3": 0.3333333333333333,
+     "recall@5": 0.3333333333333333,
+     "rr": 1.0,
+     "ndcg@5": 0.5562983930884396,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.62,
+     "search_ms": 16.57,
+     "top": [
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-grade-moderation-2023:p1",
+      "iitr-ug-ordinance-2025:p33"
+     ]
+    },
+    {
+     "id": "r37",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.58,
+     "search_ms": 17.89,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-ug-ordinance-2025:p34"
+     ]
+    },
+    {
+     "id": "r39",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.8262346571285599,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.76,
+     "search_ms": 22.98,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ug-ordinance-2025:p24",
+      "iitr-ug-ordinance-2025:p31"
+     ]
+    },
+    {
+     "id": "r40",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.83,
+     "search_ms": 19.87,
+     "top": [
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-ug-ordinance-2025:p45",
+      "iitr-phd-regulations-2026:p27"
+     ]
+    },
+    {
+     "id": "r42",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.31,
+     "search_ms": 18.28,
+     "top": [
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-ug-ordinance-2025:p36",
+      "iitr-phd-regulations-2026:p26"
+     ]
+    },
+    {
+     "id": "r43",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.92,
+     "search_ms": 47.51,
+     "top": [
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-second-exam-grades-2024:p1"
+     ]
+    },
+    {
+     "id": "r45",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.91,
+     "search_ms": 27.97,
+     "top": [
+      "iitr-ug-ordinance-2025:p35",
+      "iitr-academic-bank-of-credits-2025:p2",
+      "iitr-ug-ordinance-2025:p24"
+     ]
+    },
+    {
+     "id": "r46",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.88,
+     "search_ms": 21.86,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p4",
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-phd-regulations-2026:p29"
+     ]
+    },
+    {
+     "id": "r47",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.65,
+     "search_ms": 18.73,
+     "top": [
+      "iitr-ug-ordinance-2025:p39",
+      "iitr-phd-regulations-2026:p38",
+      "iitr-phd-regulations-2026:p38"
+     ]
+    },
+    {
+     "id": "r48",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 4.13,
+     "search_ms": 24.96,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-ug-ordinance-2025:p47",
+      "iitr-ug-ordinance-2025:p16"
+     ]
+    },
+    {
+     "id": "r50",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.22,
+     "search_ms": 25.65,
+     "top": [
+      "iitr-ug-ordinance-2025:p26",
+      "iitr-ug-ordinance-2025:p13",
+      "iitr-ug-ordinance-2025:p14"
+     ]
+    },
+    {
+     "id": "r51",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.21,
+     "search_ms": 35.54,
+     "top": [
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-ug-ordinance-2025:p13",
+      "iitr-ug-ordinance-2025:p14"
+     ]
+    },
+    {
+     "id": "r52",
+     "split": "test",
+     "category": "applicability",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 1.0,
+     "rr": 0.25,
+     "ndcg@5": 0.4306765580733931,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.35,
+     "search_ms": 34.49,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p4",
+      "iitr-phd-regulations-2019:p4",
+      "iitr-phd-regulations-2026:p28"
+     ]
+    },
+    {
+     "id": "r54",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 1.0,
+     "rr": 0.25,
+     "ndcg@5": 0.4306765580733931,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.94,
+     "search_ms": 16.67,
+     "top": [
+      "iitr-phd-regulations-2026:p33",
+      "iitr-phd-regulations-2019:p6",
+      "iitr-ug-ordinance-2025:p16"
+     ]
+    },
+    {
+     "id": "r55",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.49,
+     "search_ms": 22.84,
+     "top": [
+      "iitr-phd-regulations-2026:p37",
+      "iitr-phd-regulations-2026:p36",
+      "iitr-phd-regulations-2026:p18"
+     ]
+    },
+    {
+     "id": "r57",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.57,
+     "search_ms": 40.84,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p2"
+     ]
+    },
+    {
+     "id": "r58",
+     "split": "test",
+     "category": "short",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.39,
+     "search_ms": 15.09,
+     "top": [
+      "iitr-ufm-guidelines-2025:p5",
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-ug-ordinance-2025:p23"
+     ]
+    },
+    {
+     "id": "r59",
+     "split": "test",
+     "category": "short",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 3.04,
+     "search_ms": 15.89,
+     "top": [
+      "iitr-ug-ordinance-2025:p51",
+      "iitr-attendance-policy-2024:p1",
+      "iitr-grade-moderation-2023:p1"
+     ]
+    },
+    {
+     "id": "r60",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.5,
+     "search_ms": 16.83,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-ug-ordinance-2025:p39",
+      "iitr-ug-ordinance-2025:p37"
+     ]
+    },
+    {
+     "id": "r65",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.48,
+     "search_ms": 15.27,
+     "top": [
+      "iitr-ug-ordinance-2025:p2",
+      "iitr-ug-ordinance-2025:p4",
+      "iitr-phd-regulations-2026:p6"
+     ]
+    },
+    {
+     "id": "r66",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.88,
+     "search_ms": 19.18,
+     "top": [
+      "iitr-ug-ordinance-2025:p3",
+      "iitr-ug-ordinance-2025:p8",
+      "iitr-ug-ordinance-2025:p24"
+     ]
+    },
+    {
+     "id": "r67",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.84,
+     "search_ms": 17.09,
+     "top": [
+      "iitr-ug-ordinance-2025:p5",
+      "iitr-ug-ordinance-2025:p50",
+      "iitr-ug-ordinance-2025:p42"
+     ]
+    },
+    {
+     "id": "r68",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.8,
+     "search_ms": 15.16,
+     "top": [
+      "iitr-ug-ordinance-2025:p3",
+      "iitr-calendar-spring-2025-26:p1",
+      "iitr-phd-regulations-2026:p12"
+     ]
+    },
+    {
+     "id": "r69",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.45,
+     "search_ms": 16.88,
+     "top": [
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-phd-regulations-2026:p31",
+      "iitr-ug-ordinance-2025:p14"
+     ]
+    },
+    {
+     "id": "r70",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 2.48,
+     "search_ms": 16.56,
+     "top": [
+      "iitr-ug-ordinance-2025:p53",
+      "iitr-ug-ordinance-2025:p11",
+      "iitr-ug-ordinance-2025:p23"
+     ]
+    },
+    {
+     "id": "r71",
+     "split": "test",
+     "category": "injection",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": true,
+     "retrieve_ms": 3.01,
+     "search_ms": 15.83,
+     "top": [
+      "bench-injection-notice:p1",
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-phd-regulations-2026:p7"
+     ]
+    }
+   ],
+   "resolved_label_chunks": {
+    "r01#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r01#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r02#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r02#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r03#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r03#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r04#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r04#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r05#0": [
+     "d8500da5c017-p1-c2"
+    ],
+    "r05#1": [
+     "0df94248f760-p2-c1"
+    ],
+    "r06#0": [
+     "d8500da5c017-p1-c2"
+    ],
+    "r07#0": [
+     "0df94248f760-p2-c1"
+    ],
+    "r07#1": [
+     "0763c24467ef-p51-c2"
+    ],
+    "r08#0": [
+     "0df94248f760-p2-c2"
+    ],
+    "r09#0": [
+     "0df94248f760-p3-c2"
+    ],
+    "r10#0": [
+     "0df94248f760-p2-c0"
+    ],
+    "r11#0": [
+     "c80054b9fae7-p2-c0"
+    ],
+    "r12#0": [
+     "c80054b9fae7-p2-c0"
+    ],
+    "r13#0": [
+     "c80054b9fae7-p2-c3"
+    ],
+    "r14#0": [
+     "c80054b9fae7-p3-c0"
+    ],
+    "r15#0": [
+     "c80054b9fae7-p3-c0"
+    ],
+    "r16#0": [
+     "48fa1fc59bc2-p1-c1"
+    ],
+    "r17#0": [
+     "a2ca2110c660-p1-c0"
+    ],
+    "r17#1": [
+     "0763c24467ef-p34-c0"
+    ],
+    "r18#0": [
+     "a2ca2110c660-p1-c0"
+    ],
+    "r18#1": [
+     "0763c24467ef-p34-c0"
+    ],
+    "r19#0": [
+     "6f142936b2e8-p1-c1"
+    ],
+    "r19#1": [
+     "0763c24467ef-p33-c0"
+    ],
+    "r20#0": [
+     "6f142936b2e8-p1-c2"
+    ],
+    "r20#1": [
+     "0763c24467ef-p33-c0",
+     "0763c24467ef-p33-c1"
+    ],
+    "r21#0": [
+     "6f142936b2e8-p1-c1"
+    ],
+    "r21#1": [
+     "0763c24467ef-p33-c0",
+     "0763c24467ef-p33-c2"
+    ],
+    "r22#0": [
+     "d8820b0090a5-p3-c0",
+     "d8820b0090a5-p3-c3"
+    ],
+    "r23#0": [
+     "d8820b0090a5-p3-c1"
+    ],
+    "r24#0": [
+     "d8820b0090a5-p3-c2"
+    ],
+    "r25#0": [
+     "d8820b0090a5-p4-c0"
+    ],
+    "r26#0": [
+     "0763c24467ef-p37-c1"
+    ],
+    "r26#1": [
+     "d8820b0090a5-p3-c0",
+     "d8820b0090a5-p3-c3"
+    ],
+    "r27#0": [
+     "8edf5c3a2db7-p1-c1"
+    ],
+    "r27#1": [
+     "0763c24467ef-p27-c3"
+    ],
+    "r28#0": [
+     "0763c24467ef-p27-c3"
+    ],
+    "r28#1": [
+     "8edf5c3a2db7-p1-c3"
+    ],
+    "r29#0": [
+     "8edf5c3a2db7-p1-c0",
+     "8edf5c3a2db7-p1-c1"
+    ],
+    "r29#1": [
+     "0763c24467ef-p27-c3"
+    ],
+    "r30#0": [
+     "8b54af07c20d-p1-c1"
+    ],
+    "r31#0": [
+     "8b54af07c20d-p1-c1"
+    ],
+    "r32#0": [
+     "0763c24467ef-p20-c2"
+    ],
+    "r32#1": [
+     "0763c24467ef-p35-c1"
+    ],
+    "r33#0": [
+     "0763c24467ef-p21-c0"
+    ],
+    "r34#0": [
+     "0763c24467ef-p20-c3"
+    ],
+    "r35#0": [
+     "0763c24467ef-p25-c1"
+    ],
+    "r36#0": [
+     "0763c24467ef-p25-c2"
+    ],
+    "r36#1": [
+     "ca23bb8d09dc-p1-c2"
+    ],
+    "r36#2": [
+     "2482fd871d4c-p1-c1"
+    ],
+    "r37#0": [
+     "0763c24467ef-p23-c1"
+    ],
+    "r38#0": [
+     "0763c24467ef-p23-c1"
+    ],
+    "r39#0": [
+     "0763c24467ef-p23-c3"
+    ],
+    "r39#1": [
+     "ca23bb8d09dc-p1-c6"
+    ],
+    "r40#0": [
+     "0763c24467ef-p28-c1"
+    ],
+    "r41#0": [
+     "0763c24467ef-p28-c3"
+    ],
+    "r42#0": [
+     "0763c24467ef-p29-c4"
+    ],
+    "r43#0": [
+     "0763c24467ef-p34-c2"
+    ],
+    "r44#0": [
+     "0763c24467ef-p34-c1"
+    ],
+    "r45#0": [
+     "0763c24467ef-p35-c2"
+    ],
+    "r46#0": [
+     "0763c24467ef-p36-c0"
+    ],
+    "r47#0": [
+     "0763c24467ef-p39-c3"
+    ],
+    "r48#0": [
+     "0763c24467ef-p37-c2"
+    ],
+    "r49#0": [
+     "0763c24467ef-p27-c0"
+    ],
+    "r50#0": [
+     "0763c24467ef-p26-c1"
+    ],
+    "r51#0": [
+     "0763c24467ef-p25-c4"
+    ],
+    "r52#0": [
+     "c909164888e2-p26-c2"
+    ],
+    "r53#0": [
+     "c909164888e2-p29-c0"
+    ],
+    "r54#0": [
+     "c909164888e2-p35-c0"
+    ],
+    "r55#0": [
+     "c909164888e2-p36-c1"
+    ],
+    "r56#0": [
+     "ca23bb8d09dc-p1-c1"
+    ],
+    "r57#0": [
+     "ca23bb8d09dc-p1-c4"
+    ],
+    "r58#0": [
+     "ca23bb8d09dc-p2-c3"
+    ],
+    "r59#0": [
+     "ca23bb8d09dc-p1-c3"
+    ],
+    "r60#0": [
+     "ca23bb8d09dc-p1-c5"
+    ],
+    "r71#0": [
+     "145ee857bf5f-p1-c0"
+    ]
+   }
+  },
+  {
+   "retriever": "hybrid-fastembed",
+   "status": "ok",
+   "embedding_model": "fastembed:BAAI/bge-small-en-v1.5",
+   "embedding_dim": 384,
+   "retrieval_mode": "hybrid",
+   "collection": "campus_handbooks__fastembed_baai_bge_small_en_v1_5",
+   "thresholds": {
+    "min_score": 0.72,
+    "bm25_min_score": 1000000000.0
+   },
+   "tuning": {
+    "objective": "dev balanced accuracy of answer-vs-abstain decisions",
+    "chosen": {
+     "min_score": 0.72,
+     "bm25_min_score": null
+    },
+    "dev_balanced_accuracy": 1.0,
+    "trials": 160
+   },
+   "documents_indexed": 16,
+   "chunks_indexed": 492,
+   "not_indexed": [
+    "iitr-exit-policy-2022.pdf (scanned PDF: needs OCR or manual text)",
+    "iitr-ug-ordinance-2016.pdf (scanned PDF: needs OCR or manual text)"
+   ],
+   "index_build_s": 86.49,
+   "python_heap_peak_mb": 9.3,
+   "splits": {
+    "dev": {
+     "queries": 22,
+     "answerable": 18,
+     "no_answer": 4,
+     "recall@1": 0.6667,
+     "recall@3": 0.8056,
+     "recall@5": 0.9722,
+     "mrr": 0.8889,
+     "ndcg@5": 0.896,
+     "abstain_precision": 1.0,
+     "abstain_recall": 1.0,
+     "false_abstention_rate": 0.0,
+     "top_citation_supported": 0.8333,
+     "top_citation_cases": 18,
+     "current_doc_first": "1/1",
+     "injection_sanitized": null,
+     "retrieve_p50_ms": 11.86,
+     "retrieve_p95_ms": 17.3,
+     "search_p50_ms": 42.29,
+     "search_p95_ms": 73.88
+    },
+    "test": {
+     "queries": 49,
+     "answerable": 43,
+     "no_answer": 6,
+     "recall@1": 0.5659,
+     "recall@3": 0.8023,
+     "recall@5": 0.8605,
+     "mrr": 0.7585,
+     "ndcg@5": 0.766,
+     "abstain_precision": 0.5,
+     "abstain_recall": 1.0,
+     "false_abstention_rate": 0.1395,
+     "top_citation_supported": 0.7027,
+     "top_citation_cases": 37,
+     "current_doc_first": "1/1",
+     "injection_sanitized": "1/1",
+     "retrieve_p50_ms": 10.5,
+     "retrieve_p95_ms": 15.76,
+     "search_p50_ms": 36.11,
+     "search_p95_ms": 55.56
+    }
+   },
+   "test_categories": {
+    "applicability": {
+     "queries": 2,
+     "recall@5": 0.75,
+     "mrr": 0.625,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "exact": {
+     "queries": 13,
+     "recall@5": 0.8462,
+     "mrr": 0.7179,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "injection": {
+     "queries": 1,
+     "recall@5": 1.0,
+     "mrr": 1.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "misleading": {
+     "queries": 1,
+     "recall@5": 0.0,
+     "mrr": 0.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "multi_passage": {
+     "queries": 1,
+     "recall@5": 1.0,
+     "mrr": 1.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "no_answer": {
+     "queries": 6,
+     "recall@5": null,
+     "mrr": null,
+     "abstain_recall": 1.0,
+     "false_abstention_rate": null
+    },
+    "numeric": {
+     "queries": 9,
+     "recall@5": 1.0,
+     "mrr": 0.9111,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "paraphrase": {
+     "queries": 11,
+     "recall@5": 0.8636,
+     "mrr": 0.7121,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.3636
+    },
+    "short": {
+     "queries": 2,
+     "recall@5": 1.0,
+     "mrr": 1.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 1.0
+    },
+    "superseded": {
+     "queries": 1,
+     "recall@5": 1.0,
+     "mrr": 1.0,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    },
+    "synonym": {
+     "queries": 2,
+     "recall@5": 0.5,
+     "mrr": 0.5,
+     "abstain_recall": null,
+     "false_abstention_rate": 0.0
+    }
+   },
+   "rows": [
+    {
+     "id": "r01",
+     "split": "dev",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.8772153153380493,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.25,
+     "search_ms": 35.08,
+     "top": [
+      "iitr-attendance-policy-2024:p1",
+      "iitr-attendance-policy-2024:p1",
+      "iitr-attendance-policy-2024:p1"
+     ]
+    },
+    {
+     "id": "r05",
+     "split": "dev",
+     "category": "superseded",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.9327783893101107,
+     "top_citation_supported": true,
+     "current_first": true,
+     "injection_sanitized": null,
+     "retrieve_ms": 15.33,
+     "search_ms": 69.2,
+     "top": [
+      "iitr-ufm-revision-2026:p1",
+      "iitr-ug-ordinance-2025:p49",
+      "iitr-ug-ordinance-2025:p51"
+     ]
+    },
+    {
+     "id": "r08",
+     "split": "dev",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.5,
+     "search_ms": 29.74,
+     "top": [
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-ug-ordinance-2025:p50",
+      "iitr-phd-regulations-2026:p43"
+     ]
+    },
+    {
+     "id": "r11",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 1.0,
+     "rr": 0.25,
+     "ndcg@5": 0.4306765580733931,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 17.3,
+     "search_ms": 47.47,
+     "top": [
+      "iitr-ug-ordinance-2025:p41",
+      "iitr-ug-ordinance-2025:p43",
+      "iitr-ug-ordinance-2025:p42"
+     ]
+    },
+    {
+     "id": "r14",
+     "split": "dev",
+     "category": "short",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 1.0,
+     "rr": 0.25,
+     "ndcg@5": 0.4306765580733931,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.23,
+     "search_ms": 40.76,
+     "top": [
+      "iitr-ug-ordinance-2025:p47",
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-second-exam-grades-2024:p1"
+     ]
+    },
+    {
+     "id": "r17",
+     "split": "dev",
+     "category": "multi_passage",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.12,
+     "search_ms": 56.41,
+     "top": [
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-second-exam-grades-2024:p1",
+      "iitr-mte-second-exam-2025:p1"
+     ]
+    },
+    {
+     "id": "r20",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.6,
+     "search_ms": 60.38,
+     "top": [
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-mte-second-exam-2025:p1",
+      "iitr-mte-second-exam-2025:p1"
+     ]
+    },
+    {
+     "id": "r22",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 13.66,
+     "search_ms": 38.49,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-ug-ordinance-2025:p37"
+     ]
+    },
+    {
+     "id": "r27",
+     "split": "dev",
+     "category": "applicability",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.14,
+     "search_ms": 45.05,
+     "top": [
+      "iitr-cgpa-percentage-conversion:p1",
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-cgpa-percentage-conversion:p1"
+     ]
+    },
+    {
+     "id": "r31",
+     "split": "dev",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 14.35,
+     "search_ms": 73.88,
+     "top": [
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-minor-cgpa-2026:p1"
+     ]
+    },
+    {
+     "id": "r32",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.8262346571285599,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 16.83,
+     "search_ms": 82.83,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-phd-regulations-2019:p5"
+     ]
+    },
+    {
+     "id": "r35",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.83,
+     "search_ms": 63.08,
+     "top": [
+      "iitr-ug-ordinance-2025:p46",
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-ug-ordinance-2025:p26"
+     ]
+    },
+    {
+     "id": "r38",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 16.21,
+     "search_ms": 35.04,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-ug-ordinance-2025:p24"
+     ]
+    },
+    {
+     "id": "r41",
+     "split": "dev",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 13.8,
+     "search_ms": 42.29,
+     "top": [
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-ug-ordinance-2025:p41",
+      "iitr-ug-ordinance-2025:p46"
+     ]
+    },
+    {
+     "id": "r44",
+     "split": "dev",
+     "category": "long",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 22.1,
+     "search_ms": 57.59,
+     "top": [
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-ug-ordinance-2025:p43",
+      "iitr-ug-ordinance-2025:p41"
+     ]
+    },
+    {
+     "id": "r49",
+     "split": "dev",
+     "category": "short",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.66,
+     "search_ms": 24.89,
+     "top": [
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-phd-regulations-2026:p42",
+      "iitr-ug-ordinance-2025:p49"
+     ]
+    },
+    {
+     "id": "r53",
+     "split": "dev",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.18,
+     "search_ms": 53.0,
+     "top": [
+      "iitr-phd-regulations-2026:p29",
+      "iitr-ug-ordinance-2025:p46",
+      "iitr-phd-regulations-2026:p30"
+     ]
+    },
+    {
+     "id": "r56",
+     "split": "dev",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 14.09,
+     "search_ms": 64.34,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-calendar-spring-2025-26:p1"
+     ]
+    },
+    {
+     "id": "r61",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.86,
+     "search_ms": 28.77,
+     "top": [
+      "iitr-ug-ordinance-2025:p19",
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-calendar-spring-2025-26:p1"
+     ]
+    },
+    {
+     "id": "r62",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.11,
+     "search_ms": 23.46,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-spring-2025-26:p1",
+      "iitr-phd-regulations-2026:p11"
+     ]
+    },
+    {
+     "id": "r63",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.39,
+     "search_ms": 29.33,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ug-ordinance-2025:p23"
+     ]
+    },
+    {
+     "id": "r64",
+     "split": "dev",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.56,
+     "search_ms": 26.51,
+     "top": [
+      "iitr-ug-ordinance-2025:p2",
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-spring-2025-26:p1"
+     ]
+    },
+    {
+     "id": "r02",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.6131471927654584,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.44,
+     "search_ms": 24.82,
+     "top": [
+      "iitr-ug-ordinance-2025:p32",
+      "iitr-ug-ordinance-2025:p42",
+      "iitr-ug-ordinance-2025:p44"
+     ]
+    },
+    {
+     "id": "r03",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.99,
+     "search_ms": 41.89,
+     "top": [
+      "iitr-ug-ordinance-2025:p32",
+      "iitr-attendance-policy-2024:p1",
+      "iitr-cgpa-percentage-conversion:p1"
+     ]
+    },
+    {
+     "id": "r04",
+     "split": "test",
+     "category": "misleading",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 15.76,
+     "search_ms": 30.29,
+     "top": [
+      "iitr-attendance-policy-2024:p1",
+      "iitr-phd-regulations-2026:p30",
+      "iitr-academic-bank-of-credits-2025:p3"
+     ]
+    },
+    {
+     "id": "r06",
+     "split": "test",
+     "category": "superseded",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": true,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.78,
+     "search_ms": 38.19,
+     "top": [
+      "iitr-ufm-revision-2026:p1",
+      "iitr-ug-ordinance-2025:p49",
+      "iitr-ufm-guidelines-2025:p2"
+     ]
+    },
+    {
+     "id": "r07",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.99,
+     "search_ms": 41.93,
+     "top": [
+      "iitr-ug-ordinance-2025:p49",
+      "iitr-ug-ordinance-2025:p52",
+      "iitr-phd-regulations-2026:p44"
+     ]
+    },
+    {
+     "id": "r09",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 8.96,
+     "search_ms": 55.56,
+     "top": [
+      "iitr-ufm-guidelines-2025:p3",
+      "iitr-ufm-guidelines-2025:p3",
+      "iitr-ug-ordinance-2025:p49"
+     ]
+    },
+    {
+     "id": "r10",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.13,
+     "search_ms": 36.11,
+     "top": [
+      "iitr-phd-regulations-2026:p43",
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-ug-ordinance-2025:p49"
+     ]
+    },
+    {
+     "id": "r12",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.16,
+     "search_ms": 43.7,
+     "top": [
+      "iitr-grading-policy-2025:p2",
+      "iitr-ug-ordinance-2025:p42",
+      "iitr-ug-ordinance-2025:p42"
+     ]
+    },
+    {
+     "id": "r13",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.05,
+     "search_ms": 27.45,
+     "top": [
+      "iitr-ug-ordinance-2025:p43",
+      "iitr-grading-policy-2025:p2",
+      "iitr-ug-ordinance-2025:p41"
+     ]
+    },
+    {
+     "id": "r15",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.3333333333333333,
+     "ndcg@5": 0.5,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.35,
+     "search_ms": 53.21,
+     "top": [
+      "iitr-ug-ordinance-2025:p44",
+      "iitr-ug-ordinance-2025:p42",
+      "iitr-grading-policy-2025:p3"
+     ]
+    },
+    {
+     "id": "r16",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.57,
+     "search_ms": 27.94,
+     "top": [
+      "iitr-grading-policy-2025:p2",
+      "iitr-ug-ordinance-2025:p43",
+      "iitr-ug-ordinance-2025:p46"
+     ]
+    },
+    {
+     "id": "r18",
+     "split": "test",
+     "category": "multi_passage",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.96,
+     "search_ms": 60.21,
+     "top": [
+      "iitr-second-exam-grades-2024:p1",
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-second-exam-grades-2024:p1"
+     ]
+    },
+    {
+     "id": "r19",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 14.63,
+     "search_ms": 44.37,
+     "top": [
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-mte-second-exam-2025:p1",
+      "iitr-mte-second-exam-2025:p1"
+     ]
+    },
+    {
+     "id": "r21",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 18.64,
+     "search_ms": 39.17,
+     "top": [
+      "iitr-mte-second-exam-2025:p1",
+      "iitr-ug-ordinance-2025:p33",
+      "iitr-ug-ordinance-2025:p35"
+     ]
+    },
+    {
+     "id": "r23",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 16.56,
+     "search_ms": 34.31,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-academic-bank-of-credits-2025:p2",
+      "iitr-academic-bank-of-credits-2025:p1"
+     ]
+    },
+    {
+     "id": "r24",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.5,
+     "search_ms": 35.08,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p3",
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-ug-ordinance-2025:p6"
+     ]
+    },
+    {
+     "id": "r25",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.92,
+     "search_ms": 49.88,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p4",
+      "iitr-phd-regulations-2019:p3",
+      "iitr-phd-regulations-2019:p5"
+     ]
+    },
+    {
+     "id": "r26",
+     "split": "test",
+     "category": "applicability",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 0.5,
+     "rr": 1.0,
+     "ndcg@5": 0.6131471927654584,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.85,
+     "search_ms": 38.84,
+     "top": [
+      "iitr-ug-ordinance-2025:p37",
+      "iitr-ug-ordinance-2025:p37",
+      "iitr-ug-ordinance-2025:p46"
+     ]
+    },
+    {
+     "id": "r28",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.7967075809905066,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.31,
+     "search_ms": 39.88,
+     "top": [
+      "iitr-cgpa-percentage-conversion:p1",
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-cgpa-percentage-conversion:p1"
+     ]
+    },
+    {
+     "id": "r29",
+     "split": "test",
+     "category": "synonym",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.55,
+     "search_ms": 42.82,
+     "top": [
+      "iitr-ug-ordinance-2025:p27",
+      "iitr-ug-ordinance-2025:p42",
+      "iitr-grading-policy-2025:p2"
+     ]
+    },
+    {
+     "id": "r30",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.94,
+     "search_ms": 65.21,
+     "top": [
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-minor-cgpa-2026:p1",
+      "iitr-minor-cgpa-2026:p1"
+     ]
+    },
+    {
+     "id": "r33",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.74,
+     "search_ms": 28.89,
+     "top": [
+      "iitr-ug-ordinance-2025:p21",
+      "iitr-ug-ordinance-2025:p5",
+      "iitr-phd-regulations-2026:p38"
+     ]
+    },
+    {
+     "id": "r34",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.68,
+     "search_ms": 41.73,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-ug-ordinance-2025:p5",
+      "iitr-ug-ordinance-2025:p6"
+     ]
+    },
+    {
+     "id": "r36",
+     "split": "test",
+     "category": "synonym",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.3333333333333333,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.31,
+     "search_ms": 28.01,
+     "top": [
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-spring-2025-26:p1"
+     ]
+    },
+    {
+     "id": "r37",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.2,
+     "search_ms": 23.67,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-phd-regulations-2026:p18",
+      "iitr-ug-ordinance-2025:p23"
+     ]
+    },
+    {
+     "id": "r39",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.5,
+     "recall@3": 0.5,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 0.944847956559586,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.98,
+     "search_ms": 41.95,
+     "top": [
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ug-ordinance-2025:p24",
+      "iitr-ug-ordinance-2025:p24"
+     ]
+    },
+    {
+     "id": "r40",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.36,
+     "search_ms": 53.78,
+     "top": [
+      "iitr-ug-ordinance-2025:p28",
+      "iitr-phd-regulations-2026:p27",
+      "iitr-phd-regulations-2026:p26"
+     ]
+    },
+    {
+     "id": "r42",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 1.0,
+     "rr": 0.2,
+     "ndcg@5": 0.38685280723454163,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.42,
+     "search_ms": 45.73,
+     "top": [
+      "iitr-phd-regulations-2026:p26",
+      "iitr-phd-regulations-2026:p27",
+      "iitr-ug-ordinance-2025:p29"
+     ]
+    },
+    {
+     "id": "r43",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.85,
+     "search_ms": 41.94,
+     "top": [
+      "iitr-ug-ordinance-2025:p34",
+      "iitr-ug-ordinance-2025:p43",
+      "iitr-ug-ordinance-2025:p34"
+     ]
+    },
+    {
+     "id": "r45",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.8,
+     "search_ms": 32.0,
+     "top": [
+      "iitr-ug-ordinance-2025:p35",
+      "iitr-phd-regulations-2026:p32",
+      "iitr-ug-ordinance-2025:p35"
+     ]
+    },
+    {
+     "id": "r46",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.3333333333333333,
+     "ndcg@5": 0.5,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.37,
+     "search_ms": 42.98,
+     "top": [
+      "iitr-academic-bank-of-credits-2025:p4",
+      "iitr-ug-ordinance-2025:p36",
+      "iitr-ug-ordinance-2025:p36"
+     ]
+    },
+    {
+     "id": "r47",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.6,
+     "search_ms": 26.97,
+     "top": [
+      "iitr-ug-ordinance-2025:p39",
+      "iitr-phd-regulations-2026:p38",
+      "iitr-phd-regulations-2026:p38"
+     ]
+    },
+    {
+     "id": "r48",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": 0.0,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.0,
+     "search_ms": 25.12,
+     "top": [
+      "iitr-ug-ordinance-2025:p20",
+      "iitr-ug-ordinance-2025:p47",
+      "iitr-ug-ordinance-2025:p34"
+     ]
+    },
+    {
+     "id": "r50",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.82,
+     "search_ms": 33.27,
+     "top": [
+      "iitr-ug-ordinance-2025:p26",
+      "iitr-ug-ordinance-2025:p14",
+      "iitr-ug-ordinance-2025:p13"
+     ]
+    },
+    {
+     "id": "r51",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 13.0,
+     "search_ms": 53.86,
+     "top": [
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-ug-ordinance-2025:p8",
+      "iitr-ug-ordinance-2025:p8"
+     ]
+    },
+    {
+     "id": "r52",
+     "split": "test",
+     "category": "applicability",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 1.0,
+     "rr": 0.25,
+     "ndcg@5": 0.4306765580733931,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.28,
+     "search_ms": 48.59,
+     "top": [
+      "iitr-phd-regulations-2019:p4",
+      "iitr-phd-regulations-2026:p27",
+      "iitr-phd-regulations-2019:p3"
+     ]
+    },
+    {
+     "id": "r54",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": false,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.37,
+     "search_ms": 28.13,
+     "top": [
+      "iitr-phd-regulations-2019:p6",
+      "iitr-phd-regulations-2026:p35",
+      "iitr-phd-regulations-2026:p34"
+     ]
+    },
+    {
+     "id": "r55",
+     "split": "test",
+     "category": "numeric",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.14,
+     "search_ms": 46.8,
+     "top": [
+      "iitr-phd-regulations-2026:p36",
+      "iitr-phd-regulations-2026:p37",
+      "iitr-phd-regulations-2026:p18"
+     ]
+    },
+    {
+     "id": "r57",
+     "split": "test",
+     "category": "exact",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.29,
+     "search_ms": 45.86,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-calendar-autumn-2026-27:p1"
+     ]
+    },
+    {
+     "id": "r58",
+     "split": "test",
+     "category": "short",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 7.86,
+     "search_ms": 23.27,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-calendar-spring-2025-26:p2",
+      "iitr-calendar-autumn-2026-27:p1"
+     ]
+    },
+    {
+     "id": "r59",
+     "split": "test",
+     "category": "short",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 7.85,
+     "search_ms": 24.02,
+     "top": [
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-autumn-2026-27:p2",
+      "iitr-attendance-policy-2024:p1"
+     ]
+    },
+    {
+     "id": "r60",
+     "split": "test",
+     "category": "paraphrase",
+     "answerable": true,
+     "abstained": true,
+     "expect_abstain": false,
+     "recall@1": 0.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 0.5,
+     "ndcg@5": 0.6309297535714574,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.66,
+     "search_ms": 29.2,
+     "top": [
+      "iitr-ug-ordinance-2025:p22",
+      "iitr-calendar-autumn-2026-27:p1",
+      "iitr-calendar-spring-2025-26:p1"
+     ]
+    },
+    {
+     "id": "r65",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 12.57,
+     "search_ms": 31.35,
+     "top": [
+      "iitr-phd-regulations-2026:p4",
+      "bench-injection-notice:p1",
+      "iitr-ug-ordinance-2025:p2"
+     ]
+    },
+    {
+     "id": "r66",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.83,
+     "search_ms": 30.82,
+     "top": [
+      "iitr-phd-regulations-2026:p5",
+      "iitr-ug-ordinance-2025:p24",
+      "iitr-ug-ordinance-2025:p5"
+     ]
+    },
+    {
+     "id": "r67",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 11.32,
+     "search_ms": 30.68,
+     "top": [
+      "iitr-ug-ordinance-2025:p11",
+      "iitr-ug-ordinance-2025:p5",
+      "iitr-ug-ordinance-2025:p11"
+     ]
+    },
+    {
+     "id": "r68",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 13.19,
+     "search_ms": 22.66,
+     "top": [
+      "iitr-ug-ordinance-2025:p3",
+      "iitr-phd-regulations-2026:p5",
+      "iitr-phd-regulations-2026:p5"
+     ]
+    },
+    {
+     "id": "r69",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 10.38,
+     "search_ms": 28.13,
+     "top": [
+      "iitr-ug-ordinance-2025:p18",
+      "iitr-ug-ordinance-2025:p25",
+      "iitr-ug-ordinance-2025:p14"
+     ]
+    },
+    {
+     "id": "r70",
+     "split": "test",
+     "category": "no_answer",
+     "answerable": false,
+     "abstained": true,
+     "expect_abstain": true,
+     "recall@1": 0.0,
+     "recall@3": 0.0,
+     "recall@5": 0.0,
+     "rr": 0.0,
+     "ndcg@5": null,
+     "top_citation_supported": null,
+     "current_first": null,
+     "injection_sanitized": null,
+     "retrieve_ms": 9.57,
+     "search_ms": 24.68,
+     "top": [
+      "iitr-ug-ordinance-2025:p19",
+      "iitr-ug-ordinance-2025:p23",
+      "iitr-ug-ordinance-2025:p53"
+     ]
+    },
+    {
+     "id": "r71",
+     "split": "test",
+     "category": "injection",
+     "answerable": true,
+     "abstained": false,
+     "expect_abstain": false,
+     "recall@1": 1.0,
+     "recall@3": 1.0,
+     "recall@5": 1.0,
+     "rr": 1.0,
+     "ndcg@5": 1.0,
+     "top_citation_supported": true,
+     "current_first": null,
+     "injection_sanitized": true,
+     "retrieve_ms": 9.17,
+     "search_ms": 24.86,
+     "top": [
+      "bench-injection-notice:p1",
+      "iitr-ufm-guidelines-2025:p2",
+      "iitr-ufm-revision-2026:p1"
+     ]
+    }
+   ],
+   "resolved_label_chunks": {
+    "r01#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r01#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r02#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r02#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r03#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r03#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r04#0": [
+     "8bc7a6cb06e3-p1-c1"
+    ],
+    "r04#1": [
+     "0763c24467ef-p32-c2"
+    ],
+    "r05#0": [
+     "d8500da5c017-p1-c2"
+    ],
+    "r05#1": [
+     "0df94248f760-p2-c1"
+    ],
+    "r06#0": [
+     "d8500da5c017-p1-c2"
+    ],
+    "r07#0": [
+     "0df94248f760-p2-c1"
+    ],
+    "r07#1": [
+     "0763c24467ef-p51-c2"
+    ],
+    "r08#0": [
+     "0df94248f760-p2-c2"
+    ],
+    "r09#0": [
+     "0df94248f760-p3-c2"
+    ],
+    "r10#0": [
+     "0df94248f760-p2-c0"
+    ],
+    "r11#0": [
+     "c80054b9fae7-p2-c0"
+    ],
+    "r12#0": [
+     "c80054b9fae7-p2-c0"
+    ],
+    "r13#0": [
+     "c80054b9fae7-p2-c3"
+    ],
+    "r14#0": [
+     "c80054b9fae7-p3-c0"
+    ],
+    "r15#0": [
+     "c80054b9fae7-p3-c0"
+    ],
+    "r16#0": [
+     "48fa1fc59bc2-p1-c1"
+    ],
+    "r17#0": [
+     "a2ca2110c660-p1-c0"
+    ],
+    "r17#1": [
+     "0763c24467ef-p34-c0"
+    ],
+    "r18#0": [
+     "a2ca2110c660-p1-c0"
+    ],
+    "r18#1": [
+     "0763c24467ef-p34-c0"
+    ],
+    "r19#0": [
+     "6f142936b2e8-p1-c1"
+    ],
+    "r19#1": [
+     "0763c24467ef-p33-c0"
+    ],
+    "r20#0": [
+     "6f142936b2e8-p1-c2"
+    ],
+    "r20#1": [
+     "0763c24467ef-p33-c0",
+     "0763c24467ef-p33-c1"
+    ],
+    "r21#0": [
+     "6f142936b2e8-p1-c1"
+    ],
+    "r21#1": [
+     "0763c24467ef-p33-c0",
+     "0763c24467ef-p33-c2"
+    ],
+    "r22#0": [
+     "d8820b0090a5-p3-c0",
+     "d8820b0090a5-p3-c3"
+    ],
+    "r23#0": [
+     "d8820b0090a5-p3-c1"
+    ],
+    "r24#0": [
+     "d8820b0090a5-p3-c2"
+    ],
+    "r25#0": [
+     "d8820b0090a5-p4-c0"
+    ],
+    "r26#0": [
+     "0763c24467ef-p37-c1"
+    ],
+    "r26#1": [
+     "d8820b0090a5-p3-c0",
+     "d8820b0090a5-p3-c3"
+    ],
+    "r27#0": [
+     "8edf5c3a2db7-p1-c1"
+    ],
+    "r27#1": [
+     "0763c24467ef-p27-c3"
+    ],
+    "r28#0": [
+     "0763c24467ef-p27-c3"
+    ],
+    "r28#1": [
+     "8edf5c3a2db7-p1-c3"
+    ],
+    "r29#0": [
+     "8edf5c3a2db7-p1-c0",
+     "8edf5c3a2db7-p1-c1"
+    ],
+    "r29#1": [
+     "0763c24467ef-p27-c3"
+    ],
+    "r30#0": [
+     "8b54af07c20d-p1-c1"
+    ],
+    "r31#0": [
+     "8b54af07c20d-p1-c1"
+    ],
+    "r32#0": [
+     "0763c24467ef-p20-c2"
+    ],
+    "r32#1": [
+     "0763c24467ef-p35-c1"
+    ],
+    "r33#0": [
+     "0763c24467ef-p21-c0"
+    ],
+    "r34#0": [
+     "0763c24467ef-p20-c3"
+    ],
+    "r35#0": [
+     "0763c24467ef-p25-c1"
+    ],
+    "r36#0": [
+     "0763c24467ef-p25-c2"
+    ],
+    "r36#1": [
+     "ca23bb8d09dc-p1-c2"
+    ],
+    "r36#2": [
+     "2482fd871d4c-p1-c1"
+    ],
+    "r37#0": [
+     "0763c24467ef-p23-c1"
+    ],
+    "r38#0": [
+     "0763c24467ef-p23-c1"
+    ],
+    "r39#0": [
+     "0763c24467ef-p23-c3"
+    ],
+    "r39#1": [
+     "ca23bb8d09dc-p1-c6"
+    ],
+    "r40#0": [
+     "0763c24467ef-p28-c1"
+    ],
+    "r41#0": [
+     "0763c24467ef-p28-c3"
+    ],
+    "r42#0": [
+     "0763c24467ef-p29-c4"
+    ],
+    "r43#0": [
+     "0763c24467ef-p34-c2"
+    ],
+    "r44#0": [
+     "0763c24467ef-p34-c1"
+    ],
+    "r45#0": [
+     "0763c24467ef-p35-c2"
+    ],
+    "r46#0": [
+     "0763c24467ef-p36-c0"
+    ],
+    "r47#0": [
+     "0763c24467ef-p39-c3"
+    ],
+    "r48#0": [
+     "0763c24467ef-p37-c2"
+    ],
+    "r49#0": [
+     "0763c24467ef-p27-c0"
+    ],
+    "r50#0": [
+     "0763c24467ef-p26-c1"
+    ],
+    "r51#0": [
+     "0763c24467ef-p25-c4"
+    ],
+    "r52#0": [
+     "c909164888e2-p26-c2"
+    ],
+    "r53#0": [
+     "c909164888e2-p29-c0"
+    ],
+    "r54#0": [
+     "c909164888e2-p35-c0"
+    ],
+    "r55#0": [
+     "c909164888e2-p36-c1"
+    ],
+    "r56#0": [
+     "ca23bb8d09dc-p1-c1"
+    ],
+    "r57#0": [
+     "ca23bb8d09dc-p1-c4"
+    ],
+    "r58#0": [
+     "ca23bb8d09dc-p2-c3"
+    ],
+    "r59#0": [
+     "ca23bb8d09dc-p1-c3"
+    ],
+    "r60#0": [
+     "ca23bb8d09dc-p1-c5"
+    ],
+    "r71#0": [
+     "145ee857bf5f-p1-c0"
+    ]
+   }
+  }
+ ]
+}

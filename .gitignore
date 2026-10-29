@@ -44,3 +44,10 @@ next-env.d.ts
 Thumbs.db
 .idea/
 .vscode/
+
+# Scanned official PDFs without a text layer (not indexable; fetch with: make fetch-sources)
+services/academics_mcp/data/iitr/iitr-ug-ordinance-2016.pdf
+services/academics_mcp/data/iitr/iitr-exit-policy-2022.pdf
+
+# Local trace database
+backend/data/

@@ -1,0 +1,184 @@
+# Labelled retrieval benchmark over the official IIT Roorkee corpus (services/academics_mcp/data/iitr,
+# manifest services/academics_mcp/data/sources/iitr_sources.yaml).
+#
+# Labels are written against the documents, not against any retriever's output:
+#   relevant: [{doc, page, evidence, grade}]
+#     A retrieved chunk is relevant with `grade` (2 = directly answers, 1 = related/partial) when it comes
+#     from `doc` (manifest id), is on `page`, and its text contains `evidence` (case/whitespace-insensitive).
+#     The runner checks that every evidence string exists in the indexed corpus before scoring and records
+#     the resolved chunk ids in the report, so a chunking change cannot silently break the labels.
+#   expect_abstain: true   no indexed document answers the question (insufficient-evidence cases)
+#   split: dev | test      thresholds are tuned on dev only; headline numbers are reported on test
+#   category: exact | paraphrase | synonym | numeric | multi_passage | short | long | no_answer |
+#             superseded | misleading | applicability | injection
+#   expect_current_first: the current document must rank above the superseded one
+# The `injection` case uses a benchmark-only synthetic notice (see evals/run_retrieval.py), never the
+# official corpus.
+version: 1
+corpus_manifest: services/academics_mcp/data/sources/iitr_sources.yaml
+queries:
+  # ---------------------------------------------------------------- attendance
+  - {id: r01, split: dev, category: exact, query: "What is the attendance policy for students?",
+     relevant: [{doc: iitr-attendance-policy-2024, page: 1, evidence: "required to attend every scheduled lecture", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 32, evidence: "expected to be present in every lecture", grade: 2}]}
+  - {id: r02, split: test, category: paraphrase, query: "Can my professor give marks just for showing up to class?",
+     relevant: [{doc: iitr-attendance-policy-2024, page: 1, evidence: "up to 10% of marks", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 32, evidence: "up to 10% of marks", grade: 2}]}
+  - {id: r03, split: test, category: numeric, query: "What percentage of marks can be assigned for attendance?",
+     relevant: [{doc: iitr-attendance-policy-2024, page: 1, evidence: "10% of marks", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 32, evidence: "10% of marks", grade: 2}]}
+  - {id: r04, split: test, category: misleading, query: "Does IIT Roorkee require 75% attendance to sit in exams?",
+     relevant: [{doc: iitr-attendance-policy-2024, page: 1, evidence: "required to attend every scheduled lecture", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 32, evidence: "expected to be present in every lecture", grade: 2}]}
+  # ---------------------------------------------------------------- unfair means
+  - {id: r05, split: dev, category: superseded, expect_current_first: true,
+     query: "What is the penalty if a student is caught carrying prohibited items repeatedly in exams?",
+     relevant: [{doc: iitr-ufm-revision-2026, page: 1, evidence: "prohibited items repeatedly", grade: 2},
+                {doc: iitr-ufm-guidelines-2025, page: 2, evidence: "prohibited items repeatedly", grade: 1}]}
+  - {id: r06, split: test, category: superseded, expect_current_first: true,
+     query: "What happens if I am caught with a prohibited item again in a later semester?",
+     relevant: [{doc: iitr-ufm-revision-2026, page: 1, evidence: "second time in any subsequent semesters", grade: 2}]}
+  - {id: r07, split: test, category: exact, query: "What is the punishment for impersonation in an examination?",
+     relevant: [{doc: iitr-ufm-guidelines-2025, page: 2, evidence: "Impersonation", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 51, evidence: "Impersonation", grade: 1}]}
+  - {id: r08, split: dev, category: paraphrase, query: "Is it cheating if my phone is found in the lecture hall complex?",
+     relevant: [{doc: iitr-ufm-guidelines-2025, page: 2, evidence: "Lecture Hall Complex", grade: 2}]}
+  - {id: r09, split: test, category: exact, query: "Who decides the level of an unfair means offence?",
+     relevant: [{doc: iitr-ufm-guidelines-2025, page: 3, evidence: "decide the level of the offence", grade: 2}]}
+  - {id: r10, split: test, category: paraphrase, query: "What happens if a student keeps talking during an exam after a warning?",
+     relevant: [{doc: iitr-ufm-guidelines-2025, page: 2, evidence: "stopped from writing for 15 minutes", grade: 2}]}
+  # ---------------------------------------------------------------- grading
+  - {id: r11, split: dev, category: numeric, query: "What fraction of students in a course can normally get an A+ grade?",
+     relevant: [{doc: iitr-grading-policy-2025, page: 2, evidence: "less than or equal to 10 per cent", grade: 2}]}
+  - {id: r12, split: test, category: exact, query: "Which grading method is preferred for classes with more than 30 students?",
+     relevant: [{doc: iitr-grading-policy-2025, page: 2, evidence: "statistical system of grading is preferred", grade: 2}]}
+  - {id: r13, split: test, category: paraphrase, query: "Can someone who scored 35 percent be failed?",
+     relevant: [{doc: iitr-grading-policy-2025, page: 2, evidence: "35% or more marks", grade: 2}]}
+  - {id: r14, split: dev, category: short, query: "B+ grade point",
+     relevant: [{doc: iitr-grading-policy-2025, page: 3, evidence: "B+ 8", grade: 2}]}
+  - {id: r15, split: test, category: exact, query: "Marks ranges for grades under the absolute marking system",
+     relevant: [{doc: iitr-grading-policy-2025, page: 3, evidence: "ABSOLUTE MARK SYSTEM", grade: 2}]}
+  - {id: r16, split: test, category: exact, query: "Who sees course grades before they are released to students?",
+     relevant: [{doc: iitr-grade-moderation-2023, page: 1, evidence: "prior to informing the students", grade: 2}]}
+  # ---------------------------------------------------------------- second examinations
+  - {id: r17, split: dev, category: multi_passage, query: "What is the maximum grade point in a second examination on medical grounds?",
+     relevant: [{doc: iitr-second-exam-grades-2024, page: 1, evidence: "maximum grade point awarded will be eight", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 34, evidence: "maximum grade point awarded will be eight", grade: 2}]}
+  - {id: r18, split: test, category: multi_passage, query: "Is a grade point of 4 lowered in the second examination?",
+     relevant: [{doc: iitr-second-exam-grades-2024, page: 1, evidence: "shall not be lowered", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 34, evidence: "shall not be lowered", grade: 2}]}
+  - {id: r19, split: test, category: paraphrase, query: "I was sick and missed my mid-term exam. Can I take it again?",
+     relevant: [{doc: iitr-mte-second-exam-2025, page: 1, evidence: "sudden illness", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 33, evidence: "sudden illness", grade: 2}]}
+  - {id: r20, split: dev, category: numeric, query: "Within how long must a request for a second mid-term exam be submitted?",
+     relevant: [{doc: iitr-mte-second-exam-2025, page: 1, evidence: "within one week", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 33, evidence: "within one week", grade: 2}]}
+  - {id: r21, split: test, category: exact, query: "Whose signature is needed on the medical certificate for a missed MTE?",
+     relevant: [{doc: iitr-mte-second-exam-2025, page: 1, evidence: "CMO of the Institute Hospital", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 33, evidence: "CMO of the Institute Hospital", grade: 2}]}
+  # ---------------------------------------------------------------- academic bank of credits / transfer
+  - {id: r22, split: dev, category: numeric, query: "How many credits can a UG student transfer through the Academic Bank of Credits?",
+     relevant: [{doc: iitr-academic-bank-of-credits-2025, page: 3, evidence: "up to 20 credits", grade: 2}]}
+  - {id: r23, split: test, category: numeric, query: "What is the fee per credit for outside students taking IIT Roorkee courses under ABC?",
+     relevant: [{doc: iitr-academic-bank-of-credits-2025, page: 3, evidence: "5000", grade: 2}]}
+  - {id: r24, split: test, category: paraphrase, query: "Am I allowed to take my core courses at another institute for credit?",
+     relevant: [{doc: iitr-academic-bank-of-credits-2025, page: 3, evidence: "not be allowed to take core courses", grade: 2}]}
+  - {id: r25, split: test, category: paraphrase, query: "How long a break in studies is allowed while keeping earned credits?",
+     relevant: [{doc: iitr-academic-bank-of-credits-2025, page: 4, evidence: "total duration of 3 years", grade: 2}]}
+  - {id: r26, split: test, category: applicability, query: "Maximum credits that can be transferred from another institution towards the degree",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 37, evidence: "transfer of credits will be 24", grade: 2},
+                {doc: iitr-academic-bank-of-credits-2025, page: 3, evidence: "up to 20 credits", grade: 2}]}
+  # ---------------------------------------------------------------- CGPA, division
+  - {id: r27, split: dev, category: applicability, query: "How do I convert my CGPA to a percentage?",
+     relevant: [{doc: iitr-cgpa-percentage-conversion, page: 1, evidence: "10 * CGPA + 5", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 27, evidence: "Equivalent % = CGPA*10", grade: 2}]}
+  - {id: r28, split: test, category: numeric, query: "What CGPA is needed for First Division with Distinction?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 27, evidence: "8.5 and above", grade: 2},
+                {doc: iitr-cgpa-percentage-conversion, page: 1, evidence: "Distinction", grade: 1}]}
+  - {id: r29, split: test, category: synonym, query: "grade point average to marks percentage formula for placement",
+     relevant: [{doc: iitr-cgpa-percentage-conversion, page: 1, evidence: "Percentage", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 27, evidence: "Equivalent % = CGPA*10", grade: 1}]}
+  - {id: r30, split: test, category: exact, query: "Is the minor program CGPA counted for placements?",
+     relevant: [{doc: iitr-minor-cgpa-2026, page: 1, evidence: "not be considered for placement", grade: 2}]}
+  - {id: r31, split: dev, category: exact, query: "From which semester is a separate CGPA for the minor program implemented?",
+     relevant: [{doc: iitr-minor-cgpa-2026, page: 1, evidence: "Spring Semester 2026-27", grade: 2}]}
+  # ---------------------------------------------------------------- UG ordinance
+  - {id: r32, split: dev, category: numeric, query: "What is the maximum duration of a B.Tech programme?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 20, evidence: "maximum duration for the B.Tech", grade: 2},
+                {doc: iitr-ug-ordinance-2025, page: 35, evidence: "six years for a Four- Year UG program", grade: 1}]}
+  - {id: r33, split: test, category: paraphrase, query: "Can I leave the BS-MS programme after four years with a degree?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 21, evidence: "exit the program with a BS degree", grade: 2}]}
+  - {id: r34, split: test, category: numeric, query: "Minimum CGPA to switch from B.Tech to an Integrated Dual Degree",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 20, evidence: "minimum CGPA of 7.5", grade: 2}]}
+  - {id: r35, split: dev, category: numeric, query: "How many credits can I register for in one semester?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 25, evidence: "minimum of 14 credits and a maximum of 24 credits", grade: 2}]}
+  - {id: r36, split: test, category: synonym, query: "Deadline to add or drop courses",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 25, evidence: "first ten days of the semester", grade: 2},
+                {doc: iitr-calendar-autumn-2026-27, page: 1, evidence: "adding/changing courses", grade: 2},
+                {doc: iitr-calendar-spring-2025-26, page: 1, evidence: "adding/changing courses", grade: 1}]}
+  - {id: r37, split: test, category: exact, query: "Who gets a complete tuition fee waiver?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 23, evidence: "complete tuition fee waiver", grade: 2}]}
+  - {id: r38, split: dev, category: numeric, query: "Fee remission for family income between 1 lakh and 5 lakh per year",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 23, evidence: "2/3rd of the tuition fee", grade: 2}]}
+  - {id: r39, split: test, category: paraphrase, query: "When can a first-year student apply to change branch?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 23, evidence: "change of branch/program at the end of the Autumn Semester", grade: 2},
+                {doc: iitr-calendar-autumn-2026-27, page: 1, evidence: "branch change", grade: 1}]}
+  - {id: r40, split: test, category: numeric, query: "How many self-study courses can I take during the programme?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 28, evidence: "Maximum two self-study courses", grade: 2}]}
+  - {id: r41, split: dev, category: paraphrase, query: "Can I retake a course I already passed to improve my grade?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 28, evidence: "Only one course in the entire program can be repeated", grade: 2}]}
+  - {id: r42, split: test, category: numeric, query: "How many NPTEL credits can an undergraduate take?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 29, evidence: "Up to 8 credits", grade: 2}]}
+  - {id: r43, split: test, category: numeric, query: "What is the highest grade point possible in a re-examination?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 34, evidence: "six (6)", grade: 2}]}
+  - {id: r44, split: dev, category: long,
+     query: "I am a third year B.Tech student who failed one course last semester and I want to know in how many courses I can apply for re-examination in a semester and what the best grade is that I can get",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 34, evidence: "maximum limit of two courses", grade: 2}]}
+  - {id: r45, split: test, category: exact, query: "When is a student put on academic probation?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 35, evidence: "academic probation", grade: 2}]}
+  - {id: r46, split: test, category: paraphrase, query: "Can I be thrown out of the programme for earning too few credits?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 36, evidence: "14n credits", grade: 2}]}
+  - {id: r47, split: test, category: exact, query: "What are the requirements for an exit certificate?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 39, evidence: "at least two years in the program", grade: 2}]}
+  - {id: r48, split: test, category: paraphrase, query: "Can I finish my B.Tech one semester early?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 37, evidence: "CGPA more than 9.00", grade: 2}]}
+  - {id: r49, split: dev, category: short, query: "pencil in answer script",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 27, evidence: "cannot be written in pencil", grade: 2}]}
+  - {id: r50, split: test, category: exact, query: "How many credits does one lecture hour per week carry?",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 26, evidence: "One lecture/tutorial hour per week", grade: 2}]}
+  - {id: r51, split: test, category: numeric, query: "Minimum number of students for an elective course to run",
+     relevant: [{doc: iitr-ug-ordinance-2025, page: 25, evidence: "minimum of 5 students", grade: 2}]}
+  # ---------------------------------------------------------------- PhD
+  - {id: r52, split: test, category: applicability, query: "Minimum course credits for a PhD student admitted after a B.Tech",
+     relevant: [{doc: iitr-phd-regulations-2026, page: 26, evidence: "Minimum 24 credits", grade: 2}]}
+  - {id: r53, split: dev, category: numeric, query: "What minimum CGPA must PhD students earn in coursework?",
+     relevant: [{doc: iitr-phd-regulations-2026, page: 29, evidence: "minimum of 7.00 CGPA", grade: 2}]}
+  - {id: r54, split: test, category: exact, query: "How many examiners evaluate a PhD thesis?",
+     relevant: [{doc: iitr-phd-regulations-2026, page: 35, evidence: "three examiners", grade: 2}]}
+  - {id: r55, split: test, category: numeric, query: "For how many months is the institute assistantship given to PhD scholars?",
+     relevant: [{doc: iitr-phd-regulations-2026, page: 36, evidence: "60 months", grade: 2}]}
+  # ---------------------------------------------------------------- calendars
+  - {id: r56, split: dev, category: exact, query: "When do classes start for UG first year in Autumn 2026?",
+     relevant: [{doc: iitr-calendar-autumn-2026-27, page: 1, evidence: "Commencement of Classes for UG I year", grade: 2}]}
+  - {id: r57, split: test, category: exact, query: "When are the end term examinations in the autumn semester 2026-27?",
+     relevant: [{doc: iitr-calendar-autumn-2026-27, page: 1, evidence: "End Term Examinations", grade: 2}]}
+  - {id: r58, split: test, category: short, query: "Diwali holiday",
+     relevant: [{doc: iitr-calendar-autumn-2026-27, page: 2, evidence: "Diwali", grade: 2}]}
+  - {id: r59, split: test, category: short, query: "Thomso dates",
+     relevant: [{doc: iitr-calendar-autumn-2026-27, page: 1, evidence: "Thomso 2026", grade: 2}]}
+  - {id: r60, split: test, category: paraphrase, query: "When does the winter break begin for undergraduates?",
+     relevant: [{doc: iitr-calendar-autumn-2026-27, page: 1, evidence: "Winter vacation", grade: 2}]}
+  # ---------------------------------------------------------------- no supporting document
+  - {id: r61, split: dev, category: no_answer, expect_abstain: true, query: "What time is the hostel curfew?"}
+  - {id: r62, split: dev, category: no_answer, expect_abstain: true, query: "How much is the library late fine per day?"}
+  - {id: r63, split: dev, category: no_answer, expect_abstain: true, query: "What is the monthly mess fee?"}
+  - {id: r64, split: dev, category: no_answer, expect_abstain: true, query: "Which bus goes from campus to Haridwar railway station?"}
+  - {id: r65, split: test, category: no_answer, expect_abstain: true, query: "What is the Wi-Fi password for the central library?"}
+  - {id: r66, split: test, category: no_answer, expect_abstain: true, query: "Who won the inter-IIT sports meet last year?"}
+  - {id: r67, split: test, category: no_answer, expect_abstain: true, query: "What is the average placement package for computer science?"}
+  - {id: r68, split: test, category: no_answer, expect_abstain: true, query: "How do I book a squash court in the sports complex?"}
+  - {id: r69, split: test, category: no_answer, expect_abstain: true, query: "Is there a dress code for the convocation ceremony?"}
+  - {id: r70, split: test, category: no_answer, expect_abstain: true, query: "How do I get a parking permit for my motorcycle?"}
+  # ---------------------------------------------------------------- injection (benchmark-only synthetic notice)
+  - {id: r71, split: test, category: injection, query: "What are the reading room timings?",
+     relevant: [{doc: bench-injection-notice, page: 1, evidence: "08:00 to 23:00", grade: 2}]}
