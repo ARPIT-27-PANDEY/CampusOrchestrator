@@ -53,7 +53,8 @@ def list_runs() -> list[dict[str, Any]]:
             "kind": d.get("kind", "agent"),
             "generated_at": d.get("generated_at"),
             "dataset": d.get("dataset"),
-            "provider": d.get("provider") or ",".join(r.get("retriever", "") for r in d.get("results", [])),
+            "provider": d.get("provider")
+            or ",".join(r.get("retriever") or r.get("mode") or "" for r in d.get("results", [])),
             "model": d.get("model"),
             "transport": d.get("transport"),
             "retriever": c.get("retriever"),
@@ -90,6 +91,20 @@ def compare_agent(a: dict[str, Any], b: dict[str, Any]) -> list[str]:
     return lines
 
 
+LIBRARY_METRICS = ("hit@k", "recall@k", "precision@k", "ndcg@k", "missed_rate", "negatives_correct_empty")
+
+
+def compare_library(a: dict[str, Any], b: dict[str, Any]) -> list[str]:
+    lines = ["| Mode | Metric (test) | A | B | Change |", "|---|---|---|---|---|"]
+    ra = {r["mode"]: r for r in a["results"] if r["status"] == "ok"}
+    rb = {r["mode"]: r for r in b["results"] if r["status"] == "ok"}
+    for name in sorted(ra.keys() & rb.keys()):
+        for m in LIBRARY_METRICS:
+            va, vb = ra[name]["splits"]["test"].get(m), rb[name]["splits"]["test"].get(m)
+            lines.append(f"| {name} | {m} | {va} | {vb} | {_delta(m, va, vb)} |")
+    return lines
+
+
 def compare_retrieval(a: dict[str, Any], b: dict[str, Any]) -> list[str]:
     lines = ["| Retriever | Metric (test) | A | B | Change |", "|---|---|---|---|---|"]
     ra = {r["retriever"]: r for r in a["results"] if r["status"] == "ok"}
@@ -115,7 +130,7 @@ def main() -> None:
         parser.error("give exactly two runs")
     a, b = load(args.runs[0]), load(args.runs[1])
     if a.get("kind", "agent") != b.get("kind", "agent"):
-        raise SystemExit("Cannot compare an agent run with a retrieval run.")
+        raise SystemExit(f"Cannot compare a {a.get('kind', 'agent')} run with a {b.get('kind', 'agent')} run.")
     if a.get("dataset") != b.get("dataset"):
         print(f"WARNING: different datasets ({a.get('dataset')} vs {b.get('dataset')}); numbers are not comparable.",
               file=sys.stderr)  # fmt: skip
@@ -123,7 +138,18 @@ def main() -> None:
         print("NOTE: one run uses the mock keyword router, the other a real model: tool-selection numbers are "
               "not measuring the same thing.", file=sys.stderr)  # fmt: skip
     print(f"A: {a.get('run_id')}\nB: {b.get('run_id')}\n")
-    lines = compare_retrieval(a, b) if a.get("kind") == "retrieval" else compare_agent(a, b)
+    kind = a.get("kind", "agent")
+    if kind == "agent":
+        ids_a, ids_b = {c["id"] for c in a.get("cases", [])}, {c["id"] for c in b.get("cases", [])}
+        if ids_a != ids_b:
+            print(f"WARNING: the runs cover different cases ({len(ids_a)} vs {len(ids_b)}, {len(ids_a & ids_b)} "
+                  "shared); summary metrics are not comparable, only the per-case results are.", file=sys.stderr)  # fmt: skip
+    if kind == "retrieval":
+        lines = compare_retrieval(a, b)
+    elif kind == "library_search":
+        lines = compare_library(a, b)
+    else:
+        lines = compare_agent(a, b)
     print("\n".join(lines))
 
 
