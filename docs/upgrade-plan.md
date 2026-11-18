@@ -171,3 +171,10 @@ cookies, Origin checks, per-client rate limit, trusted-proxy handling; productio
 - Docs: README, DEPLOY, architecture, API, data sources, evaluation, security, demo script, .env.example, Makefile, CI.
 - Not done: live Groq evaluation (opt-in, needs the owner's key and quota); screenshots not retaken; OCR for the
   two scanned PDFs; verification of TRUSTED_PROXY_HOPS on Render.
+
+### Follow-ups after Phase F
+
+- Library availability eval cases accept a search-only answer (`8d6a25d`); hybrid semantic search for the
+  catalogue + 62-query library benchmark (`d656bd7`, `a548d6b`); compare covers library runs (`e6c4053`).
+- First live Groq evaluation saved (`563f155`): 5 library cases, 5/5 passed under the current rules
+  (`agent-20261029T100307Z-groq-3f5466`). A full live run of the 66-case suite is still not done.

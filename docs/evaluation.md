@@ -138,9 +138,10 @@ hits. Reports give p50/p95 (p99 only with at least 100 samples), the mean, the s
 error results separately; percentiles use non-error runs only. In-process transport has no network hop;
 the first case includes cold-start costs (no warm-up). Mock latencies contain no model inference.
 
-Live model latency so far comes from one 5-case Groq run (`agent-20261029T090445Z-groq-e99b83`, library
-questions only): 3.5-34 s per answer, of which the model was about 99% and MCP tools 50-90 ms. That is
-too small a sample for percentiles; treat it as an order of magnitude, not a benchmark.
+Live model latency so far comes from two 5-case Groq runs on the same library questions
+(`agent-20261029T090445Z-groq-e99b83` and `agent-20261029T100307Z-groq-3f5466`): 1.8-58 s per answer, of
+which the model was about 99% and MCP tools 50-110 ms. That is too small a sample for percentiles; treat
+it as an order of magnitude, not a benchmark.
 
 ## Comparing runs
 
@@ -157,4 +158,15 @@ differ or when a mock run is compared with a live one.
 See [`evals/reports/latest.md`](../evals/reports/latest.md), `latest-v1.md`, `latest-fastembed.md`,
 `latest-repeat3.md`, [`evals/reports/retrieval-latest.md`](../evals/reports/retrieval-latest.md) and
 [`evals/reports/library-latest.md`](../evals/reports/library-latest.md).
-The README summarises them. No live Groq evaluation is included in this repository's reports.
+The README summarises them.
+
+**Live GroqCloud runs** (`openai/gpt-oss-120b`, first 5 v2 cases, all library questions):
+
+| Run | Passed | Tool selection | Answer correctness | Latency p50 / p95 |
+|---|---|---|---|---|
+| `agent-20261029T090445Z-groq-e99b83` (before `8d6a25d`) | 1/5 | 20% | 80% | 23.2 / 34.4 s |
+| `agent-20261029T100307Z-groq-3f5466` (current rules) | 5/5 | 100% | 100% | 11.2 / 58.3 s |
+
+In the first run the model answered availability questions from `search_books` alone, which is correct
+because search results already carry copy counts; commit `8d6a25d` added that as an acceptable tool set.
+No full live run of the 66-case suite has been made yet.
